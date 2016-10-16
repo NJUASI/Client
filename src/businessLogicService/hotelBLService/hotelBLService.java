@@ -22,7 +22,7 @@ public interface HotelBLService {
 	public List<HotelGeneralVO> getBookedHotels(String userID);
 	public HotelVO getHotelDetail(String hotelID);
 	public List<HotelGeneralVO> getUncommentedHotels(String userID);
-	public ResultMessage updateEvaluation(EvaluationVO evaluationVO, float mark,String comment);
+	public ResultMessage updateEvaluation(EvaluationVO evaluationVO);
 	public HotelVO getHotelInfo(String userID);
 	public ResultMessage updateHotelInfo (HotelVO hotelVO);
 	public RoomInfoVO getHotelRoomInfo (String userID);

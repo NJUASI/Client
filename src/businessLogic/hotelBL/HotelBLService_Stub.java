@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
-import businessLogicService.hotelBLService.hotelBLService;
+import businessLogicService.hotelBLService.HotelBLService;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -17,10 +17,29 @@ import vo.HotelVO;
 import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
-public class HotelBLService_Stub implements hotelBLService{
+public class HotelBLService_Stub implements HotelBLService{
 
+	String hotelID;
+	String hotelName;
+	String hotelAddress;
+	String city;
+	String cycle;
+	String level;
+	String score;
+	String introduction;
+	String equipment;
 	
-	
+	public HotelBLService_Stub(String hotelID, String hotelName, String hotelAddress, String city, String cycle, String level, String score, String introduction, String equipment) {
+		this.hotelID = hotelID;
+		this.hotelName = hotelName;
+		this.hotelAddress = hotelAddress;
+		this.city = city;
+		this.cycle = cycle;
+		this.level = level;
+		this.score = score;
+		this.introduction = introduction;
+		this.equipment = equipment;
+	}
 	
 	@Override
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
@@ -53,7 +72,7 @@ public class HotelBLService_Stub implements hotelBLService{
 	}
 
 	@Override
-	public ResultMessage updateEvaluation(EvaluationVO evaluationVO, float mark, String comment) {
+	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return ResultMessage.SUCCESS;
 	}
 
