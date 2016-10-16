@@ -5,6 +5,7 @@ import java.util.List;
 import po.OrderGeneralPO;
 import po.OrderPO;
 import utilities.ResultMessage;
+import utilities.RoomType;
 
 public class OrderDataService_Stub implements OrderDataService {
 
@@ -17,7 +18,8 @@ public class OrderDataService_Stub implements OrderDataService {
 	@Override
 	public OrderPO getOrderDetail(String orderID) {
 		// TODO Auto-generated method stub
-		return new OrderPO(orderID, orderID, orderID, 0, orderID, orderID, orderID, orderID, 0, orderID, orderID, orderID);
+		return new OrderPO("123412345678", "thisHotel", "Nanjing, China", 200, "13:34", "13:05", "9:00", "12:00", "12:00", "Unexecuted", RoomType.SINGLEBED, 1, "2011", "Charles", "13000001111", "NULL");
+
 	}
 
 	@Override
