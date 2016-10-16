@@ -1,11 +1,11 @@
 package po;
 
-public class WebMarketPO {
+public class WebMarketerPO {
 	//	用户编号
 	private String userID;
 	//	密码
 	private String password;
-	public WebMarketPO(String userID, String password) {
+	public WebMarketerPO(String userID, String password) {
 		super();
 		this.userID = userID;
 		this.password = password;
