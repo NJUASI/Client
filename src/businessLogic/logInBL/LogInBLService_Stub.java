@@ -1,6 +1,7 @@
 package businessLogic.logInBL;
 
 import businessLogicService.logInBLService.LogInBLService;
+import utilities.ResultMessage;
 import vo.GuestVO;
 
 public class LogInBLService_Stub implements LogInBLService{
@@ -17,32 +18,32 @@ public class LogInBLService_Stub implements LogInBLService{
 	}
 	
 	@Override
-	public boolean guestLogIn(String guest, String password) {
+	public ResultMessage guestLogIn(String guest, String password) {
 		// TODO Auto-generated method stub
-		return true;
+		return ResultMessage.SUCCESS;
 	}
 
 	@Override
-	public boolean hotelWorkerLogIn(String hotelWorker, String password) {
+	public ResultMessage hotelWorkerLogIn(String hotelWorker, String password) {
 		// TODO Auto-generated method stub
-		return true;
+		return ResultMessage.SUCCESS;
 	}
 
 	@Override
-	public boolean webMarketerLogIn(String webMarketer, String password) {
+	public ResultMessage webMarketerLogIn(String webMarketer, String password) {
 		// TODO Auto-generated method stub
-		return true;
+		return ResultMessage.SUCCESS;
 	}
 
 	@Override
-	public boolean webManagerLogIn(String webManager, String password) {
+	public ResultMessage webManagerLogIn(String webManager, String password) {
 		// TODO Auto-generated method stub
-		return true;
+		return ResultMessage.SUCCESS;
 	}
 
 	@Override
-	public boolean guestSignUp(GuestVO guestVO) {
-		return true;
+	public ResultMessage guestSignUp(GuestVO guestVO) {
+		return ResultMessage.SUCCESS;
 	}
 
 }

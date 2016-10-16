@@ -15,7 +15,7 @@ import vo.HotelVO;
 import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
-public interface hotelBLService {
+public interface HotelBLService {
 
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO);
 	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy);

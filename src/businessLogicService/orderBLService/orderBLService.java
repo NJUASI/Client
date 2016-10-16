@@ -6,7 +6,7 @@ import utilities.ResultMessage;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
-public interface orderBLService {
+public interface OrderBLService {
 
 	public ResultMessage createOrder(OrderVO orderVO);
 	public ResultMessage executeOrder(String orderID);

@@ -7,7 +7,7 @@ import utilities.UserType;
 import vo.HotelVO;
 import vo.UserVO;
 
-public interface userBLService {
+public interface UserBLService {
 
 	public List<UserVO> getAll(UserType userType);
 	public UserVO getSingle(String userID,UserType userType);
