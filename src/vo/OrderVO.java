@@ -1,5 +1,7 @@
 package vo;
 
+import utilities.RoomType;
+
 public class OrderVO {
 	//	订单编号
 	private String orderID;
@@ -22,7 +24,7 @@ public class OrderVO {
 	//	订单状态
 	private String state;
 	//	房间类型
-	private String roomType;
+	private RoomType roomType;
 	//	房间数
 	private int roomNum;
 	//	房间号
@@ -36,7 +38,7 @@ public class OrderVO {
 	
 	public OrderVO(String orderID, String hotelName, String hotelAddress, int price, String createTime,
 			String checkInTime, String checkOutTime, String expectExecuteTime, String expectLeaveTime, String state,
-			String roomType, int roomNum, String roomNumber, String name, String phone, String message) {
+			RoomType roomType, int roomNum, String roomNumber, String name, String phone, String message) {
 		super();
 		this.orderID = orderID;
 		this.hotelName = hotelName;
@@ -56,7 +58,7 @@ public class OrderVO {
 		this.message = message;
 	}
 	public OrderVO(String orderID, String hotelName, String hotelAddress,int price, String createTime, String expectExecuteTime,
-			String expectLeaveTime, String roomType, int roomNum, String name, String phone, String message) {
+			String expectLeaveTime, RoomType roomType, int roomNum, String name, String phone, String message) {
 		super();
 		this.orderID = orderID;
 		this.hotelAddress = hotelAddress;
@@ -107,7 +109,7 @@ public class OrderVO {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public String getRoomType() {
+	public RoomType getRoomType() {
 		return roomType;
 	}
 	public int getRoomNum() {

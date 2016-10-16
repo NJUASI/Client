@@ -4,6 +4,7 @@ import java.util.List;
 
 import businessLogicService.orderBLService.OrderBLService;
 import utilities.ResultMessage;
+import utilities.RoomType;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
@@ -30,7 +31,7 @@ public class OrderBLService_Stub implements OrderBLService {
 	//	订单状态
 	 String state;
 	//	房间类型
-	 String roomType;
+	 RoomType roomType;
 	//	房间数
 	 int roomNum;
 	//	房间号
@@ -46,7 +47,7 @@ public class OrderBLService_Stub implements OrderBLService {
 	
 	public OrderBLService_Stub(String orderID, String hotelName, String hotelAddress, int price, String createTime,
 			String checkInTime, String checkOutTime, String expectExecuteTime, String expectLeaveTime, String state,
-			String roomType, int roomNum, String roomNumber, String name, String phone, String message) {
+			RoomType roomType, int roomNum, String roomNumber, String name, String phone, String message) {
 		super();
 		this.orderID = orderID;
 		this.hotelName = hotelName;
@@ -89,8 +90,8 @@ public class OrderBLService_Stub implements OrderBLService {
 	@Override
 	public OrderVO getOrderDetail(String orderID) {
 		// TODO Auto-generated method stub
-		return new OrderVO(orderID, hotelName, hotelAddress,  price, createTime,checkInTime, checkOutTime, 
-				expectExecuteTime, expectLeaveTime,  state,roomType, roomNum, roomNumber,  name, 
+		return new OrderVO(orderID, hotelName, hotelAddress, price, createTime, checkInTime, checkOutTime, 
+				expectExecuteTime, expectLeaveTime, state, roomType, roomNum, roomNumber,  name, 
 				phone, message);
 	}
 
