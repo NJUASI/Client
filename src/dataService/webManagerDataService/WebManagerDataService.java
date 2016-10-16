@@ -5,7 +5,7 @@ import utilities.ResultMessage;
 
 public interface WebManagerDataService {
 
-	public ResultMessage getSingle (String webManagerID);
+	public WebManagerPO getSingle (String webManagerID);
 
 	public ResultMessage add(WebManagerPO newWebManagerPO);
 

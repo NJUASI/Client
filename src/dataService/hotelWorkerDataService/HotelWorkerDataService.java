@@ -5,7 +5,7 @@ import utilities.ResultMessage;
 
 public interface HotelWorkerDataService {
 
-	public ResultMessage getSingle (String hotelWorkerID);
+	public HotelWorkerPO getSingle (String hotelWorkerID);
 	
 	public ResultMessage add(HotelWorkerPO newHotelWorkerPO);
 

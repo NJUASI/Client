@@ -5,7 +5,7 @@ import utilities.ResultMessage;
 
 public interface WebMarketerDataService {
 
-	public ResultMessage getSingle (String webMarketID);
+	public WebMarketerPO getSingle (String webMarketID);
 
 	public ResultMessage add(WebMarketerPO newWebMarketerPO);
 

@@ -8,7 +8,7 @@ public interface GuestDataService {
 
 	public ResultMessage modifyMember(MemberPO memberPO);
 	
-	public ResultMessage getSingle (String guestID);
+	public GuestPO getSingle (String guestID);
 	
 	public ResultMessage add(GuestPO newGuestPO);
 	

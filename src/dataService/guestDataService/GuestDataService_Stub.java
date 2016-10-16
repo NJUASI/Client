@@ -13,8 +13,8 @@ public class GuestDataService_Stub implements GuestDataService{
 	}
 
 	@Override
-	public ResultMessage getSingle(String guestID) {
-		return ResultMessage.SUCCESS;
+	public GuestPO getSingle(String guestID) {
+		return new GuestPO("0000000001", "L2", "1995/1/1", "NJU", "Charles", "jfgaj", "123456", "13000001111", "500");
 	}
 
 	@Override

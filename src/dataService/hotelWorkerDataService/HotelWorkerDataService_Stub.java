@@ -6,8 +6,8 @@ import utilities.ResultMessage;
 public class HotelWorkerDataService_Stub implements HotelWorkerDataService{
 
 	@Override
-	public ResultMessage getSingle(String hotelWorkerID) {
-		return ResultMessage.SUCCESS;
+	public HotelWorkerPO getSingle(String hotelWorkerID) {
+		return new HotelWorkerPO("00001111", "123456");
 	}
 
 	@Override

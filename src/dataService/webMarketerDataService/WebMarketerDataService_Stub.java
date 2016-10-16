@@ -6,8 +6,8 @@ import utilities.ResultMessage;
 public class WebMarketerDataService_Stub implements WebMarketerDataService{
 
 	@Override
-	public ResultMessage getSingle(String webMarketID) {
-		return ResultMessage.SUCCESS;
+	public WebMarketerPO getSingle(String webMarketID) {
+		return new WebMarketerPO("000001", "123456");
 	}
 
 	@Override

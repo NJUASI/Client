@@ -6,8 +6,8 @@ import utilities.ResultMessage;
 public class WebManagerDataService_Stub implements WebManagerDataService{
 
 	@Override
-	public ResultMessage getSingle(String webManagerID) {
-		return ResultMessage.SUCCESS;
+	public WebManagerPO getSingle(String webManagerID) {
+		return new WebManagerPO("0001", "123456");
 	}
 
 	@Override
