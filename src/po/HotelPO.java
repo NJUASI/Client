@@ -9,8 +9,6 @@ public final class HotelPO {
 	private String hotelAddress;
 	//	酒店城市
 	private String city;
-	//	酒店商圈
-	private String cycle;
 	//	酒店星级
 	private String level;
 	//	评分
@@ -20,14 +18,13 @@ public final class HotelPO {
 	//	设施服务
 	private String equipment;
 	
-	public HotelPO(String hotelID, String hotelName, String hotelAddress, String city,String cycle, String level, int score,
+	public HotelPO(String hotelID, String hotelName, String hotelAddress, String city, String level, int score,
 			String introduction, String equipment) {
 		super();
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.hotelAddress = hotelAddress;
 		this.city = city;
-		this.cycle = cycle;
 		this.level = level;
 		this.score = score;
 		this.introduction = introduction;
@@ -58,14 +55,6 @@ public final class HotelPO {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getCycle() {
-		return cycle;
-	}
-
-	public void setCycle(String cycle) {
-		this.cycle = cycle;
-	}
-
 	public String getLevel() {
 		return level;
 	}
