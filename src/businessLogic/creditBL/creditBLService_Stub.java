@@ -4,7 +4,7 @@ import businessLogicService.creditBLService.CreditBLService;
 import utilities.ResultMessage;
 import vo.CreditVO;
 
-public class creditBLService_Stub implements CreditBLService{
+public class CreditBLService_Stub implements CreditBLService{
 	
 	String time;
 	String orderID;
@@ -12,7 +12,7 @@ public class creditBLService_Stub implements CreditBLService{
 	String credit;
 	String reason;
 	
-	public creditBLService_Stub(String time, String orderID, int preCredit, String credit, String reason){
+	public CreditBLService_Stub(String time, String orderID, int preCredit, String credit, String reason){
 		this.time=time;
 		this.orderID=orderID;
 		this.preCredit=preCredit;
