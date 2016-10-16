@@ -1,5 +1,5 @@
 package utilities;
 
-public class ResultMessage {
-
+public enum ResultMessage {	
+	Success, falied;
 }
