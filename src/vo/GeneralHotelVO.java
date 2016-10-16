@@ -1,6 +1,6 @@
-package po;
+package vo;
 
-public class GeneralHotelPO {
+public class GeneralHotelVO {
 	//	酒店名称
 	private String hotelName;
 	//	酒店城市
@@ -12,7 +12,7 @@ public class GeneralHotelPO {
 	//	评分
 	private int score;
 
-	public GeneralHotelPO(String hotelName, String city, String cycle, String level, int score) {
+	public GeneralHotelVO(String hotelName, String city, String cycle, String level, int score) {
 		super();
 		this.hotelName = hotelName;
 		this.city = city;

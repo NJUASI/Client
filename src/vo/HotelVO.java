@@ -1,6 +1,6 @@
-package po;
+package vo;
 
-public final class HotelPO {
+public final class HotelVO {
 	//	酒店编号
 	private String hotelID;
 	//	酒店名
@@ -20,7 +20,7 @@ public final class HotelPO {
 	//	设施服务
 	private String equipment;
 	
-	public HotelPO(String hotelID, String hotelName, String hotelAddress, String city,String cycle, String level, int score,
+	public HotelVO(String hotelID, String hotelName, String hotelAddress, String city,String cycle, String level, int score,
 			String introduction, String equipment) {
 		super();
 		this.hotelID = hotelID;

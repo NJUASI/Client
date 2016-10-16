@@ -1,31 +1,35 @@
-package po;
+package vo;
 
-public class GeneralHotelPO {
-	//	酒店名称
+public class AddressVO {
+	//	酒店名
 	private String hotelName;
+	//	酒店地址
+	private String hotelAddress;
 	//	酒店城市
 	private String city;
 	//	酒店商圈
 	private String cycle;
-	//	酒店星级
-	private String level;
-	//	评分
-	private int score;
-
-	public GeneralHotelPO(String hotelName, String city, String cycle, String level, int score) {
+	
+	public AddressVO(String hotelName, String hotelAddress, String city, String cycle) {
 		super();
 		this.hotelName = hotelName;
+		this.hotelAddress = hotelAddress;
 		this.city = city;
 		this.cycle = cycle;
-		this.level = level;
-		this.score = score;
 	}
+	
 	
 	public String getHotelName() {
 		return hotelName;
 	}
 	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
+	}
+	public String getHotelAddress() {
+		return hotelAddress;
+	}
+	public void setHotelAddress(String hotelAddress) {
+		this.hotelAddress = hotelAddress;
 	}
 	public String getCity() {
 		return city;
@@ -36,23 +40,7 @@ public class GeneralHotelPO {
 	public String getCycle() {
 		return cycle;
 	}
-
 	public void setCycle(String cycle) {
 		this.cycle = cycle;
 	}
-	
-	public String getLevel() {
-		return level;
-	}
-	public void setLevel(String level) {
-		this.level = level;
-	}
-	public int getScore() {
-		return score;
-	}
-	public void setScore(int score) {
-		this.score = score;
-	}
-
-	
 }
