@@ -3,6 +3,9 @@ package businessLogicService.userBLService;
 import java.util.List;
 
 import utilities.ResultMessage;
+import utilities.UserType;
+import vo.HotelVO;
+import vo.UserVO;
 
 public interface userBLService {
 	public List<UserVO> getAll(UserType userType);

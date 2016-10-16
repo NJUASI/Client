@@ -1,5 +1,7 @@
 package businessLogicService.logInBLService;
 
+import vo.GuestVO;
+
 public class LogInBLService_Stub implements LogInBLService{
 
 	@Override
@@ -22,6 +24,12 @@ public class LogInBLService_Stub implements LogInBLService{
 
 	@Override
 	public boolean webManagerLogIn(String webManager, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean guestSignUp(GuestVO guestVO) {
 		// TODO Auto-generated method stub
 		return false;
 	}
