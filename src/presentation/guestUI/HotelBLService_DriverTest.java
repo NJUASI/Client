@@ -2,12 +2,9 @@ package presentation.guestUI;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 import businessLogic.hotelBL.HotelBLService_Stub;
-import businessLogicService.hotelBLService.HotelBLService;
 import utilities.ResultMessage;
 import vo.AddressVO;
 import vo.EvaluationVO;
@@ -56,4 +53,6 @@ public class HotelBLService_DriverTest {
 		
 		assertEquals(driver.hotelBLService.updateEvaluation(new EvaluationVO(4, "")), ResultMessage.SUCCESS);
 	}
+	
+	
 }
