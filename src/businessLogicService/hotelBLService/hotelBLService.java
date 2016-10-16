@@ -16,6 +16,7 @@ import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public interface hotelBLService {
+
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO);
 	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy);
 	public List<HotelGeneralVO> getBookedHotels(String userID);
@@ -32,8 +33,4 @@ public interface hotelBLService {
 	public ResultMessage updateRemainRoomInfo (Operation operation, Map<RoomType, Integer> roomInfo);
 	public ResultMessage add (HotelVO hotelVO);
 	
-	
-
-	
-
 }

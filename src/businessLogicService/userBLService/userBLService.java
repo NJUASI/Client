@@ -8,6 +8,7 @@ import vo.HotelVO;
 import vo.UserVO;
 
 public interface userBLService {
+
 	public List<UserVO> getAll(UserType userType);
 	public UserVO getSingle(String userID,UserType userType);
 	public ResultMessage add(UserVO newUserVO);

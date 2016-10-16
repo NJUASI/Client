@@ -9,4 +9,5 @@ public interface LogInBLService {
 	public boolean webMarketerLogIn (String webMarketer, String password);
 	public boolean webManagerLogIn (String webManager, String password);
 	public boolean guestSignUp (GuestVO guestVO);
+	
 }
