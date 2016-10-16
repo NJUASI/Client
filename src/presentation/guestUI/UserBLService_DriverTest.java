@@ -1,4 +1,4 @@
-package presentation.webManagerUI;
+package presentation.guestUI;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +13,7 @@ public class UserBLService_DriverTest {
 
 	@Test
 	public void test1() {
-		//test interface getSingle
+		// test interface getSingle
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
 		assertEquals(driver.userBLService.getSingle("", UserType.GUEST), ResultMessage.SUCCESS);
@@ -21,18 +21,9 @@ public class UserBLService_DriverTest {
 
 	@Test
 	public void test2() {
-		//test interface modify
+		// test interface getSingle
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
 		assertEquals(driver.userBLService.modify(new UserVO("", "")), ResultMessage.SUCCESS);
 	}
-
-	@Test
-	public void test3() {
-		//test interface getLoginInfo
-		UserBLService_Stub stub = new UserBLService_Stub();
-		UserBLService_Driver driver = new UserBLService_Driver(stub);
-		assertEquals(driver.userBLService.getLoginInfo("", UserType.GUEST), ResultMessage.SUCCESS);
-	}
-
 }
