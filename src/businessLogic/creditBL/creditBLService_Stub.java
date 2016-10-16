@@ -25,7 +25,7 @@ public class CreditBLService_Stub implements CreditBLService{
 	}
 
 	public CreditVO getBasicInfo(String ID) {
-		return new CreditVO(time,orderID,preCredit,credit,reason);
+		return new CreditVO(guestID, memberLevel, birthday, enterprise, name, nickName, password, phone, ID, ID, ID, preCredit, ID)
 	}
 
 }

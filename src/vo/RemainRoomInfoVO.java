@@ -1,24 +1,26 @@
 package vo;
 
+import utilities.RoomType;
+
 public class RemainRoomInfoVO {
 	//	房间类型
-	private String roomType;
+	private RoomType roomType;
 	//	房间数
 	private int roomNum;
 	//	价格
 	private int price;
 	
-	public RemainRoomInfoVO(String roomType, int roomNum, int price) {
+	public RemainRoomInfoVO(RoomType roomType, int roomNum, int price) {
 		super();
 		this.roomType = roomType;
 		this.roomNum = roomNum;
 		this.price = price;
 	}
 	
-	public String getRoomType() {
+	public RoomType getRoomType() {
 		return roomType;
 	}
-	public void setRoomType(String roomType) {
+	public void setRoomType(RoomType roomType) {
 		this.roomType = roomType;
 	}
 	public int getRoomNum() {
