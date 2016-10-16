@@ -1,5 +1,6 @@
-package businessLogicService.logInBLService;
+package businessLogic.logInBL;
 
+import businessLogicService.logInBLService.LogInBLService;
 import vo.GuestVO;
 
 public class LogInBLService_Stub implements LogInBLService{
