@@ -1,13 +1,13 @@
 package po;
 
 public class PromotionPO {
-	//	ÕÛ¿ÛÂÊ
+	//	æŠ˜æ‰£ç‡
 	private double discount;
-	//	ÕÛ¿Û¾Æµê
+	//	æŠ˜æ‰£é…’åº—
 	private String hotelID;
-	//	¿ªÊ¼ÈÕÆÚ
+	//	å¼€å§‹æ—¥æœŸ
 	private String startDate;
-	//	½áÊøÈÕÆÚ
+	//	ç»“æŸæ—¥æœŸ
 	private String endDate;
 	
 	public PromotionPO(double discount, String hotelID, String startDate, String endDate) {

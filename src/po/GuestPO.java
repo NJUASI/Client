@@ -1,17 +1,17 @@
 package po;
 
 public class GuestPO {
-	//	����
+	//	姓名
 	private String name;	
-	//	�ǳ�
+	//	昵称
 	private String nickName;
-	//	�û����
+	//	用户编号
 	private String guestID;
-	//	����
+	//	密码
 	private String password;
-	//	��ϵ��ʽ
+	//	联系方式
 	private String phone;	
-	//	����ֵ
+	//	信用值
 	private String credit;
 	
 	public GuestPO(String name, String nickName, String guestID, String password, String phone, String credit) {

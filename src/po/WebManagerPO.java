@@ -1,9 +1,9 @@
 package po;
 
 public class WebManagerPO {
-	//	管理人员编号
+	//	绠＄悊浜哄憳缂栧彿
 	private String userID;
-	//	密码
+	//	瀵嗙爜
 	private String password;
 	
 	

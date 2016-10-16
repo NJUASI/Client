@@ -1,9 +1,9 @@
 package po;
 
 public class WebMarketPO {
-	//	ÓÃ»§±àºÅ
+	//	ç”¨æˆ·ç¼–å·
 	private String userID;
-	//	ÃÜÂë
+	//	å¯†ç 
 	private String password;
 	public WebMarketPO(String userID, String password) {
 		super();

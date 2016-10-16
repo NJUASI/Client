@@ -1,15 +1,15 @@
 package po;
 
 public class CreditPO {
-	//	ĞÅÓÃÖµ¸ü¸ÄÊ±¼ä
+	//	ä¿¡ç”¨å€¼æ›´æ”¹æ—¶é—´
 	private String time;
-	//	¶©µ¥±àºÅ
+	//	è®¢å•ç¼–å·
 	private String orderID;
-	//	±ä»¯Ç°ĞÅÓÃÖµ
+	//	å˜åŒ–å‰ä¿¡ç”¨å€¼
 	private int preCredit;
-	//	±ä»¯ºóĞÅÓÃÖµ
+	//	å˜åŒ–åä¿¡ç”¨å€¼
 	private String credit;
-	//	±ä»¯Ô­Òò ¼´¶¯×÷
+	//	å˜åŒ–åŸå›  å³åŠ¨ä½œ
 	private String reason;
 	
 	public CreditPO(String time, String orderID, int preCredit, String credit, String reason) {

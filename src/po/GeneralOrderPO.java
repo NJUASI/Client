@@ -1,18 +1,18 @@
 package po;
 
 public class GeneralOrderPO {
-	
-	//		¾ÆµêÃû
+
+	//		é…’åº—å
 	private String hotelName;
-	//		¾ÆµêµØÖ·
+	//		é…’åº—åœ°å€
 	private String hotelAddress;
-	//		Ô¤¶¨¼Û¸ñ
+	//		é¢„å®šä»·æ ¼
 	private int price;
-	//	×îÍí¶©µ¥Ö´ĞĞÊ±¼ä
+	//	æœ€æ™šè®¢å•æ‰§è¡Œæ—¶é—´
 	private String expectExecuteTime;	
-	//	Ô¤¼ÆÀë¿ªÊ±¼ä
+	//	é¢„è®¡ç¦»å¼€æ—¶é—´
 	private String expectLeaveTime;	
-	//		¶©µ¥×´Ì¬
+	//		è®¢å•çŠ¶æ€
 	private String state;
 	
 	public GeneralOrderPO(String hotelName, String hotelAddress, int price, String expectExecuteTime, String expectLeaveTime,

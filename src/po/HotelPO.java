@@ -1,21 +1,21 @@
 package po;
 
 public final class HotelPO {
-    //	¾Æµê±àºÅ
+	//	é…’åº—ç¼–å·
 	private String hotelID;
-	//	¾ÆµêÃû
+	//	é…’åº—å
 	private String hotelName;
-	//	¾ÆµêµØÖ·
+	//	é…’åº—åœ°å€
 	private String hotelAddress;
-	//	¾Æµê³ÇÊĞ
+	//	é…’åº—åŸå¸‚
 	private String city;
-	//	¾ÆµêĞÇ¼¶
+	//	é…’åº—æ˜Ÿçº§
 	private String level;
-	//	ÆÀ·Ö
+	//	è¯„åˆ†
 	private int score;
-	//	¼ò½é
+	//	ç®€ä»‹
 	private String introduction;	
-	//	ÉèÊ©·şÎñ
+	//	è®¾æ–½æœåŠ¡
 	private String equipment;
 	
 	public HotelPO(String hotelID, String hotelName, String hotelAddress, String city, String level, int score,

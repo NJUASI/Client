@@ -1,13 +1,13 @@
 package po;
 
 public class GeneralHotelPO {
-	//	酒店名称
+	//	閰掑簵鍚嶇О
 	private String hotelName;
-	//	酒店城市
+	//	閰掑簵鍩庡競
 	private String city;
-	//	酒店星级
+	//	閰掑簵鏄熺骇
 	private String level;
-	//	评分
+	//	璇勫垎
 	private int score;
 
 	public GeneralHotelPO(String hotelName, String city, String level, int score) {

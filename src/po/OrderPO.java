@@ -1,38 +1,60 @@
 package po;
 
 public class OrderPO {
-	//	¶©µ¥±àºÅ
+	//	è®¢å•ç¼–å·
 	private String orderID;
-	//	¾ÆµêÃû
+	//	é…’åº—å
 	private String hotelName;
-	//	¾ÆµêµØÖ·
+	//	é…’åº—åœ°å€
 	private String hotelAddress;
-	//	Ô¤¶¨¼Û¸ñ
+	//	é¢„å®šä»·æ ¼
 	private int price;
-	//	¶©µ¥Éú³ÉÊ±¼ä
+	//	è®¢å•ç”Ÿæˆæ—¶é—´
 	private String createTime;
-	//	Èë×¡Ê±¼ä
+	//	å…¥ä½æ—¶é—´
 	private String checkInTime;	
-	//	ÍË·¿Ê±¼ä
+	//	é€€æˆ¿æ—¶é—´
 	private String checkOutTime;
-	//	×îÍí¶©µ¥Ö´ĞĞÊ±¼ä
+	//	æœ€æ™šè®¢å•æ‰§è¡Œæ—¶é—´
 	private String expectExecuteTime;	
-	//	Ô¤¼ÆÀë¿ªÊ±¼ä
+	//	é¢„è®¡ç¦»å¼€æ—¶é—´
 	private String expectLeaveTime;	
-	//	¶©µ¥×´Ì¬
+	//	è®¢å•çŠ¶æ€
 	private String state;
-	//	·¿¼äÀàĞÍ
+	//	æˆ¿é—´ç±»å‹
 	private String roomType;
-	//	·¿¼äÊı
+	//	æˆ¿é—´æ•°
 	private int roomNum;
-	//	·¿¼äºÅ
+	//	æˆ¿é—´å·
 	private String roomNumber;
-	//	Èë×¡ÈËĞÕÃû
+	//	å…¥ä½äººå§“å
 	private String name;	
-	//	ÁªÏµ·½Ê½
+	//	è”ç³»æ–¹å¼
 	private String phone;
-	//	ÌØ±ğÒªÇó
+	//	ç‰¹åˆ«è¦æ±‚
 	private String message;
+	
+	public OrderPO(String orderID, String hotelName, String hotelAddress, int price, String createTime,
+			String checkInTime, String checkOutTime, String expectExecuteTime, String expectLeaveTime, String state,
+			String roomType, int roomNum, String roomNumber, String name, String phone, String message) {
+		super();
+		this.orderID = orderID;
+		this.hotelName = hotelName;
+		this.hotelAddress = hotelAddress;
+		this.price = price;
+		this.createTime = createTime;
+		this.checkInTime = checkInTime;
+		this.checkOutTime = checkOutTime;
+		this.expectExecuteTime = expectExecuteTime;
+		this.expectLeaveTime = expectLeaveTime;
+		this.state = state;
+		this.roomType = roomType;
+		this.roomNum = roomNum;
+		this.roomNumber = roomNumber;
+		this.name = name;
+		this.phone = phone;
+		this.message = message;
+	}
 	public OrderPO(String orderID, String hotelName, String hotelAddress,int price, String createTime, String expectExecuteTime,
 			String expectLeaveTime, String roomType, int roomNum, String name, String phone, String message) {
 		super();

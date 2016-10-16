@@ -1,14 +1,13 @@
 package po;
 
 public class MemberPO {
-	//	用户编号	
+	//	鐢ㄦ埛缂栧彿	
 	private String guestID;
-	//	会员等级	
-	private String memberLevel;
-	
-	//	会员生日
+	//	浼氬憳绛夌骇	
+	private String memberLevel;	
+	//	浼氬憳鐢熸棩
 	private String birthday;
-	//	会员企业名称
+	//	浼氬憳浼佷笟鍚嶇О
 	private String enterprise;
 	
 	public MemberPO(String guestID, String memberLevel, String birthday, String enterprise) {

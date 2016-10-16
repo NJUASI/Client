@@ -1,11 +1,11 @@
 package po;
 
 public class HotelWorkerPO {
-	//	¾Æµê±àºÅ
+	//	é…’åº—ç¼–å·
 	private String hotelID;
-	//	ÃÜÂë
+	//	å¯†ç 
 	private String password;
-	//	¾ÆµêÃû³Æ
+	//	é…’åº—åç§°
 	private String hotelName;
 	
 	
@@ -15,6 +15,13 @@ public class HotelWorkerPO {
 		this.password = password;
 	}
 	
+	public HotelWorkerPO(String hotelID, String password, String hotelName) {
+		super();
+		this.hotelID = hotelID;
+		this.password = password;
+		this.hotelName = hotelName;
+	}
+
 	public String getHotelID() {
 		return hotelID;
 	}

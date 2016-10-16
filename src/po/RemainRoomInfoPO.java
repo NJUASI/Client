@@ -1,11 +1,11 @@
 package po;
 
 public class RemainRoomInfoPO {
-	//	·¿¼äÀàÐÍ
+	//	æˆ¿é—´ç±»åž‹
 	private String roomType;
-	//	·¿¼äÊý
+	//	æˆ¿é—´æ•°
 	private int roomNum;
-	//	¼Û¸ñ
+	//	ä»·æ ¼
 	private int price;
 	
 	public RemainRoomInfoPO(String roomType, int roomNum, int price) {

@@ -1,12 +1,14 @@
 package po;
 
 public class MarketPO {
-	//	µÈ¼¶Ãû³Æ
+
+	//	ç­‰çº§åç§°
 	private String marketName;
-	//	µÈ¼¶ĞÅÓÃ¶È
+	//	ç­‰çº§ä¿¡ç”¨åº¦
 	private int marketCredit;
-	//	µÈ¼¶ÓÅ»İ
+	//	ç­‰çº§ä¼˜æƒ 
 	private String marketBenefit;
+
 	
 	public MarketPO(String marketName, int marketCredit, String marketBenefit) {
 		super();
