@@ -12,7 +12,7 @@ public class HotelDataService_Stub implements HotelDataService  {
 	@Override
 	public HotelPO getHotelDetail(String hotelID) {
 		// TODO Auto-generated method stub
-		return new HotelPO("","","","","",0,"","");
+		return new HotelPO("00000001","thisHotel","Nanjing","Nanjing","4",8,"Very good","All Equipted");
 	}
 
 	@Override
