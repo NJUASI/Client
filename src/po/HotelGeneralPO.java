@@ -1,6 +1,8 @@
 package po;
 
 public class HotelGeneralPO {
+	//	酒店编号
+	private String hotelID;
 	//	酒店名称
 	private String hotelName;
 	//	酒店城市
@@ -10,10 +12,11 @@ public class HotelGeneralPO {
 	//	酒店星级
 	private String level;
 	//	评分
-	private int score;
-
-	public HotelGeneralPO(String hotelName, String city, String cycle, String level, int score) {
+	private double score;
+	
+	public HotelGeneralPO(String hotelID, String hotelName, String city, String cycle, String level, int score) {
 		super();
+		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.city = city;
 		this.cycle = cycle;
@@ -21,6 +24,12 @@ public class HotelGeneralPO {
 		this.score = score;
 	}
 	
+	public String getHotelID() {
+		return hotelID;
+	}
+	public void setHotelID(String hotelID) {
+		this.hotelID = hotelID;
+	}
 	public String getHotelName() {
 		return hotelName;
 	}
@@ -36,18 +45,16 @@ public class HotelGeneralPO {
 	public String getCycle() {
 		return cycle;
 	}
-
 	public void setCycle(String cycle) {
 		this.cycle = cycle;
 	}
-	
 	public String getLevel() {
 		return level;
 	}
 	public void setLevel(String level) {
 		this.level = level;
 	}
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
 	public void setScore(int score) {

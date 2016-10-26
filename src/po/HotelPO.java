@@ -3,34 +3,38 @@ package po;
 public final class HotelPO {
 	//	酒店编号
 	private String hotelID;
-	//	酒店名
+	//	酒店名称
 	private String hotelName;
-	//	酒店地址
-	private String hotelAddress;
 	//	酒店城市
 	private String city;
+	//	酒店商圈
+	private String cycle;
+	//	酒店地址
+	private String hotelAddress;
 	//	酒店星级
 	private String level;
 	//	评分
-	private int score;
+	private double score;
+	//	评价
+	private int comment;
 	//	简介
 	private String introduction;	
 	//	设施服务
 	private String equipment;
-	
-	public HotelPO(String hotelID, String hotelName, String hotelAddress, String city, String level, int score,
-			String introduction, String equipment) {
+	public HotelPO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
+			double score, int comment, String introduction, String equipment) {
 		super();
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
-		this.hotelAddress = hotelAddress;
 		this.city = city;
+		this.cycle = cycle;
+		this.hotelAddress = hotelAddress;
 		this.level = level;
 		this.score = score;
+		this.comment = comment;
 		this.introduction = introduction;
 		this.equipment = equipment;
 	}
-	
 	public String getHotelID() {
 		return hotelID;
 	}
@@ -43,17 +47,23 @@ public final class HotelPO {
 	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
 	}
-	public String getHotelAddress() {
-		return hotelAddress;
-	}
-	public void setHotelAddress(String hotelAddress) {
-		this.hotelAddress = hotelAddress;
-	}
 	public String getCity() {
 		return city;
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	public String getCycle() {
+		return cycle;
+	}
+	public void setCycle(String cycle) {
+		this.cycle = cycle;
+	}
+	public String getHotelAddress() {
+		return hotelAddress;
+	}
+	public void setHotelAddress(String hotelAddress) {
+		this.hotelAddress = hotelAddress;
 	}
 	public String getLevel() {
 		return level;
@@ -61,11 +71,17 @@ public final class HotelPO {
 	public void setLevel(String level) {
 		this.level = level;
 	}
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
 	public void setScore(int score) {
 		this.score = score;
+	}
+	public int getComment() {
+		return comment;
+	}
+	public void setComment(int comment) {
+		this.comment = comment;
 	}
 	public String getIntroduction() {
 		return introduction;

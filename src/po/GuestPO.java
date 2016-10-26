@@ -3,8 +3,6 @@ package po;
 public class GuestPO {
 	//	用户编号	
 	private String guestID;
-	//	会员等级	
-	private String memberLevel;	
 	//	会员生日
 	private String birthday;
 	//	会员企业名称
@@ -20,11 +18,10 @@ public class GuestPO {
 	//	信用值
 	private String credit;
 	
-	public GuestPO(String guestID, String memberLevel, String birthday, String enterprise, String name, String nickName,
+	public GuestPO(String guestID, String birthday, String enterprise, String name, String nickName,
 			String password, String phone, String credit) {
 		super();
 		this.guestID = guestID;
-		this.memberLevel = memberLevel;
 		this.birthday = birthday;
 		this.enterprise = enterprise;
 		this.name = name;
@@ -34,14 +31,7 @@ public class GuestPO {
 		this.credit = credit;
 	}
 	
-	public String getMemberLevel() {
-		return memberLevel;
-	}
-
-	public void setMemberLevel(String memberLevel) {
-		this.memberLevel = memberLevel;
-	}
-
+	
 	public String getBirthday() {
 		return birthday;
 	}
