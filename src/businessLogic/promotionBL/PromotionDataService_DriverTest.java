@@ -15,11 +15,11 @@ public class PromotionDataService_DriverTest {
 		//test interface Evaluation
 		PromotionDataService_Stub stub = new PromotionDataService_Stub();
 		PromotionDataService_Driver driver = new PromotionDataService_Driver(stub);
-		PromotionPO promotionPO =driver.promotionDataService.getPromotions("").get(0);
+		PromotionPO promotionPO =driver.promotionDataService.getPromotions("1234567890").get(0);
 		
-		assertEquals(promotionPO.getHotelID(), "");
-		assertEquals(promotionPO.getEndDate(), "");
-		assertEquals(promotionPO.getStartDate(), "");
+		assertEquals(promotionPO.getHotelID(), "12345678");
+		assertEquals(promotionPO.getEndDate(), "2016/3/9");
+		assertEquals(promotionPO.getStartDate(), "2016/2/2");
 		
 	}
 	

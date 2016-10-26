@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import dataService.orderDataService.OrderDataService;
 import dataService.orderDataService.OrderDataService_Stub;
 import po.OrderPO;
 import utilities.ResultMessage;
@@ -18,7 +17,10 @@ public class OrderDataService_DriverTest {
 		OrderDataService_Stub stub = new OrderDataService_Stub();
 		OrderDataService_Driver driver = new OrderDataService_Driver(stub);
 		
-		assertEquals(driver.orderDataService.createOrder(new OrderPO("", "", "", 200, "", "", "", RoomType.SINGLEBED, 2, "", "", "")), ResultMessage.SUCCESS);
+		assertEquals(driver.orderDataService.createOrder(new OrderPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
+				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
+				"2016/2/4", "2016/2/4")), ResultMessage.SUCCESS);
 	}
 
 	@Test
@@ -26,24 +28,24 @@ public class OrderDataService_DriverTest {
 		//test interface getOrderDetails
 		OrderDataService_Stub stub = new OrderDataService_Stub();
 		OrderDataService_Driver driver = new OrderDataService_Driver(stub);
-		OrderPO orderPO = driver.orderDataService.getOrderDetail("123412345678");
+		OrderPO orderPO = driver.orderDataService.getOrderDetail("123456789012");
 		
-		assertEquals(orderPO.getOrderID(), "123412345678");
+		assertEquals(orderPO.getOrderID(), "123456789012");
 		assertEquals(orderPO.getHotelName(), "thisHotel");
-		assertEquals(orderPO.getHotelAddress(), "Nanjing, China");
+		assertEquals(orderPO.getHotelAddress(), "address");
 		assertEquals(orderPO.getPrice(), 200);
-		assertEquals(orderPO.getCreateTime(), "13:34");
-		assertEquals(orderPO.getCheckInTime(), "13:05");
-		assertEquals(orderPO.getCheckOutTime(), "9:00");
-		assertEquals(orderPO.getExpectExecuteTime(), "12:00");
-		assertEquals(orderPO.getExpectLeaveTime(), "12:00");
-		assertEquals(orderPO.getState(), "Unexecuted");
-		assertEquals(orderPO.getRoomType(), RoomType.SINGLEBED);
-		assertEquals(orderPO.getRoomNum(), 1);
-		assertEquals(orderPO.getRoomNumber(), "2011");
-		assertEquals(orderPO.getName(), "Charles");
-		assertEquals(orderPO.getPhone(), "13000001111");
-		assertEquals(orderPO.getMessage(), "NULL");
+		assertEquals(orderPO.getCreateTime(), "2016/2/2/18:30:20");
+		assertEquals(orderPO.getCheckInTime(), "2016/2/3");
+		assertEquals(orderPO.getCheckOutTime(), "2016/2/4");
+		assertEquals(orderPO.getExpectExecuteTime(), "2016/2/3");
+		assertEquals(orderPO.getExpectLeaveTime(), "2016/2/4");
+		assertEquals(orderPO.getState(), "execut");
+		assertEquals(orderPO.getRoomType(), RoomType.AMBASSADOR);
+		assertEquals(orderPO.getRoomNum(), 2);
+		assertEquals(orderPO.getRoomNumber(), "301");
+		assertEquals(orderPO.getName(), "zhangsan");
+		assertEquals(orderPO.getPhone(), "13554321234");
+		assertEquals(orderPO.getMessage(), "not");
 		
 	}
 	
@@ -53,7 +55,7 @@ public class OrderDataService_DriverTest {
 		OrderDataService_Stub stub = new OrderDataService_Stub();
 		OrderDataService_Driver driver = new OrderDataService_Driver(stub);
 		
-		assertEquals(driver.orderDataService.executeOrder("123412345678"), ResultMessage.SUCCESS);
+		assertEquals(driver.orderDataService.executeOrder("123456789012"), ResultMessage.SUCCESS);
 		
 	}
 }

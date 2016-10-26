@@ -12,9 +12,9 @@ public class MarketBLService_DriverTest {
 
 	@Test
 	public void test() {
-		MarketBLService_Stub stub = new MarketBLService_Stub("",0,"");
+		MarketBLService_Stub stub = new MarketBLService_Stub("aa",0,"0.9");
 		MarketBLService_Driver driver = new MarketBLService_Driver(stub);
-		assertEquals(driver.marketBLService.setMemberFormulation(new MarketVO("",0,"")), ResultMessage.SUCCESS);
+		assertEquals(driver.marketBLService.setMemberFormulation(new MarketVO("aa",0,"0.9")), ResultMessage.SUCCESS);
 	}
 
 }

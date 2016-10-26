@@ -7,14 +7,13 @@ import vo.MemberVO;
 
 public class MemberBLService_Stub implements MemberBLService{
 
-	String userID;
+	String guestID;
 	MemberType memberType;
 	String birthday;
 	String enterprise;
 	
-	public MemberBLService_Stub(String userID, MemberType memberType, String birthday, String enterprise) {
-		this.userID = userID;
-		this.memberType = memberType;
+	public MemberBLService_Stub(String guestID, String birthday, String enterprise) {
+		this.guestID = guestID;
 		this.birthday = birthday;
 		this.enterprise = enterprise;
 	}

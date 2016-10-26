@@ -19,16 +19,17 @@ public class HotelDataService_DriverTest {
 		//test interface getHotelDetail
 		HotelDataService_Stub stub = new HotelDataService_Stub();
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
-		HotelPO hotelPO = driver.hotelDataService.getHotelDetail("000000");
+		HotelPO hotelPO = driver.hotelDataService.getHotelDetail("12345678");
 				
-		assertEquals(hotelPO.getHotelID(), "00001111");
+		assertEquals(hotelPO.getHotelID(), "12345678");
 		assertEquals(hotelPO.getHotelName(), "thisHotel");
-		assertEquals(hotelPO.getHotelAddress(), "Nanjing, China");
+		assertEquals(hotelPO.getHotelAddress(), "address");
 		assertEquals(hotelPO.getCity(), "Nanjing");
 		assertEquals(hotelPO.getLevel(), "4");
-		assertEquals(hotelPO.getScore(), 8);
-		assertEquals(hotelPO.getIntroduction(), "Very good");
-		assertEquals(hotelPO.getEquipment(), "All eqipment");
+		assertEquals(hotelPO.getScore(), 5);
+		assertEquals(hotelPO.getComment(), 5);
+		assertEquals(hotelPO.getIntroduction(), "good");
+		assertEquals(hotelPO.getEquipment(), "allEqipment");
 	}
 	
 	@Test
@@ -36,11 +37,12 @@ public class HotelDataService_DriverTest {
 		//test interface Evaluation
 		HotelDataService_Stub stub = new HotelDataService_Stub();
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
-		RemainRoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("");
+		RemainRoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("12345678");
 		
 		assertEquals(remainRoomInfoPO.getRoomType(), RoomType.AMBASSADOR);
-		assertEquals(remainRoomInfoPO.getRoomNum(),0);
-		assertEquals(remainRoomInfoPO.getPrice(), 0);
+		assertEquals(remainRoomInfoPO.getRoomNum(),2);
+		assertEquals(remainRoomInfoPO.getPrice(), 200);
+		assertEquals(remainRoomInfoPO.getDate(),"2016/2/2");
 	}
 		
 	}

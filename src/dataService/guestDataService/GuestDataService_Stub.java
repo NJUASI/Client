@@ -14,7 +14,8 @@ public class GuestDataService_Stub implements GuestDataService{
 
 	@Override
 	public GuestPO getSingle(String guestID) {
-		return new GuestPO("0000000001", "L2", "1995/1/1", "NJU", "Charles", "jfgaj", "123456", "13000001111", "500");
+		return new GuestPO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
+				"000000", "13523456789","100");
 	}
 
 	@Override

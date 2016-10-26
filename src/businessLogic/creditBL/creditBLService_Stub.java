@@ -6,30 +6,14 @@ import vo.CreditVO;
 
 public class CreditBLService_Stub implements CreditBLService {
 	String guestID;
-	String memberLevel;
-	String birthday;
-	String enterprise;
-	String name;
-	String nickName;
-	String password;
-	String phone;
-	String credit;
+	int credit;
 	String time;
 	String orderID;
 	int preCredit;
 	String reason;
 
-	public CreditBLService_Stub(String guestID, String memberLevel, String birthday, String enterprise, String name,
-			String nickName, String password, String phone, String credit, String time, String orderID, int preCredit,
-			String reason) {
+	public CreditBLService_Stub(String guestID, String time, String orderID, int preCredit,int credit, String reason) {
 		this.guestID = guestID;
-		this.memberLevel = memberLevel;
-		this.birthday = birthday;
-		this.enterprise = enterprise;
-		this.name = name;
-		this.nickName = nickName;
-		this.password = password;
-		this.phone = phone;
 		this.credit = credit;
 		this.time = time;
 		this.orderID = orderID;
@@ -42,8 +26,7 @@ public class CreditBLService_Stub implements CreditBLService {
 	}
 
 	public CreditVO getBasicInfo(String ID) {
-		return new CreditVO(guestID, memberLevel, birthday, enterprise, name, nickName, password, phone, credit, time,
-				orderID, preCredit, reason);
+		return new CreditVO("1234567890","2016/1/1","123456789012",100,100, "undo");
 	}
 
 }

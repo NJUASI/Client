@@ -19,24 +19,37 @@ import vo.RoomInfoVO;
 
 public class HotelBLService_Stub implements HotelBLService{
 
-	String hotelID;
-	String hotelName;
-	String hotelAddress;
-	String city;
-	String cycle;
-	String level;
-	String score;
-	String introduction;
-	String equipment;
+//	酒店编号
+	 String hotelID;
+	//	酒店名称
+	 String hotelName;
+	//	酒店城市
+	 String city;
+	//	酒店商圈
+	 String cycle;
+	//	酒店地址
+	 String hotelAddress;
+	//	酒店星级
+	 String level;
+	//	评分
+	 double score;
+	//	评价
+	 int comment;
+	//	简介
+	 String introduction;	
+	//	设施服务
+	 String equipment;
 	
-	public HotelBLService_Stub(String hotelID, String hotelName, String hotelAddress, String city, String cycle, String level, String score, String introduction, String equipment) {
+	public HotelBLService_Stub(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
+			double score, int comment, String introduction, String equipment) {
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
-		this.hotelAddress = hotelAddress;
 		this.city = city;
 		this.cycle = cycle;
+		this.hotelAddress = hotelAddress;
 		this.level = level;
 		this.score = score;
+		this.comment = comment;
 		this.introduction = introduction;
 		this.equipment = equipment;
 	}
@@ -44,7 +57,7 @@ public class HotelBLService_Stub implements HotelBLService{
 	@Override
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("thisHotel", "Nanjing", "Xinjiekou", "4", 8));
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
 		return list;
 	}
 
@@ -62,7 +75,8 @@ public class HotelBLService_Stub implements HotelBLService{
 
 	@Override
 	public HotelVO getHotelDetail(String hotelID) {
-		return new HotelVO("00001111", "thisHotel", "Nanjing, China", "Nanjing", "xinjiekou", "4", 8, "Very good", "All eqipment");
+		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
+				5, 5, "good", "allEquipment");
 	}
 
 	@Override
@@ -112,7 +126,7 @@ public class HotelBLService_Stub implements HotelBLService{
 
 	@Override
 	public RemainRoomInfoVO getRemainRoomInfo(String userID) {
-		return new RemainRoomInfoVO(RoomType.SINGLEBED, 2, 200);
+		return new RemainRoomInfoVO("12345678", RoomType.AMBASSADOR,2,200,"2016/2/2");
 	}
 
 	@Override

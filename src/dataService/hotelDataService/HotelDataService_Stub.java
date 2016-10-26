@@ -12,7 +12,8 @@ public class HotelDataService_Stub implements HotelDataService  {
 	@Override
 	public HotelPO getHotelDetail(String hotelID) {
 		// TODO Auto-generated method stub
-		return new HotelPO("00000001","thisHotel","Nanjing","Nanjing","4",8,"Very good","All Equipted");
+		return new HotelPO("12345678", "thisHotel", "NanJing", "center", "address", "4",
+				5,5, "good", "allEquipment");
 	}
 
 	@Override
@@ -54,7 +55,7 @@ public class HotelDataService_Stub implements HotelDataService  {
 	@Override
 	public RemainRoomInfoPO getRemainRoomInfo(String hotelID) {
 		// TODO Auto-generated method stub
-		return new RemainRoomInfoPO(RoomType.AMBASSADOR,0,0);
+		return new RemainRoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200, "2016/2/2");
 	}
 
 	@Override

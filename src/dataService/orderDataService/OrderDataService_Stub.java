@@ -18,7 +18,10 @@ public class OrderDataService_Stub implements OrderDataService {
 	@Override
 	public OrderPO getOrderDetail(String orderID) {
 		// TODO Auto-generated method stub
-		return new OrderPO("123412345678", "thisHotel", "Nanjing, China", 200, "13:34", "13:05", "9:00", "12:00", "12:00", "Unexecuted", RoomType.SINGLEBED, 1, "2011", "Charles", "13000001111", "NULL");
+		return new OrderPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
+				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
+				"2016/2/4", "2016/2/4");
 
 	}
 

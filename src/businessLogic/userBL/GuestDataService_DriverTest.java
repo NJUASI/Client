@@ -7,7 +7,6 @@ import org.junit.Test;
 import dataService.guestDataService.GuestDataService_Stub;
 import po.GuestPO;
 import utilities.ResultMessage;
-import utilities.RoomType;
 
 public class GuestDataService_DriverTest {
 
@@ -16,17 +15,16 @@ public class GuestDataService_DriverTest {
 		//test interface getSingle
 		GuestDataService_Stub stub = new GuestDataService_Stub();
 		GuestDataService_Driver driver = new GuestDataService_Driver(stub);
-		GuestPO guestPO = driver.guestDataService.getSingle("0000000001");
+		GuestPO guestPO = driver.guestDataService.getSingle("1234567890");
 		
-		assertEquals(guestPO.getGuestID(), "0000000001");
-		assertEquals(guestPO.getMemberLevel(), "L2");
-		assertEquals(guestPO.getBirthday(), "1995/1/1");
-		assertEquals(guestPO.getEnterprise(), "NJU");
-		assertEquals(guestPO.getName(), "Charles");
-		assertEquals(guestPO.getNickName(), "jfgaj");
-		assertEquals(guestPO.getPassword(), "123456");
-		assertEquals(guestPO.getPhone(), "13000001111");
-		assertEquals(guestPO.getCredit(), "500");
+		assertEquals(guestPO.getGuestID(), "1234567890");
+		assertEquals(guestPO.getBirthday(), "2016/2/2");
+		assertEquals(guestPO.getEnterprise(), "school");
+		assertEquals(guestPO.getName(), "zhansgan");
+		assertEquals(guestPO.getNickName(), "xiaosan");
+		assertEquals(guestPO.getPassword(), "000000");
+		assertEquals(guestPO.getPhone(), "13523456789");
+		assertEquals(guestPO.getCredit(), "100");
 	}
 
 	@Test
@@ -35,6 +33,7 @@ public class GuestDataService_DriverTest {
 		GuestDataService_Stub stub = new GuestDataService_Stub();
 		GuestDataService_Driver driver = new GuestDataService_Driver(stub);
 		
-		assertEquals(driver.guestDataService.add(new GuestPO("0000000001", "L2", "1995/1/1", "NJU", "Charles", "jfgaj", "123456", "13000001111", "500")), ResultMessage.SUCCESS);
+		assertEquals(driver.guestDataService.add(new GuestPO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
+				"000000", "13523456789","100")), ResultMessage.SUCCESS);
 	}
 }

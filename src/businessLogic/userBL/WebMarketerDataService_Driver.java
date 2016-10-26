@@ -1,10 +1,12 @@
 package businessLogic.userBL;
 
+import dataService.webMarketerDataService.WebMarketerDataService;
+
 public class WebMarketerDataService_Driver {
 
-	WebManagerDataService webManagerDataService;
+	WebMarketerDataService webMarketerDataService;
 	
-	public WebMarketerDataService_Driver(WebManagerDataService webManagerDataService) {
-		this.webManagerDataService = webManagerDataService;
+	public WebMarketerDataService_Driver(WebMarketerDataService webMarketerDataService) {
+		this.webMarketerDataService = webMarketerDataService;
 	}
 }

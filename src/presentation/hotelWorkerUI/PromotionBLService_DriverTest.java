@@ -15,21 +15,22 @@ public class PromotionBLService_DriverTest {
 	@Test
 	public void test1() {
 		//test interface Evaluation
-		PromotionBLService_Stub stub = new PromotionBLService_Stub(0, "", "", "");
+		PromotionBLService_Stub stub = new PromotionBLService_Stub(0.9, "12345678", "2016/2/2", "2016/3/9");
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
-		PromotionVO promotionVO =driver.promotionBLService.getPromotions("").get(0);
+		PromotionVO promotionVO =driver.promotionBLService.getPromotions("1234567890").get(0);
 		
-		assertEquals(promotionVO.getHotelID(), "");
-		assertEquals(promotionVO.getEndDate(), "");
-		assertEquals(promotionVO.getStartDate(), "");
+		assertEquals(promotionVO.getHotelID(), "12345678");
+		assertEquals(promotionVO.getEndDate(), "2016/3/9");
+		assertEquals(promotionVO.getStartDate(), "2016/2/2");
 		
 	}
 	
 	public void test2() {
 		//test interface Evaluation
-		PromotionBLService_Stub stub = new PromotionBLService_Stub(0, "", "", "");
+		PromotionBLService_Stub stub = new PromotionBLService_Stub(0.9, "12345678", "2016/2/2", "2016/3/9");
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
 		ArrayList<PromotionVO> list = new ArrayList<PromotionVO>();
+		list.add(new PromotionVO(0.9, "12345678", "2016/2/2", "2016/3/9"));
 		
 		assertEquals(driver.promotionBLService.update(list), ResultMessage.SUCCESS);
 	}

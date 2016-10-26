@@ -15,9 +15,9 @@ public class MarketDataService_DriverTest {
 		MarketDataService_Driver driver = new MarketDataService_Driver(stub);
 		MarketPO marketPO = driver.marketDataService.getMemberFormulation();
 		
-		assertEquals(marketPO.getMarketName() , "");
+		assertEquals(marketPO.getMarketName() , "aa");
 		assertEquals(marketPO.getMarketCredit(), 0);
-		assertEquals(marketPO.getMarketBenefit(), "");
+		assertEquals(marketPO.getMarketBenefit(), "0.9");
 	
 	
 	}

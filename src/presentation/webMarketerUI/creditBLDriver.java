@@ -4,7 +4,6 @@ import businessLogic.creditBL.CreditBLService_Stub;
 
 public class CreditBLDriver {
 
-	CreditBLService_Stub creditBLService_Stub = new CreditBLService_Stub
-			("0000000001", "L2", "1995/1/1", "NJU", "Charles", "bhsab", "123456", "13000001111", "500", "2016", "123411111111", 0, "undo");
+	CreditBLService_Stub creditBLService_Stub = new CreditBLService_Stub("1234567890","2016/1/1","123456789012",100,100, "undo");
 	
 }
