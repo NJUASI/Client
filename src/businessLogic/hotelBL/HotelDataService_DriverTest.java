@@ -42,7 +42,6 @@ public class HotelDataService_DriverTest {
 		assertEquals(remainRoomInfoPO.getRoomType(), RoomType.AMBASSADOR);
 		assertEquals(remainRoomInfoPO.getRoomNum(),2);
 		assertEquals(remainRoomInfoPO.getPrice(), 200);
-		assertEquals(remainRoomInfoPO.getDate(),"2016/2/2");
 	}
 		
 	}

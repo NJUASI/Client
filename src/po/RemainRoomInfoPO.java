@@ -12,15 +12,13 @@ public class RemainRoomInfoPO {
 	private int roomNum;
 	// 价格
 	private int price;
-	// 日期
-	private String date;
-	public RemainRoomInfoPO(String hotelID, RoomType roomType, int roomNum, int price, String date) {
+	
+	public RemainRoomInfoPO(String hotelID, RoomType roomType, int roomNum, int price) {
 		super();
 		this.hotelID = hotelID;
 		this.roomType = roomType;
 		this.roomNum = roomNum;
 		this.price = price;
-		this.date = date;
 	}
 	public String getHotelID() {
 		return hotelID;
@@ -46,11 +44,4 @@ public class RemainRoomInfoPO {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-
 }

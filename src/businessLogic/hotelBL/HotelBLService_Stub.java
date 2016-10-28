@@ -126,7 +126,7 @@ public class HotelBLService_Stub implements HotelBLService{
 
 	@Override
 	public RemainRoomInfoVO getRemainRoomInfo(String userID) {
-		return new RemainRoomInfoVO("12345678", RoomType.AMBASSADOR,2,200,"2016/2/2");
+		return new RemainRoomInfoVO("12345678", RoomType.AMBASSADOR,2,200);
 	}
 
 	@Override

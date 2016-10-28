@@ -55,7 +55,7 @@ public class HotelDataService_Stub implements HotelDataService  {
 	@Override
 	public RemainRoomInfoPO getRemainRoomInfo(String hotelID) {
 		// TODO Auto-generated method stub
-		return new RemainRoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200, "2016/2/2");
+		return new RemainRoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200);
 	}
 
 	@Override
