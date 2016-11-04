@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import businessLogic.hotelBL.HotelBLService_Stub;
+import businessLogic.hotelBL.Hotel;
 import utilities.ResultMessage;
 import vo.AddressVO;
 import vo.EvaluationVO;
@@ -16,7 +16,7 @@ public class HotelBLService_DriverTest {
 	@Test
 	public void test1() {
 		//test interface getHotelList
-		HotelBLService_Stub stub = new HotelBLService_Stub("12345678", "thisHotel", "NanJing","center", "address", "4",
+		Hotel stub = new Hotel("12345678", "thisHotel", "NanJing","center", "address", "4",
 				5, 5, "good","allEquipment");
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
 		HotelGeneralVO hotelGeneralVO = driver.hotelBLService.getHotelList(new AddressVO("thisHotel", "address", "NanJing", "center")).get(0);
@@ -31,7 +31,7 @@ public class HotelBLService_DriverTest {
 	@Test
 	public void test2() {
 		//test interface getHotelDetail
-		HotelBLService_Stub stub = new HotelBLService_Stub("12345678", "thisHotel", "NanJing","center", "address", "4",
+		Hotel stub = new Hotel("12345678", "thisHotel", "NanJing","center", "address", "4",
 				5, 5, "good","allEquipment");
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
 		HotelVO hotelVO = driver.hotelBLService.getHotelDetail("000000");
@@ -50,7 +50,7 @@ public class HotelBLService_DriverTest {
 	@Test
 	public void test3() {
 		//test interface Evaluation
-		HotelBLService_Stub stub = new HotelBLService_Stub("12345678", "thisHotel", "NanJing","center", "address", "4",
+		Hotel stub = new Hotel("12345678", "thisHotel", "NanJing","center", "address", "4",
 				5, 5, "good","allEquipment");
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
 		

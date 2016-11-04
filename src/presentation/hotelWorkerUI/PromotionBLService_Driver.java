@@ -1,11 +1,13 @@
 package presentation.hotelWorkerUI;
 
+import businessLogic.promotionBL.MockPromotion;
+import businessLogic.promotionBL.Promotion;
 import businessLogicService.promotionBLService.PromotionBLService;
 
 public class PromotionBLService_Driver {
-	PromotionBLService promotionBLService;
+	Promotion promotionBLService;
 	
-	public PromotionBLService_Driver(PromotionBLService promotionBLService) {
-		this.promotionBLService = promotionBLService;
+	public PromotionBLService_Driver(MockPromotion stub) {
+		this.promotionBLService = stub;
 	}
 }
