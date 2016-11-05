@@ -14,22 +14,19 @@ import vo.PromotionVO;
 public class PromotionController implements PromotionBLService {
 
 
-	public Promotion mockPromotion;
+	private Promotion promotion;
 
 	private static PromotionController promotionController;
 
 	private PromotionController() {
-
+		promotion = new MockPromotion();
 	}
 
 	/**
 	 * @return 返回PromotionController对象，单例
 	 */
 	public static PromotionController getInstance(){
-		if(promotionController == null)
-		{
-			promotionController = new PromotionController();
-		}
+		if(promotionController == null) promotionController = new PromotionController();
 		return promotionController;
 	}
 	
@@ -39,20 +36,20 @@ public class PromotionController implements PromotionBLService {
 	 * @param hotelID
 	 */
 	public void setHotel(String hotelID){
-		mockPromotion = new MockPromotion(hotelID);
+//		mockPromotion = new MockPromotion(hotelID);
 	}
 
 
 	@Override
 	public List<PromotionVO> getPromotions(String userID) {
 		// TODO 自动生成的方法存根
-		return mockPromotion.getPromotions(userID);
+		return promotion.getPromotions(userID);
 	}
 
 	@Override
 	public ResultMessage update(List<PromotionVO> list) {
 		// TODO 自动生成的方法存根
-		return mockPromotion.update(list);
+		return promotion.update(list);
 	}
 
 }

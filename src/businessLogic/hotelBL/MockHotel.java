@@ -23,10 +23,8 @@ import vo.RoomInfoVO;
  */
 public class MockHotel extends Hotel {
 
-	public MockHotel(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
-			double score, int comment, String introduction, String equipment) {
-		super(hotelID, hotelName, city, cycle, hotelAddress, level, score, comment, introduction, equipment);
-		// TODO 自动生成的构造函数存根
+	public MockHotel() {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
