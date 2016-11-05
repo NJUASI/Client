@@ -30,7 +30,7 @@ public class OrderBLService_DriverTest {
 		//test interface getOrderDetail
 		OrderBLService_Stub stub = new OrderBLService_Stub
 				("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-						"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
+						"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
 						RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
 						"2016/2/4", "2016/2/4");
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
@@ -45,13 +45,13 @@ public class OrderBLService_DriverTest {
 		assertEquals(orderVO.checkOutTime, "2016/2/4");
 		assertEquals(orderVO.expectExecuteTime, "2016/2/3");
 		assertEquals(orderVO.expectLeaveTime, "2016/2/4");
-		assertEquals(orderVO.state, "execut");
+		assertEquals(orderVO.state, "executed");
 		assertEquals(orderVO.roomType, RoomType.AMBASSADOR);
 		assertEquals(orderVO.roomNum, 2);
 		assertEquals(orderVO.roomNumber, "301");
 		assertEquals(orderVO.name, "zhangsan");
 		assertEquals(orderVO.phone, "13554321234");
-		assertEquals(orderVO.message, "Not");
+		assertEquals(orderVO.message, "not");
 		
 		
 	}
