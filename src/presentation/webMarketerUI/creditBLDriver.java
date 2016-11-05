@@ -1,6 +1,6 @@
 package presentation.webMarketerUI;
 
-import businessLogic.creditBL.CreditBLService_Stub;
+import businessLogic.creditBL.stub.CreditBLService_Stub;
 
 public class CreditBLDriver {
 

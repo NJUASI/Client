@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import businessLogic.logInBL.LogInBLService_Stub;
+import businessLogic.logInBL.stub.LogInBLService_Stub;
 import utilities.ResultMessage;
 import vo.GuestVO;
 

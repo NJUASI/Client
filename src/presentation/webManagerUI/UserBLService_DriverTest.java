@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import businessLogic.userBL.UserBLService_Stub;
+import businessLogic.userBL.stub.UserBLService_Stub;
 import utilities.ResultMessage;
 import utilities.UserType;
 import vo.UserVO;

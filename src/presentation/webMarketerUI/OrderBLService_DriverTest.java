@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import businessLogic.orderBL.OrderBLService_Stub;
+import businessLogic.orderBL.stub.OrderBLService_Stub;
 import utilities.ResultMessage;
 import utilities.RoomType;
 import vo.OrderVO;

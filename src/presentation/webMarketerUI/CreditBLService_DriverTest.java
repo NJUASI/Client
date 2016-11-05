@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import businessLogic.creditBL.CreditBLService_Stub;
+import businessLogic.creditBL.stub.CreditBLService_Stub;
 import utilities.ResultMessage;
 import vo.CreditVO;
 

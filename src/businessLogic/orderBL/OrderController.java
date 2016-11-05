@@ -14,7 +14,7 @@ public class OrderController implements OrderBLService{
 	private Order order;
 	
 	public OrderController() {
-		order = new Order();
+		order = new MockOrder();
 	}
 	
 	public static OrderController getInstance() {

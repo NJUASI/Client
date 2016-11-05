@@ -20,15 +20,15 @@ public class Order {
 	}
 
 	public ResultMessage executeOrder(String orderID) {
-		return ResultMessage.SUCCESS;
+		return null;
 	}
 
 	public ResultMessage undoAbnormalOrder(String orderID) {
-		return ResultMessage.SUCCESS;
+		return null;
 	}
 
 	public ResultMessage undoNormalOrder(String orderID) {
-		return ResultMessage.SUCCESS;
+		return null;
 	}
 
 	public OrderVO getOrderDetail(String orderID) {

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import businessLogic.marketBL.MarketBLService_Stub;
+import businessLogic.marketBL.stub.MarketBLService_Stub;
 import utilities.ResultMessage;
 import vo.MarketVO;
 
