@@ -10,7 +10,7 @@ import org.junit.Test;
 import utilities.ResultMessage;
 import vo.PromotionVO;
 
-public class Promotions_tester {
+public class Promotion_tester {
 
 	@Test
 	public void test1() {
