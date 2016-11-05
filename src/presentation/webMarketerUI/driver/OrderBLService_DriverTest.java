@@ -14,10 +14,7 @@ public class OrderBLService_DriverTest {
 	@Test
 	//test orderBLService.createOrder
 	public void test1() {
-		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(driver.orderBLService.createOrder(new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
@@ -28,10 +25,7 @@ public class OrderBLService_DriverTest {
 	@Test
 	//test orderBLService.executeOrder
 	public void test2() {
-		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(driver.orderBLService.executeOrder("123456789012"), ResultMessage.SUCCESS);
 	}
@@ -39,10 +33,7 @@ public class OrderBLService_DriverTest {
 	@Test
 	//test orderBLService.undoAbnormalOrder
 	public void test3() {
-		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(driver.orderBLService.undoAbnormalOrder("123456789012"), ResultMessage.SUCCESS);
 	}
@@ -50,10 +41,7 @@ public class OrderBLService_DriverTest {
 	@Test
 	//test orderBLService.undoAbnormalOrder
 	public void test4() {
-		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(driver.orderBLService.undoAbnormalOrder("123456789012"), ResultMessage.SUCCESS);
 	}
@@ -61,10 +49,7 @@ public class OrderBLService_DriverTest {
 	@Test
 	//test orderBLService.undoNormalOrder
 	public void test5() {
-		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(driver.orderBLService.undoNormalOrder("123456789012"), ResultMessage.SUCCESS);
 	}
@@ -72,15 +57,12 @@ public class OrderBLService_DriverTest {
 	@Test
 	//test orderBLService.getOrderDetail
 	public void test6() {
-		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
         OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
 		
         assertEquals(orderVO.orderID, "123456789012");
-		assertEquals(orderVO.hotelName, "thishotel");
+		assertEquals(orderVO.hotelName, "thisHotel");
 		assertEquals(orderVO.hotelAddress, "address");
 		assertEquals(orderVO.price, 200);
 		assertEquals(orderVO.createTime, "2016/2/2/18:30:20");

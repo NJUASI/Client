@@ -54,11 +54,10 @@ public class Hotel implements HotelBLService{
 //		this.equipment = equipment;
 //	}
 	
-	//持有的promotion的对象，getDiscount
 	private Promotion promotion;
 	
 	public Hotel() {
-		// TODO Auto-generated constructor stub
+		promotion = new Promotion();
 	}
 
 	@Override

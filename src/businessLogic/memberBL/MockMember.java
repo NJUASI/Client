@@ -6,7 +6,7 @@ import utilities.MemberType;
 import utilities.ResultMessage;
 import vo.MemberVO;
 
-public class McokMember extends Member {
+public class MockMember extends Member {
 	
 	public ResultMessage add(MemberVO memberVO) {
 		// TODO Auto-generated method stub

@@ -15,16 +15,13 @@ public class PromotionController implements PromotionBLService {
 
 
 	private Promotion promotion;
-
 	private static PromotionController promotionController;
 
 	private PromotionController() {
+		//new the mock object
 		promotion = new MockPromotion();
 	}
 
-	/**
-	 * @return 返回PromotionController对象，单例
-	 */
 	public static PromotionController getInstance(){
 		if(promotionController == null) promotionController = new PromotionController();
 		return promotionController;

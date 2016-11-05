@@ -24,18 +24,14 @@ import vo.RoomInfoVO;
 public class HotelController implements HotelBLService {
 
 	
-	public Hotel hotel;
-	
+	private Hotel hotel;
 	private static HotelController hotelController;
 	
-	//new the mock object
 	private HotelController() {
+		//new the mock object
 		hotel = new MockHotel();
 	}
 	
-	/**
-	 * @return 返回HotelController对象，单例
-	 */
 	public static HotelController getInstance(){
 		if(hotelController == null) hotelController = new HotelController();
 		return hotelController;

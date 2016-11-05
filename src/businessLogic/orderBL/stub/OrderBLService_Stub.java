@@ -2,6 +2,7 @@ package businessLogic.orderBL.stub;
 
 import java.util.List;
 
+import businessLogic.creditBL.Credit;
 import businessLogic.hotelBL.Hotel;
 import businessLogic.promotionBL.Promotion;
 import businessLogic.userBL.User;

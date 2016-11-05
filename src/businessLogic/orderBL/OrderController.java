@@ -9,17 +9,17 @@ import vo.OrderVO;
 
 public class OrderController implements OrderBLService{
 
-	private static OrderController orderController;
-
 	private Order order;
+	private static OrderController orderController;
 	
-	public OrderController() {
+	private OrderController() {
+		//new the mock object
 		order = new MockOrder();
 	}
 	
 	public static OrderController getInstance() {
-		if (orderController == null) return new OrderController();
-		else return orderController;
+		if (orderController == null) orderController = new OrderController();
+		return orderController;
 	}
 	
 	
