@@ -12,8 +12,8 @@ import vo.OrderVO;
 public class OrderBLService_DriverTest {
 
 	@Test
-	// test orderBLService.createOrder
 	public void test1() {
+		// test orderBLService.createOrder
 		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
 				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
@@ -29,8 +29,8 @@ public class OrderBLService_DriverTest {
 	}
 
 	@Test
-	// test orderBLService.executeOrder
 	public void test2() {
+		// test orderBLService.executeOrder
 		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
 				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
@@ -40,8 +40,8 @@ public class OrderBLService_DriverTest {
 	}
 
 	@Test
-	// test orderBLService.undoAbnormalOrder
 	public void test3() {
+		// test orderBLService.undoAbnormalOrder
 		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
 				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
@@ -51,8 +51,8 @@ public class OrderBLService_DriverTest {
 	}
 
 	@Test
-	// test orderBLService.undoAbnormalOrder
 	public void test4() {
+		// test orderBLService.undoAbnormalOrder
 		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
 				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
@@ -62,8 +62,8 @@ public class OrderBLService_DriverTest {
 	}
 
 	@Test
-	// test orderBLService.undoNormalOrder
 	public void test5() {
+		// test orderBLService.undoNormalOrder
 		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
 				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
@@ -73,31 +73,31 @@ public class OrderBLService_DriverTest {
 	}
 
 	@Test
-	// test orderBLService.getOrderDetail
 	public void test6() {
+		// test orderBLService.OrderDetail
 		OrderBLService_Stub stub = new OrderBLService_Stub("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
+				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
 				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
 				"2016/2/4", "2016/2/4");
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
 		
-		assertEquals(orderVO.getOrderID(), "123456789012");
-		assertEquals(orderVO.getHotelName(), "thisHotel");
-		assertEquals(orderVO.getHotelAddress(), "address");
-		assertEquals(orderVO.getPrice(), 200);
-		assertEquals(orderVO.getCreateTime(), "2016/2/2/18:30:20");
-		assertEquals(orderVO.getCheckInTime(), "2016/2/3");
-		assertEquals(orderVO.getCheckOutTime(), "2016/2/4");
-		assertEquals(orderVO.getExpectExecuteTime(), "2016/2/3");
-		assertEquals(orderVO.getExpectLeaveTime(), "2016/2/4");
-		assertEquals(orderVO.getState(), "execut");
-		assertEquals(orderVO.getRoomType(), RoomType.AMBASSADOR);
-		assertEquals(orderVO.getRoomNum(), 2);
-		assertEquals(orderVO.getRoomNumber(), "301");
-		assertEquals(orderVO.getName(), "zhangsan");
-		assertEquals(orderVO.getPhone(), "13554321234");
-		assertEquals(orderVO.getMessage(), "Not");
+		assertEquals(orderVO.orderID, "123456789012");
+		assertEquals(orderVO.hotelName, "thisHotel");
+		assertEquals(orderVO.hotelAddress, "address");
+		assertEquals(orderVO.price, 200);
+		assertEquals(orderVO.createTime, "2016/2/2/18:30:20");
+		assertEquals(orderVO.checkInTime, "2016/2/3");
+		assertEquals(orderVO.checkOutTime, "2016/2/4");
+		assertEquals(orderVO.expectExecuteTime, "2016/2/3");
+		assertEquals(orderVO.expectLeaveTime, "2016/2/4");
+		assertEquals(orderVO.state, "executed");
+		assertEquals(orderVO.roomType, RoomType.AMBASSADOR);
+		assertEquals(orderVO.roomNum, 2);
+		assertEquals(orderVO.roomNumber, "301");
+		assertEquals(orderVO.name, "zhangsan");
+		assertEquals(orderVO.phone, "13554321234");
+		assertEquals(orderVO.message, "not");
 	}
 
 }

@@ -18,7 +18,7 @@ public class OrderDataService_DriverTest {
 		OrderDataService_Driver driver = new OrderDataService_Driver(stub);
 		
 		assertEquals(driver.orderDataService.createOrder(new OrderPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "excute",
+				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
 				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
 				"2016/2/4", "2016/2/4")), ResultMessage.SUCCESS);
 	}
@@ -39,7 +39,7 @@ public class OrderDataService_DriverTest {
 		assertEquals(orderPO.getCheckOutTime(), "2016/2/4");
 		assertEquals(orderPO.getExpectExecuteTime(), "2016/2/3");
 		assertEquals(orderPO.getExpectLeaveTime(), "2016/2/4");
-		assertEquals(orderPO.getState(), "execut");
+		assertEquals(orderPO.getState(), "executed");
 		assertEquals(orderPO.getRoomType(), RoomType.AMBASSADOR);
 		assertEquals(orderPO.getRoomNum(), 2);
 		assertEquals(orderPO.getRoomNumber(), "301");

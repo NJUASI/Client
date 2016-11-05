@@ -55,7 +55,7 @@ public class MockOrder extends Order{
 		// TODO Auto-generated method stub
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/3", "2016/2/4" ,"excute"));
+				"2016/2/3", "2016/2/4" ,"executed"));
 		return orderGenerals;
 	}
 
@@ -64,7 +64,7 @@ public class MockOrder extends Order{
 		// TODO Auto-generated method stub
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/3", "2016/2/4" ,"excute"));
+				"2016/2/3", "2016/2/4" ,"executed"));
 		return orderGenerals;
 	}
 

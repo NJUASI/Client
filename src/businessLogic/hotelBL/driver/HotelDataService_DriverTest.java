@@ -29,7 +29,7 @@ public class HotelDataService_DriverTest {
 		assertEquals(hotelPO.getScore(), 5);
 		assertEquals(hotelPO.getComment(), 5);
 		assertEquals(hotelPO.getIntroduction(), "good");
-		assertEquals(hotelPO.getEquipment(), "allEqipment");
+		assertEquals(hotelPO.getEquipment(), "allEquipment");
 	}
 	
 	@Test

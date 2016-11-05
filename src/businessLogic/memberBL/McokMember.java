@@ -10,14 +10,14 @@ public class McokMember extends Member {
 	
 	public ResultMessage add(MemberVO memberVO) {
 		// TODO Auto-generated method stub
-		return new GuestDataService_Stub().modifyMember(new MemberPO(memberVO.getGuestID(),
-				memberVO.getBirthday(),memberVO.getEnterprise()));
+		return new GuestDataService_Stub().modifyMember(new MemberPO(memberVO.guestID,
+				memberVO.birthday,memberVO.enterprise));
 	}
 
 	public ResultMessage modify(MemberVO memberVO) {
 		// TODO Auto-generated method stub
-		return new GuestDataService_Stub().modifyMember(new MemberPO(memberVO.getGuestID(),
-				memberVO.getBirthday(),memberVO.getEnterprise()));
+		return new GuestDataService_Stub().modifyMember(new MemberPO(memberVO.guestID,
+				memberVO.birthday,memberVO.enterprise));
 	}
 
 	public MemberVO getMemberInfo(String userID, MemberType memberType) {

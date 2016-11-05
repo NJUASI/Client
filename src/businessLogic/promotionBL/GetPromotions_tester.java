@@ -18,10 +18,10 @@ public class GetPromotions_tester {
 		List<PromotionVO> list = controller.mockPromotion.getPromotions(controller.mockPromotion.hotelID);
 		PromotionVO promotionVO = list.get(1);
 		
-		assertEquals(promotionVO.getHotelID(), "12345679");
-		assertEquals(promotionVO.getStartDate(), "2016/11/12");
-		assertEquals(promotionVO.getEndDate(), "2016/11/13");
-		assertEquals(promotionVO.getDiscount(), 0.8 ,0.1);
+		assertEquals(promotionVO.hotelID, "12345679");
+		assertEquals(promotionVO.startDate, "2016/11/12");
+		assertEquals(promotionVO.endDate, "2016/11/13");
+		assertEquals(promotionVO.discount, 0.8 ,0.1);
 	}
 
 }
