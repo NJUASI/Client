@@ -1,24 +1,14 @@
 package vo;
 
-public class WebMarketerVO {
+public class WebMarketerVO extends UserVO {
 	//	用户编号
-	private String userID;
+	public String webMarketerID;
 	//	密码
-	private String password;
-	public WebMarketerVO(String userID, String password) {
-		super();
-		this.userID = userID;
-		this.password = password;
-	}
+	public String password;
 	
-	public String getUserID() {
-		return userID;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
+	public WebMarketerVO(String webMarketerID, String password) {
+		super(webMarketerID,password);
+		this.webMarketerID = webMarketerID;
 		this.password = password;
 	}
-
 }

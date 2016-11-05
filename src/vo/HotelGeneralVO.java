@@ -2,20 +2,19 @@ package vo;
 
 public class HotelGeneralVO {
 	//	酒店编号
-	private String hotelID;
+	public String hotelID;
 	//	酒店名称
-	private String hotelName;
+	public String hotelName;
 	//	酒店城市
-	private String city;
+	public String city;
 	//	酒店商圈
-	private String cycle;
+	public String cycle;
 	//	酒店星级
-	private String level;
+	public String level;
 	//	评分
-	private double score;
+	public double score;
 	
 	public HotelGeneralVO(String hotelID, String hotelName, String city, String cycle, String level, int score) {
-		super();
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.city = city;
@@ -23,43 +22,4 @@ public class HotelGeneralVO {
 		this.level = level;
 		this.score = score;
 	}
-	
-	public String getHotelID() {
-		return hotelID;
-	}
-	public void setHotelID(String hotelID) {
-		this.hotelID = hotelID;
-	}
-	public String getHotelName() {
-		return hotelName;
-	}
-	public void setHotelName(String hotelName) {
-		this.hotelName = hotelName;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getCycle() {
-		return cycle;
-	}
-	public void setCycle(String cycle) {
-		this.cycle = cycle;
-	}
-	public String getLevel() {
-		return level;
-	}
-	public void setLevel(String level) {
-		this.level = level;
-	}
-	public double getScore() {
-		return score;
-	}
-	public void setScore(int score) {
-		this.score = score;
-	}
-
-	
 }
