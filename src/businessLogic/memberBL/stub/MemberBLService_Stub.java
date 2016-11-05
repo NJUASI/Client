@@ -34,7 +34,7 @@ public class MemberBLService_Stub implements MemberBLService{
 		return false;
 	}
 
-	public MemberType getMemberType(String userID, MemberType memberType) {
+	public MemberType getMemberType(String userID) {
 		return null;
 	}
 

@@ -42,8 +42,8 @@ public class MemberController implements MemberBLService {
 	}
 
 	@Override
-	public MemberType getMemberType(String userID, MemberType memberType) {
-		return member.getMemberType(userID, memberType);
+	public MemberType getMemberType(String userID) {
+		return member.getMemberType(userID);
 	}
 	
 }

@@ -13,9 +13,12 @@ public class MockUser extends User{
 	
 	public List<UserVO> getAll(UserType userType) {
 		List<UserVO> list = new ArrayList<UserVO>();
-		UserVO guestVO= new GuestVO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
+		UserVO guestVO1= new GuestVO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
 				"000000", "13523456789","100");
-		list.add(guestVO);
+		UserVO guestVO2= new GuestVO("1234567891", "2016/2/2", "school", "zhangsi", "xiaosi",
+				"000000", "13523456799","200");
+		list.add(guestVO1);
+		list.add(guestVO2);
 		return list;
 	}
 

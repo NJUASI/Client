@@ -22,7 +22,7 @@ public class MockMember extends Member {
 		return true;
 	}
 
-	public MemberType getMemberType(String userID, MemberType memberType) {
+	public MemberType getMemberType(String userID) {
 		return MemberType.COMMON;
 	}
 

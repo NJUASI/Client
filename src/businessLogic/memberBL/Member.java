@@ -26,7 +26,7 @@ public class Member {
 		return false;
 	}
 
-	public MemberType getMemberType(String userID, MemberType memberType) {
+	public MemberType getMemberType(String userID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
