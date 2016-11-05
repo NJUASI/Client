@@ -2,6 +2,7 @@ package businessLogic.promotionBL;
 
 import java.util.List;
 
+import businessLogicService.promotionBLService.PromotionBLService;
 import utilities.ResultMessage;
 import vo.PromotionVO;
 
@@ -11,9 +12,11 @@ import vo.PromotionVO;
  * 上午2:35:54
  */
 public class Promotion{
+
+	String hotelID;
 	
-	public Promotion() {
-		// TODO Auto-generated constructor stub
+	public Promotion(String hotelID) {
+		this.hotelID = hotelID;
 	}
 
 	public List<PromotionVO> getPromotions(String hotelID) {

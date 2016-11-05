@@ -8,12 +8,13 @@ import vo.PromotionVO;
 
 public class MockPromotion extends Promotion {
 	
-	public MockPromotion() {
-		super();
+	public MockPromotion(String hotelID) {
+		super(hotelID);
 	}
 
 	@Override
 	public List<PromotionVO> getPromotions(String hotelID) {
+		// TODO 自动生成的方法存根
 		
 		List<PromotionVO> list = new ArrayList<PromotionVO>();
 		
@@ -25,6 +26,7 @@ public class MockPromotion extends Promotion {
 
 	@Override
 	public ResultMessage update(List<PromotionVO> list) {
+		// TODO 自动生成的方法存根
 		return ResultMessage.SUCCESS;
 	}
 	
