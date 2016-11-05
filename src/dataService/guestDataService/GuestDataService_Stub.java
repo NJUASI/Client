@@ -9,7 +9,7 @@ public class GuestDataService_Stub implements GuestDataService{
 	@Override
 	public ResultMessage modifyMember(MemberPO memberPO) {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 	@Override
