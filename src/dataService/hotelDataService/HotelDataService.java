@@ -4,7 +4,6 @@ package dataService.hotelDataService;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.HotelPO;
-import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
 
 public interface HotelDataService {
@@ -17,8 +16,8 @@ public interface HotelDataService {
 	public boolean setHotelRoomInfo(RoomInfoPO hotelRoomInfoPO);
 	public boolean setCheckInInfo (CheckInPO checkInInfo);
 	public boolean setCheckOutInfo (CheckOutPO checkOutInfo);
-	public RemainRoomInfoPO getRemainRoomInfo(String hotelID);
-	public boolean setRemainRoomInfo(RemainRoomInfoPO remainRoomInfoPO);
+	public RoomInfoPO getRemainRoomInfo(String hotelID);
+	public boolean setRemainRoomInfo(RoomInfoPO remainRoomInfoPO);
 	public boolean add (HotelPO hotelInfoPO);
 
 

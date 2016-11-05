@@ -3,7 +3,6 @@ package dataService.hotelDataService;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.HotelPO;
-import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
 import utilities.RoomType;
 
@@ -53,13 +52,13 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	@Override
-	public RemainRoomInfoPO getRemainRoomInfo(String hotelID) {
+	public RoomInfoPO getRemainRoomInfo(String hotelID) {
 		// TODO Auto-generated method stub
-		return new RemainRoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200);
+		return new RoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200);
 	}
 
 	@Override
-	public boolean setRemainRoomInfo(RemainRoomInfoPO remainRoomInfoPO) {
+	public boolean setRemainRoomInfo(RoomInfoPO remainRoomInfoPO) {
 		// TODO Auto-generated method stub
 		return false;
 	}

@@ -1,6 +1,6 @@
 package businessLogic.hotelBL;
 
-import java.util.Calendar;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +13,6 @@ import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
-import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 /**
@@ -69,8 +68,8 @@ public class HotelController implements HotelBLService {
 	}
 
 	@Override
-	public HotelVO getHotelInfo(String userID) {
-		return hotel.getHotelDetail(userID);
+	public HotelVO getHotelInfo(String hotelWorkerID) {
+		return hotel.getHotelDetail(hotelWorkerID);
 	}
 
 	@Override
@@ -79,28 +78,28 @@ public class HotelController implements HotelBLService {
 	}
 
 	@Override
-	public RoomInfoVO getHotelRoomInfo(String userID) {
-		return hotel.getHotelRoomInfo(userID);
+	public List<RoomInfoVO> getHotelRoomInfo(String hotelWorkerID) {
+		return hotel.getHotelRoomInfo(hotelWorkerID);
 	}
 
 	@Override
-	public ResultMessage updateHotelRoomInfo(RoomInfoVO hotelRoomVO) {
-		return hotel.updateHotelRoomInfo(hotelRoomVO);
+	public ResultMessage updateHotelRoomInfo(List<RoomInfoVO> list) {
+		return hotel.updateHotelRoomInfo(list);
 	}
 
 	@Override
-	public ResultMessage updateCheckIn(List<String> roomNum, Calendar inTime, Calendar predictedOutTime) {
-		return hotel.updateCheckIn(roomNum, inTime, predictedOutTime);
+	public ResultMessage updateCheckIn(String orderID, List<String> roomNum, LocalDateTime inTime, LocalDateTime expectedLeaveTime) {
+		return hotel.updateCheckIn(orderID, roomNum, inTime, expectedLeaveTime);
 	}
 
 	@Override
-	public ResultMessage updateCheckOut(Calendar outTime) {
-		return hotel.updateCheckOut(outTime);
+	public ResultMessage updateCheckOut(String orderID, LocalDateTime outTime) {
+		return hotel.updateCheckOut(orderID, outTime);
 	}
 
 	@Override
-	public RemainRoomInfoVO getRemainRoomInfo(String userID) {
-		return hotel.getRemainRoomInfo(userID);
+	public List<RoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
+		return hotel.getRemainRoomInfo(hotelWorkerID);
 	}
 
 	@Override

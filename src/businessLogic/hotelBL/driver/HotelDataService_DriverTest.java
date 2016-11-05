@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import dataService.hotelDataService.HotelDataService_Stub;
 import po.HotelPO;
-import po.RemainRoomInfoPO;
+import po.RoomInfoPO;
 import utilities.RoomType;
 
 public class HotelDataService_DriverTest {
@@ -26,7 +26,7 @@ public class HotelDataService_DriverTest {
 		assertEquals(hotelPO.getHotelAddress(), "address");
 		assertEquals(hotelPO.getCity(), "Nanjing");
 		assertEquals(hotelPO.getLevel(), "4");
-		assertEquals(hotelPO.getScore(), 5);
+		assertEquals(hotelPO.getScore(), 5, 0);
 		assertEquals(hotelPO.getComment(), 5);
 		assertEquals(hotelPO.getIntroduction(), "good");
 		assertEquals(hotelPO.getEquipment(), "allEquipment");
@@ -37,12 +37,12 @@ public class HotelDataService_DriverTest {
 		//test interface Evaluation
 		HotelDataService_Stub stub = new HotelDataService_Stub();
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
-		RemainRoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("12345678");
+		RoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("12345678");
 		
 		assertEquals(remainRoomInfoPO.getRoomType(), RoomType.AMBASSADOR);
 		assertEquals(remainRoomInfoPO.getRoomNum(),2);
 		assertEquals(remainRoomInfoPO.getPrice(), 200);
 	}
-		
-	}
+	
+}
 

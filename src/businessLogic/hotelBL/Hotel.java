@@ -1,11 +1,10 @@
 package businessLogic.hotelBL;
 
-import java.util.Calendar;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
 import businessLogic.promotionBL.Promotion;
-import businessLogicService.hotelBLService.HotelBLService;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -14,7 +13,6 @@ import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
-import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public class Hotel{
@@ -55,7 +53,7 @@ public class Hotel{
 		return null;
 	}
 
-	public HotelVO getHotelInfo(String userID) {
+	public HotelVO getHotelInfo(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -65,27 +63,27 @@ public class Hotel{
 		return null;
 	}
 
-	public RoomInfoVO getHotelRoomInfo(String userID) {
+	public List<RoomInfoVO> getHotelRoomInfo(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public ResultMessage updateHotelRoomInfo(RoomInfoVO hotelRoomVO) {
+	public ResultMessage updateHotelRoomInfo(List<RoomInfoVO> list) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public ResultMessage updateCheckIn(List<String> roomNum, Calendar inTime, Calendar predictedOutTime) {
+	public ResultMessage updateCheckIn(String orderID, List<String> roomNum, LocalDateTime inTime, LocalDateTime expectedLeaveTime) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public ResultMessage updateCheckOut(Calendar outTime) {
+	public ResultMessage updateCheckOut(String orderID, LocalDateTime outTime) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public RemainRoomInfoVO getRemainRoomInfo(String userID) {
+	public List<RoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

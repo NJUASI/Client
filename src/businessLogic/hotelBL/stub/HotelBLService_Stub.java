@@ -1,7 +1,8 @@
 package businessLogic.hotelBL.stub;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +15,6 @@ import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
-import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public class HotelBLService_Stub implements HotelBLService{
@@ -94,30 +94,33 @@ public class HotelBLService_Stub implements HotelBLService{
 	}
 
 	@Override
-	public RoomInfoVO getHotelRoomInfo(String userID) {
+	public List<RoomInfoVO> getHotelRoomInfo(String userID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ResultMessage updateHotelRoomInfo(RoomInfoVO hotelRoomVO) {
+	public ResultMessage updateHotelRoomInfo(List<RoomInfoVO> list) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ResultMessage updateCheckIn(List<String> roomNum, Calendar inTime, Calendar predictedOutTime) {
+	public ResultMessage updateCheckIn(String orderID, List<String> roomNum, LocalDateTime inTime, LocalDateTime expectedLeaveTime) {
 		return ResultMessage.SUCCESS;
 	}
 
 	@Override
-	public ResultMessage updateCheckOut(Calendar outTime) {
+	public ResultMessage updateCheckOut(String orderID, LocalDateTime outTime) {
 		return ResultMessage.SUCCESS;
 	}
 
 	@Override
-	public RemainRoomInfoVO getRemainRoomInfo(String userID) {
-		return new RemainRoomInfoVO("12345678", RoomType.AMBASSADOR,2,200);
+	public List<RoomInfoVO> getRemainRoomInfo(String userID) {
+		List<RoomInfoVO> list = new LinkedList<RoomInfoVO>();
+		list.add(new RoomInfoVO("12345678", RoomType.SINGLEBED, 13, 200));
+		list.add(new RoomInfoVO("12345678", RoomType.DOUBLEBED, 6, 300));
+		return list;
 	}
 
 	@Override
