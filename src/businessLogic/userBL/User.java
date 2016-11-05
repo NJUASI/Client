@@ -39,7 +39,7 @@ public class User {
 		return null;
 	}
 
-	public ResultMessage getLoginInfo(String userID, UserType userType) {
+	public ResultMessage getLogInInfo(String userID, UserType userType) {
 		// TODO Auto-generated method stub
 		return null;
 	}

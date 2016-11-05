@@ -11,10 +11,6 @@ import vo.PromotionVO;
  * 上午2:35:54
  */
 public class Promotion{
-	
-	public Promotion() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public List<PromotionVO> getPromotions(String hotelID) {
 		// TODO Auto-generated method stub

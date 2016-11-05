@@ -1,5 +1,8 @@
 package businessLogic.marketBL.stub;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import businessLogicService.marketBLService.MarketBLService;
 import utilities.ResultMessage;
 import vo.MarketVO;
@@ -15,11 +18,13 @@ public class MarketBLService_Stub implements MarketBLService {
 //		this.marketBenefit = marketBenefit;
 //	}
 
-	public MarketVO getMemberFormulation() {
-		return new MarketVO("Lv1",500 , "0.9");
+	public List<MarketVO> getMemberFormulation() {
+		List<MarketVO> list = new LinkedList<MarketVO>();
+		list.add(new MarketVO("Lv1",500 , "0.9"));
+		return list;
 	}
 
-	public ResultMessage setMemberFormulation(MarketVO marketVO) {
+	public ResultMessage setMemberFormulation(List<MarketVO> marketVOList) {
 		return ResultMessage.SUCCESS;
 	}
 

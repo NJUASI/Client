@@ -1,18 +1,21 @@
 package businessLogic.marketBL;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import utilities.ResultMessage;
 import vo.MarketVO;
 
 public class MockMarket extends Market {
 	
-	public MarketVO getMemberFormulation() {
-		// TODO Auto-generated method stub
-		return new MarketVO("Lv1",500 , "0.9");
+	public List<MarketVO> getMemberFormulation() {
+		List<MarketVO> list = new LinkedList<MarketVO>();
+		list.add(new MarketVO("Lv1",500 , "0.9"));
+		return list;
 	}
 
 
-	public ResultMessage setMemberFormulation(MarketVO marketVO) {
-		// TODO Auto-generated method stub
+	public ResultMessage setMemberFormulation(List<MarketVO> marketVOList) {
 		return ResultMessage.SUCCESS;
 	}
 }

@@ -1,11 +1,13 @@
 package businessLogicService.marketBLService;
 
+import java.util.List;
+
 import utilities.ResultMessage;
 import vo.MarketVO;
 
 public interface MarketBLService {
 
-	public MarketVO getMemberFormulation ();
-	public ResultMessage setMemberFormulation (MarketVO marketVO);
+	public List<MarketVO> getMemberFormulation ();
+	public ResultMessage setMemberFormulation (List<MarketVO> marketVOList);
 	
 }

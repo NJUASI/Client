@@ -22,13 +22,11 @@ public class CreditController implements CreditBLService{
 	
 	@Override
 	public ResultMessage charge(int chargeNum) {
-		// TODO Auto-generated method stub
 		return credit.charge(chargeNum);
 	}
 
 	@Override
 	public CreditVO getBasicInfo(String ID) {
-		// TODO Auto-generated method stub
 		return credit.getBasicInfo(ID);
 	}
 
