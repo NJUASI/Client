@@ -36,22 +36,22 @@ public class OrderBLService_DriverTest {
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
 		
-		assertEquals(orderVO.getOrderID(), "123456789012");
-		assertEquals(orderVO.getHotelName(), "thisHotel");
-		assertEquals(orderVO.getHotelAddress(), "address");
-		assertEquals(orderVO.getPrice(), 200);
-		assertEquals(orderVO.getCreateTime(), "2016/2/2/18:30:20");
-		assertEquals(orderVO.getCheckInTime(), "2016/2/3");
-		assertEquals(orderVO.getCheckOutTime(), "2016/2/4");
-		assertEquals(orderVO.getExpectExecuteTime(), "2016/2/3");
-		assertEquals(orderVO.getExpectLeaveTime(), "2016/2/4");
-		assertEquals(orderVO.getState(), "execut");
-		assertEquals(orderVO.getRoomType(), RoomType.AMBASSADOR);
-		assertEquals(orderVO.getRoomNum(), 2);
-		assertEquals(orderVO.getRoomNumber(), "301");
-		assertEquals(orderVO.getName(), "zhangsan");
-		assertEquals(orderVO.getPhone(), "13554321234");
-		assertEquals(orderVO.getMessage(), "Not");
+		assertEquals(orderVO.orderID, "123456789012");
+		assertEquals(orderVO.hotelName, "thisHotel");
+		assertEquals(orderVO.hotelAddress, "address");
+		assertEquals(orderVO.price, 200);
+		assertEquals(orderVO.createTime, "2016/2/2/18:30:20");
+		assertEquals(orderVO.checkInTime, "2016/2/3");
+		assertEquals(orderVO.checkOutTime, "2016/2/4");
+		assertEquals(orderVO.expectExecuteTime, "2016/2/3");
+		assertEquals(orderVO.expectLeaveTime, "2016/2/4");
+		assertEquals(orderVO.state, "execut");
+		assertEquals(orderVO.roomType, RoomType.AMBASSADOR);
+		assertEquals(orderVO.roomNum, 2);
+		assertEquals(orderVO.roomNumber, "301");
+		assertEquals(orderVO.name, "zhangsan");
+		assertEquals(orderVO.phone, "13554321234");
+		assertEquals(orderVO.message, "Not");
 		
 		
 	}
