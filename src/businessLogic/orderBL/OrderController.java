@@ -14,7 +14,7 @@ public class OrderController implements OrderBLService{
 	private Order order;
 	
 	public OrderController() {
-		// TODO Auto-generated constructor stub
+		order = new Order();
 	}
 	
 	public static OrderController getInstance() {
