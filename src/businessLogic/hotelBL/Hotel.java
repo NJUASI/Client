@@ -18,45 +18,47 @@ import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public class Hotel implements HotelBLService{
-
 	
-	//持有的promotion的对象
-	Promotion promotion;
+//	//	酒店编号
+//	String hotelID;
+//	//	酒店名称
+//	String hotelName;
+//	//	酒店城市
+//	String city;
+//	//	酒店商圈
+//	String cycle;
+//	//	酒店地址
+//	String hotelAddress;
+//	//	酒店星级
+//	String level;
+//	//	评分
+//	double score;
+//	//	评价
+//	int comment;
+//	//	简介
+//	String introduction;	
+//	//	设施服务
+//	String equipment;
+//
+//	public Hotel(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
+//			double score, int comment, String introduction, String equipment) {
+//		this.hotelID = hotelID;
+//		this.hotelName = hotelName;
+//		this.city = city;
+//		this.cycle = cycle;
+//		this.hotelAddress = hotelAddress;
+//		this.level = level;
+//		this.score = score;
+//		this.comment = comment;
+//		this.introduction = introduction;
+//		this.equipment = equipment;
+//	}
 	
+	//持有的promotion的对象，getDiscount
+	private Promotion promotion;
 	
-	//	酒店编号
-	String hotelID;
-	//	酒店名称
-	String hotelName;
-	//	酒店城市
-	String city;
-	//	酒店商圈
-	String cycle;
-	//	酒店地址
-	String hotelAddress;
-	//	酒店星级
-	String level;
-	//	评分
-	double score;
-	//	评价
-	int comment;
-	//	简介
-	String introduction;	
-	//	设施服务
-	String equipment;
-
-	public Hotel(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
-			double score, int comment, String introduction, String equipment) {
-		this.hotelID = hotelID;
-		this.hotelName = hotelName;
-		this.city = city;
-		this.cycle = cycle;
-		this.hotelAddress = hotelAddress;
-		this.level = level;
-		this.score = score;
-		this.comment = comment;
-		this.introduction = introduction;
-		this.equipment = equipment;
+	public Hotel() {
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
