@@ -13,7 +13,7 @@ public class LogInBLService_DriverTest {
 	@Test
 	public void test1() {
 		//test interface guestSignUp
-		LogInBLService_Stub stub = new LogInBLService_Stub("1234567890","000000");
+		LogInBLService_Stub stub = new LogInBLService_Stub();
 		LogInBLService_Driver driver = new LogInBLService_Driver(stub);
 		assertEquals(driver.logInBLService.guestSignUp(new GuestVO
 				("1234567890", "2016/2/2", "school","zhangsan", "xiaosan",

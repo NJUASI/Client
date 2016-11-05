@@ -6,16 +6,16 @@ import vo.GuestVO;
 
 public class LogInBLService_Stub implements LogInBLService{
 
-	String guest;
-	String hotelWorker;
-	String webMarketer;
-	String webManager;
-	String password;
-	
-	public LogInBLService_Stub(String ID, String password) {
-		this.guest = ID;
-		this.password = password;
-	}
+//	String guest;
+//	String hotelWorker;
+//	String webMarketer;
+//	String webManager;
+//	String password;
+//	
+//	public LogInBLService_Stub(String ID, String password) {
+//		this.guest = ID;
+//		this.password = password;
+//	}
 	
 	@Override
 	public ResultMessage guestLogIn(String guest, String password) {

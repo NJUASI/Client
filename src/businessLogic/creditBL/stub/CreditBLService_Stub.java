@@ -5,21 +5,21 @@ import utilities.ResultMessage;
 import vo.CreditVO;
 
 public class CreditBLService_Stub implements CreditBLService {
-	String guestID;
-	int credit;
-	String time;
-	String orderID;
-	int preCredit;
-	String reason;
-
-	public CreditBLService_Stub(String guestID, String time, String orderID, int preCredit,int credit, String reason) {
-		this.guestID = guestID;
-		this.credit = credit;
-		this.time = time;
-		this.orderID = orderID;
-		this.preCredit = preCredit;
-		this.reason = reason;
-	}
+//	String guestID;
+//	int credit;
+//	String time;
+//	String orderID;
+//	int preCredit;
+//	String reason;
+//
+//	public CreditBLService_Stub(String guestID, String time, String orderID, int preCredit,int credit, String reason) {
+//		this.guestID = guestID;
+//		this.credit = credit;
+//		this.time = time;
+//		this.orderID = orderID;
+//		this.preCredit = preCredit;
+//		this.reason = reason;
+//	}
 
 	public ResultMessage charge(int chargeNum) {
 		return ResultMessage.SUCCESS;
