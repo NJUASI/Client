@@ -46,13 +46,13 @@ public class OrderDataService_Stub implements OrderDataService {
 	@Override
 	public ResultMessage undoAbnormalOrder(String orderID) {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 	@Override
 	public ResultMessage undoNormalOrder(String orderID) {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 }
