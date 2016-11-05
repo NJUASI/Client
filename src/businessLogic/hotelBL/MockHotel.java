@@ -23,9 +23,6 @@ import vo.RoomInfoVO;
  */
 public class MockHotel extends Hotel {
 
-	public MockHotel() {
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {

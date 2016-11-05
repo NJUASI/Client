@@ -28,24 +28,24 @@ public class PromotionController implements PromotionBLService {
 	}
 	
 	
-	/**
-	 * 给promotion注册一个hotel
-	 * @param hotelID
-	 */
-	public void setHotel(String hotelID){
+//	/**
+//	 * 给promotion注册一个hotel
+//	 * @param hotelID
+//	 */
+//	public void setHotel(String hotelID){
 //		mockPromotion = new MockPromotion(hotelID);
-	}
+//	}
 
 
 	@Override
 	public List<PromotionVO> getPromotions(String userID) {
-		// TODO 自动生成的方法存根
+		
 		return promotion.getPromotions(userID);
 	}
 
 	@Override
 	public ResultMessage update(List<PromotionVO> list) {
-		// TODO 自动生成的方法存根
+		
 		return promotion.update(list);
 	}
 

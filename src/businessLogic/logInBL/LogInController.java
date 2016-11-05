@@ -23,31 +23,31 @@ public class LogInController implements LogInBLService{
 	@Override
 	public ResultMessage guestLogIn(String guest, String password) {
 		// TODO Auto-generated method stub
-		return null;
+		return logIn.guestLogIn(guest, password);
 	}
 
 	@Override
 	public ResultMessage hotelWorkerLogIn(String hotelWorker, String password) {
 		// TODO Auto-generated method stub
-		return null;
+		return logIn.hotelWorkerLogIn(hotelWorker, password);
 	}
 
 	@Override
 	public ResultMessage webMarketerLogIn(String webMarketer, String password) {
 		// TODO Auto-generated method stub
-		return null;
+		return logIn.webManagerLogIn(webMarketer, password);
 	}
 
 	@Override
 	public ResultMessage webManagerLogIn(String webManager, String password) {
 		// TODO Auto-generated method stub
-		return null;
+		return logIn.webManagerLogIn(webManager, password);
 	}
 
 	@Override
 	public ResultMessage guestSignUp(GuestVO guestVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return logIn.guestSignUp(guestVO);
 	}
 
 }

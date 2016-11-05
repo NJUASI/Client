@@ -8,10 +8,6 @@ import vo.PromotionVO;
 
 public class MockPromotion extends Promotion {
 	
-	public MockPromotion() {
-		super();
-	}
-
 	@Override
 	public List<PromotionVO> getPromotions(String hotelID) {
 		

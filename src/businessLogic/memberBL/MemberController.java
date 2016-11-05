@@ -24,31 +24,31 @@ public class MemberController implements MemberBLService {
 	@Override
 	public ResultMessage add(MemberVO memberVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return member.add(memberVO);
 	}
 
 	@Override
 	public ResultMessage modify(MemberVO memberVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return member.modify(memberVO);
 	}
 
 	@Override
 	public MemberVO getMemberInfo(String userID, MemberType memberType) {
 		// TODO Auto-generated method stub
-		return null;
+		return member.getMemberInfo(userID, memberType);
 	}
 
 	@Override
 	public boolean isMember(String userID, MemberType memberType) {
 		// TODO Auto-generated method stub
-		return false;
+		return member.isMember(userID, memberType);
 	}
 
 	@Override
 	public MemberType getMemberType(String userID, MemberType memberType) {
 		// TODO Auto-generated method stub
-		return null;
+		return member.getMemberType(userID, memberType);
 	}
 	
 }

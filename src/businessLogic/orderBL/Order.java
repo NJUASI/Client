@@ -6,9 +6,7 @@ import businessLogic.creditBL.Credit;
 import businessLogic.hotelBL.Hotel;
 import businessLogic.promotionBL.Promotion;
 import businessLogic.userBL.User;
-import businessLogicService.orderBLService.OrderBLService;
 import utilities.ResultMessage;
-import utilities.RoomType;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 

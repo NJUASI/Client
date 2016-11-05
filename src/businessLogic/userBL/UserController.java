@@ -2,8 +2,6 @@ package businessLogic.userBL;
 
 import java.util.List;
 
-import businessLogic.hotelBL.HotelController;
-import businessLogic.hotelBL.MockHotel;
 import businessLogicService.userBLService.UserBLService;
 import utilities.ResultMessage;
 import utilities.UserType;
@@ -29,43 +27,43 @@ public class UserController implements UserBLService{
 	@Override
 	public List<UserVO> getAll(UserType userType) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.getAll(userType);
 	}
 
 	@Override
 	public UserVO getSingle(String userID, UserType userType) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.getSingle(userID, userType);
 	}
 
 	@Override
 	public ResultMessage add(UserVO newUserVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.add(newUserVO);
 	}
 
 	@Override
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.addHotel(newHotelVO, hotelID);
 	}
 
 	@Override
 	public ResultMessage modify(UserVO userVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.modify(userVO);
 	}
 
 	@Override
 	public ResultMessage modifyCredit(float creditNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.modifyCredit(creditNum);
 	}
 
 	@Override
 	public ResultMessage getLoginInfo(String userID, UserType userType) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.getLoginInfo(userID, userType);
 	}
 
 }

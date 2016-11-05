@@ -23,13 +23,13 @@ public class MarketController implements MarketBLService{
 	@Override
 	public MarketVO getMemberFormulation() {
 		// TODO Auto-generated method stub
-		return null;
+		return market.getMemberFormulation();
 	}
 
 	@Override
 	public ResultMessage setMemberFormulation(MarketVO marketVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return market.setMemberFormulation(marketVO);
 	}
 
 }
