@@ -32,7 +32,7 @@ public class UserBLService_DriverTest {
 		//test interface getLoginInfo
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
-		assertEquals(driver.userBLService.getLoginInfo("1234567890", UserType.GUEST), ResultMessage.SUCCESS);
+		assertEquals(driver.userBLService.getLogInInfo("1234567890", UserType.GUEST), ResultMessage.SUCCESS);
 	}
 
 }
