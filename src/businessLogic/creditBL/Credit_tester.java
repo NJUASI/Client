@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import businessLogic.userBL.User;
 import utilities.ResultMessage;
 import vo.BasicInfoVO;
 import vo.CreditVO;
@@ -18,6 +17,7 @@ public class Credit_tester {
 	@Test
 	public void test1() {
 		//test cooperation with class user & market
+		//test interface getBasicInfo(String guestID)
 		CreditController controller = CreditController.getInstance();
 		
 		BasicInfoVO userBasicInfoVO = controller.getBasicInfo("1234567890");
@@ -38,6 +38,7 @@ public class Credit_tester {
 	@Test
 	public void test2() {
 		//test cooperation with class user
+		//test interface charge(String guestID, int chargeNum)
 		CreditController controller = CreditController.getInstance();
 	    
 	    assertEquals(controller.charge("1234567890", 100), ResultMessage.SUCCESS);
@@ -46,6 +47,7 @@ public class Credit_tester {
 	@Test
 	public void test3() {
 		//test cooperation with class user
+		//test interface getAllCreditDetail(String guestID)
 		CreditController controller = CreditController.getInstance();
 		List<CreditVO> list = controller.getAllCreditDetail("1234567890");
 		CreditVO creditVO1 = list.get(0);
@@ -78,6 +80,7 @@ public class Credit_tester {
 	@Test
 	public void test4() {
 		//test cooperation with class market
+		//test interface getMemberFormulation()
 		CreditController controller = CreditController.getInstance();
 	    
 	    List<MarketVO> memberFormulationList = controller.getMemberFormulation();
