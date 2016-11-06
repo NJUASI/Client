@@ -37,46 +37,7 @@ public class MockHotel extends Hotel {
 		order = new MockOrder();
 	}
 	
-	@Override
-	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
-		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
-		return list;
-	}
-
-	@Override
-	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
-		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
-		return list;
-	}
-
-	@Override
-	public List<HotelGeneralVO> getBookedHotels(String userID) {
-		List<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
-		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","4",5));
-		return list;
-	}
-
-	@Override
-	public HotelVO getHotelDetail(String hotelID) {
-		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5, 5, "good", "allEquipment");
-	}
-
-	@Override
-	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
-		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
-		return list;
-	}
-
-	@Override
-	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
-		return ResultMessage.SUCCESS;
-	}
-
+	
 	@Override
 	public HotelVO getHotelInfo(String hotelWorkerID) {
 		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
@@ -126,6 +87,48 @@ public class MockHotel extends Hotel {
 
 	@Override
 	public ResultMessage add(HotelVO hotelVO) {
+		return ResultMessage.SUCCESS;
+	}
+	
+	
+	
+	@Override
+	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
+		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		return list;
+	}
+
+	@Override
+	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
+		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		return list;
+	}
+
+	@Override
+	public List<HotelGeneralVO> getBookedHotels(String userID) {
+		List<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","4",5));
+		return list;
+	}
+
+	@Override
+	public HotelVO getHotelDetail(String hotelID) {
+		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
+				5, 5, "good", "allEquipment");
+	}
+
+	@Override
+	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
+		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		return list;
+	}
+
+	@Override
+	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return ResultMessage.SUCCESS;
 	}
 	

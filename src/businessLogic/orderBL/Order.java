@@ -1,5 +1,6 @@
 package businessLogic.orderBL;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import businessLogic.promotionBL.Promotion;
@@ -51,6 +52,16 @@ public class Order {
 		return null;
 	}
 
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral (LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral () {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	public List<String> getBookedHotels(String guestID) {
 		// TODO Auto-generated method stub
 		return null;

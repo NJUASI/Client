@@ -62,13 +62,13 @@ public class OrderController implements OrderBLService{
 	@Override
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral(LocalDate date) {
 		// TODO Auto-generated method stub
-		return null;
+		return order.getAllAbnormalOrderGeneral(date);
 	}
 
 	@Override
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
 		// TODO Auto-generated method stub
-		return null;
+		return order.getAllAbnormalOrderGeneral();
 	}
 	
 	@Override

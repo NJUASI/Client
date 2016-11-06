@@ -1,5 +1,6 @@
 package businessLogic.orderBL;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,6 +70,22 @@ public class MockOrder extends Order{
 		return orderGenerals;
 	}
 
+	@Override
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral (LocalDate date) {
+		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
+		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				"2016/2/3", "2016/2/4" ,"abnormal"));
+		return orderGenerals;
+	}
+	
+	@Override
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral () {
+		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
+		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				"2016/2/3", "2016/2/4" ,"abnormal"));
+		return orderGenerals;
+	}
+	
 	@Override
 	public List<String> getBookedHotels(String guestID) {
 		List<String> bookedHotels = new ArrayList<String>();

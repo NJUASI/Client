@@ -27,36 +27,6 @@ public class Hotel{
 		order = new Order();
 	}
 
-	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<HotelGeneralVO> getBookedHotels(String userID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public HotelVO getHotelDetail(String hotelID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public HotelVO getHotelInfo(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		return null;
@@ -98,6 +68,38 @@ public class Hotel{
 	}
 
 	public ResultMessage add(HotelVO hotelVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<HotelGeneralVO> getBookedHotels(String userID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public HotelVO getHotelDetail(String hotelID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		// TODO Auto-generated method stub
 		return null;
 	}
