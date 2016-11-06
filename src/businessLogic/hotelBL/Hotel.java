@@ -24,7 +24,14 @@ public class Hotel{
 	
 	public Hotel() {
 		promotion = new Promotion();
-		orderInfo = new Order();
+		orderInfo = new OrderInfo() {
+			
+			@Override
+			public List<String> getBookedHotels(String guestID) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		};
 	}
 
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
