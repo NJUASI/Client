@@ -54,8 +54,8 @@ public class UserBLService_Stub implements UserBLService {
 	}
 
 	@Override
-	public ResultMessage getLogInInfo(String userID, UserType userType) {
+	public String getLogInInfo(String userID, UserType userType) {
 		// TODO Auto-generated method stub
-		return ResultMessage.SUCCESS;
+		return null;
 	}
 }

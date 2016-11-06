@@ -17,6 +17,6 @@ public interface UserBLService {
 	public ResultMessage addHotel(HotelVO  newHotelVO, String hotelID);
 	public ResultMessage modify(UserVO userVO);
 	public ResultMessage modifyCredit (String guestID, float creditNum);
-	public ResultMessage getLogInInfo(String userID, UserType userType);
+	public String getLogInInfo(String userID, UserType userType);
 	
 }

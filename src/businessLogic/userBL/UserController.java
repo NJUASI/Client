@@ -61,7 +61,7 @@ public class UserController implements UserBLService{
 	}
 
 	@Override
-	public ResultMessage getLogInInfo(String userID, UserType userType) {
+	public String getLogInInfo(String userID, UserType userType) {
 		return user.getLogInInfo(userID, userType);
 	}
 

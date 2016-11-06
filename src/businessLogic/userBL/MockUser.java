@@ -62,8 +62,8 @@ public class MockUser extends User{
 		return ResultMessage.SUCCESS;
 	}
 
-	public ResultMessage getLogInInfo(String userID, UserType userType) {
-		return ResultMessage.SUCCESS;
+	public String getLogInInfo(String userID, UserType userType) {
+		return "123456";
 	}
 
 }
