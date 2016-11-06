@@ -3,6 +3,7 @@ package businessLogic.promotionBL;
 import java.util.List;
 
 import businessLogicService.promotionBLService.PromotionBLService;
+import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.PromotionVO;
 
@@ -42,6 +43,12 @@ public class PromotionController implements PromotionBLService {
 	public ResultMessage update(List<PromotionVO> list) {
 		
 		return promotion.update(list);
+	}
+
+	@Override
+	public float getDiscout(PreOrder preOrder) {
+		// TODO Auto-generated method stub
+		return promotion.getDiscout(preOrder);
 	}
 
 }

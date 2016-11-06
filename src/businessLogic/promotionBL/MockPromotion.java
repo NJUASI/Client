@@ -3,6 +3,7 @@ package businessLogic.promotionBL;
 import java.util.ArrayList;
 import java.util.List;
 
+import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.PromotionVO;
 
@@ -18,6 +19,11 @@ public class MockPromotion extends Promotion {
 	@Override
 	public ResultMessage update(List<PromotionVO> list) {
 		return ResultMessage.SUCCESS;
+	}
+	
+	public float getDiscout(PreOrder preOrder) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import businessLogicService.promotionBLService.PromotionBLService;
+import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.PromotionVO;
 
@@ -39,6 +40,12 @@ public class PromotionBLService_Stub implements PromotionBLService{
 	public ResultMessage update(List<PromotionVO> list) {
 		// TODO Auto-generated method stub
 		return  ResultMessage.SUCCESS;
+	}
+
+	@Override
+	public float getDiscout(PreOrder preOrder) {
+		// TODO Auto-generated method stub
+		return (float)0.8;
 	}
 	
 
