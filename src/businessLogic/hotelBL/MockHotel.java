@@ -18,6 +18,7 @@ import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.PromotionVO;
 import vo.RoomInfoVO;
 
 /**
@@ -52,8 +53,9 @@ public class MockHotel extends Hotel {
 
 	@Override
 	public List<HotelGeneralVO> getBookedHotels(String userID) {
-		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
+		List<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
 		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","4",5));
 		return list;
 	}
 
@@ -125,5 +127,13 @@ public class MockHotel extends Hotel {
 	@Override
 	public ResultMessage add(HotelVO hotelVO) {
 		return ResultMessage.SUCCESS;
+	}
+	
+	@Override
+	public List<PromotionVO> getPromotions(String hotelID) {
+		// TODO Auto-generated method stub
+		List<PromotionVO> list = new ArrayList<PromotionVO>();
+		list= promotion.getPromotions(hotelID);
+		return list;
 	}
 }

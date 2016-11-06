@@ -12,6 +12,7 @@ import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.PromotionVO;
 import vo.RoomInfoVO;
 
 public interface HotelBLService {
@@ -31,5 +32,6 @@ public interface HotelBLService {
 	public List<RoomInfoVO> getRemainRoomInfo (String hotelWorkerID);
 	public ResultMessage updateRemainRoomInfo (Operation operation, Map<RoomType, Integer> roomInfo);
 	public ResultMessage add (HotelVO hotelVO);
+	public List<PromotionVO> getPromotions(String hotelID);
 	
 }

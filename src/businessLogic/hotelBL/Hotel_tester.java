@@ -2,239 +2,274 @@ package businessLogic.hotelBL;
 
 import static org.junit.Assert.assertEquals;
 
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Test;
 
-import utilities.Operation;
-import utilities.ResultMessage;
-import utilities.RoomType;
-import utilities.SortStrategy;
-import vo.AddressVO;
-import vo.EvaluationVO;
 import vo.HotelGeneralVO;
-import vo.HotelVO;
-import vo.RoomInfoVO;
+import vo.PromotionVO;
 
 public class Hotel_tester {
-
+	
 	@Test
 	public void test1() {
-		// test method getHotelList(AddressVO addressVO)
+		//test cooperation with class Promotion
+		//test interface getPromotions
 		HotelController hotelController = HotelController.getInstance();
+		List<PromotionVO> list = hotelController.getPromotions("12345678");
+		PromotionVO promotionVO1=list.get(0);
+		PromotionVO promotionVO2=list.get(1);
 		
-		HotelGeneralVO hotelGeneralVO = hotelController.getHotelList(
-				new AddressVO("thisHotel", "address", "Nanjing", "center")).get(0);
+		assertEquals(promotionVO1.discount, 0.9,0);
+		assertEquals(promotionVO1.hotelID, "12345678");
+		assertEquals(promotionVO1.startDate, "2016/11/11");
+		assertEquals(promotionVO1.endDate, "2016/11/12");
 		
-		assertEquals(hotelGeneralVO.hotelID, "12345678");
-		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
-		assertEquals(hotelGeneralVO.city, "NanJing");
-		assertEquals(hotelGeneralVO.cycle, "center");
-		assertEquals(hotelGeneralVO.level, "4");
-		assertEquals(hotelGeneralVO.score, 5, 0);
+		assertEquals(promotionVO2.discount, 0.8,0);
+		assertEquals(promotionVO2.hotelID, "12345678");
+		assertEquals(promotionVO2.startDate, "2016/11/11");
+		assertEquals(promotionVO2.endDate, "2016/11/12");
 	}
 	
 	@Test
 	public void test2() {
-		// test method getSortedHotels(SortStrategy sortStrategy)
+		//test cooperation with class Order
+		//test interface getBookedHotels
 		HotelController hotelController = HotelController.getInstance();
+		List<HotelGeneralVO> list = hotelController.getBookedHotels("1234567890");
+		HotelGeneralVO hotelGeneralVO1=list.get(0);
+		HotelGeneralVO hotelGeneralVO2=list.get(1);
 		
-		HotelGeneralVO hotelGeneralVO = hotelController.getSortedHotels(
-				new SortStrategy()).get(0);
+		assertEquals(hotelGeneralVO1.hotelID, "12345678");
+		assertEquals(hotelGeneralVO1.hotelName, "thisHotel");
+		assertEquals(hotelGeneralVO1.city, "NanJing");
+		assertEquals(hotelGeneralVO1.cycle, "center");
+		assertEquals(hotelGeneralVO1.level, "4");
+		assertEquals(hotelGeneralVO1.score, 5,0);
 		
-		assertEquals(hotelGeneralVO.hotelID, "12345678");
-		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
-		assertEquals(hotelGeneralVO.city, "NanJing");
-		assertEquals(hotelGeneralVO.cycle, "center");
-		assertEquals(hotelGeneralVO.level, "4");
-		assertEquals(hotelGeneralVO.score, 5, 0);
+		assertEquals(hotelGeneralVO2.hotelID, "12345679");
+		assertEquals(hotelGeneralVO2.hotelName, "thatHotel");
+		assertEquals(hotelGeneralVO2.city, "NanJing");
+		assertEquals(hotelGeneralVO2.cycle, "center");
+		assertEquals(hotelGeneralVO2.level, "4");
+		assertEquals(hotelGeneralVO2.score, 5,0);
 	}
 	
-	@Test
-	public void test3() {
-		// test method getBookedHotels(String userID)
-		HotelController hotelController = HotelController.getInstance();
-		
-		HotelGeneralVO hotelGeneralVO = hotelController.getBookedHotels("123456789012").get(0);
-		
-		assertEquals(hotelGeneralVO.hotelID, "12345678");
-		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
-		assertEquals(hotelGeneralVO.city, "NanJing");
-		assertEquals(hotelGeneralVO.cycle, "center");
-		assertEquals(hotelGeneralVO.level, "4");
-		assertEquals(hotelGeneralVO.score, 5, 0);
-	}
-	
-	@Test
-	public void test4() {
-		// test method getHotelDetail(String hotelID)
-		HotelController hotelController = HotelController.getInstance();
-		
-		HotelVO hotelVO = hotelController.getHotelDetail("12345678");
-		
-		assertEquals(hotelVO.hotelID, "12345678");
-		assertEquals(hotelVO.hotelName, "thisHotel");
-		assertEquals(hotelVO.city, "NanJing");
-		assertEquals(hotelVO.cycle, "center");
-		assertEquals(hotelVO.hotelAddress, "address");
-		assertEquals(hotelVO.level, "4");
-		assertEquals(hotelVO.cycle, "center");
-		assertEquals(hotelVO.score, 5, 0);
-		assertEquals(hotelVO.comment, 5);
-		assertEquals(hotelVO.introduction, "good");
-		assertEquals(hotelVO.equipment, "allEquipment");
-	}
-	
-	@Test
-	public void test5() {
-		// test method getUncommentedHotels(String userID)
-		HotelController hotelController = HotelController.getInstance();
-		
-		HotelGeneralVO hotelGeneralVO = hotelController.getUncommentedHotels("123456789012").get(0);
-		
-		assertEquals(hotelGeneralVO.hotelID, "12345678");
-		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
-		assertEquals(hotelGeneralVO.city, "NanJing");
-		assertEquals(hotelGeneralVO.cycle, "center");
-		assertEquals(hotelGeneralVO.level, "4");
-		assertEquals(hotelGeneralVO.score, 5, 0);
-	}
-	
-	
-	@Test
-	public void test6() {
-		// test method updateEvaluation(EvaluationVO evaluationVO)
-		HotelController hotelController = HotelController.getInstance();
-		
-		assertEquals(hotelController.updateEvaluation(new EvaluationVO(5, "good")), ResultMessage.SUCCESS);
-	}
-	
-	@Test
-	public void test7() {
-		// test method getHotelInfo(String userID)
-		HotelController hotelController = HotelController.getInstance();
-		
-		HotelVO hotelVO = hotelController.getHotelDetail("12345678");
-		
-		assertEquals(hotelVO.hotelID, "12345678");
-		assertEquals(hotelVO.hotelName, "thisHotel");
-		assertEquals(hotelVO.city, "NanJing");
-		assertEquals(hotelVO.cycle, "center");
-		assertEquals(hotelVO.hotelAddress, "address");
-		assertEquals(hotelVO.level, "4");
-		assertEquals(hotelVO.cycle, "center");
-		assertEquals(hotelVO.score, 5, 0);
-		assertEquals(hotelVO.comment, 5);
-		assertEquals(hotelVO.introduction, "good");
-		assertEquals(hotelVO.equipment, "allEquipment");
-	}
-	
-	@Test
-	public void test8() {
-		// test method updateHotelInfo(HotelVO hotelVO)
-		HotelController hotelController = HotelController.getInstance();
-		
-		assertEquals(hotelController.updateHotelInfo(new HotelVO("12345678","thisHotel", "NanJing", 
-				"center", "address", "4" , 5, 5, "good", "allEquipment")), ResultMessage.SUCCESS);
-	}
-	
-	@Test
-	public void test9() {
-		// test method getHotelRoomInfo(String userID)
-		HotelController hotelController = HotelController.getInstance();
-		
-		List<RoomInfoVO> list = hotelController.getHotelRoomInfo("12345678");
-		RoomInfoVO roomInfoVO1 = list.get(0);
-		RoomInfoVO roomInfoVO2 = list.get(1);
-		
-		assertEquals(roomInfoVO1.hotelID, "12345678");
-		assertEquals(roomInfoVO1.roomType, RoomType.SINGLEBED);
-		assertEquals(roomInfoVO1.roomNum, 20);
-		assertEquals(roomInfoVO1.price, 200);
-		
-		assertEquals(roomInfoVO2.hotelID, "12345678");
-		assertEquals(roomInfoVO2.roomType, RoomType.DOUBLEBED);
-		assertEquals(roomInfoVO2.roomNum, 15);
-		assertEquals(roomInfoVO2.price, 300);
-	}
-
-	@Test
-	public void test10() {
-		// test method updateHotelRoomInfo(List<RoomInfoVO> list)
-		HotelController hotelController = HotelController.getInstance();
-		
-		List<RoomInfoVO> list = new LinkedList<RoomInfoVO>();
-		list.add(new RoomInfoVO("12345678", RoomType.SINGLEBED, 20, 200));
-		list.add(new RoomInfoVO("12345678", RoomType.DOUBLEBED, 15, 300));
-		assertEquals(hotelController.updateHotelRoomInfo(list), ResultMessage.SUCCESS);
-	}
-	
-	@Test
-	public void test11() {
-		// test method updateCheckIn(String orderID, List<String> roomNum, LocalDataTime inTime, LocalDataTime expectedLeaveTime)
-		HotelController hotelController = HotelController.getInstance();
-		
-		List<String> roomNumberList = new LinkedList<String>();
-		roomNumberList.add("301");
-		LocalDateTime inTime = LocalDateTime.of(2016, 10, 2, 14, 03);
-		LocalDateTime expectedLeaveTime = LocalDateTime.of(2016, 10, 3, 12, 00);
-		
-		assertEquals(hotelController.updateCheckIn("123456789012", roomNumberList, inTime, expectedLeaveTime), ResultMessage.SUCCESS);
-	}
-	
-	@Test
-	public void test12() {
-		// test method updateCheckOut(String orderID, LocalDateTime outTime)
-		HotelController hotelController = HotelController.getInstance();
-		
-		LocalDateTime outTime = LocalDateTime.of(2016, 10, 3, 11, 20);
-		
-		assertEquals(hotelController.updateCheckOut("123456789012", outTime), ResultMessage.SUCCESS);
-	}
-	
-	@Test
-	public void test13() {
-		// test method getRemainRoomInfo(String hotelWorkerID)
-		HotelController hotelController = HotelController.getInstance();
-		
-		List<RoomInfoVO> remainRoomInfoList = hotelController.getRemainRoomInfo("12345678");
-		RoomInfoVO remainRoonInfoVO1 = remainRoomInfoList.get(0);
-		RoomInfoVO remainRoonInfoVO2 = remainRoomInfoList.get(1);
-		
-		assertEquals(remainRoonInfoVO1.hotelID, "12345678");
-		assertEquals(remainRoonInfoVO1.roomType, RoomType.SINGLEBED);
-		assertEquals(remainRoonInfoVO1.roomNum, 13);
-		assertEquals(remainRoonInfoVO1.price, 200);
-		
-		assertEquals(remainRoonInfoVO2.hotelID, "12345678");
-		assertEquals(remainRoonInfoVO2.roomType, RoomType.DOUBLEBED);
-		assertEquals(remainRoonInfoVO2.roomNum, 6);
-		assertEquals(remainRoonInfoVO2.price, 300);
-	}
-	
-	@Test
-	public void test14() {
-		// test method updateRemainRoomInfo(Operation operation, Map<RoomType, Integer> roomInfo)
-		HotelController hotelController = HotelController.getInstance();
-		
-		Map<RoomType, Integer> roomInfo = new HashMap<RoomType, Integer>();
-		roomInfo.put(RoomType.SINGLEBED, 2);
-		roomInfo.put(RoomType.DOUBLEBED, 1);
-		
-		assertEquals(hotelController.updateRemainRoomInfo(Operation.CHECK_IN, roomInfo), ResultMessage.SUCCESS);
-	}
-	
-	@Test
-	public void test15() {
-		// test method add(HotelVO hotelVO)
-		HotelController hotelController = HotelController.getInstance();
-		HotelVO hotelVO = new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5, 5, "good", "allEquipment");
-		
-		assertEquals(hotelController.add(hotelVO), ResultMessage.SUCCESS);
-	}
 }
+
+//	@Test
+//	public void test1() {
+//		// test method getHotelList(AddressVO addressVO)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		HotelGeneralVO hotelGeneralVO = hotelController.getHotelList(
+//				new AddressVO("thisHotel", "address", "Nanjing", "center")).get(0);
+//		
+//		assertEquals(hotelGeneralVO.hotelID, "12345678");
+//		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
+//		assertEquals(hotelGeneralVO.city, "NanJing");
+//		assertEquals(hotelGeneralVO.cycle, "center");
+//		assertEquals(hotelGeneralVO.level, "4");
+//		assertEquals(hotelGeneralVO.score, 5, 0);
+//	}
+//	
+//	@Test
+//	public void test2() {
+//		// test method getSortedHotels(SortStrategy sortStrategy)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		HotelGeneralVO hotelGeneralVO = hotelController.getSortedHotels(
+//				new SortStrategy()).get(0);
+//		
+//		assertEquals(hotelGeneralVO.hotelID, "12345678");
+//		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
+//		assertEquals(hotelGeneralVO.city, "NanJing");
+//		assertEquals(hotelGeneralVO.cycle, "center");
+//		assertEquals(hotelGeneralVO.level, "4");
+//		assertEquals(hotelGeneralVO.score, 5, 0);
+//	}
+//	
+//	@Test
+//	public void test3() {
+//		// test method getBookedHotels(String userID)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		HotelGeneralVO hotelGeneralVO = hotelController.getBookedHotels("123456789012").get(0);
+//		
+//		assertEquals(hotelGeneralVO.hotelID, "12345678");
+//		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
+//		assertEquals(hotelGeneralVO.city, "NanJing");
+//		assertEquals(hotelGeneralVO.cycle, "center");
+//		assertEquals(hotelGeneralVO.level, "4");
+//		assertEquals(hotelGeneralVO.score, 5, 0);
+//	}
+//	
+//	@Test
+//	public void test4() {
+//		// test method getHotelDetail(String hotelID)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		HotelVO hotelVO = hotelController.getHotelDetail("12345678");
+//		
+//		assertEquals(hotelVO.hotelID, "12345678");
+//		assertEquals(hotelVO.hotelName, "thisHotel");
+//		assertEquals(hotelVO.city, "NanJing");
+//		assertEquals(hotelVO.cycle, "center");
+//		assertEquals(hotelVO.hotelAddress, "address");
+//		assertEquals(hotelVO.level, "4");
+//		assertEquals(hotelVO.cycle, "center");
+//		assertEquals(hotelVO.score, 5, 0);
+//		assertEquals(hotelVO.comment, 5);
+//		assertEquals(hotelVO.introduction, "good");
+//		assertEquals(hotelVO.equipment, "allEquipment");
+//	}
+//	
+//	@Test
+//	public void test5() {
+//		// test method getUncommentedHotels(String userID)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		HotelGeneralVO hotelGeneralVO = hotelController.getUncommentedHotels("123456789012").get(0);
+//		
+//		assertEquals(hotelGeneralVO.hotelID, "12345678");
+//		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
+//		assertEquals(hotelGeneralVO.city, "NanJing");
+//		assertEquals(hotelGeneralVO.cycle, "center");
+//		assertEquals(hotelGeneralVO.level, "4");
+//		assertEquals(hotelGeneralVO.score, 5, 0);
+//	}
+//	
+//	
+//	@Test
+//	public void test6() {
+//		// test method updateEvaluation(EvaluationVO evaluationVO)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		assertEquals(hotelController.updateEvaluation(new EvaluationVO(5, "good")), ResultMessage.SUCCESS);
+//	}
+//	
+//	@Test
+//	public void test7() {
+//		// test method getHotelInfo(String userID)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		HotelVO hotelVO = hotelController.getHotelDetail("12345678");
+//		
+//		assertEquals(hotelVO.hotelID, "12345678");
+//		assertEquals(hotelVO.hotelName, "thisHotel");
+//		assertEquals(hotelVO.city, "NanJing");
+//		assertEquals(hotelVO.cycle, "center");
+//		assertEquals(hotelVO.hotelAddress, "address");
+//		assertEquals(hotelVO.level, "4");
+//		assertEquals(hotelVO.cycle, "center");
+//		assertEquals(hotelVO.score, 5, 0);
+//		assertEquals(hotelVO.comment, 5);
+//		assertEquals(hotelVO.introduction, "good");
+//		assertEquals(hotelVO.equipment, "allEquipment");
+//	}
+//	
+//	@Test
+//	public void test8() {
+//		// test method updateHotelInfo(HotelVO hotelVO)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		assertEquals(hotelController.updateHotelInfo(new HotelVO("12345678","thisHotel", "NanJing", 
+//				"center", "address", "4" , 5, 5, "good", "allEquipment")), ResultMessage.SUCCESS);
+//	}
+//	
+//	@Test
+//	public void test9() {
+//		// test method getHotelRoomInfo(String userID)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		List<RoomInfoVO> list = hotelController.getHotelRoomInfo("12345678");
+//		RoomInfoVO roomInfoVO1 = list.get(0);
+//		RoomInfoVO roomInfoVO2 = list.get(1);
+//		
+//		assertEquals(roomInfoVO1.hotelID, "12345678");
+//		assertEquals(roomInfoVO1.roomType, RoomType.SINGLEBED);
+//		assertEquals(roomInfoVO1.roomNum, 20);
+//		assertEquals(roomInfoVO1.price, 200);
+//		
+//		assertEquals(roomInfoVO2.hotelID, "12345678");
+//		assertEquals(roomInfoVO2.roomType, RoomType.DOUBLEBED);
+//		assertEquals(roomInfoVO2.roomNum, 15);
+//		assertEquals(roomInfoVO2.price, 300);
+//	}
+//
+//	@Test
+//	public void test10() {
+//		// test method updateHotelRoomInfo(List<RoomInfoVO> list)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		List<RoomInfoVO> list = new LinkedList<RoomInfoVO>();
+//		list.add(new RoomInfoVO("12345678", RoomType.SINGLEBED, 20, 200));
+//		list.add(new RoomInfoVO("12345678", RoomType.DOUBLEBED, 15, 300));
+//		assertEquals(hotelController.updateHotelRoomInfo(list), ResultMessage.SUCCESS);
+//	}
+//	
+//	@Test
+//	public void test11() {
+//		// test method updateCheckIn(String orderID, List<String> roomNum, LocalDataTime inTime, LocalDataTime expectedLeaveTime)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		List<String> roomNumberList = new LinkedList<String>();
+//		roomNumberList.add("301");
+//		LocalDateTime inTime = LocalDateTime.of(2016, 10, 2, 14, 03);
+//		LocalDateTime expectedLeaveTime = LocalDateTime.of(2016, 10, 3, 12, 00);
+//		
+//		assertEquals(hotelController.updateCheckIn("123456789012", roomNumberList, inTime, expectedLeaveTime), ResultMessage.SUCCESS);
+//	}
+//	
+//	@Test
+//	public void test12() {
+//		// test method updateCheckOut(String orderID, LocalDateTime outTime)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		LocalDateTime outTime = LocalDateTime.of(2016, 10, 3, 11, 20);
+//		
+//		assertEquals(hotelController.updateCheckOut("123456789012", outTime), ResultMessage.SUCCESS);
+//	}
+//	
+//	@Test
+//	public void test13() {
+//		// test method getRemainRoomInfo(String hotelWorkerID)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		List<RoomInfoVO> remainRoomInfoList = hotelController.getRemainRoomInfo("12345678");
+//		RoomInfoVO remainRoonInfoVO1 = remainRoomInfoList.get(0);
+//		RoomInfoVO remainRoonInfoVO2 = remainRoomInfoList.get(1);
+//		
+//		assertEquals(remainRoonInfoVO1.hotelID, "12345678");
+//		assertEquals(remainRoonInfoVO1.roomType, RoomType.SINGLEBED);
+//		assertEquals(remainRoonInfoVO1.roomNum, 13);
+//		assertEquals(remainRoonInfoVO1.price, 200);
+//		
+//		assertEquals(remainRoonInfoVO2.hotelID, "12345678");
+//		assertEquals(remainRoonInfoVO2.roomType, RoomType.DOUBLEBED);
+//		assertEquals(remainRoonInfoVO2.roomNum, 6);
+//		assertEquals(remainRoonInfoVO2.price, 300);
+//	}
+//	
+//	@Test
+//	public void test14() {
+//		// test method updateRemainRoomInfo(Operation operation, Map<RoomType, Integer> roomInfo)
+//		HotelController hotelController = HotelController.getInstance();
+//		
+//		Map<RoomType, Integer> roomInfo = new HashMap<RoomType, Integer>();
+//		roomInfo.put(RoomType.SINGLEBED, 2);
+//		roomInfo.put(RoomType.DOUBLEBED, 1);
+//		
+//		assertEquals(hotelController.updateRemainRoomInfo(Operation.CHECK_IN, roomInfo), ResultMessage.SUCCESS);
+//	}
+//	
+//	@Test
+//	public void test15() {
+//		// test method add(HotelVO hotelVO)
+//		HotelController hotelController = HotelController.getInstance();
+//		HotelVO hotelVO = new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
+//				5, 5, "good", "allEquipment");
+//		
+//		assertEquals(hotelController.add(hotelVO), ResultMessage.SUCCESS);
+//	}
+//}

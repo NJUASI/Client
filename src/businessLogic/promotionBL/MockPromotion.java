@@ -13,6 +13,7 @@ public class MockPromotion extends Promotion {
 	public List<PromotionVO> getPromotions(String hotelID) {
 		List<PromotionVO> list = new ArrayList<PromotionVO>();
 		list.add(new PromotionVO(0.9, "12345678", "2016/11/11", "2016/11/12"));
+		list.add(new PromotionVO(0.8, "12345678", "2016/11/11", "2016/11/12"));
 		return list;
 	}
 

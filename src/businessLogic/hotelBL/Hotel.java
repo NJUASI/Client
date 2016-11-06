@@ -14,6 +14,7 @@ import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.PromotionVO;
 import vo.RoomInfoVO;
 
 public class Hotel{
@@ -97,6 +98,11 @@ public class Hotel{
 	}
 
 	public ResultMessage add(HotelVO hotelVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List<PromotionVO> getPromotions(String hotelID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

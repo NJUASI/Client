@@ -8,7 +8,6 @@ import vo.BasicInfoVO;
 import vo.CreditVO;
 import vo.GuestVO;
 import vo.MarketVO;
-import vo.MemberVO;
 
 public class CreditBLService_Stub implements CreditBLService {
 //	String guestID;

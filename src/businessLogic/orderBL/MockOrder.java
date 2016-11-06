@@ -72,8 +72,8 @@ public class MockOrder extends Order{
 	@Override
 	public List<String> getBookedHotels(String guestID) {
 		List<String> bookedHotels = new ArrayList<String>();
-		bookedHotels.add("thisHotel");
-		bookedHotels.add("thatHotel");
+		bookedHotels.add("12345678");
+		bookedHotels.add("12345679");
 		return bookedHotels;
 	}
 }

@@ -13,6 +13,7 @@ import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.PromotionVO;
 import vo.RoomInfoVO;
 
 /**
@@ -110,6 +111,12 @@ public class HotelController implements HotelBLService {
 	@Override
 	public ResultMessage add(HotelVO hotelVO) {
 		return hotel.add(hotelVO);
+	}
+
+	@Override
+	public List<PromotionVO> getPromotions(String hotelID) {
+		// TODO Auto-generated method stub
+		return hotel.getPromotions(hotelID);
 	}
 
 }
