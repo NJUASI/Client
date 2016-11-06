@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import businessLogic.orderBL.MockOrder;
-import businessLogic.orderBL.OrderInfo;
+import businessLogic.orderBL.Order;
 import businessLogic.promotionBL.MockPromotion;
 import businessLogic.promotionBL.Promotion;
 import utilities.Operation;
@@ -29,18 +29,11 @@ public class MockHotel extends Hotel {
 
 
 	private Promotion promotion;
-	private OrderInfo orderInfo;
+	private Order order;
 	
 	public MockHotel() {
 		promotion = new MockPromotion();
-		orderInfo = new OrderInfo() {
-			
-			@Override
-			public List<String> getBookedHotels(String guestID) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		};
+		order = new MockOrder();
 	}
 	
 	@Override

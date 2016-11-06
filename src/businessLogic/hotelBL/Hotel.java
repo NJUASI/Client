@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import businessLogic.orderBL.Order;
-import businessLogic.orderBL.OrderInfo;
 import businessLogic.promotionBL.Promotion;
 import utilities.Operation;
 import utilities.ResultMessage;
@@ -20,18 +19,11 @@ import vo.RoomInfoVO;
 public class Hotel{
 	
 	private Promotion promotion;
-	private OrderInfo orderInfo;
+	private Order order;
 	
 	public Hotel() {
 		promotion = new Promotion();
-		orderInfo = new OrderInfo() {
-			
-			@Override
-			public List<String> getBookedHotels(String guestID) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		};
+		order = new Order();
 	}
 
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {

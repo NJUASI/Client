@@ -2,27 +2,18 @@ package businessLogic.orderBL;
 
 import java.util.List;
 
-import businessLogic.creditBL.Credit;
-import businessLogic.hotelBL.Hotel;
 import businessLogic.promotionBL.Promotion;
-import businessLogic.userBL.User;
 import utilities.ResultMessage;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
-public class Order implements OrderInfo{
+public class Order {
 	
 	
-	private Hotel hotel;
 	private Promotion promotion;
-	private Credit credit;
-	private User user;
 	
 	public Order() {
-		hotel = new Hotel();
 		promotion = new Promotion();
-		credit = new Credit();
-		user = new User();
 	}
 
 	public ResultMessage createOrder(OrderVO orderVO) {
@@ -60,7 +51,6 @@ public class Order implements OrderInfo{
 		return null;
 	}
 
-	@Override
 	public List<String> getBookedHotels(String guestID) {
 		// TODO Auto-generated method stub
 		return null;

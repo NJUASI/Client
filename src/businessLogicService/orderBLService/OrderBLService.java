@@ -16,5 +16,6 @@ public interface OrderBLService {
 	public List<OrderGeneralVO> getAllGuestOrderGeneral (String guestID);
 	public List<OrderGeneralVO> getAllHotelOrderGeneral (String hotelID);
 	public List<String> getBookedHotels (String guestID);
+	
 
 }
