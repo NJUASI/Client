@@ -3,6 +3,14 @@ package businessLogic.orderBL;
 import java.util.ArrayList;
 import java.util.List;
 
+import businessLogic.creditBL.Credit;
+import businessLogic.creditBL.MockCredit;
+import businessLogic.hotelBL.Hotel;
+import businessLogic.hotelBL.MockHotel;
+import businessLogic.promotionBL.MockPromotion;
+import businessLogic.promotionBL.Promotion;
+import businessLogic.userBL.MockUser;
+import businessLogic.userBL.User;
 import utilities.ResultMessage;
 import utilities.RoomType;
 import vo.OrderGeneralVO;
@@ -10,6 +18,19 @@ import vo.OrderVO;
 
 public class MockOrder extends Order{
 
+	
+	private Hotel hotel;
+	private Promotion promotion;
+	private Credit credit;
+	private User user;
+	
+	public MockOrder() {
+		hotel = new MockHotel();
+		promotion = new MockPromotion();
+		credit = new MockCredit();
+		user = new MockUser();
+	}
+	
 	@Override
 	public ResultMessage createOrder(OrderVO orderVO) {
 		return ResultMessage.SUCCESS;
@@ -57,7 +78,7 @@ public class MockOrder extends Order{
 	}
 
 	@Override
-	public List<String> getBookedHotel(String guestID) {
+	public List<String> getBookedHotels(String guestID) {
 		List<String> bookedHotels = new ArrayList<String>();
 		bookedHotels.add("thisHotel");
 		bookedHotels.add("thatHotel");

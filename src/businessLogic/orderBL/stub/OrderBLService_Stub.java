@@ -145,7 +145,7 @@ public class OrderBLService_Stub implements OrderBLService {
 	}
 
 	@Override
-	public List<String> getBookedHotel(String guestID) {
+	public List<String> getBookedHotels(String guestID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

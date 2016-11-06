@@ -59,8 +59,8 @@ public class OrderController implements OrderBLService{
 	}
 
 	@Override
-	public List<String> getBookedHotel(String guestID) {
-		return order.getBookedHotel(guestID);
+	public List<String> getBookedHotels(String guestID) {
+		return order.getBookedHotels(guestID);
 	}
 
 }

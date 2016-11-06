@@ -10,7 +10,7 @@ import utilities.ResultMessage;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
-public class Order {
+public class Order implements OrderInfo{
 	
 	
 	private Hotel hotel;
@@ -60,9 +60,10 @@ public class Order {
 		return null;
 	}
 
-	public List<String> getBookedHotel(String guestID) {
+	@Override
+	public List<String> getBookedHotels(String guestID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 }

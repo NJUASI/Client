@@ -3,6 +3,8 @@ package businessLogic.userBL;
 import java.util.ArrayList;
 import java.util.List;
 
+import businessLogic.hotelBL.Hotel;
+import businessLogic.hotelBL.MockHotel;
 import utilities.ResultMessage;
 import utilities.UserType;
 import vo.GuestVO;
@@ -10,6 +12,12 @@ import vo.HotelVO;
 import vo.UserVO;
 
 public class MockUser extends User{
+	
+	private Hotel hotel;
+	
+	public MockUser() {
+		hotel = new MockHotel();
+	}
 	
 	public List<UserVO> getAll(UserType userType) {
 		List<UserVO> list = new ArrayList<UserVO>();

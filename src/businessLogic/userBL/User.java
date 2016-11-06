@@ -2,6 +2,7 @@ package businessLogic.userBL;
 
 import java.util.List;
 
+import businessLogic.hotelBL.Hotel;
 import utilities.ResultMessage;
 import utilities.UserType;
 import vo.HotelVO;
@@ -9,6 +10,12 @@ import vo.UserVO;
 
 public class User {
 
+	private Hotel hotel;
+	
+	public User() {
+		hotel = new Hotel();
+	}
+	
 	public List<UserVO> getAll(UserType userType) {
 		// TODO Auto-generated method stub
 		return null;

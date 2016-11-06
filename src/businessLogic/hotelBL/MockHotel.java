@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import businessLogic.orderBL.MockOrder;
+import businessLogic.orderBL.OrderInfo;
+import businessLogic.promotionBL.MockPromotion;
+import businessLogic.promotionBL.Promotion;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -24,6 +28,14 @@ import vo.RoomInfoVO;
 public class MockHotel extends Hotel {
 
 
+	private Promotion promotion;
+	private OrderInfo orderInfo;
+	
+	public MockHotel() {
+		promotion = new MockPromotion();
+		orderInfo = new MockOrder();
+	}
+	
 	@Override
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();

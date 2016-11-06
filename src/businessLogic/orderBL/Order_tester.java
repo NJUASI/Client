@@ -126,7 +126,7 @@ public class Order_tester {
 	public void test8() {
 		//test method getBookedHotel(String guestID)
 		OrderController controller = OrderController.getInstance();
-		List<String> list = controller.getBookedHotel("1234567890");
+		List<String> list = controller.getBookedHotels("1234567890");
 			
 		
 		assertEquals(list.get(0), "thisHotel");

@@ -5,11 +5,6 @@ import java.util.List;
 import utilities.ResultMessage;
 import vo.PromotionVO;
 
-/**
- * @author Harvey Gong
- *
- * 上午2:35:54
- */
 public class Promotion{
 
 	public List<PromotionVO> getPromotions(String hotelID) {

@@ -6,11 +6,6 @@ import businessLogicService.promotionBLService.PromotionBLService;
 import utilities.ResultMessage;
 import vo.PromotionVO;
 
-/**
- * @author Harvey Gong
- *
- * 上午2:36:11
- */
 public class PromotionController implements PromotionBLService {
 
 
