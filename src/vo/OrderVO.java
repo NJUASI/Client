@@ -13,6 +13,8 @@ public class OrderVO {
 	public String hotelName;
 	// 酒店地址
 	public String hotelAddress;
+	//房间原价
+	public int prePrice;
 	// 预定价格
 	public int price;
 	// 订单生成时间
@@ -43,7 +45,7 @@ public class OrderVO {
 	// 实际离开时间
 	public String leaveTime;
 
-	public OrderVO(String orderID, String guestID, String hotelID, String hotelName, String hotelAddress, int price,
+	public OrderVO(String orderID, String guestID, String hotelID, String hotelName, String hotelAddress,int prePrice,int price,
 			String createTime, String checkInTime, String checkOutTime, String expectExecuteTime, String state,
 			RoomType roomType, int roomNum, String roomNumber, String name, String phone, String message,
 			String expectLeaveTime, String leaveTime) {
@@ -52,6 +54,7 @@ public class OrderVO {
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.hotelAddress = hotelAddress;
+		this.prePrice=prePrice;
 		this.price = price;
 		this.createTime = createTime;
 		this.checkInTime = checkInTime;
