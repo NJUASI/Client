@@ -12,6 +12,22 @@ import vo.UserVO;
 
 public class User_tester {
 
+	
+	@Test
+	public void test1() {
+		//test cooperation with class hotel
+		//test interface addHotel(HotelVO newHotelVO, String hotelID)
+		UserController controller = UserController.getInstance();
+		
+		HotelVO newHotelVO = new HotelVO("12345678", "thisHotel", "NanJing","center", "address", "4",
+				5, 5, "good","allEquipment");
+		
+		assertEquals(controller.addHotel(newHotelVO, "12345678"), ResultMessage.SUCCESS);
+		assertEquals(controller.addHotel(newHotelVO, "12345679"), ResultMessage.FAIL);
+		
+	}
+	
+	
 //	@Test
 //	public void test1() {
 //		//test method getAll(UserType userType)

@@ -51,7 +51,8 @@ public class MockUser extends User{
 	}
 
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		return ResultMessage.SUCCESS;
+		if (newHotelVO.hotelID.equals(hotelID)) return hotel.add(newHotelVO);
+		else return ResultMessage.FAIL;
 	}
 
 	public ResultMessage modify(UserVO userVO) {
