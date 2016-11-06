@@ -10,7 +10,7 @@ public class MockMarket extends Market {
 	
 	public List<MarketVO> getMemberFormulation() {
 		List<MarketVO> list = new LinkedList<MarketVO>();
-		list.add(new MarketVO("Lv1",500 , "0.9"));
+		list.add(new MarketVO("Lv1", 50, "0.9"));
 		return list;
 	}
 

@@ -1,8 +1,12 @@
 package businessLogic.creditBL.stub;
 
+import java.util.List;
+
 import businessLogicService.creditBLService.CreditBLService;
 import utilities.ResultMessage;
+import vo.BasicInfoVO;
 import vo.CreditVO;
+import vo.GuestVO;
 
 public class CreditBLService_Stub implements CreditBLService {
 //	String guestID;
@@ -25,8 +29,15 @@ public class CreditBLService_Stub implements CreditBLService {
 		return ResultMessage.SUCCESS;
 	}
 
-	public CreditVO getBasicInfo(String ID) {
-		return new CreditVO("1234567890","2016/1/1","123456789012",100,100, "undo");
+	public BasicInfoVO getBasicInfo(String ID) {
+		return new BasicInfoVO(new GuestVO("1234567890","1995/4/1","Samsung","Carol","cal", "123456", "13555550000", 400), 
+				"L1");
+	}
+
+	@Override
+	public List<CreditVO> getAllCreditDetail(String guestID) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

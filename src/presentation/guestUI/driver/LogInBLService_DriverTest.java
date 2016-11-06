@@ -25,6 +25,6 @@ public class LogInBLService_DriverTest {
 		LogInBLService_Driver driver = new LogInBLService_Driver(stub);
 		assertEquals(driver.logInBLService.guestSignUp(new GuestVO
 				("1234567890", "2016/2/2", "school","zhangsan", "xiaosan",
-						"000000", "13568792345", "100")), ResultMessage.SUCCESS);
+						"000000", "13568792345", 100)), ResultMessage.SUCCESS);
 	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import businessLogicService.userBLService.UserBLService;
 import utilities.ResultMessage;
 import utilities.UserType;
+import vo.CreditVO;
 import vo.HotelVO;
 import vo.UserVO;
 
@@ -34,6 +35,11 @@ public class UserController implements UserBLService{
 		return user.getSingle(userID, userType);
 	}
 
+	@Override
+	public List<CreditVO> getAllCreditDetail(String guestID) {
+		return user.getAllCreditDetail(guestID);
+	}
+	
 	@Override
 	public ResultMessage add(UserVO newUserVO) {
 		return user.add(newUserVO);

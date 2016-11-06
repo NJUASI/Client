@@ -1,8 +1,11 @@
 package businessLogic.creditBL;
 
+import java.util.List;
+
 import businessLogic.marketBL.Market;
 import businessLogic.userBL.User;
 import utilities.ResultMessage;
+import vo.BasicInfoVO;
 import vo.CreditVO;
 
 public class Credit {
@@ -20,7 +23,12 @@ public class Credit {
 		return null;
 	}
 
-	public CreditVO getBasicInfo(String ID) {
+	public BasicInfoVO getBasicInfo(String ID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<CreditVO> getAllCreditDetail(String guestID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

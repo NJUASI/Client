@@ -46,7 +46,7 @@ public class LogIn_tester {
 		//test method guestSignUp(GuestVO guestVO)
 		LogInController controller = LogInController.getInstance();
 		GuestVO guestVO = new GuestVO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789","100");
+				"000000", "13523456789", 100);
 			
 	assertEquals(controller.guestSignUp(guestVO) , ResultMessage.SUCCESS);
 	}

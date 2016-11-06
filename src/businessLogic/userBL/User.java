@@ -5,6 +5,7 @@ import java.util.List;
 import businessLogic.hotelBL.Hotel;
 import utilities.ResultMessage;
 import utilities.UserType;
+import vo.CreditVO;
 import vo.HotelVO;
 import vo.UserVO;
 
@@ -22,6 +23,11 @@ public class User {
 	}
 	
 	public UserVO getSingle(String userID, UserType userType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List<CreditVO> getAllCreditDetail(String guestID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

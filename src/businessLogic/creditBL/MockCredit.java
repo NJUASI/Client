@@ -1,11 +1,17 @@
 package businessLogic.creditBL;
 
+import java.util.List;
+
 import businessLogic.marketBL.Market;
 import businessLogic.marketBL.MockMarket;
 import businessLogic.userBL.MockUser;
 import businessLogic.userBL.User;
 import utilities.ResultMessage;
+import utilities.UserType;
+import vo.BasicInfoVO;
 import vo.CreditVO;
+import vo.GuestVO;
+import vo.MarketVO;
 
 public class MockCredit extends Credit{
 	
@@ -23,9 +29,21 @@ public class MockCredit extends Credit{
 	}
 
 	@Override
-	public CreditVO getBasicInfo(String ID) {
-		CreditVO creditVO = new CreditVO("1234567890","2016/1/1","123456789012",100,100, "undo");
-		return creditVO;
+	public BasicInfoVO getBasicInfo(String ID) {
+		GuestVO guestVO = (GuestVO)user.getSingle("1234567890", UserType.GUEST);
+		List<MarketVO> memberFormulationList = market.getMemberFormulation();
+		MarketVO marketVO = memberFormulationList.get(0);
+		
+		String memberDegree = "Lv0";
+		if (guestVO.credit > marketVO.marketCredit) {
+			memberDegree = "Lv1";
+		}
+		return new BasicInfoVO(guestVO, memberDegree);
+	}
+	
+	@Override
+	public List<CreditVO> getAllCreditDetail(String guestID) {
+		return user.getAllCreditDetail(guestID);
 	}
 
 }

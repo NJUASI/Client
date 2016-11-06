@@ -1,7 +1,10 @@
 package businessLogic.creditBL;
 
+import java.util.List;
+
 import businessLogicService.creditBLService.CreditBLService;
 import utilities.ResultMessage;
+import vo.BasicInfoVO;
 import vo.CreditVO;
 
 public class CreditController implements CreditBLService{
@@ -26,8 +29,13 @@ public class CreditController implements CreditBLService{
 	}
 
 	@Override
-	public CreditVO getBasicInfo(String ID) {
+	public BasicInfoVO getBasicInfo(String ID) {
 		return credit.getBasicInfo(ID);
+	}
+	
+	@Override
+	public List<CreditVO> getAllCreditDetail(String guestID) {
+		return credit.getAllCreditDetail(guestID);
 	}
 
 }

@@ -63,7 +63,7 @@ public class User_tester {
 		//test method add(UserVO newUserVO)
 		UserController controller = UserController.getInstance();
 		UserVO guestVO= new GuestVO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789","100");
+				"000000", "13523456789", 100);
 		
 		assertEquals(controller.add(guestVO), ResultMessage.SUCCESS);
 		
@@ -85,7 +85,7 @@ public class User_tester {
 		//test method modify(UserVO userVO)
 		UserController controller = UserController.getInstance();
 		UserVO guestVO= new GuestVO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789","100");
+				"000000", "13523456789", 100);
 		
 		assertEquals(controller.modify(guestVO), ResultMessage.SUCCESS);
 		

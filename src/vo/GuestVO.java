@@ -16,10 +16,10 @@ public class GuestVO extends UserVO{
 	//	联系方式
 	public String phone;	
 	//	信用值
-	public String credit;
+	public int credit;
 	
 	public GuestVO(String guestID, String birthday, String enterprise, String name, String nickName,
-			String password, String phone, String credit) {
+			String password, String phone, int credit) {
 		super(guestID,password);
 		this.guestID = guestID;
 		this.birthday = birthday;

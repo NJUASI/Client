@@ -5,6 +5,7 @@ import java.util.List;
 import businessLogicService.userBLService.UserBLService;
 import utilities.ResultMessage;
 import utilities.UserType;
+import vo.CreditVO;
 import vo.HotelVO;
 import vo.UserVO;
 
@@ -22,6 +23,12 @@ public class UserBLService_Stub implements UserBLService {
 		return null;
 	}
 
+	@Override
+	public List<CreditVO> getAllCreditDetail(String guestID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	@Override
 	public ResultMessage add(UserVO newUserVO) {
 		// TODO Auto-generated method stub
@@ -51,5 +58,4 @@ public class UserBLService_Stub implements UserBLService {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}
-
 }

@@ -33,7 +33,14 @@ public class MockHotel extends Hotel {
 	
 	public MockHotel() {
 		promotion = new MockPromotion();
-		orderInfo = new MockOrder();
+		orderInfo = new OrderInfo() {
+			
+			@Override
+			public List<String> getBookedHotels(String guestID) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		};
 	}
 	
 	@Override
