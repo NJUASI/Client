@@ -2,19 +2,17 @@ package businessLogic.orderBL;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
 
 import org.junit.Test;
 
 import utilities.ResultMessage;
 import utilities.RoomType;
-import vo.OrderGeneralVO;
 import vo.OrderVO;
 
 public class Order_tester {
 	@Test
 	public void test1() {
-		//test cooperation with class promotion
+		//test cooperation with class Promotion
 		//test interface getDiscout
 		OrderController controller = OrderController.getInstance();
 		OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address",250, 200,

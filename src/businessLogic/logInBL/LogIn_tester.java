@@ -11,7 +11,7 @@ public class LogIn_tester {
 
 	@Test
 	public void test1() {
-		//test cooperation with class user
+		//test cooperation with class User
 		//test interface guestLogIn(String guest, String password)
 		LogInController controller = LogInController.getInstance();
 			
@@ -21,7 +21,7 @@ public class LogIn_tester {
 	
 	@Test
 	public void test2() {
-		//test cooperation with class user
+		//test cooperation with class User
 		//test interface hotelWorkerLogIn(String hotelWorker, String password)
 		LogInController controller = LogInController.getInstance();
 			
@@ -31,7 +31,7 @@ public class LogIn_tester {
 	
 	@Test
 	public void test3() {
-		//test cooperation with class user
+		//test cooperation with class User
 		//test interface webMarketerLogIn(String webMarketer, String password)
 		LogInController controller = LogInController.getInstance();
 			
@@ -41,7 +41,7 @@ public class LogIn_tester {
 	
 	@Test
 	public void test4() {
-		//test cooperation with class user
+		//test cooperation with class User
 		//test interface webManagerLogIn(String webManager, String password)
 		LogInController controller = LogInController.getInstance();
 			
@@ -51,7 +51,7 @@ public class LogIn_tester {
 	
 	@Test
 	public void test5() {
-		//test cooperation with class user
+		//test cooperation with class User
 		//test interface guestSignUp(GuestVO guestVO)
 		LogInController controller = LogInController.getInstance();
 		

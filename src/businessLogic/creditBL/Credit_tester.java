@@ -16,7 +16,7 @@ public class Credit_tester {
 
 	@Test
 	public void test1() {
-		//test cooperation with class user & market
+		//test cooperation with class User & Market
 		//test interface getBasicInfo(String guestID)
 		CreditController controller = CreditController.getInstance();
 		
@@ -37,7 +37,7 @@ public class Credit_tester {
 	
 	@Test
 	public void test2() {
-		//test cooperation with class user
+		//test cooperation with class User
 		//test interface charge(String guestID, int chargeNum)
 		CreditController controller = CreditController.getInstance();
 	    
@@ -46,7 +46,7 @@ public class Credit_tester {
 	
 	@Test
 	public void test3() {
-		//test cooperation with class user
+		//test cooperation with class User
 		//test interface getAllCreditDetail(String guestID)
 		CreditController controller = CreditController.getInstance();
 		List<CreditVO> list = controller.getAllCreditDetail("1234567890");
@@ -79,7 +79,7 @@ public class Credit_tester {
 	
 	@Test
 	public void test4() {
-		//test cooperation with class market
+		//test cooperation with class Market
 		//test interface getMemberFormulation()
 		CreditController controller = CreditController.getInstance();
 	    

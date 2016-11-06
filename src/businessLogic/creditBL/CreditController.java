@@ -7,7 +7,6 @@ import utilities.ResultMessage;
 import vo.BasicInfoVO;
 import vo.CreditVO;
 import vo.MarketVO;
-import vo.MemberVO;
 
 public class CreditController implements CreditBLService{
 

@@ -5,8 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import businessLogic.userBL.stub.UserBLService_Stub;
+import presentation.webManagerUI.driver.UserBLService_Driver;
 import utilities.ResultMessage;
 import utilities.UserType;
+import vo.GuestVO;
 import vo.UserVO;
 
 public class UserBLService_DriverTest {
@@ -16,7 +18,9 @@ public class UserBLService_DriverTest {
 		// test interface getSingle
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
-		assertEquals(driver.userBLService.getSingle("1234567890", UserType.GUEST), ResultMessage.SUCCESS);
+		UserVO guestVO = new GuestVO("1234567890", "1996/4/1", "school", "zhangsan", "xiaosan",
+				"000000", "13523456789", 100); 
+		assertEquals(driver.userBLService.add(guestVO), ResultMessage.SUCCESS);
 	}
 
 	@Test
@@ -25,5 +29,13 @@ public class UserBLService_DriverTest {
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
 		assertEquals(driver.userBLService.modify(new UserVO("1234567890", "000000")), ResultMessage.SUCCESS);
+	}
+	
+	@Test
+	public void test3() {
+		//test interface getLoginInfo
+		UserBLService_Stub stub = new UserBLService_Stub();
+		UserBLService_Driver driver = new UserBLService_Driver(stub);
+		assertEquals(driver.userBLService.getLogInInfo("1234567890", UserType.GUEST), "000000");
 	}
 }

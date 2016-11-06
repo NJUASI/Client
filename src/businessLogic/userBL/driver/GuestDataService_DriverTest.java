@@ -20,7 +20,7 @@ public class GuestDataService_DriverTest {
 		assertEquals(guestPO.getGuestID(), "1234567890");
 		assertEquals(guestPO.getBirthday(), "2016/2/2");
 		assertEquals(guestPO.getEnterprise(), "school");
-		assertEquals(guestPO.getName(), "zhansgan");
+		assertEquals(guestPO.getName(), "zhangsan");
 		assertEquals(guestPO.getNickName(), "xiaosan");
 		assertEquals(guestPO.getPassword(), "000000");
 		assertEquals(guestPO.getPhone(), "13523456789");

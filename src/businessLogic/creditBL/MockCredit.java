@@ -12,7 +12,6 @@ import vo.BasicInfoVO;
 import vo.CreditVO;
 import vo.GuestVO;
 import vo.MarketVO;
-import vo.MemberVO;
 
 public class MockCredit extends Credit{
 	

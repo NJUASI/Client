@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import businessLogic.promotionBL.MockPromotion;
 import businessLogic.promotionBL.stub.PromotionBLService_Stub;
 import utilities.ResultMessage;
 import vo.PromotionVO;

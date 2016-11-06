@@ -5,17 +5,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import utilities.ResultMessage;
-import utilities.UserType;
-import vo.GuestVO;
 import vo.HotelVO;
-import vo.UserVO;
 
 public class User_tester {
 
 	
 	@Test
 	public void test1() {
-		//test cooperation with class hotel
+		//test cooperation with class Hotel
 		//test interface addHotel(HotelVO newHotelVO, String hotelID)
 		UserController controller = UserController.getInstance();
 		

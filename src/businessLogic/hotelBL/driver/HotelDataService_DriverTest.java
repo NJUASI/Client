@@ -24,7 +24,7 @@ public class HotelDataService_DriverTest {
 		assertEquals(hotelPO.getHotelID(), "12345678");
 		assertEquals(hotelPO.getHotelName(), "thisHotel");
 		assertEquals(hotelPO.getHotelAddress(), "address");
-		assertEquals(hotelPO.getCity(), "Nanjing");
+		assertEquals(hotelPO.getCity(), "NanJing");
 		assertEquals(hotelPO.getLevel(), "4");
 		assertEquals(hotelPO.getScore(), 5, 0);
 		assertEquals(hotelPO.getComment(), 5);
