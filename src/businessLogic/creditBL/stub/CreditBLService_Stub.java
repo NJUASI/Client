@@ -7,6 +7,8 @@ import utilities.ResultMessage;
 import vo.BasicInfoVO;
 import vo.CreditVO;
 import vo.GuestVO;
+import vo.MarketVO;
+import vo.MemberVO;
 
 public class CreditBLService_Stub implements CreditBLService {
 //	String guestID;
@@ -36,6 +38,18 @@ public class CreditBLService_Stub implements CreditBLService {
 
 	@Override
 	public List<CreditVO> getAllCreditDetail(String guestID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResultMessage charge(String guestID, int chargeNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MarketVO> getMemberFormulation() {
 		// TODO Auto-generated method stub
 		return null;
 	}

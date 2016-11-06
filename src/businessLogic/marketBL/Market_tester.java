@@ -20,8 +20,8 @@ public class Market_tester {
 		MarketVO marketVO =list.get(0);
 			
 		assertEquals(marketVO.marketName , "Lv1");
-		assertEquals(marketVO.marketCredit , 500);
-		assertEquals(marketVO.marketBenefit , "0.9");
+		assertEquals(marketVO.marketCredit , 50);
+		assertEquals(marketVO.marketBenefit , 0.9, 0);
 	}
 	
 	@Test
@@ -29,7 +29,7 @@ public class Market_tester {
 		//test method setMemberFormulation(List<MarketVO> marketVOList)
 		MarketController controller = MarketController.getInstance();
 		List<MarketVO> list = new LinkedList<MarketVO>();
-		list.add(new MarketVO("Lv1",500 , "0.9"));
+		list.add(new MarketVO("Lv1",500 , 0.9));
 			
 		assertEquals(controller.setMemberFormulation(list) , ResultMessage.SUCCESS);
 	}

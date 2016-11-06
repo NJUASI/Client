@@ -7,6 +7,8 @@ import businessLogic.userBL.User;
 import utilities.ResultMessage;
 import vo.BasicInfoVO;
 import vo.CreditVO;
+import vo.MarketVO;
+import vo.MemberVO;
 
 public class Credit {
 
@@ -18,7 +20,7 @@ public class Credit {
 		market = new Market();
 	}
 	
-	public ResultMessage charge(int chargeNum) {
+	public ResultMessage charge(String guestID, int chargeNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -29,6 +31,11 @@ public class Credit {
 	}
 
 	public List<CreditVO> getAllCreditDetail(String guestID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public List<MarketVO> getMemberFormulation() {
 		// TODO Auto-generated method stub
 		return null;
 	}

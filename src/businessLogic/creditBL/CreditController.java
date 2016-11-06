@@ -6,6 +6,8 @@ import businessLogicService.creditBLService.CreditBLService;
 import utilities.ResultMessage;
 import vo.BasicInfoVO;
 import vo.CreditVO;
+import vo.MarketVO;
+import vo.MemberVO;
 
 public class CreditController implements CreditBLService{
 
@@ -24,18 +26,23 @@ public class CreditController implements CreditBLService{
 	}
 	
 	@Override
-	public ResultMessage charge(int chargeNum) {
-		return credit.charge(chargeNum);
+	public ResultMessage charge(String guestID, int chargeNum) {
+		return credit.charge(guestID, chargeNum);
 	}
 
 	@Override
-	public BasicInfoVO getBasicInfo(String ID) {
-		return credit.getBasicInfo(ID);
+	public BasicInfoVO getBasicInfo(String guestID) {
+		return credit.getBasicInfo(guestID);
 	}
 	
 	@Override
 	public List<CreditVO> getAllCreditDetail(String guestID) {
 		return credit.getAllCreditDetail(guestID);
+	}
+	
+	@Override
+	public List<MarketVO> getMemberFormulation() {
+		return credit.getMemberFormulation();
 	}
 
 }

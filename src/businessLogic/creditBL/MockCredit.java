@@ -12,6 +12,7 @@ import vo.BasicInfoVO;
 import vo.CreditVO;
 import vo.GuestVO;
 import vo.MarketVO;
+import vo.MemberVO;
 
 public class MockCredit extends Credit{
 	
@@ -24,8 +25,8 @@ public class MockCredit extends Credit{
 	}
 	
 	@Override
-	public ResultMessage charge(int chargeNum) {
-		return ResultMessage.SUCCESS;
+	public ResultMessage charge(String guestID, int chargeNum) {
+		return user.modifyCredit("1234567890", 100);
 	}
 
 	@Override
@@ -44,6 +45,11 @@ public class MockCredit extends Credit{
 	@Override
 	public List<CreditVO> getAllCreditDetail(String guestID) {
 		return user.getAllCreditDetail(guestID);
+	}
+	
+	@Override
+	public List<MarketVO> getMemberFormulation() {
+		return market.getMemberFormulation();
 	}
 
 }

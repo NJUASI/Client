@@ -48,7 +48,7 @@ public class UserBLService_Stub implements UserBLService {
 	}
 
 	@Override
-	public ResultMessage modifyCredit(float creditNum) {
+	public ResultMessage modifyCredit(String guestID, float creditNum) {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}

@@ -56,8 +56,8 @@ public class UserController implements UserBLService{
 	}
 
 	@Override
-	public ResultMessage modifyCredit(float creditNum) {
-		return user.modifyCredit(creditNum);
+	public ResultMessage modifyCredit(String guestID, float creditNum) {
+		return user.modifyCredit(guestID, creditNum);
 	}
 
 	@Override

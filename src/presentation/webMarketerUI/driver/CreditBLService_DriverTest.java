@@ -14,7 +14,7 @@ public class CreditBLService_DriverTest {
 	public void test1() {
 		CreditBLService_Stub stub = new CreditBLService_Stub();
 		CreditBLService_Driver driver = new CreditBLService_Driver(stub);
-		assertEquals(driver.creditBLService.charge(0), ResultMessage.SUCCESS);
+		assertEquals(driver.creditBLService.charge("",0), ResultMessage.SUCCESS);
 	
 	}
 	

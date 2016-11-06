@@ -7,12 +7,12 @@ public class MarketVO {
 	//	等级信用度
 	public int marketCredit;
 	//	等级优惠
-	public String marketBenefit;
+	public double marketBenefit;
 
 	
-	public MarketVO(String marketName, int marketCredit, String marketBenefit) {
+	public MarketVO(String marketName, int marketCredit, double d) {
 		this.marketName = marketName;
 		this.marketCredit = marketCredit;
-		this.marketBenefit = marketBenefit;
+		this.marketBenefit = d;
 	}
 }

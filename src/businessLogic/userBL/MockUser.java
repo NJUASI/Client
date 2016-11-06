@@ -58,7 +58,7 @@ public class MockUser extends User{
 		return ResultMessage.SUCCESS;
 	}
 
-	public ResultMessage modifyCredit(float creditNum) {
+	public ResultMessage modifyCredit(String guestID, float creditNum) {
 		return ResultMessage.SUCCESS;
 	}
 

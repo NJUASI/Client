@@ -47,7 +47,7 @@ public class User {
 		return null;
 	}
 
-	public ResultMessage modifyCredit(float creditNum) {
+	public ResultMessage modifyCredit(String guestID, float creditNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}

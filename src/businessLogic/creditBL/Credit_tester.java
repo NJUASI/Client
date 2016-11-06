@@ -11,12 +11,13 @@ import utilities.ResultMessage;
 import vo.BasicInfoVO;
 import vo.CreditVO;
 import vo.GuestVO;
+import vo.MarketVO;
 
 public class Credit_tester {
 
 	@Test
 	public void test1() {
-		//test cooperation with class user
+		//test cooperation with class user & market
 		CreditController controller = CreditController.getInstance();
 		
 		BasicInfoVO userBasicInfoVO = controller.getBasicInfo("1234567890");
@@ -36,7 +37,15 @@ public class Credit_tester {
 	
 	@Test
 	public void test2() {
-		//test cooperation with class market
+		//test cooperation with class user
+		CreditController controller = CreditController.getInstance();
+	    
+	    assertEquals(controller.charge("1234567890", 100), ResultMessage.SUCCESS);
+	}
+	
+	@Test
+	public void test3() {
+		//test cooperation with class user
 		CreditController controller = CreditController.getInstance();
 		List<CreditVO> list = controller.getAllCreditDetail("1234567890");
 		CreditVO creditVO1 = list.get(0);
@@ -64,6 +73,19 @@ public class Credit_tester {
 	    assertEquals(creditVO3.credit , 300);
 	    assertEquals(creditVO3.reason , "executed");
 	    
+	}
+	
+	@Test
+	public void test4() {
+		//test cooperation with class market
+		CreditController controller = CreditController.getInstance();
+	    
+	    List<MarketVO> memberFormulationList = controller.getMemberFormulation();
+	    MarketVO marketVO = memberFormulationList.get(0);
+	    
+	    assertEquals(marketVO.marketName , "Lv1");
+	    assertEquals(marketVO.marketCredit, 50);
+	    assertEquals(marketVO.marketBenefit, 0.9, 0);    
 	}
 	
 //	
