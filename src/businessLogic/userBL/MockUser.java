@@ -21,6 +21,30 @@ public class MockUser extends User{
 		hotel = new MockHotel();
 	}
 	
+	public ResultMessage add(UserVO newUserVO) {
+		return ResultMessage.SUCCESS;
+	}
+	
+
+	public ResultMessage modify(UserVO userVO) {
+		return ResultMessage.SUCCESS;
+	}
+	
+	public UserVO getSingle(String userID, UserType userType) {
+		UserVO guestVO= new GuestVO("1234567890", "1996/4/1", "school", "zhangsan", "xiaosan",
+				"000000", "13523456789", 100 );
+		return guestVO;
+	}
+	
+	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
+		if (newHotelVO.hotelID.equals(hotelID)) return hotel.add(newHotelVO);
+		else return ResultMessage.FAIL;
+	}
+	
+	public ResultMessage modifyCredit(String guestID, float creditNum) {
+		return ResultMessage.SUCCESS;
+	}
+	
 	public List<UserVO> getAll(UserType userType) {
 		List<UserVO> list = new ArrayList<UserVO>();
 		UserVO guestVO1= new GuestVO("1234567890", "1996/4/1", "school", "zhangsan", "xiaosan",
@@ -31,12 +55,6 @@ public class MockUser extends User{
 		list.add(guestVO2);
 		return list;
 	}
-
-	public UserVO getSingle(String userID, UserType userType) {
-		UserVO guestVO= new GuestVO("1234567890", "1996/4/1", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789", 100 );
-		return guestVO;
-	}
 	
 	public List<CreditVO> getAllCreditDetail(String userID) {
 		List<CreditVO> creditDetailList = new LinkedList<CreditVO>();
@@ -44,23 +62,6 @@ public class MockUser extends User{
 		creditDetailList.add(new CreditVO("1234567890", "2016/10/3", "124520161003", 100, 100, "create"));
 		creditDetailList.add(new CreditVO("1234567890", "2016/10/4", "244520161004", 100, 300, "executed"));
 		return creditDetailList;
-	}
-
-	public ResultMessage add(UserVO newUserVO) {
-		return ResultMessage.SUCCESS;
-	}
-
-	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		if (newHotelVO.hotelID.equals(hotelID)) return hotel.add(newHotelVO);
-		else return ResultMessage.FAIL;
-	}
-
-	public ResultMessage modify(UserVO userVO) {
-		return ResultMessage.SUCCESS;
-	}
-
-	public ResultMessage modifyCredit(String guestID, float creditNum) {
-		return ResultMessage.SUCCESS;
 	}
 
 	public String getLogInInfo(String userID, UserType userType) {

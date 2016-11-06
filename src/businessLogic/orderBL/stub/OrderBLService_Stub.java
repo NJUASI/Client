@@ -1,5 +1,6 @@
 package businessLogic.orderBL.stub;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import businessLogic.creditBL.Credit;
@@ -145,9 +146,20 @@ public class OrderBLService_Stub implements OrderBLService {
 	}
 
 	@Override
-	public List<String> getBookedHotels(String guestID) {
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral(LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
+	public List<String> getBookedHotels(String guestID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

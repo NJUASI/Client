@@ -1,5 +1,6 @@
 package businessLogic.orderBL;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import businessLogicService.orderBLService.OrderBLService;
@@ -58,6 +59,18 @@ public class OrderController implements OrderBLService{
 		return order.getAllHotelOrderGeneral(hotelID);
 	}
 
+	@Override
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral(LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	@Override
 	public List<String> getBookedHotels(String guestID) {
 		return order.getBookedHotels(guestID);

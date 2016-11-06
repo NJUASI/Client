@@ -24,45 +24,54 @@ public class UserController implements UserBLService{
 		if(userController == null) userController = new UserController();
 		return userController;
 	}
-	
-	@Override
-	public List<UserVO> getAll(UserType userType) {
-		return user.getAll(userType);
-	}
 
-	@Override
-	public UserVO getSingle(String userID, UserType userType) {
-		return user.getSingle(userID, userType);
-	}
-
-	@Override
-	public List<CreditVO> getAllCreditDetail(String guestID) {
-		return user.getAllCreditDetail(guestID);
-	}
-	
 	@Override
 	public ResultMessage add(UserVO newUserVO) {
-		return user.add(newUserVO);
-	}
-
-	@Override
-	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		return user.addHotel(newHotelVO, hotelID);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public ResultMessage modify(UserVO userVO) {
-		return user.modify(userVO);
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserVO getSingle(String userID, UserType userType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public ResultMessage modifyCredit(String guestID, float creditNum) {
-		return user.modifyCredit(guestID, creditNum);
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UserVO> getAll(UserType userType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CreditVO> getAllCreditDetail(String guestID) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public String getLogInInfo(String userID, UserType userType) {
-		return user.getLogInInfo(userID, userType);
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
 
 }

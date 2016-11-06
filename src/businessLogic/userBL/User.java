@@ -17,27 +17,7 @@ public class User {
 		hotel = new Hotel();
 	}
 	
-	public List<UserVO> getAll(UserType userType) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public UserVO getSingle(String userID, UserType userType) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public List<CreditVO> getAllCreditDetail(String guestID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public ResultMessage add(UserVO newUserVO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -47,7 +27,27 @@ public class User {
 		return null;
 	}
 
+	public UserVO getSingle(String userID, UserType userType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public ResultMessage modifyCredit(String guestID, float creditNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<UserVO> getAll(UserType userType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<CreditVO> getAllCreditDetail(String guestID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

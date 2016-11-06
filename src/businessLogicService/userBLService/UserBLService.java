@@ -10,13 +10,20 @@ import vo.UserVO;
 
 public interface UserBLService {
 
-	public List<UserVO> getAll(UserType userType);
-	public UserVO getSingle(String userID,UserType userType);
-	public List<CreditVO> getAllCreditDetail(String guestID);
 	public ResultMessage add(UserVO newUserVO);
-	public ResultMessage addHotel(HotelVO  newHotelVO, String hotelID);
+
 	public ResultMessage modify(UserVO userVO);
+	
+	public UserVO getSingle(String userID, UserType userType);
+	
+	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID);
+	
 	public ResultMessage modifyCredit (String guestID, float creditNum);
+	
+	public List<UserVO> getAll(UserType userType);
+	
+	public List<CreditVO> getAllCreditDetail(String guestID);
+	
 	public String getLogInInfo(String userID, UserType userType);
 	
 }
