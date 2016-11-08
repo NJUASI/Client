@@ -8,9 +8,9 @@ public class GeneralHotelPO {
 	//	酒店星级
 	private String level;
 	//	评分
-	private int score;
+	private double score;
 
-	public GeneralHotelPO(String hotelName, String city, String level, int score) {
+	public GeneralHotelPO(String hotelName, String city, String level, double score) {
 		super();
 		this.hotelName = hotelName;
 		this.city = city;
@@ -36,10 +36,10 @@ public class GeneralHotelPO {
 	public void setLevel(String level) {
 		this.level = level;
 	}
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 

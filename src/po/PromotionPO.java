@@ -3,7 +3,7 @@ package po;
 public class PromotionPO {
 	//	折扣率
 	private double discount;
-	//	折扣酒店
+	//	折扣酒店编号
 	private String hotelID;
 	//	开始日期
 	private String startDate;

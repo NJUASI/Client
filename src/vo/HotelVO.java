@@ -16,14 +16,14 @@ public final class HotelVO {
 	//	评分
 	public double score;
 	//	评价
-	public int comment;
+	public String comment;
 	//	简介
 	public String introduction;	
 	//	设施服务
 	public String equipment;
 	
 	public HotelVO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
-			double score, int comment, String introduction, String equipment) {
+			double score, String comment, String introduction, String equipment) {
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.city = city;

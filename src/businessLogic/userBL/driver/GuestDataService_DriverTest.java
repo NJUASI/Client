@@ -34,6 +34,6 @@ public class GuestDataService_DriverTest {
 		GuestDataService_Driver driver = new GuestDataService_Driver(stub);
 		
 		assertEquals(driver.guestDataService.add(new GuestPO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789","100")), ResultMessage.SUCCESS);
+				"000000", "13523456789",100)), ResultMessage.SUCCESS);
 	}
 }

@@ -4,7 +4,7 @@ public class GuestPO {
 	//	用户编号	
 	private String guestID;
 	//	会员生日
-	private String birthday;
+	private String birthday;    //localdate??
 	//	会员企业名称
 	private String enterprise;
 	//	姓名
@@ -16,10 +16,10 @@ public class GuestPO {
 	//	联系方式
 	private String phone;	
 	//	信用值
-	private String credit;
+	private int credit;
 	
 	public GuestPO(String guestID, String birthday, String enterprise, String name, String nickName,
-			String password, String phone, String credit) {
+			String password, String phone, int credit) {
 		super();
 		this.guestID = guestID;
 		this.birthday = birthday;
@@ -82,10 +82,10 @@ public class GuestPO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getCredit() {
+	public int getCredit() {
 		return credit;
 	}
-	public void setCredit(String credit) {
+	public void setCredit(int credit) {
 		this.credit = credit;
 	}
 }

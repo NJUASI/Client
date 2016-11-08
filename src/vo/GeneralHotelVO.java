@@ -10,9 +10,9 @@ public class GeneralHotelVO {
 	//	酒店星级
 	public String level;
 	//	评分
-	public int score;
+	public double score;
 
-	public GeneralHotelVO(String hotelName, String city, String cycle, String level, int score) {
+	public GeneralHotelVO(String hotelName, String city, String cycle, String level, double score) {
 		this.hotelName = hotelName;
 		this.city = city;
 		this.cycle = cycle;

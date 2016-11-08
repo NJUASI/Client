@@ -16,13 +16,13 @@ public final class HotelPO {
 	//	评分
 	private double score;
 	//	评价
-	private int comment;
+	private String comment;
 	//	简介
 	private String introduction;	
 	//	设施服务
 	private String equipment;
 	public HotelPO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
-			double score, int comment, String introduction, String equipment) {
+			double score, String comment, String introduction, String equipment) {
 		super();
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
@@ -77,10 +77,10 @@ public final class HotelPO {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	public int getComment() {
+	public String getComment() {
 		return comment;
 	}
-	public void setComment(int comment) {
+	public void setComment(String comment) {
 		this.comment = comment;
 	}
 	public String getIntroduction() {

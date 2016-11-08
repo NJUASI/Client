@@ -41,7 +41,7 @@ public class MockHotel extends Hotel {
 	@Override
 	public HotelVO getHotelInfo(String hotelWorkerID) {
 		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5, 5, "good", "allEquipment");
+				5, "5", "good", "allEquipment");
 	}
 
 	@Override
@@ -117,7 +117,7 @@ public class MockHotel extends Hotel {
 	@Override
 	public HotelVO getHotelDetail(String hotelID) {
 		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5, 5, "good", "allEquipment");
+				5, "5", "good", "allEquipment");
 	}
 
 	@Override

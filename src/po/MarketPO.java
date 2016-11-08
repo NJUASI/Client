@@ -7,10 +7,10 @@ public class MarketPO {
 	//	等级信用度
 	private int marketCredit;
 	//	等级优惠
-	private String marketBenefit;
+	private double marketBenefit;
 
 	
-	public MarketPO(String marketName, int marketCredit, String marketBenefit) {
+	public MarketPO(String marketName, int marketCredit, Double marketBenefit) {
 		super();
 		this.marketName = marketName;
 		this.marketCredit = marketCredit;
@@ -29,10 +29,10 @@ public class MarketPO {
 	public void setMarketCredit(int marketCredit) {
 		this.marketCredit = marketCredit;
 	}
-	public String getMarketBenefit() {
+	public double getMarketBenefit() {
 		return marketBenefit;
 	}
-	public void setMarketBenefit(String marketBenefit) {
+	public void setMarketBenefit(double marketBenefit) {
 		this.marketBenefit = marketBenefit;
 	}
 	

@@ -68,7 +68,7 @@ public class HotelBLService_Stub implements HotelBLService{
 	@Override
 	public HotelVO getHotelDetail(String hotelID) {
 		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5, 5, "good", "allEquipment");
+				5, "5", "good", "allEquipment");
 	}
 
 	@Override

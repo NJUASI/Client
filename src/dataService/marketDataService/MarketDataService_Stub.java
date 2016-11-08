@@ -9,7 +9,7 @@ public class MarketDataService_Stub implements MarketDataService {
 	@Override
 	public MarketPO getMemberFormulation() {
 		// TODO Auto-generated method stub
-		return new MarketPO("aa",0,"0.9");
+		return new MarketPO("aa",0,0.9);
 	}
 
 	@Override

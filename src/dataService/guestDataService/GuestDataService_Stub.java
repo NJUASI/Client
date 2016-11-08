@@ -18,7 +18,7 @@ public class GuestDataService_Stub implements GuestDataService{
 	@Override
 	public GuestPO getSingle(String guestID) {
 		return new GuestPO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789","100");
+				"000000", "13523456789",100);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class GuestDataService_Stub implements GuestDataService{
 		// TODO Auto-generated method stub
 		List<GuestPO> list = new ArrayList<GuestPO>();
 		GuestPO a= new GuestPO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789","100");
+				"000000", "13523456789",100);
 		list.add(a);
 		return list;
 	}
