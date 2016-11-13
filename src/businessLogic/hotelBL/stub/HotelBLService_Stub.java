@@ -50,6 +50,7 @@ public class HotelBLService_Stub implements HotelBLService{
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
 		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","3",5));
 		return list;
 	}
 

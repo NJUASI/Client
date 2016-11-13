@@ -1,16 +1,15 @@
-package vo;
+package po;
 
-public class EvaluationVO {
-	
+public class EvaluationPO {
+
 	//	评分
 	public double score;
 	
 	//	评价
 	public String comment;
 	
-	public EvaluationVO(double score, String comment) {
+	public EvaluationPO(double score, String comment) {
 		this.score = score;
 		this.comment = comment;
 	}
-	
 }

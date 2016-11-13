@@ -1,6 +1,6 @@
-package vo;
+package po;
 
-public class AddressVO {
+public class AddressPO {
 
 	//	酒店所属城市
 	public String city;
@@ -8,7 +8,7 @@ public class AddressVO {
 	//	酒店商圈
 	public String cycle;
 	
-	public AddressVO(String city, String cycle) {
+	public AddressPO(String city, String cycle) {
 		this.city = city;
 		this.cycle = cycle;
 	}

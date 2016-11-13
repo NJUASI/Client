@@ -1,7 +1,12 @@
 package dataService.hotelDataService;
 
+import java.util.List;
+
+import po.AddressPO;
 import po.CheckInPO;
 import po.CheckOutPO;
+import po.EvaluationPO;
+import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RoomInfoPO;
 import utilities.RoomType;
@@ -9,10 +14,22 @@ import utilities.RoomType;
 public class HotelDataService_Stub implements HotelDataService  {
 
 	@Override
+	public List<HotelGeneralPO> getHotelList(AddressPO addressPO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public HotelPO getHotelDetail(String hotelID) {
 		// TODO Auto-generated method stub
 		return new HotelPO("12345678", "thisHotel", "NanJing", "center", "address", "4",
 				5,"5", "good", "allEquipment");
+	}
+
+	@Override
+	public boolean addEvaluation(EvaluationPO evaluationPO) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
@@ -68,5 +85,5 @@ public class HotelDataService_Stub implements HotelDataService  {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
 }

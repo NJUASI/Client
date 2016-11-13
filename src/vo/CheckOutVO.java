@@ -6,6 +6,7 @@ public class CheckOutVO {
 
 	//	订单编号
 	public String orderID;
+	
 	//	退房时间
 	public LocalDateTime checkOutTime;
 	
