@@ -14,7 +14,7 @@ public class LogInBLService_DriverTest {
 		//test interface guestLogIn
 		LogInBLService_Stub stub = new LogInBLService_Stub();
 		LogInBLService_Driver driver = new LogInBLService_Driver(stub);
-		assertEquals(driver.logInBLService.webMarketerLogIn("1234567890","000000"), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.logInBLService.webMarketerLogIn("1234567890","000000"));
 	}
 
 }

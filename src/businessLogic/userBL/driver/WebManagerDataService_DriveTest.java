@@ -16,7 +16,7 @@ public class WebManagerDataService_DriveTest {
 		WebManagerDataService_Stub stub = new WebManagerDataService_Stub();
 		WebManagerDataService_Driver driver = new WebManagerDataService_Driver(stub);
 			
-			assertEquals(driver.webManagerDataService.add(new WebManagerPO("0001", "123456")),ResultMessage.SUCCESS);
+			assertEquals(ResultMessage.SUCCESS, driver.webManagerDataService.add(new WebManagerPO("0001", "123456")));
 	}
 	
 	@Test
@@ -26,8 +26,7 @@ public class WebManagerDataService_DriveTest {
 		WebManagerDataService_Driver driver = new WebManagerDataService_Driver(stub);
 		WebManagerPO webManagerPO = driver.webManagerDataService.getSingle("0001");
 		
-		assertEquals(webManagerPO.getUserID(), "0001");
-		assertEquals(webManagerPO.getPassword(), "123456");
+		assertEquals("123456", webManagerPO.getPassword());
 	}
 
 }

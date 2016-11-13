@@ -21,15 +21,15 @@ public class HotelDataService_DriverTest {
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
 		HotelPO hotelPO = driver.hotelDataService.getHotelDetail("12345678");
 				
-		assertEquals(hotelPO.getHotelID(), "12345678");
-		assertEquals(hotelPO.getHotelName(), "thisHotel");
-		assertEquals(hotelPO.getHotelAddress(), "address");
-		assertEquals(hotelPO.getCity(), "NanJing");
-		assertEquals(hotelPO.getLevel(), "4");
-		assertEquals(hotelPO.getScore(), 5, 0);
-		assertEquals(hotelPO.getComment(), "5");
-		assertEquals(hotelPO.getIntroduction(), "good");
-		assertEquals(hotelPO.getEquipment(), "allEquipment");
+		assertEquals("12345678", hotelPO.getHotelID());
+		assertEquals("thisHotel", hotelPO.getHotelName());
+		assertEquals("address", hotelPO.getHotelAddress());
+		assertEquals("NanJing", hotelPO.getCity());
+		assertEquals("4", hotelPO.getLevel());
+		assertEquals(5, hotelPO.getScore(), 0);
+		assertEquals("5", hotelPO.getComment());
+		assertEquals("good", hotelPO.getIntroduction());
+		assertEquals("allEquipment", hotelPO.getEquipment());
 	}
 	
 	@Test
@@ -39,9 +39,9 @@ public class HotelDataService_DriverTest {
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
 		RoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("12345678");
 		
-		assertEquals(remainRoomInfoPO.getRoomType(), RoomType.AMBASSADOR);
-		assertEquals(remainRoomInfoPO.getRoomNumCount(),2);
-		assertEquals(remainRoomInfoPO.getPrice(), 200, 0);
+		assertEquals(RoomType.AMBASSADOR, remainRoomInfoPO.getRoomType());
+		assertEquals(2, remainRoomInfoPO.getRoomNumCount());
+		assertEquals(200, remainRoomInfoPO.getPrice(), 0);
 	}
 	
 }

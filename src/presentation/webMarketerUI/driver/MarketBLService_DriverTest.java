@@ -19,9 +19,9 @@ public class MarketBLService_DriverTest {
 		MarketBLService_Driver driver = new MarketBLService_Driver(stub);
 		
 		List<MarketVO> list = new LinkedList<MarketVO>();
-		list.add(new MarketVO("Lv1",500 , 0.9));
+		list.add(new MarketVO("Lv1", 500, 0.9));
 		
-		assertEquals(driver.marketBLService.setMemberFormulation(list), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.marketBLService.setMemberFormulation(list));
 	}
 
 }

@@ -6,17 +6,20 @@ public class RoomInfoVO {
 	
 	// 酒店编号
 	public String hotelID;
+	
 	// 房间类型
 	public RoomType roomType;
-	// 房间数
-	public int roomNum;
-	// 价格
-	public int price;
 	
-	public RoomInfoVO(String hotelID, RoomType roomType, int roomNum, int price) {
+	// 房间数
+	public int roomNumCount;
+	
+	// 价格
+	public double price;
+	
+	public RoomInfoVO(String hotelID, RoomType roomType, int roomNumCount, int price) {
 		this.hotelID = hotelID;
 		this.roomType = roomType;
-		this.roomNum = roomNum;
+		this.roomNumCount = roomNumCount;
 		this.price = price;
 	}
 }

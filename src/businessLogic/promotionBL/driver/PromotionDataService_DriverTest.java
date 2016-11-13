@@ -19,9 +19,9 @@ public class PromotionDataService_DriverTest {
 		PromotionDataService_Driver driver = new PromotionDataService_Driver(stub);
 		HotelPromotionPO hotelPromotionPO =driver.promotionDataService.getHotelPromotions("12345678").get(0);
 		
-		assertEquals(hotelPromotionPO.getHotelID(), "12345678");
-		assertEquals(hotelPromotionPO.getStartDate(), LocalDate.of(2016, 2, 2));		
-		assertEquals(hotelPromotionPO.getEndDate(), LocalDate.of(2016, 3, 9));		
+		assertEquals("12345678", hotelPromotionPO.getHotelID());
+		assertEquals(LocalDate.of(2016, 2, 2), hotelPromotionPO.getStartDate());		
+		assertEquals(LocalDate.of(2016, 3, 9), hotelPromotionPO.getEndDate());		
 	}
 	
 	@Test
@@ -31,9 +31,9 @@ public class PromotionDataService_DriverTest {
 		PromotionDataService_Driver driver = new PromotionDataService_Driver(stub);
 		WebPromotionPO webPromotionPO =driver.promotionDataService.getWebPromotions("123456").get(0);
 		
-		assertEquals(webPromotionPO.getCycle(), "ALL_CYCLE");
-		assertEquals(webPromotionPO.getStartDate(), LocalDate.of(2016, 2, 2));		
-		assertEquals(webPromotionPO.getEndDate(), LocalDate.of(2016, 3, 9));		
+		assertEquals("ALL_CYCLE", webPromotionPO.getCycle());
+		assertEquals(LocalDate.of(2016, 2, 2), webPromotionPO.getStartDate());		
+		assertEquals(LocalDate.of(2016, 3, 9), webPromotionPO.getEndDate());		
 	}
 
 }

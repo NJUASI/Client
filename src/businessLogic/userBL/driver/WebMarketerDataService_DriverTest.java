@@ -16,7 +16,7 @@ public class WebMarketerDataService_DriverTest {
 		WebMarketerDataService_Stub stub = new WebMarketerDataService_Stub();
 		WebMarketerDataService_Driver driver = new WebMarketerDataService_Driver(stub);
 			
-			assertEquals(driver.webMarketerDataService.add(new WebMarketerPO("000001", "123456")),ResultMessage.SUCCESS);
+			assertEquals(ResultMessage.SUCCESS, driver.webMarketerDataService.add(new WebMarketerPO("000001", "123456")));
 	}
 	
 	@Test
@@ -26,8 +26,7 @@ public class WebMarketerDataService_DriverTest {
 		WebMarketerDataService_Driver driver = new WebMarketerDataService_Driver(stub);
 		WebMarketerPO webMarketerPO = driver.webMarketerDataService.getSingle("000001");
 		
-		assertEquals(webMarketerPO.getUserID(), "000001");
-		assertEquals(webMarketerPO.getPassword(), "123456");
+		assertEquals("123456", webMarketerPO.getPassword());
 	}
 
 

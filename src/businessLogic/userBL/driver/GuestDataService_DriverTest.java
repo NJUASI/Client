@@ -19,14 +19,13 @@ public class GuestDataService_DriverTest {
 		GuestDataService_Driver driver = new GuestDataService_Driver(stub);
 		GuestPO guestPO = driver.guestDataService.getSingle("1234567890");
 		
-		assertEquals(guestPO.getGuestID(), "1234567890");
-		assertEquals(guestPO.getBirthday(), LocalDate.of(1995, 1, 1));
-		assertEquals(guestPO.getEnterprise(), "school");
-		assertEquals(guestPO.getName(), "zhangsan");
-		assertEquals(guestPO.getNickName(), "xiaosan");
-		assertEquals(guestPO.getPassword(), "000000");
-		assertEquals(guestPO.getPhone(), "13523456789");
-		assertEquals(guestPO.getCredit(), 100);
+		assertEquals(LocalDate.of(1995, 1, 1), guestPO.getBirthday());
+		assertEquals("school", guestPO.getEnterprise());
+		assertEquals("zhangsan", guestPO.getName());
+		assertEquals("xiaosan", guestPO.getNickName());
+		assertEquals("000000", guestPO.getPassword());
+		assertEquals("13523456789", guestPO.getPhone());
+		assertEquals(100, guestPO.getCredit(), 0);
 	}
 
 	@Test
@@ -35,7 +34,7 @@ public class GuestDataService_DriverTest {
 		GuestDataService_Stub stub = new GuestDataService_Stub();
 		GuestDataService_Driver driver = new GuestDataService_Driver(stub);
 		
-		assertEquals(driver.guestDataService.add(new GuestPO("1234567890", LocalDate.of(1995, 1, 1), "school", "zhangsan", "xiaosan",
-				"000000", "13523456789",100)), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.guestDataService.add(new GuestPO("1234567890", 
+				LocalDate.of(1995, 1, 1), "school", "zhangsan", "xiaosan", "000000", "13523456789",100)));
 	}
 }

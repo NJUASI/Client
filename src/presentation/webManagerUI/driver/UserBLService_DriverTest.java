@@ -21,7 +21,7 @@ public class UserBLService_DriverTest {
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
 		UserVO guestVO = new GuestVO("1234567890", LocalDate.of(1996, 4, 1), "school", "zhangsan", "xiaosan",
 				"000000", "13523456789", 100);
-		assertEquals(driver.userBLService.add(guestVO), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.userBLService.add(guestVO));
 	}
 
 	@Test
@@ -29,7 +29,7 @@ public class UserBLService_DriverTest {
 		//test interface modify
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
-		assertEquals(driver.userBLService.modify(new UserVO("1234567890", "000000")), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.userBLService.modify(new UserVO("1234567890", "000000")));
 	}
 
 	@Test
@@ -37,7 +37,7 @@ public class UserBLService_DriverTest {
 		//test interface getLoginInfo
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
-		assertEquals(driver.userBLService.getLogInInfo("1234567890", UserType.GUEST), "000000");
+		assertEquals("000000", driver.userBLService.getLogInInfo("1234567890", UserType.GUEST));
 	}
 
 }

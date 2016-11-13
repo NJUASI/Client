@@ -34,7 +34,7 @@ public class OrderDataService_DriverTest {
 				createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, orderState, 
 				roomType, 2, "301", 2, "zhangsan","13554321234", "no");
 		
-		assertEquals(driver.orderDataService.createOrder(orderPO), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.orderDataService.createOrder(orderPO));
 	}
 
 	@Test
@@ -50,23 +50,23 @@ public class OrderDataService_DriverTest {
 		LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
 		LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
 		
-		assertEquals(orderPO.getOrderID(), "123456789012");
-		assertEquals(orderPO.getHotelName(), "thisHotel");
-		assertEquals(orderPO.getHotelAddress(), "address");
-		assertEquals(orderPO.getPreviousPrice(), 200, 0);
-		assertEquals(orderPO.getPrice(), 200, 0);
-		assertEquals(orderPO.getCreateTime(), createTime);
-		assertEquals(orderPO.getCheckInTime(), checkInTime);
-		assertEquals(orderPO.getCheckOutTime(), checkOutTime);
-		assertEquals(orderPO.getExpectExecuteTime(), expectExecuteTime);
-		assertEquals(orderPO.getExpectLeaveTime(), expectLeaveTime);
-		assertEquals(orderPO.getState(), OrderState.EXECUTED);
-		assertEquals(orderPO.getRoomType(), RoomType.AMBASSADOR);
-		assertEquals(orderPO.getRoomNumCount(), 2);
-		assertEquals(orderPO.getRoomNumber(), "301");
-		assertEquals(orderPO.getName(), "zhangsan");
-		assertEquals(orderPO.getPhone(), "13554321234");
-		assertEquals(orderPO.getMessage(), "no");
+		assertEquals("123456789012", orderPO.getOrderID());
+		assertEquals("thisHotel", orderPO.getHotelName());
+		assertEquals("address", orderPO.getHotelAddress());
+		assertEquals(200, orderPO.getPreviousPrice(), 0);
+		assertEquals(200, orderPO.getPrice(), 0);
+		assertEquals(createTime, orderPO.getCreateTime());
+		assertEquals(checkInTime, orderPO.getCheckInTime());
+		assertEquals(checkOutTime, orderPO.getCheckOutTime());
+		assertEquals(expectExecuteTime, orderPO.getExpectExecuteTime());
+		assertEquals(expectLeaveTime, orderPO.getExpectLeaveTime());
+		assertEquals(OrderState.EXECUTED, orderPO.getState());
+		assertEquals(RoomType.AMBASSADOR, orderPO.getRoomType());
+		assertEquals(2, orderPO.getRoomNumCount());
+		assertEquals("301  302", orderPO.getRoomNumber());
+		assertEquals("zhangsan", orderPO.getName());
+		assertEquals("13554321234", orderPO.getPhone());
+		assertEquals("no", orderPO.getMessage());
 		
 	}
 	
@@ -76,7 +76,7 @@ public class OrderDataService_DriverTest {
 		OrderDataService_Stub stub = new OrderDataService_Stub();
 		OrderDataService_Driver driver = new OrderDataService_Driver(stub);
 		
-		assertEquals(driver.orderDataService.executeOrder("123456789012"), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.orderDataService.executeOrder("123456789012"));
 		
 	}
 }

@@ -16,54 +16,41 @@ public class HotelBLService_DriverTest {
 	@Test
 	public void test1() {
 		//test interface getHotelList
-
-//		Hotel stub = new Hotel("12345678", "thisHotel", "NanJing","center", "address", "4",
-//				5, 5, "good","allEquipment");
 		HotelBLService_Stub stub = new HotelBLService_Stub();
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
 		HotelGeneralVO hotelGeneralVO = driver.hotelBLService.getHotelList(new AddressVO("thisHotel", "address", "NanJing", "center")).get(0);
 		
-		assertEquals(hotelGeneralVO.hotelName, "thisHotel");
-		assertEquals(hotelGeneralVO.city, "NanJing");
-		assertEquals(hotelGeneralVO.cycle, "center");
-		assertEquals(hotelGeneralVO.level, "4");
-		assertEquals(hotelGeneralVO.score, 5, 0);
+		assertEquals("thisHotel", hotelGeneralVO.hotelName);
+		assertEquals("NanJing", hotelGeneralVO.city);
+		assertEquals("center", hotelGeneralVO.cycle);
+		assertEquals("4", hotelGeneralVO.level);
+		assertEquals(5, hotelGeneralVO.score, 0);
 	}
 
 	@Test
 	public void test2() {
 		//test interface getHotelDetail
-		
-//		Hotel stub = new Hotel("12345678", "thisHotel", "NanJing","center", "address", "4",
-//				5, 5, "good","allEquipment");
-
 		HotelBLService_Stub stub = new HotelBLService_Stub();
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
-		HotelVO hotelVO = driver.hotelBLService.getHotelDetail("000000");
+		HotelVO hotelVO = driver.hotelBLService.getHotelDetail("12345678");
 				
-		assertEquals(hotelVO.hotelGeneralVO.hotelID, "12345678");
-		assertEquals(hotelVO.hotelGeneralVO.hotelName, "thisHotel");
-		assertEquals(hotelVO.hotelAddress, "address");
-		assertEquals(hotelVO.hotelGeneralVO.city, "NanJing");
-		assertEquals(hotelVO.hotelGeneralVO.cycle, "center");
-		assertEquals(hotelVO.hotelGeneralVO.level, "4");
-		assertEquals(hotelVO.hotelGeneralVO.score, 5, 0);
-		assertEquals(hotelVO.introduction, "good");
-		assertEquals(hotelVO.equipment, "allEquipment");
+		assertEquals("12345678", hotelVO.hotelGeneralVO.hotelID);
+		assertEquals("thisHotel", hotelVO.hotelGeneralVO.hotelName);
+		assertEquals("address", hotelVO.hotelAddress);
+		assertEquals("NanJing", hotelVO.hotelGeneralVO.city);
+		assertEquals("center", hotelVO.hotelGeneralVO.cycle);
+		assertEquals("4", hotelVO.hotelGeneralVO.level);
+		assertEquals(5, hotelVO.hotelGeneralVO.score, 0);
+		assertEquals("good", hotelVO.introduction);
+		assertEquals("allEquipment", hotelVO.equipment);
 	}
 	
 	@Test
 	public void test3() {
 		//test interface Evaluation
-		
-//		Hotel stub = new Hotel("12345678", "thisHotel", "NanJing","center", "address", "4",
-//				5, 5, "good","allEquipment");
-		
 		HotelBLService_Stub stub = new HotelBLService_Stub();
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
 		
-		assertEquals(driver.hotelBLService.updateEvaluation(new EvaluationVO(4, "5")), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.hotelBLService.updateEvaluation(new EvaluationVO(4, "5")));
 	}
-	
-	
 }

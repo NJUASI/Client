@@ -17,8 +17,7 @@ public class HotelWorkerDataService_DriverTest {
 		HotelWorkerDataService_Driver driver = new HotelWorkerDataService_Driver(stub);
 		HotelWorkerPO hotelWorkerPO = driver.hotelWorkerDataService.getSingle("00001111");
 		
-		assertEquals(hotelWorkerPO.getHotelID(), "00001111");
-		assertEquals(hotelWorkerPO.getPassword(), "123456");
+		assertEquals("123456", hotelWorkerPO.getPassword());
 	}
 
 	@Test
@@ -27,7 +26,7 @@ public class HotelWorkerDataService_DriverTest {
 		HotelWorkerDataService_Stub stub = new HotelWorkerDataService_Stub();
 		HotelWorkerDataService_Driver driver = new HotelWorkerDataService_Driver(stub);
 		
-		assertEquals(driver.hotelWorkerDataService.add(new HotelWorkerPO("00001111", "123456")), ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, driver.hotelWorkerDataService.add(new HotelWorkerPO("00001111", "123456")));
 	}
 
 }

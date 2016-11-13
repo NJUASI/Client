@@ -11,21 +11,6 @@ import vo.GuestVO;
 import vo.MarketVO;
 
 public class CreditBLService_Stub implements CreditBLService {
-//	String guestID;
-//	int credit;
-//	String time;
-//	String orderID;
-//	int preCredit;
-//	String reason;
-//
-//	public CreditBLService_Stub(String guestID, String time, String orderID, int preCredit,int credit, String reason) {
-//		this.guestID = guestID;
-//		this.credit = credit;
-//		this.time = time;
-//		this.orderID = orderID;
-//		this.preCredit = preCredit;
-//		this.reason = reason;
-//	}
 
 	public ResultMessage charge(int chargeNum) {
 		return ResultMessage.SUCCESS;
@@ -45,7 +30,7 @@ public class CreditBLService_Stub implements CreditBLService {
 	@Override
 	public ResultMessage charge(String guestID, int chargeNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 	@Override
@@ -54,4 +39,19 @@ public class CreditBLService_Stub implements CreditBLService {
 		return null;
 	}
 
+//	String guestID;
+//	int credit;
+//	String time;
+//	String orderID;
+//	int preCredit;
+//	String reason;
+//
+//	public CreditBLService_Stub(String guestID, String time, String orderID, int preCredit,int credit, String reason) {
+//		this.guestID = guestID;
+//		this.credit = credit;
+//		this.time = time;
+//		this.orderID = orderID;
+//		this.preCredit = preCredit;
+//		this.reason = reason;
+//	}
 }
