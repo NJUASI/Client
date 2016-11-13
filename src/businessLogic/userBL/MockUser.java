@@ -1,6 +1,7 @@
 package businessLogic.userBL;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -38,7 +39,7 @@ public class MockUser extends User{
 	}
 	
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		if (newHotelVO.hotelID.equals(hotelID)) return hotel.add(newHotelVO);
+		if (newHotelVO.hotelGeneralVO.hotelID.equals(hotelID)) return hotel.add(newHotelVO);
 		else return ResultMessage.FAIL;
 	}
 	
@@ -59,9 +60,9 @@ public class MockUser extends User{
 	
 	public List<CreditVO> getAllCreditDetail(String userID) {
 		List<CreditVO> creditDetailList = new LinkedList<CreditVO>();
-		creditDetailList.add(new CreditVO("1234567890", "2016/10/2", "123420161002", 100, 100, "undo"));
-		creditDetailList.add(new CreditVO("1234567890", "2016/10/3", "124520161003", 100, 100, "create"));
-		creditDetailList.add(new CreditVO("1234567890", "2016/10/4", "244520161004", 100, 300, "executed"));
+		creditDetailList.add(new CreditVO("1234567890", LocalDateTime.of(2016, 10, 2, 18, 12), "123420161002", 100, 100, "undo"));
+		creditDetailList.add(new CreditVO("1234567890", LocalDateTime.of(2016, 10, 3, 13, 14), "124520161003", 100, 100, "create"));
+		creditDetailList.add(new CreditVO("1234567890", LocalDateTime.of(2016, 10, 4, 15, 22), "244520161004", 100, 300, "executed"));
 		return creditDetailList;
 	}
 

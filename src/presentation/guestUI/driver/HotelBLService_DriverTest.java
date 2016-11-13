@@ -41,13 +41,13 @@ public class HotelBLService_DriverTest {
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
 		HotelVO hotelVO = driver.hotelBLService.getHotelDetail("000000");
 				
-		assertEquals(hotelVO.hotelID, "12345678");
-		assertEquals(hotelVO.hotelName, "thisHotel");
+		assertEquals(hotelVO.hotelGeneralVO.hotelID, "12345678");
+		assertEquals(hotelVO.hotelGeneralVO.hotelName, "thisHotel");
 		assertEquals(hotelVO.hotelAddress, "address");
-		assertEquals(hotelVO.city, "NanJing");
-		assertEquals(hotelVO.cycle, "center");
-		assertEquals(hotelVO.level, "4");
-		assertEquals(hotelVO.score, 5, 0);
+		assertEquals(hotelVO.hotelGeneralVO.city, "NanJing");
+		assertEquals(hotelVO.hotelGeneralVO.cycle, "center");
+		assertEquals(hotelVO.hotelGeneralVO.level, "4");
+		assertEquals(hotelVO.hotelGeneralVO.score, 5, 0);
 		assertEquals(hotelVO.introduction, "good");
 		assertEquals(hotelVO.equipment, "allEquipment");
 	}

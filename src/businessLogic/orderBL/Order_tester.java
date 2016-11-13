@@ -2,9 +2,11 @@ package businessLogic.orderBL;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDateTime;
 
 import org.junit.Test;
 
+import utilities.OrderState;
 import utilities.ResultMessage;
 import utilities.RoomType;
 import vo.OrderVO;
@@ -15,10 +17,19 @@ public class Order_tester {
 		//test cooperation with class Promotion
 		//test interface getDiscout
 		OrderController controller = OrderController.getInstance();
-		OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address",250, 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		
+		LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 30);
+		LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
+		LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
+		LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
+		LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
+		
+		OrderState orderState = OrderState.EXECUTED;
+		RoomType roomType = RoomType.AMBASSADOR;
+		
+		OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 
+				250, 200, createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, 
+				orderState, roomType, 2, "301  302", 2, "zhangsan","13554321234", "no");
 				
 		assertEquals(controller.createOrder(orderVO) , ResultMessage.SUCCESS);
 				

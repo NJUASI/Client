@@ -1,12 +1,16 @@
 package vo;
 
 public class AddressVO {
+	
 	//	酒店名
 	public String hotelName;
+	
 	//	酒店地址
 	public String hotelAddress;
+	
 	//	酒店城市
 	public String city;
+	
 	//	酒店商圈
 	public String cycle;
 	

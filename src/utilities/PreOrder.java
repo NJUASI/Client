@@ -1,5 +1,7 @@
 package utilities;
 
+import java.time.LocalDateTime;
+
 import vo.OrderVO;
 
 public class PreOrder {
@@ -8,16 +10,16 @@ public class PreOrder {
 	// 酒店编号
 	public String hotelID;
 	// 入住时间
-	public String checkInTime;
+	public LocalDateTime checkInTime;
 
 	// 房间数
 	public int roomNum;
 	
 	public PreOrder(OrderVO orderVO){
-		this.guestID = orderVO.guestID;
-		this.hotelID=orderVO.hotelID;
+		this.guestID = orderVO.orderGeneralVO.guestID;
+		this.hotelID=orderVO.orderGeneralVO.hotelID;
 		this.checkInTime =orderVO.checkInTime;
-		this.roomNum=orderVO.roomNum;
+		this.roomNum=orderVO.roomNumCount;
 		
 	}
 

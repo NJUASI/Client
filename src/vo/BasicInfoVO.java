@@ -4,6 +4,7 @@ public class BasicInfoVO {
 
 	//一些个人基本信息
 	public GuestVO guestVO;
+	
 	//会员等级
 	public String memberDegree;
 	

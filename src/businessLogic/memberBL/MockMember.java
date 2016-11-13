@@ -1,5 +1,7 @@
 package businessLogic.memberBL;
 
+import java.time.LocalDate;
+
 import utilities.MemberType;
 import utilities.ResultMessage;
 import vo.MemberVO;
@@ -15,7 +17,7 @@ public class MockMember extends Member {
 	}
 
 	public MemberVO getMemberInfo(String userID, MemberType memberType) {
-		return  new MemberVO("1234567890", "2016/2/2", "school");
+		return  new MemberVO("1234567890", LocalDate.of(2016, 2, 2), "school");
 	}
 
 	public boolean isMember(String userID, MemberType memberType) {

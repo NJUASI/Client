@@ -2,6 +2,8 @@ package presentation.webMarketerUI.driver;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDateTime;
+
 import org.junit.Test;
 
 import businessLogic.creditBL.stub.CreditBLService_Stub;
@@ -23,7 +25,7 @@ public class CreditBLService_DriverTest {
 		CreditBLService_Stub stub = new CreditBLService_Stub();
 		CreditBLService_Driver driver = new CreditBLService_Driver(stub);
 		assertEquals(driver.creditBLService.getBasicInfo("1234567890"), 
-				new CreditVO("1234567890","2016/1/1","123456789012",100,100, "undo"));
+				new CreditVO("1234567890",LocalDateTime.of(2016, 1, 1, 18, 12),"123456789012",100,100, "undo"));
 	
 	}
 

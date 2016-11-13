@@ -1,11 +1,13 @@
 package businessLogic.orderBL;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import businessLogic.promotionBL.MockPromotion;
 import businessLogic.promotionBL.Promotion;
+import utilities.OrderState;
 import utilities.PreOrder;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -25,7 +27,7 @@ public class MockOrder extends Order{
 	public ResultMessage createOrder(OrderVO orderVO) {
 		PreOrder preOrder = new PreOrder(orderVO);
 		float discout = promotion.getDiscout(preOrder);
-		orderVO.price=(int)discout*orderVO.prePrice;
+		orderVO.orderGeneralVO.price=(int)discout*orderVO.previousPrice;
 		return ResultMessage.SUCCESS;
 	}
 
@@ -46,10 +48,19 @@ public class MockOrder extends Order{
 
 	@Override
 	public OrderVO getOrderDetail(String orderID) {
-		OrderVO orderVO= new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address",250, 200,
-				"2016/2/2/18:30:20", "2016/2/3", "2016/2/4", "2016/2/3", "executed",
-				RoomType.AMBASSADOR, 2, "301", "zhangsan","13554321234", "not",
-				"2016/2/4", "2016/2/4");
+		LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 30);
+		LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
+		LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
+		LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
+		LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
+		
+		OrderState orderState = OrderState.EXECUTED;
+		RoomType roomType = RoomType.AMBASSADOR;
+		
+		OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 
+				250, 200, createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, 
+				orderState, roomType, 2, "301  302", 2, "zhangsan","13554321234", "no");
+		
 		return orderVO;
 
 	}
@@ -58,7 +69,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllGuestOrderGeneral(String guestID) {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/3", "2016/2/4" ,"executed"));
+				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 
@@ -66,7 +77,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllHotelOrderGeneral(String hotelID) {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/3", "2016/2/4" ,"executed"));
+				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 
@@ -74,7 +85,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral (LocalDate date) {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/3", "2016/2/4" ,"abnormal"));
+				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 	
@@ -82,7 +93,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral () {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				"2016/2/3", "2016/2/4" ,"abnormal"));
+				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 	
