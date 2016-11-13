@@ -1,160 +1,193 @@
 package po;
 
+import java.time.LocalDateTime;
+
+import utilities.OrderState;
 import utilities.RoomType;
 
 public class OrderPO {
-	// 订单编号
-	private String orderID;
-	// 客户编号
-	private String guestID;
-	// 酒店编号
-	private String hotelID;
-	// 酒店名
-	private String hotelName;
-	// 酒店地址
-	private String hotelAddress;
-	// 预定价格
-	private int price;
-	// 订单生成时间
-	private String createTime;
-	// 入住时间
-	private String checkInTime;
-	// 退房时间
-	private String checkOutTime;
-	// 最晚订单执行时间
-	private String expectExecuteTime;
+	
+	//	订单编号 客户编号 酒店编号 酒店名 酒店地址 最后预定价格 最晚订单执行时间 预计离开时间 订单状态
+	private OrderGeneralPO orderGeneralPO;
+	
+	//	原价
+	private double previousPrice;
+	
+	//	订单生成时间
+	private LocalDateTime createTime;
+	
+	//	入住时间
+	private LocalDateTime checkInTime;
+	
+	//	退房时间（实际离开时间）
+	private LocalDateTime checkOutTime;
 
-	// 订单状态
-	private String state;
-	// 房间类型
+	//	房间类型
 	private RoomType roomType;
-	// 房间数
-	private int roomNum;
-	// 房间号
+	
+	//	房间数
+	private int roomNumCount;
+	
+	//	房间号
 	private String roomNumber;
-	// 入住人姓名
+	
+	//	预计入住人数
+	private int expectGuestNumCount;
+	
+	//	入住人姓名
 	private String name;
-	// 联系方式
+	
+	//	联系方式
 	private String phone;
-	// 特别要求
+	
+	//	特别要求
 	private String message;
-	// 预计离开时间
-	private String expectLeaveTime;
-	// 实际离开时间
-	private String leaveTime;
+	
 
-	public OrderPO(String orderID, String guestID, String hotelID, String hotelName, String hotelAddress, int price,
-			String createTime, String checkInTime, String checkOutTime, String expectExecuteTime, String state,
-			RoomType roomType, int roomNum, String roomNumber, String name, String phone, String message,
-			String expectLeaveTime, String leaveTime) {
+	public OrderPO(String orderID, String guestID, String hotelID, String hotelName, String hotelAddress, 
+			double previousPrice, double price, LocalDateTime createTime, LocalDateTime checkInTime,
+			LocalDateTime checkOutTime, LocalDateTime expectExecuteTime, LocalDateTime expectLeaveTime, 
+			OrderState state, RoomType roomType, int roomNumCount, String roomNumber, 
+			int expectGuestNumCount, String name, String phone, String message) {
 		super();
-		this.orderID = orderID;
-		this.guestID = guestID;
-		this.hotelID = hotelID;
-		this.hotelName = hotelName;
-		this.hotelAddress = hotelAddress;
-		this.price = price;
+		this.orderGeneralPO = new OrderGeneralPO(orderID, guestID, hotelID, hotelName, hotelAddress,
+				price, expectExecuteTime, expectLeaveTime, state);
+		
+		this.previousPrice = previousPrice;
 		this.createTime = createTime;
 		this.checkInTime = checkInTime;
 		this.checkOutTime = checkOutTime;
-		this.expectExecuteTime = expectExecuteTime;
-		this.state = state;
 		this.roomType = roomType;
-		this.roomNum = roomNum;
+		this.roomNumCount = roomNumCount;
+		this.roomNumber = roomNumber;
+		this.expectGuestNumCount = expectGuestNumCount;
+		this.name = name;
+		this.phone = phone;
+		this.message = message;
+	}
+
+	public OrderPO(OrderGeneralPO orderGeneralPO, double previousPrice, LocalDateTime createTime, LocalDateTime checkInTime, 
+			LocalDateTime checkOutTime, RoomType roomType, int roomNumCount, String roomNumber, String name, 
+			String phone, String message) {
+		super();
+		this.orderGeneralPO = orderGeneralPO;
+		
+		this.previousPrice = previousPrice;
+		this.createTime = createTime;
+		this.checkInTime = checkInTime;
+		this.checkOutTime = checkOutTime;
+		this.roomType = roomType;
+		this.roomNumCount = roomNumCount;
 		this.roomNumber = roomNumber;
 		this.name = name;
 		this.phone = phone;
 		this.message = message;
-		this.expectLeaveTime = expectLeaveTime;
-		this.leaveTime = leaveTime;
 	}
-
+	
 	public String getOrderID() {
-		return orderID;
+		return orderGeneralPO.getOrderID();
 	}
 
 	public void setOrderID(String orderID) {
-		this.orderID = orderID;
+		this.setOrderID(orderID);
 	}
 
 	public String getGuestID() {
-		return guestID;
+		return orderGeneralPO.getGuestID();
 	}
 
 	public void setGuestID(String guestID) {
-		this.guestID = guestID;
+		this.setGuestID(guestID);
 	}
 
 	public String getHotelID() {
-		return hotelID;
+		return orderGeneralPO.getHotelID();
 	}
 
 	public void setHotelID(String hotelID) {
-		this.hotelID = hotelID;
+		this.setHotelID(hotelID);
 	}
 
 	public String getHotelName() {
-		return hotelName;
+		return orderGeneralPO.getHotelName();
 	}
 
 	public void setHotelName(String hotelName) {
-		this.hotelName = hotelName;
+		this.setHotelName(hotelName);
 	}
 
 	public String getHotelAddress() {
-		return hotelAddress;
+		return orderGeneralPO.getHotelAddress();
 	}
 
 	public void setHotelAddress(String hotelAddress) {
-		this.hotelAddress = hotelAddress;
+		this.setHotelAddress(hotelAddress);
 	}
 
-	public int getPrice() {
-		return price;
+	public double getPrice() {
+		return orderGeneralPO.getPrice();
 	}
 
-	public void setPrice(int price) {
-		this.price = price;
+	public void setPrice(double price) {
+		this.setPrice(price);
 	}
 
-	public String getCreateTime() {
-		return createTime;
+	public double getPreviousPrice() {
+		return previousPrice;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setPreviousPrice(double previousPrice) {
+		this.previousPrice = previousPrice;
+	}
+	
+	public LocalDateTime getExpectExecuteTime() {
+		return orderGeneralPO.getExpectExecuteTime();
 	}
 
-	public String getCheckInTime() {
-		return checkInTime;
+	public void setExpectExecuteTime(LocalDateTime expectExecuteTime) {
+		this.setExpectExecuteTime(expectExecuteTime);
 	}
 
-	public void setCheckInTime(String checkInTime) {
-		this.checkInTime = checkInTime;
-	}
-
-	public String getCheckOutTime() {
-		return checkOutTime;
-	}
-
-	public void setCheckOutTime(String checkOutTime) {
-		this.checkOutTime = checkOutTime;
-	}
-
-	public String getExpectExecuteTime() {
-		return expectExecuteTime;
-	}
-
-	public void setExpectExecuteTime(String expectExecuteTime) {
-		this.expectExecuteTime = expectExecuteTime;
-	}
-
-	public String getState() {
-		return state;
+	public OrderState getState() {
+		return orderGeneralPO.getState();
 	}
 
 	public void setState(String state) {
-		this.state = state;
+		this.setState(state);
+	}
+	
+	public LocalDateTime getExpectLeaveTime() {
+		return orderGeneralPO.getExpectLeaveTime();
+	}
+
+	public void setExpectLeaveTime(LocalDateTime expectLeaveTime) {
+		this.setExpectLeaveTime(expectLeaveTime);
+	}
+	
+	
+	
+	public LocalDateTime getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(LocalDateTime createTime) {
+		this.createTime = createTime;
+	}
+
+	public LocalDateTime getCheckInTime() {
+		return checkInTime;
+	}
+
+	public void setCheckInTime(LocalDateTime checkInTime) {
+		this.checkInTime = checkInTime;
+	}
+
+	public LocalDateTime getCheckOutTime() {
+		return checkOutTime;
+	}
+
+	public void setCheckOutTime(LocalDateTime checkOutTime) {
+		this.checkOutTime = checkOutTime;
 	}
 
 	public RoomType getRoomType() {
@@ -165,12 +198,12 @@ public class OrderPO {
 		this.roomType = roomType;
 	}
 
-	public int getRoomNum() {
-		return roomNum;
+	public int getRoomNumCount() {
+		return roomNumCount;
 	}
 
-	public void setRoomNum(int roomNum) {
-		this.roomNum = roomNum;
+	public void setRoomNumCount(int roomNumCount) {
+		this.roomNumCount = roomNumCount;
 	}
 
 	public String getRoomNumber() {
@@ -181,6 +214,14 @@ public class OrderPO {
 		this.roomNumber = roomNumber;
 	}
 
+	public int getExpectGuestNumCount() {
+		return expectGuestNumCount;
+	}
+
+	public void setExpectGuestNumCount(int expectGuestNumCount) {
+		this.expectGuestNumCount = expectGuestNumCount;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -204,21 +245,5 @@ public class OrderPO {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
-	public String getExpectLeaveTime() {
-		return expectLeaveTime;
-	}
-
-	public void setExpectLeaveTime(String expectLeaveTime) {
-		this.expectLeaveTime = expectLeaveTime;
-	}
-
-	public String getLeaveTime() {
-		return leaveTime;
-	}
-
-	public void setLeaveTime(String leaveTime) {
-		this.leaveTime = leaveTime;
-	}
-
+	
 }

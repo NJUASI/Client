@@ -1,18 +1,22 @@
 package po;
 
+import java.time.LocalDateTime;
+
 public class CheckInPO {
 
 	//	订单编号
 	private String orderID;
+	
 	//	房间号
 	private String roomNumber;
-	//	入住时间
-	private String checkInTime;	
-	//	预计离开时间
-	private String expectLeaveTime;
 	
-	public CheckInPO(String orderID, String roomNumber, String checkInTime, String expectLeaveTime) {
-		super();
+	//	入住时间
+	private LocalDateTime checkInTime;	
+	
+	//	预计离开时间
+	private LocalDateTime expectLeaveTime;
+	
+	public CheckInPO(String orderID, String roomNumber, LocalDateTime checkInTime, LocalDateTime expectLeaveTime) {
 		this.orderID = orderID;
 		this.roomNumber = roomNumber;
 		this.checkInTime = checkInTime;
@@ -31,16 +35,16 @@ public class CheckInPO {
 	public void setRoomNumber(String roomNumber) {
 		this.roomNumber = roomNumber;
 	}
-	public String getCheckInTime() {
+	public LocalDateTime getCheckInTime() {
 		return checkInTime;
 	}
-	public void setCheckInTime(String checkInTime) {
+	public void setCheckInTime(LocalDateTime checkInTime) {
 		this.checkInTime = checkInTime;
 	}
-	public String getExpectLeaveTime() {
+	public LocalDateTime getExpectLeaveTime() {
 		return expectLeaveTime;
 	}
-	public void setExpectLeaveTime(String expectLeaveTime) {
+	public void setExpectLeaveTime(LocalDateTime expectLeaveTime) {
 		this.expectLeaveTime = expectLeaveTime;
 	}
 	

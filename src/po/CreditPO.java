@@ -1,27 +1,33 @@
 package po;
 
+import java.time.LocalDateTime;
+
 public class CreditPO {
-    //	用户编号	
+    
+	//	用户编号	
 	private String guestID;
+	
 	//	信用值更改时间
-	private String time;
+	private LocalDateTime time;
+	
 	//	订单编号
 	private String orderID;
+	
 	//	变化前信用值
-	private int preCredit;
+	private double previousCredit;
+	
 	//	变化后信用值
-	private int credit;
+	private double afterCredit;
+	
 	//	变化原因 即动作
 	private String reason;
 	
-	public CreditPO(String guestID, String time, String orderID, int preCredit,int credit, String reason) {
-		super();
+	public CreditPO(String guestID, LocalDateTime time, String orderID, double previousCredit, double afterCredit, String reason) {
 		this.guestID = guestID;
-		
 		this.time = time;
 		this.orderID = orderID;
-		this.preCredit = preCredit;
-		this.credit = credit;
+		this.previousCredit = previousCredit;
+		this.afterCredit = afterCredit;
 		this.reason = reason;
 	}
 
@@ -33,11 +39,11 @@ public class CreditPO {
 		this.guestID = guestID;
 	}
 
-	public String getTime() {
+	public LocalDateTime getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(LocalDateTime time) {
 		this.time = time;
 	}
 
@@ -49,20 +55,20 @@ public class CreditPO {
 		this.orderID = orderID;
 	}
 
-	public int getPreCredit() {
-		return preCredit;
+	public double getPreCredit() {
+		return previousCredit;
 	}
 
-	public void setPreCredit(int preCredit) {
-		this.preCredit = preCredit;
+	public void setPreCredit(double previousCredit) {
+		this.previousCredit = previousCredit;
 	}
 
-	public int getCredit() {
-		return credit;
+	public double getCredit() {
+		return afterCredit;
 	}
 
-	public void setCredit(int credit) {
-		this.credit = credit;
+	public void setCredit(double credit) {
+		this.afterCredit = credit;
 	}
 
 	public String getReason() {

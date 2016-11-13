@@ -2,6 +2,8 @@ package businessLogic.logInBL;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+
 import org.junit.Test;
 
 import utilities.ResultMessage;
@@ -55,8 +57,8 @@ public class LogIn_tester {
 		//test interface guestSignUp(GuestVO guestVO)
 		LogInController controller = LogInController.getInstance();
 		
-		GuestVO guestVO = new GuestVO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
-				"000000", "13523456789", 100);
+		GuestVO guestVO = new GuestVO("1234567890", LocalDate.of(1995, 4, 1), "school", "zhangsan", 
+				"xiaosan", "000000", "13523456789", 100);
 			
 		assertEquals(controller.guestSignUp(guestVO) , ResultMessage.SUCCESS);
 	}

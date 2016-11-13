@@ -1,14 +1,19 @@
 package po;
 
+import java.time.LocalDate;
+
 public class MemberPO {
+	
 	//	用户编号	
 	private String guestID;
+	
 	//	会员生日
-	private String birthday;
+	private LocalDate birthday;
+	
 	//	会员企业名称
 	private String enterprise;
 	
-	public MemberPO(String guestID, String birthday, String enterprise) {
+	public MemberPO(String guestID, LocalDate birthday, String enterprise) {
 		super();
 		this.guestID = guestID;
 		this.birthday = birthday;
@@ -19,12 +24,13 @@ public class MemberPO {
 		return guestID;
 	}
 	
-	public String getBirthday() {
+	public LocalDate getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(String birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
+	
 	public String getEnterprise() {
 		return enterprise;
 	}
@@ -32,6 +38,4 @@ public class MemberPO {
 		this.enterprise = enterprise;
 	}	
 
-	
-	
 }

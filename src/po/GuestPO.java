@@ -1,25 +1,35 @@
 package po;
 
+import java.time.LocalDate;
+
 public class GuestPO {
+	
 	//	用户编号	
 	private String guestID;
+	
 	//	会员生日
-	private String birthday;    //localdate??
+	private LocalDate birthday;
+	
 	//	会员企业名称
 	private String enterprise;
+	
 	//	姓名
 	private String name;	
+	
 	//	昵称
 	private String nickName;
+	
 	//	密码
 	private String password;
+	
 	//	联系方式
 	private String phone;	
-	//	信用值
-	private int credit;
 	
-	public GuestPO(String guestID, String birthday, String enterprise, String name, String nickName,
-			String password, String phone, int credit) {
+	//	信用值
+	private double credit;
+	
+	public GuestPO(String guestID, LocalDate birthday, String enterprise, String name, String nickName,
+			String password, String phone, double credit) {
 		super();
 		this.guestID = guestID;
 		this.birthday = birthday;
@@ -32,24 +42,18 @@ public class GuestPO {
 	}
 	
 	
-	public String getBirthday() {
+	public LocalDate getBirthday() {
 		return birthday;
 	}
-
-	public void setBirthday(String birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
 
 	public String getEnterprise() {
 		return enterprise;
 	}
-
 	public void setEnterprise(String enterprise) {
 		this.enterprise = enterprise;
-	}
-
-	public void setGuestID(String guestID) {
-		this.guestID = guestID;
 	}
 
 	public String getName() {
@@ -58,34 +62,40 @@ public class GuestPO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getNickName() {
 		return nickName;
 	}
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+	
 	public String getGuestID() {
 		return guestID;
 	}
-//	public void setGuestID(String guestID) {
-//		this.guestID = guestID;
-//	}
+	public void setGuestID(String guestID) {
+		this.guestID = guestID;
+	}
+	
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	public String getPhone() {
 		return phone;
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getCredit() {
+	
+	public double getCredit() {
 		return credit;
 	}
-	public void setCredit(int credit) {
+	public void setCredit(double credit) {
 		this.credit = credit;
 	}
+	
 }

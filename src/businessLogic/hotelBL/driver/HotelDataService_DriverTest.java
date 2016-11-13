@@ -27,7 +27,7 @@ public class HotelDataService_DriverTest {
 		assertEquals(hotelPO.getCity(), "NanJing");
 		assertEquals(hotelPO.getLevel(), "4");
 		assertEquals(hotelPO.getScore(), 5, 0);
-		assertEquals(hotelPO.getComment(), 5);
+		assertEquals(hotelPO.getComment(), "5");
 		assertEquals(hotelPO.getIntroduction(), "good");
 		assertEquals(hotelPO.getEquipment(), "allEquipment");
 	}
@@ -40,8 +40,8 @@ public class HotelDataService_DriverTest {
 		RoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("12345678");
 		
 		assertEquals(remainRoomInfoPO.getRoomType(), RoomType.AMBASSADOR);
-		assertEquals(remainRoomInfoPO.getRoomNum(),2);
-		assertEquals(remainRoomInfoPO.getPrice(), 200);
+		assertEquals(remainRoomInfoPO.getRoomNumCount(),2);
+		assertEquals(remainRoomInfoPO.getPrice(), 200, 0);
 	}
 	
 }

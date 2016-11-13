@@ -10,8 +10,11 @@ import vo.MarketVO;
 public interface CreditBLService {
 
 	public ResultMessage charge(String guestID, int chargeNum);
+	
 	public BasicInfoVO getBasicInfo (String guestID);
+	
 	public List<CreditVO> getAllCreditDetail(String guestID);
+	
 	public List<MarketVO> getMemberFormulation();
 	
 }

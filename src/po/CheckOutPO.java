@@ -1,15 +1,16 @@
 package po;
 
+import java.time.LocalDateTime;
+
 public class CheckOutPO {
 
 	//	订单编号
 	private String orderID;
-	//	退房时间
-	private String checkOutTime;
 	
-
-	public CheckOutPO(String orderID,String checkOutTime) {
-		super();
+	//	退房时间
+	private LocalDateTime checkOutTime;
+	
+	public CheckOutPO(String orderID,LocalDateTime checkOutTime) {
 		this.orderID = orderID;
 		this.checkOutTime = checkOutTime;
 	}
@@ -22,11 +23,11 @@ public class CheckOutPO {
 		this.orderID = orderID;
 	}
 
-	public String getCheckOutTime() {
+	public LocalDateTime getCheckOutTime() {
 		return checkOutTime;
 	}
 
-	public void setCheckOutTime(String checkOutTime) {
+	public void setCheckOutTime(LocalDateTime checkOutTime) {
 		this.checkOutTime = checkOutTime;
 	}
 

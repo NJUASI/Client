@@ -1,27 +1,40 @@
 package po;
 
+import java.time.LocalDateTime;
+
+import utilities.OrderState;
+
 public class OrderGeneralPO {
+	
 	// 订单编号
 	private String orderID;
+	
 	// 客户编号
 	private String guestID;
+	
 	// 酒店编号
 	private String hotelID;
+	
 	// 酒店名
 	private String hotelName;
+	
 	// 酒店地址
 	private String hotelAddress;
-	// 预定价格
-	private int price;
+	
+	// 最后预定价格
+	private double price;
+	
 	// 最晚订单执行时间
-	private String expectExecuteTime;
+	private LocalDateTime expectExecuteTime;
+	
 	// 预计离开时间
-	private String expectLeaveTime;
+	private LocalDateTime expectLeaveTime;
+	
 	// 订单状态
-	private String state;
+	private OrderState state;
 
 	public OrderGeneralPO(String orderID, String guestID, String hotelID, String hotelName, String hotelAddress,
-			int price, String expectExecuteTime, String expectLeaveTime, String state) {
+			double price, LocalDateTime expectExecuteTime, LocalDateTime expectLeaveTime, OrderState state) {
 		super();
 		this.orderID = orderID;
 		this.guestID = guestID;
@@ -74,35 +87,35 @@ public class OrderGeneralPO {
 		this.hotelAddress = hotelAddress;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public String getExpectExecuteTime() {
+	public LocalDateTime getExpectExecuteTime() {
 		return expectExecuteTime;
 	}
 
-	public void setExpectExecuteTime(String expectExecuteTime) {
+	public void setExpectExecuteTime(LocalDateTime expectExecuteTime) {
 		this.expectExecuteTime = expectExecuteTime;
 	}
 
-	public String getExpectLeaveTime() {
+	public LocalDateTime getExpectLeaveTime() {
 		return expectLeaveTime;
 	}
 
-	public void setExpectLeaveTime(String expectLeaveTime) {
+	public void setExpectLeaveTime(LocalDateTime expectLeaveTime) {
 		this.expectLeaveTime = expectLeaveTime;
 	}
 
-	public String getState() {
+	public OrderState getState() {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(OrderState state) {
 		this.state = state;
 	}
 

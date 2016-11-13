@@ -2,6 +2,8 @@ package businessLogic.userBL.driver;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+
 import org.junit.Test;
 
 import dataService.guestDataService.GuestDataService_Stub;
@@ -18,13 +20,13 @@ public class GuestDataService_DriverTest {
 		GuestPO guestPO = driver.guestDataService.getSingle("1234567890");
 		
 		assertEquals(guestPO.getGuestID(), "1234567890");
-		assertEquals(guestPO.getBirthday(), "2016/2/2");
+		assertEquals(guestPO.getBirthday(), LocalDate.of(1995, 1, 1));
 		assertEquals(guestPO.getEnterprise(), "school");
 		assertEquals(guestPO.getName(), "zhangsan");
 		assertEquals(guestPO.getNickName(), "xiaosan");
 		assertEquals(guestPO.getPassword(), "000000");
 		assertEquals(guestPO.getPhone(), "13523456789");
-		assertEquals(guestPO.getCredit(), "100");
+		assertEquals(guestPO.getCredit(), 100);
 	}
 
 	@Test
@@ -33,7 +35,7 @@ public class GuestDataService_DriverTest {
 		GuestDataService_Stub stub = new GuestDataService_Stub();
 		GuestDataService_Driver driver = new GuestDataService_Driver(stub);
 		
-		assertEquals(driver.guestDataService.add(new GuestPO("1234567890", "2016/2/2", "school", "zhangsan", "xiaosan",
+		assertEquals(driver.guestDataService.add(new GuestPO("1234567890", LocalDate.of(1995, 1, 1), "school", "zhangsan", "xiaosan",
 				"000000", "13523456789",100)), ResultMessage.SUCCESS);
 	}
 }

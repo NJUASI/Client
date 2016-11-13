@@ -3,19 +3,24 @@ package po;
 import utilities.RoomType;
 
 public class RoomInfoPO {
+	
 	// 酒店编号
 	private String hotelID;
+	
 	// 房间类型
 	private RoomType roomType;
+	
 	// 房间数
-	private int roomNum;
+	private int roomNumCount;
+	
 	// 价格
-	private int price;
-	public RoomInfoPO(String hotelID, RoomType roomType, int roomNum, int price) {
+	private double price;
+	
+	public RoomInfoPO(String hotelID, RoomType roomType, int roomNumCount, double price) {
 		super();
 		this.hotelID = hotelID;
 		this.roomType = roomType;	
-		this.roomNum = roomNum;
+		this.roomNumCount = roomNumCount;
 		this.price = price;
 	}
 	public String getHotelID() {
@@ -30,16 +35,16 @@ public class RoomInfoPO {
 	public void setRoomType(RoomType roomType) {
 		this.roomType = roomType;
 	}
-	public int getRoomNum() {
-		return roomNum;
+	public int getRoomNumCount() {
+		return roomNumCount;
 	}
-	public void setRoomNum(int roomNum) {
-		this.roomNum = roomNum;
+	public void setRoomNumCount(int roomNumCount) {
+		this.roomNumCount = roomNumCount;
 	}
-	public int getPrice() {			
+	public double getPrice() {			
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	

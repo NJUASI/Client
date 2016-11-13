@@ -1,5 +1,6 @@
 package businessLogic.creditBL.stub;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import businessLogicService.creditBLService.CreditBLService;
@@ -31,8 +32,8 @@ public class CreditBLService_Stub implements CreditBLService {
 	}
 
 	public BasicInfoVO getBasicInfo(String ID) {
-		return new BasicInfoVO(new GuestVO("1234567890","1995/4/1","Samsung","Carol","cal", "123456", "13555550000", 400), 
-				"L1");
+		return new BasicInfoVO(new GuestVO("1234567890", LocalDate.of(1995, 4, 1), "Samsung","Carol","cal", "123456", 
+				"13555550000", 400), "L1");
 	}
 
 	@Override

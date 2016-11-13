@@ -1,94 +1,105 @@
 package po;
 
 public final class HotelPO {
-	//	酒店编号
-	private String hotelID;
-	//	酒店名称
-	private String hotelName;
-	//	酒店城市
-	private String city;
-	//	酒店商圈
-	private String cycle;
+	//	酒店编号 酒店名称 酒店城市 酒店商圈 酒店星级 评分
+	private HotelGeneralPO hotelGeneralPO;
+	
 	//	酒店地址
 	private String hotelAddress;
-	//	酒店星级
-	private String level;
-	//	评分
-	private double score;
+	
 	//	评价
 	private String comment;
+	
 	//	简介
 	private String introduction;	
+	
 	//	设施服务
 	private String equipment;
-	public HotelPO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
-			double score, String comment, String introduction, String equipment) {
-		super();
-		this.hotelID = hotelID;
-		this.hotelName = hotelName;
-		this.city = city;
-		this.cycle = cycle;
+	
+	public HotelPO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, 
+			String level, double score, String comment, String introduction, String equipment) {
+		this.hotelGeneralPO = new HotelGeneralPO(hotelID, hotelName, city, cycle, level, score);
+		
 		this.hotelAddress = hotelAddress;
-		this.level = level;
-		this.score = score;
 		this.comment = comment;
 		this.introduction = introduction;
 		this.equipment = equipment;
 	}
+	
+	public HotelPO(HotelGeneralPO hotelGeneralPO, String hotelAddress, String comment, 
+			String introduction, String equipment) {
+		this.hotelGeneralPO = hotelGeneralPO;
+		
+		this.hotelAddress = hotelAddress;
+		this.comment = comment;
+		this.introduction = introduction;
+		this.equipment = equipment;
+	}
+	
 	public String getHotelID() {
-		return hotelID;
+		return hotelGeneralPO.getHotelID();
 	}
 	public void setHotelID(String hotelID) {
-		this.hotelID = hotelID;
+		this.hotelGeneralPO.setHotelID(hotelID);
 	}
+	
 	public String getHotelName() {
-		return hotelName;
+		return hotelGeneralPO.getHotelName();
 	}
 	public void setHotelName(String hotelName) {
-		this.hotelName = hotelName;
+		this.setHotelName(hotelName);
 	}
+	
 	public String getCity() {
-		return city;
+		return hotelGeneralPO.getCity();
 	}
 	public void setCity(String city) {
-		this.city = city;
+		this.hotelGeneralPO.setCity(city);
 	}
+	
 	public String getCycle() {
-		return cycle;
+		return hotelGeneralPO.getCycle();
 	}
 	public void setCycle(String cycle) {
-		this.cycle = cycle;
+		this.hotelGeneralPO.setCycle(cycle);
 	}
+	
 	public String getHotelAddress() {
 		return hotelAddress;
 	}
 	public void setHotelAddress(String hotelAddress) {
 		this.hotelAddress = hotelAddress;
 	}
+	
 	public String getLevel() {
-		return level;
+		return hotelGeneralPO.getLevel();
 	}
 	public void setLevel(String level) {
-		this.level = level;
+		this.setLevel(level);
 	}
+	
 	public double getScore() {
-		return score;
+		return hotelGeneralPO.getScore();
 	}
-	public void setScore(int score) {
-		this.score = score;
+	public void setScore(double score) {
+		this.setScore(score);
 	}
+	
 	public String getComment() {
 		return comment;
 	}
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
 	public String getIntroduction() {
 		return introduction;
 	}
+	
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
+	
 	public String getEquipment() {
 		return equipment;
 	}

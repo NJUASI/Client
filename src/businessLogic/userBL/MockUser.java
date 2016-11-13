@@ -1,5 +1,6 @@
 package businessLogic.userBL;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class MockUser extends User{
 	}
 	
 	public UserVO getSingle(String userID, UserType userType) {
-		UserVO guestVO= new GuestVO("1234567890", "1996/4/1", "school", "zhangsan", "xiaosan",
+		UserVO guestVO= new GuestVO("1234567890", LocalDate.of(1996, 4, 1), "school", "zhangsan", "xiaosan",
 				"000000", "13523456789", 100 );
 		return guestVO;
 	}
@@ -47,9 +48,9 @@ public class MockUser extends User{
 	
 	public List<UserVO> getAll(UserType userType) {
 		List<UserVO> list = new ArrayList<UserVO>();
-		UserVO guestVO1= new GuestVO("1234567890", "1996/4/1", "school", "zhangsan", "xiaosan",
+		UserVO guestVO1= new GuestVO("1234567890", LocalDate.of(1996, 4, 1), "school", "zhangsan", "xiaosan",
 				"000000", "13523456789", 100);
-		UserVO guestVO2= new GuestVO("1234567891", "1996/4/7", "school", "zhangsi", "xiaosi",
+		UserVO guestVO2= new GuestVO("1234567891", LocalDate.of(1996, 4, 7), "school", "zhangsi", "xiaosi",
 				"000000", "13523456799", 200);
 		list.add(guestVO1);
 		list.add(guestVO2);
