@@ -28,49 +28,49 @@ public class UserController implements UserBLService{
 	@Override
 	public ResultMessage add(UserVO newUserVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.add(newUserVO);
 	}
 
 	@Override
 	public ResultMessage modify(UserVO userVO) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.modify(userVO);
 	}
 
 	@Override
 	public UserVO getSingle(String userID, UserType userType) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.getSingle(userID, userType);
 	}
 
 	@Override
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.addHotel(newHotelVO, hotelID);
 	}
 
 	@Override
 	public ResultMessage modifyCredit(String guestID, float creditNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.modifyCredit(guestID, creditNum);
 	}
 
 	@Override
 	public List<UserVO> getAll(UserType userType) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.getAll(userType);
 	}
 
 	@Override
 	public List<CreditVO> getAllCreditDetail(String guestID) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.getAllCreditDetail(guestID);
 	}
 
 	@Override
 	public String getLogInInfo(String userID, UserType userType) {
 		// TODO Auto-generated method stub
-		return null;
+		return user.getLogInInfo(userID, userType);
 	}
 	
 

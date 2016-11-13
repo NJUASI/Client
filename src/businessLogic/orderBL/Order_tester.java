@@ -31,7 +31,7 @@ public class Order_tester {
 				250, 200, createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, 
 				orderState, roomType, 2, "301  302", 2, "zhangsan","13554321234", "no");
 				
-		assertEquals(controller.createOrder(orderVO) , ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, controller.createOrder(orderVO));
 				
 	}
 	

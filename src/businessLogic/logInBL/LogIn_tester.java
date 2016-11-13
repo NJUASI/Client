@@ -17,8 +17,8 @@ public class LogIn_tester {
 		//test interface guestLogIn(String guest, String password)
 		LogInController controller = LogInController.getInstance();
 			
-		assertEquals(controller.guestLogIn("1234567890", "123456") , ResultMessage.SUCCESS);
-		assertEquals(controller.guestLogIn("1234567890", "000000") , ResultMessage.FAIL);
+		assertEquals(ResultMessage.SUCCESS, controller.guestLogIn("1234567890", "123456"));
+		assertEquals(ResultMessage.FAIL, controller.guestLogIn("1234567890", "000000"));
 	}
 	
 	@Test
@@ -27,8 +27,8 @@ public class LogIn_tester {
 		//test interface hotelWorkerLogIn(String hotelWorker, String password)
 		LogInController controller = LogInController.getInstance();
 			
-		assertEquals(controller.hotelWorkerLogIn("12345678", "123456") , ResultMessage.SUCCESS);
-		assertEquals(controller.hotelWorkerLogIn("12345678", "000000") , ResultMessage.FAIL);
+		assertEquals(ResultMessage.SUCCESS, controller.hotelWorkerLogIn("12345678", "123456"));
+		assertEquals(ResultMessage.FAIL, controller.hotelWorkerLogIn("12345678", "000000"));
 	}
 	
 	@Test
@@ -37,8 +37,8 @@ public class LogIn_tester {
 		//test interface webMarketerLogIn(String webMarketer, String password)
 		LogInController controller = LogInController.getInstance();
 			
-		assertEquals(controller.webMarketerLogIn("123456", "123456") , ResultMessage.SUCCESS);
-		assertEquals(controller.webMarketerLogIn("123456", "000000") , ResultMessage.FAIL);
+		assertEquals(ResultMessage.SUCCESS, controller.webMarketerLogIn("123456", "123456"));
+		assertEquals(ResultMessage.FAIL, controller.webMarketerLogIn("123456", "000000"));
 	}
 	
 	@Test
@@ -47,8 +47,8 @@ public class LogIn_tester {
 		//test interface webManagerLogIn(String webManager, String password)
 		LogInController controller = LogInController.getInstance();
 			
-		assertEquals(controller.webManagerLogIn("1234", "123456") , ResultMessage.SUCCESS);
-		assertEquals(controller.webManagerLogIn("1234", "000000") , ResultMessage.FAIL);
+		assertEquals(ResultMessage.SUCCESS, controller.webManagerLogIn("1234", "123456"));
+		assertEquals(ResultMessage.FAIL, controller.webManagerLogIn("1234", "000000"));
 	}
 	
 	@Test
@@ -60,7 +60,7 @@ public class LogIn_tester {
 		GuestVO guestVO = new GuestVO("1234567890", LocalDate.of(1995, 4, 1), "school", "zhangsan", 
 				"xiaosan", "000000", "13523456789", 100);
 			
-		assertEquals(controller.guestSignUp(guestVO) , ResultMessage.SUCCESS);
+		assertEquals(ResultMessage.SUCCESS, controller.guestSignUp(guestVO));
 	}
 
 }

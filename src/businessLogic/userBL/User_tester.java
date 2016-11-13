@@ -19,8 +19,8 @@ public class User_tester {
 		HotelVO newHotelVO = new HotelVO("12345678", "thisHotel", "NanJing","center", "address", "4",
 				5, "5", "good","allEquipment");
 		
-		assertEquals(controller.addHotel(newHotelVO, "12345678"), ResultMessage.SUCCESS);
-		assertEquals(controller.addHotel(newHotelVO, "12345679"), ResultMessage.FAIL);
+		assertEquals(ResultMessage.SUCCESS, controller.addHotel(newHotelVO, "12345678"));
+		assertEquals(ResultMessage.FAIL, controller.addHotel(newHotelVO, "12345679"));
 		
 	}
 	

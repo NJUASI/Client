@@ -20,15 +20,15 @@ public class Hotel_tester {
 		PromotionVO promotionVO1=list.get(0);
 		PromotionVO promotionVO2=list.get(1);
 		
-		assertEquals(promotionVO1.discount, 0.9,0);
-		assertEquals(promotionVO1.hotelID, "12345678");
-		assertEquals(promotionVO1.startDate, "2016/11/11");
-		assertEquals(promotionVO1.endDate, "2016/11/12");
+		assertEquals(0.9, promotionVO1.discount,0);
+		assertEquals("12345678", promotionVO1.hotelID);
+		assertEquals("2016/11/11", promotionVO1.startDate);
+		assertEquals("2016/11/12", promotionVO1.endDate);
 		
-		assertEquals(promotionVO2.discount, 0.8,0);
-		assertEquals(promotionVO2.hotelID, "12345678");
-		assertEquals(promotionVO2.startDate, "2016/11/11");
-		assertEquals(promotionVO2.endDate, "2016/11/12");
+		assertEquals(0.8, promotionVO2.discount,0);
+		assertEquals("12345678", promotionVO2.hotelID);
+		assertEquals("2016/11/11", promotionVO2.startDate);
+		assertEquals("2016/11/12", promotionVO2.endDate);
 	}
 	
 	@Test
@@ -40,19 +40,19 @@ public class Hotel_tester {
 		HotelGeneralVO hotelGeneralVO1=list.get(0);
 		HotelGeneralVO hotelGeneralVO2=list.get(1);
 		
-		assertEquals(hotelGeneralVO1.hotelID, "12345678");
-		assertEquals(hotelGeneralVO1.hotelName, "thisHotel");
-		assertEquals(hotelGeneralVO1.city, "NanJing");
-		assertEquals(hotelGeneralVO1.cycle, "center");
-		assertEquals(hotelGeneralVO1.level, "4");
-		assertEquals(hotelGeneralVO1.score, 5,0);
+		assertEquals("12345678", hotelGeneralVO1.hotelID);
+		assertEquals("thisHotel", hotelGeneralVO1.hotelName);
+		assertEquals("NanJing", hotelGeneralVO1.city);
+		assertEquals("center", hotelGeneralVO1.cycle);
+		assertEquals("4", hotelGeneralVO1.level);
+		assertEquals(5, hotelGeneralVO1.score, 0);
 		
-		assertEquals(hotelGeneralVO2.hotelID, "12345679");
-		assertEquals(hotelGeneralVO2.hotelName, "thatHotel");
-		assertEquals(hotelGeneralVO2.city, "NanJing");
-		assertEquals(hotelGeneralVO2.cycle, "center");
-		assertEquals(hotelGeneralVO2.level, "4");
-		assertEquals(hotelGeneralVO2.score, 5,0);
+		assertEquals("12345679", hotelGeneralVO2.hotelID);
+		assertEquals("thatHotel", hotelGeneralVO2.hotelName);
+		assertEquals("NanJing", hotelGeneralVO2.city);
+		assertEquals("center", hotelGeneralVO2.cycle);
+		assertEquals("4", hotelGeneralVO2.level);
+		assertEquals(5, hotelGeneralVO2.score, 0);
 	}
 	
 }

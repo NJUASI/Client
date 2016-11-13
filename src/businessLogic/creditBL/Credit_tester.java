@@ -2,6 +2,8 @@ package businessLogic.creditBL;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.junit.Test;
@@ -23,14 +25,14 @@ public class Credit_tester {
 		BasicInfoVO userBasicInfoVO = controller.getBasicInfo("1234567890");
 		GuestVO guestVO = userBasicInfoVO.guestVO;
 		
-		assertEquals(guestVO.guestID, "1234567890");
-		assertEquals(guestVO.password, "000000");
-		assertEquals(guestVO.birthday, "1996/4/1");
-		assertEquals(guestVO.enterprise, "school");
-		assertEquals(guestVO.name, "zhangsan" );
-		assertEquals(guestVO.nickName, "xiaosan");
-		assertEquals(guestVO.credit, 100, 0);
-		assertEquals(guestVO.phone, "13523456789");
+		assertEquals("1234567890", guestVO.guestID);
+		assertEquals("000000", guestVO.password);
+		assertEquals(LocalDate.of(1996, 4, 1), guestVO.birthday);
+		assertEquals("school", guestVO.enterprise);
+		assertEquals("zhangsan", guestVO.name);
+		assertEquals("xiaosan", guestVO.nickName);
+		assertEquals(100, guestVO.credit, 0);
+		assertEquals("13523456789", guestVO.phone);
 		
 	    assertEquals(userBasicInfoVO.memberDegree, "Lv1");
 	}
@@ -41,7 +43,7 @@ public class Credit_tester {
 		//test interface charge(String guestID, int chargeNum)
 		CreditController controller = CreditController.getInstance();
 	    
-	    assertEquals(controller.charge("1234567890", 100), ResultMessage.SUCCESS);
+	    assertEquals(ResultMessage.SUCCESS, controller.charge("1234567890", 100));
 	}
 	
 	@Test
@@ -54,26 +56,26 @@ public class Credit_tester {
 		CreditVO creditVO2 = list.get(1);
 		CreditVO creditVO3 = list.get(2);
 	
-	    assertEquals(creditVO1.guestID, "1234567890");
-	    assertEquals(creditVO1.time, "2016/10/2");
-	    assertEquals(creditVO1.orderID, "123420161002");
-	    assertEquals(creditVO1.previousCredit, 100, 0);
-	    assertEquals(creditVO1.afterCredit, 100, 0);
-	    assertEquals(creditVO1.reason, "undo");
+	    assertEquals("1234567890", creditVO1.guestID);
+	    assertEquals(LocalDateTime.of(2016, 10, 2, 18, 12), creditVO1.time);
+	    assertEquals("123420161002", creditVO1.orderID);
+	    assertEquals(100, creditVO1.previousCredit, 0);
+	    assertEquals(100, creditVO1.afterCredit, 0);
+	    assertEquals("undo", creditVO1.reason);
 	    
-	    assertEquals(creditVO2.guestID, "1234567890");
-	    assertEquals(creditVO2.time, "2016/10/3");
-	    assertEquals(creditVO2.orderID, "124520161003");
-	    assertEquals(creditVO1.previousCredit, 100, 0);
-	    assertEquals(creditVO1.afterCredit, 100, 0);
-	    assertEquals(creditVO2.reason, "create");
+	    assertEquals("1234567890", creditVO1.guestID);
+	    assertEquals(LocalDateTime.of(2016, 10, 3, 13, 14), creditVO2.time);
+	    assertEquals("124520161003", creditVO2.orderID);
+	    assertEquals(100, creditVO2.previousCredit, 0);
+	    assertEquals(100, creditVO2.afterCredit, 0);
+	    assertEquals("create", creditVO2.reason);
 	    
-	    assertEquals(creditVO3.guestID, "1234567890");
-	    assertEquals(creditVO3.time, "2016/10/4");
-	    assertEquals(creditVO3.orderID, "244520161004");
-	    assertEquals(creditVO1.previousCredit, 300, 0);
-	    assertEquals(creditVO1.afterCredit, 100, 0);
-	    assertEquals(creditVO3.reason, "executed");
+	    assertEquals("1234567890", creditVO1.guestID);
+	    assertEquals(LocalDateTime.of(2016, 10, 4, 15, 22), creditVO3.time);
+	    assertEquals("244520161004", creditVO3.orderID);
+	    assertEquals(100, creditVO3.previousCredit, 0);
+	    assertEquals(300, creditVO3.afterCredit, 0);
+	    assertEquals("executed", creditVO3.reason);
 	    
 	}
 	
@@ -86,9 +88,9 @@ public class Credit_tester {
 	    List<MarketVO> memberFormulationList = controller.getMemberFormulation();
 	    MarketVO marketVO = memberFormulationList.get(0);
 	    
-	    assertEquals(marketVO.marketName, "Lv1");
-	    assertEquals(marketVO.marketCredit, 50);
-	    assertEquals(marketVO.marketBenefit, 0.9, 0);    
+	    assertEquals("Lv1", marketVO.marketName);
+	    assertEquals(50, marketVO.marketCredit, 0);
+	    assertEquals(0.9, marketVO.marketBenefit, 0);    
 	}
 	
 //	
