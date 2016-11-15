@@ -4,10 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import businessLogic.creditBL.Credit;
-import businessLogic.hotelBL.Hotel;
-import businessLogic.promotionBL.Promotion;
-import businessLogic.userBL.User;
 import businessLogicService.orderBLService.OrderBLService;
 import utilities.OrderState;
 import utilities.ResultMessage;
@@ -16,11 +12,6 @@ import vo.OrderGeneralVO;
 import vo.OrderVO;
 
 public class OrderBLService_Stub implements OrderBLService {
-
-	private Hotel hotel;
-	private Promotion promotion;
-	private Credit creidt;
-	private User user;
 	
 	
 	public OrderBLService_Stub() {
