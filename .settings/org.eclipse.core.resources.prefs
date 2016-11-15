@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/businessLogic/hotelBL/stub/HotelBLService_Stub.java=UTF-8
+encoding//src/main/java/businessLogic/orderBL/stub/OrderBLService_Stub.java=UTF-8
+encoding//src/main/java/businessLogic/promotionBL/PromotionController.java=UTF-8
+encoding//src/main/java/businessLogic/promotionBL/stub/PromotionBLService_Stub.java=UTF-8
 encoding/<project>=UTF-8
