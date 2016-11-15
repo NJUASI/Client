@@ -15,19 +15,20 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.signUpUI.controller.LogInViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="1000.0">
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="15.0" layoutY="150.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="酒店" />
-                  <Button layoutX="15.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="订单" />
-                  <Button layoutX="15.0" layoutY="310.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="会员" />
-                  <Label layoutX="36.0" layoutY="94.0" text="昵称" />
-                  <Button layoutX="15.0" layoutY="390.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="信用" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="Button" />
-                  <Button layoutX="15.0" layoutY="540.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="主页" />
+                  <Button layoutX="9.0" layoutY="150.0" mnemonicParsing="false" prefHeight="40.0" text="酒店订单" />
+                  <Button layoutX="8.0" layoutY="228.0" mnemonicParsing="false" prefHeight="40.0" text="线下处理" />
+                  <Button layoutX="8.0" layoutY="310.0" mnemonicParsing="false" prefHeight="40.0" text="剩余客房" />
+                  <Label layoutX="26.0" layoutY="90.0" text="酒店名" />
+                  <Button layoutX="8.0" layoutY="390.0" mnemonicParsing="false" prefHeight="40.0" text="促销策略" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" wrapText="true" />
+                  <Button layoutX="8.0" layoutY="470.0" mnemonicParsing="false" prefHeight="40.0" text="客房信息" />
+                  <Button layoutX="8.0" layoutY="550.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="主页" />
                </children>
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="601.0" prefWidth="900.0">
