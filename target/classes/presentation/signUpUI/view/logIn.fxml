@@ -37,7 +37,7 @@
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffbfb" height="210.0" stroke="BLACK" strokeType="INSIDE" width="330.0" />
             <Button fx:id="register" layoutX="140.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#register" text="注册" />
-            <GridPane layoutX="65.0" layoutY="20.0">
+            <GridPane layoutX="61.0" layoutY="29.0" prefHeight="111.0" prefWidth="222.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="91.0" text="姓      名：" GridPane.rowIndex="1" />
                   <Label text="密      码：" />
@@ -49,8 +49,8 @@
                   <TextField fx:id="phone" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="83.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="125.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />

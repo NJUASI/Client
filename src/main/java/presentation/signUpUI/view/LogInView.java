@@ -1,9 +1,18 @@
 package presentation.signUpUI.view;
 
+import java.io.IOException;
+
+import com.sun.javafx.robot.impl.FXRobotHelper;
+
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 	
 public class LogInView {
 
@@ -14,7 +23,7 @@ public class LogInView {
 	    @FXML private Pane logInPane;
 	    @FXML private Pane registerPane;
 	    @FXML private Pane mainPane;
-	    @FXML private Button logIn;
+	    @FXML public Button logIn;
 	    @FXML private Button register;
 	    @FXML private TextField ID;
 	    @FXML private TextField password;
@@ -25,7 +34,11 @@ public class LogInView {
 
 
 	    
-	    @FXML
+//	    public LogInView(Stage stage) {
+//			this.stage=stage;
+//		}
+
+		@FXML
 	    protected void openLogIn() {
 	    	 registerPane.setVisible(false);
 	    	 logInPane.setVisible(true);
@@ -40,7 +53,21 @@ public class LogInView {
 	     @FXML
 		 protected void logIn() {
 	    	 System.out.println(ID.getText()+" "+password.getText());
-		 }
+	 		try {
+				Parent root = FXMLLoader.load(getClass().getResource("Guest.fxml"));
+			 ObservableList<Stage> stage = FXRobotHelper.getStages();
+
+	    	 Scene scene = new Scene(root);
+	    	 stage.get(0).setScene(scene);
+
+	 		} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	
+	    	
+			
+	     }
 		     
 		 @FXML
 		 protected void register() {
