@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class Main extends Application{
 	
 	public void start(Stage stage) throws IOException  {
-		Parent root = FXMLLoader.load(getClass().getResource("logIn.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/presentation/signUpUI/view/logIn.fxml"));
 //		Pane root=new Pane();
 		Scene scene = new Scene(root, 1000, 625);
 		

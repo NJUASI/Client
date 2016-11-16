@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="mainPane" prefHeight="625.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.signUpUI.view.LogInView">
+<Pane fx:id="mainPane" prefHeight="625.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.signUpUI.controller.LogInViewController">
    <children>
       <Button fx:id="registerWindow" layoutX="500.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#openRegister" prefHeight="23.0" prefWidth="102.0" text="注册" />
       <Button fx:id="logInWindow" layoutX="398.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#openLogIn" prefHeight="23.0" prefWidth="102.0" text="登录" />

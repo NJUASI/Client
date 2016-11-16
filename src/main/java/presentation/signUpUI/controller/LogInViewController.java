@@ -55,7 +55,7 @@ public class LogInViewController {
 		 protected void logIn() {
 	    	 System.out.println(ID.getText()+" "+password.getText());
 	 		try {
-				Parent root = FXMLLoader.load(getClass().getResource("Guest.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("/presentation/GuestUI/view/Guest.fxml"));
 			 ObservableList<Stage> stage = FXRobotHelper.getStages();
 
 	    	 Scene scene = new Scene(root);
