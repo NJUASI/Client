@@ -13,7 +13,6 @@ import po.RoomInfoPO;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
-import vo.RoomInfoVO;
 
 public interface HotelDataService {
 
@@ -21,9 +20,9 @@ public interface HotelDataService {
 	
 	public ResultMessage setHotelInfo(HotelPO hotelPO);
 	
-	public List<RoomInfoVO> getHotelRoomInfo(String hotelID);
+	public List<RoomInfoPO> getHotelRoomInfo(String hotelID);
 	
-	public ResultMessage setHotelRoomInfo(List<RoomInfoVO> list);
+	public ResultMessage setHotelRoomInfo(List<RoomInfoPO> list);
 	
 	public ResultMessage setCheckInInfo (CheckInPO checkInPO);
 	

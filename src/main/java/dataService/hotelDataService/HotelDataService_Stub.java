@@ -14,7 +14,6 @@ import po.RoomInfoPO;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
-import vo.RoomInfoVO;
 
 public class HotelDataService_Stub implements HotelDataService  {
 	
@@ -31,13 +30,13 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public List<RoomInfoVO> getHotelRoomInfo(String hotelID) {
+	public List<RoomInfoPO> getHotelRoomInfo(String hotelID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	
-	public ResultMessage setHotelRoomInfo(List<RoomInfoVO> list) {
+	public ResultMessage setHotelRoomInfo(List<RoomInfoPO> list) {
 		// TODO Auto-generated method stub
 		return null;
 	}
