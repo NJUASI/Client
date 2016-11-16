@@ -13,16 +13,4 @@
     <version>4.12</version>
 </dependency>
   </dependencies>
-  <build>
-  <plugins>
-  <plugin>
-    <groupId>com.zenjava</groupId>
-    <artifactId>javafx-maven-plugin</artifactId>
-    <version>8.7.0</version>
-    <configuration>
-        <mainClass> http://javafx-maven-plugin.github.io</mainClass>
-    </configuration>
-</plugin>
-  </plugins>
-  </build>
 </project>
