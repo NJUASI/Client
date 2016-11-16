@@ -60,6 +60,7 @@ public class HotelBLService_DriverTest {
 		HotelBLService_Stub stub = new HotelBLService_Stub();
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
 		
-		assertEquals(ResultMessage.SUCCESS, driver.hotelBLService.updateEvaluation(new EvaluationVO(4, "5")));
+		assertEquals(ResultMessage.SUCCESS, driver.hotelBLService.updateEvaluation(new EvaluationVO
+				("123420161002", 4, "5")));
 	}
 }

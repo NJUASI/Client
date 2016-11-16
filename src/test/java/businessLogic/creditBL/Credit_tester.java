@@ -25,7 +25,7 @@ public class Credit_tester {
 		BasicInfoVO userBasicInfoVO = controller.getBasicInfo("1234567890");
 		GuestVO guestVO = userBasicInfoVO.guestVO;
 		
-		assertEquals("1234567890", guestVO.guestID);
+		assertEquals("1234567890", guestVO.userID);
 		assertEquals("000000", guestVO.password);
 		assertEquals(LocalDate.of(1996, 4, 1), guestVO.birthday);
 		assertEquals("school", guestVO.enterprise);
