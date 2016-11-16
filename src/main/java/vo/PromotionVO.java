@@ -1,18 +1,27 @@
 package vo;
 
-public class PromotionVO {
+import java.time.LocalDate;
+
+import utilities.PromotionType;
+
+public abstract class PromotionVO {
+
+	//	折扣类型
+	public PromotionType promotionType;
+	
 	//	折扣率
 	public double discount;
-	//	折扣酒店
-	public String hotelID;
-	//	开始日期
-	public String startDate;
-	//	结束日期
-	public String endDate;
 	
-	public PromotionVO(double discount, String hotelID, String startDate, String endDate) {
+	//	开始日期
+	public LocalDate startDate;
+	
+	//	结束日期
+	public LocalDate endDate;
+	
+	public PromotionVO(PromotionType promotionType, double discount, 
+			LocalDate startDate, LocalDate endDate) {
+		this.promotionType = promotionType;
 		this.discount = discount;
-		this.hotelID = hotelID;
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}

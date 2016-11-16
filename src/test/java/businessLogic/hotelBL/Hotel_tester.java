@@ -2,33 +2,37 @@ package businessLogic.hotelBL;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.junit.Test;
 
+import utilities.PromotionType;
 import vo.HotelGeneralVO;
-import vo.PromotionVO;
+import vo.HotelPromotionVO;
 
 public class Hotel_tester {
 	
 	@Test
 	public void test1() {
 		//test cooperation with class Promotion
-		//test interface getPromotions
+		//test interface getHotelPromotions
 		HotelController hotelController = HotelController.getInstance();
-		List<PromotionVO> list = hotelController.getPromotions("12345678");
-		PromotionVO promotionVO1=list.get(0);
-		PromotionVO promotionVO2=list.get(1);
+		List<HotelPromotionVO> list = hotelController.getHotelPromotions("12345678");
+		HotelPromotionVO promotionVO1=list.get(0);
+		HotelPromotionVO promotionVO2=list.get(1);
 		
+		assertEquals(PromotionType.HOTEL__HOLIDAY, promotionVO1.promotionType);
 		assertEquals(0.9, promotionVO1.discount,0);
 		assertEquals("12345678", promotionVO1.hotelID);
-		assertEquals("2016/11/11", promotionVO1.startDate);
-		assertEquals("2016/11/12", promotionVO1.endDate);
+		assertEquals(LocalDate.of(2016, 11, 1), promotionVO1.startDate);
+		assertEquals(LocalDate.of(2016, 11, 15), promotionVO1.endDate);
 		
-		assertEquals(0.8, promotionVO2.discount,0);
+		assertEquals(PromotionType.HOTEL__ENTERPRISE, promotionVO2.promotionType);
+		assertEquals(0.95, promotionVO2.discount,0);
 		assertEquals("12345678", promotionVO2.hotelID);
-		assertEquals("2016/11/11", promotionVO2.startDate);
-		assertEquals("2016/11/12", promotionVO2.endDate);
+		assertEquals(LocalDate.of(2016, 7, 1), promotionVO2.startDate);
+		assertEquals(LocalDate.of(2016, 12, 31), promotionVO2.endDate);
 	}
 	
 	@Test

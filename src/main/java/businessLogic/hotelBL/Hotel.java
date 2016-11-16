@@ -13,6 +13,7 @@ import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
+import vo.HotelPromotionVO;
 import vo.HotelVO;
 import vo.PromotionVO;
 import vo.RoomInfoVO;
@@ -104,7 +105,7 @@ public class Hotel{
 		return null;
 	}
 	
-	public List<PromotionVO> getPromotions(String hotelID) {
+	public List<HotelPromotionVO> getHotelPromotions(String hotelID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

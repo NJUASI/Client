@@ -17,6 +17,7 @@ import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
+import vo.HotelPromotionVO;
 import vo.HotelVO;
 import vo.PromotionVO;
 import vo.RoomInfoVO;
@@ -133,10 +134,11 @@ public class MockHotel extends Hotel {
 	}
 	
 	@Override
-	public List<PromotionVO> getPromotions(String hotelID) {
-		// TODO Auto-generated method stub
-		List<PromotionVO> list = new ArrayList<PromotionVO>();
-		list= promotion.getPromotions(hotelID);
-		return list;
+	public List<HotelPromotionVO> getHotelPromotions(String hotelID) {
+//		List<PromotionVO> list = new ArrayList<PromotionVO>();
+//		list = promotion.getHotelPromotions(hotelID);
+//		return list;
+		
+		return promotion.getHotelPromotions(hotelID);
 	}
 }

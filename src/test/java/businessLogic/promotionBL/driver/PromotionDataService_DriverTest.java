@@ -29,7 +29,7 @@ public class PromotionDataService_DriverTest {
 		//test interface getWebPromotions
 		PromotionDataService_Stub stub = new PromotionDataService_Stub();
 		PromotionDataService_Driver driver = new PromotionDataService_Driver(stub);
-		WebPromotionPO webPromotionPO =driver.promotionDataService.getWebPromotions("123456").get(0);
+		WebPromotionPO webPromotionPO =driver.promotionDataService.getWebPromotions().get(0);
 		
 		assertEquals("ALL_CYCLE", webPromotionPO.getCycle());
 		assertEquals(LocalDate.of(2016, 2, 2), webPromotionPO.getStartDate());		

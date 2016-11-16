@@ -12,6 +12,7 @@ import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
+import vo.HotelPromotionVO;
 import vo.HotelVO;
 import vo.PromotionVO;
 import vo.RoomInfoVO;
@@ -100,8 +101,8 @@ public class HotelController implements HotelBLService {
 		return hotel.updateEvaluation(evaluationVO);
 	}
 
-	public List<PromotionVO> getPromotions(String hotelID) {
-		return hotel.getPromotions(hotelID);
+	public List<HotelPromotionVO> getHotelPromotions(String hotelID) {
+		return hotel.getHotelPromotions(hotelID);
 	}
 
 }

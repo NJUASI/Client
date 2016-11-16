@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import po.HotelPromotionPO;
-import po.PromotionPO;
 import po.WebPromotionPO;
 import utilities.PromotionType;
 
@@ -21,7 +20,7 @@ public class PromotionDataService_Stub implements PromotionDataService {
 	}
 
 	
-	public List<WebPromotionPO> getWebPromotions(String webMarketerID) {
+	public List<WebPromotionPO> getWebPromotions() {
 		// TODO Auto-generated method stub
 		List<WebPromotionPO> list = new ArrayList<WebPromotionPO>();
 		list.add(new WebPromotionPO(PromotionType.WEB__HOLIDAY, "ALL_CYCLE", 0.9, 
@@ -36,7 +35,7 @@ public class PromotionDataService_Stub implements PromotionDataService {
 	}
 
 	
-	public boolean setWebPromotions(String webMarketerID, List<WebPromotionPO> list) {
+	public boolean setWebPromotions(List<WebPromotionPO> list) {
 		// TODO Auto-generated method stub
 		return false;
 	}

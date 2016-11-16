@@ -5,7 +5,9 @@ import java.util.List;
 import businessLogicService.promotionBLService.PromotionBLService;
 import utilities.PreOrder;
 import utilities.ResultMessage;
+import vo.HotelPromotionVO;
 import vo.PromotionVO;
+import vo.WebPromotionVO;
 
 public class PromotionController implements PromotionBLService {
 
@@ -33,11 +35,6 @@ public class PromotionController implements PromotionBLService {
 //	}
 
 
-	public List<PromotionVO> getPromotions(String userID) {
-		
-		return promotion.getPromotions(userID);
-	}
-
 	public ResultMessage update(List<PromotionVO> list) {
 		
 		return promotion.update(list);
@@ -46,6 +43,26 @@ public class PromotionController implements PromotionBLService {
 	public float getDiscout(PreOrder preOrder) {
 		// TODO Auto-generated method stub
 		return promotion.getDiscout(preOrder);
+	}
+
+	public List<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
+		// TODO Auto-generated method stub
+		return promotion.getHotelPromotions(hotelWorkerID);
+	}
+
+	public List<WebPromotionVO> getWebPromotions() {
+		// TODO Auto-generated method stub
+		return getWebPromotions();
+	}
+
+	public ResultMessage setHotelPromotions(String hotelWorkerID, List<HotelPromotionVO> list) {
+		// TODO Auto-generated method stub
+		return setHotelPromotions(hotelWorkerID, list);
+	}
+
+	public ResultMessage setWebPromotions(List<WebPromotionVO> list) {
+		// TODO Auto-generated method stub
+		return setWebPromotions(list);
 	}
 
 }

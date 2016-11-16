@@ -2,12 +2,16 @@ package presentation.hotelWorkerUI.driver;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
 import businessLogic.promotionBL.stub.PromotionBLService_Stub;
+import utilities.PromotionType;
 import utilities.ResultMessage;
+import vo.HotelPromotionVO;
 import vo.PromotionVO;
 
 public class PromotionBLService_DriverTest {
@@ -17,12 +21,22 @@ public class PromotionBLService_DriverTest {
 		//test interface getPromotions
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
-		PromotionVO promotionVO = driver.promotionBLService.getPromotions("12345678").get(0);
+		List<HotelPromotionVO> list = driver.promotionBLService.getHotelPromotions("12345678");
 
-		assertEquals(0.8, promotionVO.discount, 0);
-		assertEquals("12345678", promotionVO.hotelID);
-		assertEquals("2016/11/12", promotionVO.endDate);
-		assertEquals("2016/11/11", promotionVO.startDate);
+		HotelPromotionVO promotionVO1=list.get(0);
+		HotelPromotionVO promotionVO2=list.get(1);
+		
+		assertEquals(PromotionType.HOTEL__HOLIDAY, promotionVO1.promotionType);
+		assertEquals(0.9, promotionVO1.discount,0);
+		assertEquals("12345678", promotionVO1.hotelID);
+		assertEquals(LocalDate.of(2016, 11, 1), promotionVO1.startDate);
+		assertEquals(LocalDate.of(2016, 11, 15), promotionVO1.endDate);
+		
+		assertEquals(PromotionType.HOTEL__ENTERPRISE, promotionVO2.promotionType);
+		assertEquals(0.95, promotionVO2.discount,0);
+		assertEquals("12345678", promotionVO2.hotelID);
+		assertEquals(LocalDate.of(2016, 7, 1), promotionVO2.startDate);
+		assertEquals(LocalDate.of(2016, 12, 31), promotionVO2.endDate);
 
 	}
 
@@ -32,7 +46,8 @@ public class PromotionBLService_DriverTest {
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
 		ArrayList<PromotionVO> list = new ArrayList<PromotionVO>();
-		list.add(new PromotionVO(0.9, "12345678", "2016/11/11", "2016/11/12"));
+		list.add(new HotelPromotionVO(PromotionType.HOTEL__HOLIDAY, "12345678", 0.9, 
+				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 
 		assertEquals(ResultMessage.SUCCESS, driver.promotionBLService.update(list));
 	}

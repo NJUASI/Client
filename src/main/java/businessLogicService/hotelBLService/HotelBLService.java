@@ -47,9 +47,6 @@ public interface HotelBLService {
 	
 	public List<HotelGeneralVO> getUncommentedHotels (String userID);
 	
-	public ResultMessage updateEvaluation (EvaluationVO evaluationVO);
-	
-	public List<PromotionVO> getPromotions (String hotelID);
-	
+	public ResultMessage updateEvaluation (EvaluationVO evaluationVO);	
 	
 }
