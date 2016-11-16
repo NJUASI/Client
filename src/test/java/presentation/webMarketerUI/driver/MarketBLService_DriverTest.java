@@ -15,6 +15,7 @@ public class MarketBLService_DriverTest {
 
 	@Test
 	public void test() {
+		//test interface setMemberFormulation
 		MarketBLService_Stub stub = new MarketBLService_Stub();
 		MarketBLService_Driver driver = new MarketBLService_Driver(stub);
 		

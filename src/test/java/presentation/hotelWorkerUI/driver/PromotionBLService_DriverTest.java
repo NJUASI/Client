@@ -12,13 +12,12 @@ import businessLogic.promotionBL.stub.PromotionBLService_Stub;
 import utilities.PromotionType;
 import utilities.ResultMessage;
 import vo.HotelPromotionVO;
-import vo.PromotionVO;
 
 public class PromotionBLService_DriverTest {
 
 	@Test
 	public void test1() {
-		//test interface getPromotions
+		//test interface getHotelPromotions
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
 		List<HotelPromotionVO> list = driver.promotionBLService.getHotelPromotions("12345678");
@@ -42,14 +41,14 @@ public class PromotionBLService_DriverTest {
 
 	@Test
 	public void test2() {
-		//test interface update
+		//test interface setHotelPromotions
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
-		ArrayList<PromotionVO> list = new ArrayList<PromotionVO>();
+		ArrayList<HotelPromotionVO> list = new ArrayList<HotelPromotionVO>();
 		list.add(new HotelPromotionVO(PromotionType.HOTEL__HOLIDAY, "12345678", 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 
-		assertEquals(ResultMessage.SUCCESS, driver.promotionBLService.update(list));
+		assertEquals(ResultMessage.SUCCESS, driver.promotionBLService.setHotelPromotions("12345678", list));
 	}
 
 }

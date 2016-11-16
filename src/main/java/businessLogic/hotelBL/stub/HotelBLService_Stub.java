@@ -1,6 +1,5 @@
 package businessLogic.hotelBL.stub;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,10 +11,11 @@ import utilities.ResultMessage;
 import utilities.RoomType;
 import utilities.SortStrategy;
 import vo.AddressVO;
+import vo.CheckInVO;
+import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
-import vo.PromotionVO;
 import vo.RoomInfoVO;
 
 public class HotelBLService_Stub implements HotelBLService{
@@ -108,13 +108,15 @@ public class HotelBLService_Stub implements HotelBLService{
 	}
 
 	
-	public ResultMessage updateCheckIn(String orderID, List<String> roomNum, LocalDateTime inTime, LocalDateTime expectedLeaveTime) {
-		return ResultMessage.SUCCESS;
+	public ResultMessage updateCheckIn(CheckInVO checkInVO) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	
-	public ResultMessage updateCheckOut(String orderID, LocalDateTime outTime) {
-		return ResultMessage.SUCCESS;
+
+	public ResultMessage updateCheckOut(CheckOutVO checkOutVO) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
@@ -136,11 +138,4 @@ public class HotelBLService_Stub implements HotelBLService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-	public List<PromotionVO> getPromotions(String hotelID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

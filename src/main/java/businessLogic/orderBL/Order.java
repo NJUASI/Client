@@ -10,7 +10,6 @@ import vo.OrderVO;
 
 public class Order {
 	
-	
 	private Promotion promotion;
 	
 	public Order() {

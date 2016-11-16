@@ -1,6 +1,5 @@
 package businessLogic.hotelBL;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,33 +7,23 @@ import java.util.Map;
 
 import businessLogic.orderBL.MockOrder;
 import businessLogic.orderBL.Order;
-import businessLogic.promotionBL.MockPromotion;
-import businessLogic.promotionBL.Promotion;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
 import utilities.SortStrategy;
 import vo.AddressVO;
+import vo.CheckInVO;
+import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
-import vo.HotelPromotionVO;
 import vo.HotelVO;
-import vo.PromotionVO;
 import vo.RoomInfoVO;
 
-/**
- * @author Harvey Gong
- *
- * 上午2:35:58
- */
 public class MockHotel extends Hotel {
 
-
-	private Promotion promotion;
 	private Order order;
 	
 	public MockHotel() {
-		promotion = new MockPromotion();
 		order = new MockOrder();
 	}
 	
@@ -64,12 +53,12 @@ public class MockHotel extends Hotel {
 	}
 
 	@Override
-	public ResultMessage updateCheckIn(String orderID, List<String> roomNum, LocalDateTime inTime, LocalDateTime expectedLeaveTime) {
+	public ResultMessage updateCheckIn(CheckInVO checkInVO) {
 		return ResultMessage.SUCCESS;
 	}
 
 	@Override
-	public ResultMessage updateCheckOut(String orderID, LocalDateTime outTime) {
+	public ResultMessage updateCheckOut(CheckOutVO checkOutVO) {
 		return ResultMessage.SUCCESS;
 	}
 
@@ -131,14 +120,5 @@ public class MockHotel extends Hotel {
 	@Override
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return ResultMessage.SUCCESS;
-	}
-	
-	@Override
-	public List<HotelPromotionVO> getHotelPromotions(String hotelID) {
-//		List<PromotionVO> list = new ArrayList<PromotionVO>();
-//		list = promotion.getHotelPromotions(hotelID);
-//		return list;
-		
-		return promotion.getHotelPromotions(hotelID);
 	}
 }

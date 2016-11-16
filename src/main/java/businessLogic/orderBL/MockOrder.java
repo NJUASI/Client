@@ -16,7 +16,6 @@ import vo.OrderVO;
 
 public class MockOrder extends Order{
 
-	
 	private Promotion promotion;
 	
 	public MockOrder() {
@@ -26,7 +25,7 @@ public class MockOrder extends Order{
 	@Override
 	public ResultMessage createOrder(OrderVO orderVO) {
 		PreOrder preOrder = new PreOrder(orderVO);
-		float discout = promotion.getDiscout(preOrder);
+		double discout = promotion.getDiscout(preOrder);
 		orderVO.orderGeneralVO.price=(int)discout*orderVO.previousPrice;
 		return ResultMessage.SUCCESS;
 	}

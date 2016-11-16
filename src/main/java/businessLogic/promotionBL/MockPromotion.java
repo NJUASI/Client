@@ -8,16 +8,10 @@ import utilities.PreOrder;
 import utilities.PromotionType;
 import utilities.ResultMessage;
 import vo.HotelPromotionVO;
-import vo.PromotionVO;
 import vo.WebPromotionVO;
 
 public class MockPromotion extends Promotion {
-	
-	@Override
-	public ResultMessage update(List<PromotionVO> list) {
-		return ResultMessage.SUCCESS;
-	}
-	
+
 	public List<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		List<HotelPromotionVO> list = new LinkedList<HotelPromotionVO>();
@@ -52,9 +46,9 @@ public class MockPromotion extends Promotion {
 		return ResultMessage.SUCCESS;
 	}
 	
-	public float getDiscout(PreOrder preOrder) {
+	public double getDiscout(PreOrder preOrder) {
 		// TODO Auto-generated method stub
-		return 0;
+		return 0.8;
 	}
 	
 }

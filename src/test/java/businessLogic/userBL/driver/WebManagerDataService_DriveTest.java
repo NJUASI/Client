@@ -12,11 +12,11 @@ public class WebManagerDataService_DriveTest {
 
 	@Test
 	public void test1() {
-			//test interface getSingle
+		//test interface getSingle
 		WebManagerDataService_Stub stub = new WebManagerDataService_Stub();
 		WebManagerDataService_Driver driver = new WebManagerDataService_Driver(stub);
-			
-			assertEquals(ResultMessage.SUCCESS, driver.webManagerDataService.add(new WebManagerPO("0001", "123456")));
+		
+		assertEquals(ResultMessage.SUCCESS, driver.webManagerDataService.add(new WebManagerPO("0001", "123456")));
 	}
 	
 	@Test

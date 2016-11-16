@@ -26,9 +26,9 @@ public class PromotionBLService_Stub implements PromotionBLService{
 	}
 
 	
-	public float getDiscout(PreOrder preOrder) {
+	public double getDiscout(PreOrder preOrder) {
 		// TODO Auto-generated method stub
-		return (float)0.8;
+		return 0.8;
 	}
 
 
@@ -49,9 +49,9 @@ public class PromotionBLService_Stub implements PromotionBLService{
 		// TODO Auto-generated method stub
 		List<WebPromotionVO> list = new LinkedList<WebPromotionVO>();
 		
-		list.add(new WebPromotionVO(PromotionType.HOTEL__HOLIDAY, "ALL_CYCLE", 0.9, 
+		list.add(new WebPromotionVO(PromotionType.WEB__HOLIDAY, "ALL_CYCLE", 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
-		list.add(new WebPromotionVO(PromotionType.HOTEL__ENTERPRISE, "ALL_CYCLE", 0.95, 
+		list.add(new WebPromotionVO(PromotionType.WEB__VIP_APPOINTED_CYCLE, "ALL_CYCLE", 0.95, 
 				LocalDate.of(2016, 7, 1), LocalDate.of(2016, 12, 31)));
 		
 		return list;

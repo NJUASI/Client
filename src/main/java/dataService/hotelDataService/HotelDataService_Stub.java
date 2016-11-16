@@ -1,6 +1,8 @@
 package dataService.hotelDataService;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import po.AddressPO;
 import po.CheckInPO;
@@ -9,6 +11,8 @@ import po.EvaluationPO;
 import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RoomInfoPO;
+import utilities.Operation;
+import utilities.ResultMessage;
 import utilities.RoomType;
 
 public class HotelDataService_Stub implements HotelDataService  {
@@ -27,9 +31,9 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public boolean addEvaluation(EvaluationPO evaluationPO) {
+	public ResultMessage addEvaluation(EvaluationPO evaluationPO) {
 		// TODO Auto-generated method stub
-		return false;
+		return ResultMessage.SUCCESS;
 	}
 
 	
@@ -39,9 +43,9 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public boolean setHotelInfo(HotelPO hotelInfoPO) {
+	public ResultMessage setHotelInfo(HotelPO hotelInfoPO) {
 		// TODO Auto-generated method stub
-		return false;
+		return ResultMessage.SUCCESS;
 	}
 
 	
@@ -51,39 +55,41 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public boolean setHotelRoomInfo(RoomInfoPO hotelRoomInfoPO) {
+	public ResultMessage setHotelRoomInfo(RoomInfoPO hotelRoomInfoPO) {
 		// TODO Auto-generated method stub
-		return false;
+		return ResultMessage.SUCCESS;
 	}
 
 	
-	public boolean setCheckInInfo(CheckInPO checkInInfo) {
+	public ResultMessage setCheckInInfo(CheckInPO checkInInfo) {
 		// TODO Auto-generated method stub
-		return false;
+		return ResultMessage.SUCCESS;
 	}
 
 	
-	public boolean setCheckOutInfo(CheckOutPO checkOutInfo) {
+	public ResultMessage setCheckOutInfo(CheckOutPO checkOutInfo) {
 		// TODO Auto-generated method stub
-		return false;
+		return ResultMessage.SUCCESS;
 	}
 
 	
-	public RoomInfoPO getRemainRoomInfo(String hotelID) {
+	public List<RoomInfoPO> getRemainRoomInfo(String hotelID) {
 		// TODO Auto-generated method stub
-		return new RoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200);
+		List<RoomInfoPO> list = new ArrayList<RoomInfoPO>();
+		list.add(new RoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200));
+		return list;
 	}
 
 	
-	public boolean setRemainRoomInfo(RoomInfoPO remainRoomInfoPO) {
+	public ResultMessage setRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) {
 		// TODO Auto-generated method stub
-		return false;
+		return ResultMessage.SUCCESS;
 	}
 
 	
-	public boolean add(HotelPO hotelInfoPO) {
+	public ResultMessage add(HotelPO hotelInfoPO) {
 		// TODO Auto-generated method stub
-		return false;
+		return ResultMessage.SUCCESS;
 	}
 	
 }

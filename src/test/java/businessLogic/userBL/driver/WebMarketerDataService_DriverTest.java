@@ -12,11 +12,11 @@ public class WebMarketerDataService_DriverTest {
 
 	@Test
 	public void test1() {
-			//test interface getSingle
+		//test interface getSingle
 		WebMarketerDataService_Stub stub = new WebMarketerDataService_Stub();
 		WebMarketerDataService_Driver driver = new WebMarketerDataService_Driver(stub);
-			
-			assertEquals(ResultMessage.SUCCESS, driver.webMarketerDataService.add(new WebMarketerPO("000001", "123456")));
+		
+		assertEquals(ResultMessage.SUCCESS, driver.webMarketerDataService.add(new WebMarketerPO("000001", "123456")));
 	}
 	
 	@Test

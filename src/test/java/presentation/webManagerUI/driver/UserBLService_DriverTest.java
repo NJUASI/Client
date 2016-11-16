@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import businessLogic.userBL.stub.UserBLService_Stub;
 import utilities.ResultMessage;
-import utilities.UserType;
 import vo.GuestVO;
 import vo.UserVO;
 
@@ -30,14 +29,6 @@ public class UserBLService_DriverTest {
 		UserBLService_Stub stub = new UserBLService_Stub();
 		UserBLService_Driver driver = new UserBLService_Driver(stub);
 		assertEquals(ResultMessage.SUCCESS, driver.userBLService.modify(new UserVO("1234567890", "000000")));
-	}
-
-	@Test
-	public void test3() {
-		//test interface getLoginInfo
-		UserBLService_Stub stub = new UserBLService_Stub();
-		UserBLService_Driver driver = new UserBLService_Driver(stub);
-		assertEquals("000000", driver.userBLService.getLogInInfo("1234567890", UserType.GUEST));
 	}
 
 }

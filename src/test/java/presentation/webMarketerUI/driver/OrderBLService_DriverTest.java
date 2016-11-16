@@ -13,64 +13,18 @@ import utilities.RoomType;
 import vo.OrderVO;
 
 public class OrderBLService_DriverTest {
-
+	
 	@Test
-	//test orderBLService.createOrder
+	//test interface undoAbnormalOrder
 	public void test1() {
 		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
-		
-		LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 30);
-		LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
-		LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
-		LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
-		LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
-		
-		OrderState orderState = OrderState.EXECUTED;
-		RoomType roomType = RoomType.AMBASSADOR;
-		
-		OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 
-				250, 200, createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, 
-				orderState, roomType, 2, "301  302", 2, "zhangsan","13554321234", "no");
-		
-		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.createOrder(orderVO));
+		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoAbnormalOrder("123456789012"));
 	}
-
+	
 	@Test
-	//test orderBLService.executeOrder
+	//test interface getOrderDetail
 	public void test2() {
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
-		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.executeOrder("123456789012"));
-	}
-	
-	@Test
-	//test orderBLService.undoAbnormalOrder
-	public void test3() {
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
-		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoAbnormalOrder("123456789012"));
-	}
-	
-	@Test
-	//test orderBLService.undoAbnormalOrder
-	public void test4() {
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
-		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoAbnormalOrder("123456789012"));
-	}
-	
-	@Test
-	//test orderBLService.undoNormalOrder
-	public void test5() {
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
-		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoNormalOrder("123456789012"));
-	}
-	
-	@Test
-	//test orderBLService.getOrderDetail
-	public void test6() {
 		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
         OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");

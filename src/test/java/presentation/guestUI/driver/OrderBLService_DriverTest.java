@@ -35,9 +35,17 @@ public class OrderBLService_DriverTest {
 		
 		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.createOrder(orderVO));
 	}
-
+	
 	@Test
 	public void test2() {
+		// test interface undoNormalOrder
+		OrderBLService_Stub stub = new OrderBLService_Stub();
+		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoNormalOrder("123456789012"));
+	}
+
+	@Test
+	public void test3() {
 		//test interface getOrderDetail
 		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);

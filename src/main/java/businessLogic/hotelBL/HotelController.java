@@ -1,6 +1,5 @@
 package businessLogic.hotelBL;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -10,18 +9,13 @@ import utilities.ResultMessage;
 import utilities.RoomType;
 import utilities.SortStrategy;
 import vo.AddressVO;
+import vo.CheckInVO;
+import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
-import vo.HotelPromotionVO;
 import vo.HotelVO;
-import vo.PromotionVO;
 import vo.RoomInfoVO;
 
-/**
- * @author Harvey Gong
- *
- * 上午2:35:25
- */
 public class HotelController implements HotelBLService {
 
 	
@@ -55,12 +49,12 @@ public class HotelController implements HotelBLService {
 		return hotel.updateHotelRoomInfo(list);
 	}
 
-	public ResultMessage updateCheckIn(String orderID, List<String> roomNum, LocalDateTime inTime, LocalDateTime expectedLeaveTime) {
-		return hotel.updateCheckIn(orderID, roomNum, inTime, expectedLeaveTime);
+	public ResultMessage updateCheckIn(CheckInVO checkInVO) {
+		return hotel.updateCheckIn(checkInVO);
 	}
 
-	public ResultMessage updateCheckOut(String orderID, LocalDateTime outTime) {
-		return hotel.updateCheckOut(orderID, outTime);
+	public ResultMessage updateCheckOut(CheckOutVO checkOutVO) {
+		return hotel.updateCheckOut(checkOutVO);
 	}
 
 	public List<RoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
@@ -100,9 +94,4 @@ public class HotelController implements HotelBLService {
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return hotel.updateEvaluation(evaluationVO);
 	}
-
-	public List<HotelPromotionVO> getHotelPromotions(String hotelID) {
-		return hotel.getHotelPromotions(hotelID);
-	}
-
 }

@@ -17,6 +17,6 @@ public interface PromotionBLService {
 
 	public ResultMessage setWebPromotions(List<WebPromotionVO> list);
 	
-	public float getDiscout(PreOrder preOrder);
+	public double getDiscout(PreOrder preOrder);
 
 }

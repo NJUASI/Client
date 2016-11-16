@@ -5,15 +5,9 @@ import java.util.List;
 import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.HotelPromotionVO;
-import vo.PromotionVO;
 import vo.WebPromotionVO;
 
 public class Promotion{
-
-	public ResultMessage update(List<PromotionVO> list) {
-		// TODO Auto-generated method stub
-		return  null;
-	}
 
 	public List<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
 		// TODO Auto-generated method stub
@@ -35,7 +29,7 @@ public class Promotion{
 		return ResultMessage.SUCCESS;
 	}
 	
-	public float getDiscout(PreOrder preOrder) {
+	public double getDiscout(PreOrder preOrder) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

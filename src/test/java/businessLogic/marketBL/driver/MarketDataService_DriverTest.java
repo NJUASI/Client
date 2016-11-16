@@ -18,8 +18,6 @@ public class MarketDataService_DriverTest {
 		assertEquals("aa", marketPO.getMarketName());
 		assertEquals(0, marketPO.getMarketCredit(), 0);
 		assertEquals(0.9, marketPO.getMarketBenefit(), 0);
-	
-	
 	}
 
 }

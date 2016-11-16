@@ -1,6 +1,5 @@
 package businessLogicService.hotelBLService;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -9,10 +8,11 @@ import utilities.ResultMessage;
 import utilities.RoomType;
 import utilities.SortStrategy;
 import vo.AddressVO;
+import vo.CheckInVO;
+import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
-import vo.PromotionVO;
 import vo.RoomInfoVO;
 
 public interface HotelBLService {
@@ -25,9 +25,9 @@ public interface HotelBLService {
 	
 	public ResultMessage updateHotelRoomInfo (List<RoomInfoVO> list);
 	
-	public ResultMessage updateCheckIn (String orderID, List<String> roomNum, LocalDateTime inTime, LocalDateTime expectedLeaveTime);
+	public ResultMessage updateCheckIn (CheckInVO checkInVO);
 	
-	public ResultMessage updateCheckOut (String orderID, LocalDateTime outTime);
+	public ResultMessage updateCheckOut (CheckOutVO checkOutVO);
 	
 	public List<RoomInfoVO> getRemainRoomInfo (String hotelWorkerID);
 	
