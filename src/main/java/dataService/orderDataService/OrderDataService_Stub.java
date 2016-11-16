@@ -1,5 +1,6 @@
 package dataService.orderDataService;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,9 +18,14 @@ public class OrderDataService_Stub implements OrderDataService {
 		return ResultMessage.SUCCESS;
 	}
 
-	
-	public OrderPO getOrderDetail(String orderID) {
+
+	public ResultMessage executeOrder(String orderID) {
 		// TODO Auto-generated method stub
+		return ResultMessage.SUCCESS;
+	}
+
+
+	public OrderPO getOrderDetail(String orderID) {
 		LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 20);
 		LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
 		LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
@@ -49,9 +55,15 @@ public class OrderDataService_Stub implements OrderDataService {
 	}
 
 	
-	public ResultMessage executeOrder(String orderID) {
+	public List<OrderGeneralPO> getAllAbnormalOrderGeneral(LocalDate date) {
 		// TODO Auto-generated method stub
-		return ResultMessage.SUCCESS;
+		return null;
+	}
+
+
+	public List<OrderGeneralPO> getAllAbnormalOrderGeneral() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

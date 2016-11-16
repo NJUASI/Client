@@ -1,7 +1,8 @@
 /businessLogic/
 /businessLogicService/
-/utilities/
-/vo/
-/presentation/
 /dataService/
 /po/
+/presentation/
+/utilities/
+/vo/
+/.DS_Store

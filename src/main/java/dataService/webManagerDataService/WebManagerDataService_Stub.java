@@ -14,6 +14,14 @@ public class WebManagerDataService_Stub implements WebManagerDataService{
 	}
 
 	
+	public List<WebManagerPO> getAllWebManager() {
+		 List<WebManagerPO> list = new  ArrayList<WebManagerPO>();
+		 WebManagerPO a= new WebManagerPO("0001", "123456");
+		 list.add(a);
+		return list;
+	}
+
+	
 	public ResultMessage add(WebManagerPO newWebManagerPO) {
 		return ResultMessage.SUCCESS;
 	}
@@ -24,13 +32,10 @@ public class WebManagerDataService_Stub implements WebManagerDataService{
 		return null;
 	}
 
-	
-	public List<WebManagerPO> getAllWebManager() {
+
+	public ResultMessage init() {
 		// TODO Auto-generated method stub
-		 List<WebManagerPO> list = new  ArrayList<WebManagerPO>();
-		 WebManagerPO a= new WebManagerPO("0001", "123456");
-		 list.add(a);
-		return list;
+		return null;
 	}
 
 }

@@ -14,8 +14,16 @@ public class HotelWorkerDataService_Stub implements HotelWorkerDataService{
 	}
 
 	
+	public List<HotelWorkerPO> getAllHotelWorker() {
+		List<HotelWorkerPO>  list= new ArrayList<HotelWorkerPO>();
+		HotelWorkerPO b= new HotelWorkerPO("00001111", "123456");
+		list.add(b);
+		return list;
+	}
+	
+	
 	public ResultMessage add(HotelWorkerPO newHotelWorkerPO) {
-		
+		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}
 
@@ -29,15 +37,6 @@ public class HotelWorkerDataService_Stub implements HotelWorkerDataService{
 	public ResultMessage init() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	
-	public List<HotelWorkerPO> getAllHotelWorker() {
-		// TODO Auto-generated method stub
-		List<HotelWorkerPO>  list= new ArrayList<HotelWorkerPO>();
-		HotelWorkerPO b= new HotelWorkerPO("00001111", "123456");
-		list.add(b);
-		return list;
 	}
 
 }

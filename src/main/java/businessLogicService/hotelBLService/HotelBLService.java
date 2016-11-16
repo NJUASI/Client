@@ -31,7 +31,8 @@ public interface HotelBLService {
 	
 	public List<RoomInfoVO> getRemainRoomInfo (String hotelWorkerID);
 	
-	public ResultMessage updateRemainRoomInfo (Operation operation, Map<RoomType, Integer> roomInfo);
+	public ResultMessage updateRemainRoomInfo (String hotelID, Operation operation, 
+			Map<RoomType, Integer> roomInfo);
 	
 	public ResultMessage add (HotelVO hotelVO);
 	

@@ -59,7 +59,7 @@ public class Hotel{
 		return null;
 	}
 
-	public ResultMessage updateRemainRoomInfo(Operation operation, Map<RoomType, Integer> roomInfo) {
+	public ResultMessage updateRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -14,28 +14,10 @@ import po.RoomInfoPO;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
+import vo.RoomInfoVO;
 
 public class HotelDataService_Stub implements HotelDataService  {
-
 	
-	public List<HotelGeneralPO> getHotelList(AddressPO addressPO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	public HotelPO getHotelDetail(String hotelID) {
-		// TODO Auto-generated method stub
-		return new HotelPO("12345678", "thisHotel", "NanJing", "center", "address", "4",
-				5,"5", "good", "allEquipment");
-	}
-
-	
-	public ResultMessage addEvaluation(EvaluationPO evaluationPO) {
-		// TODO Auto-generated method stub
-		return ResultMessage.SUCCESS;
-	}
-
 	
 	public HotelPO getHotelInfo(String hotelID) {
 		// TODO Auto-generated method stub
@@ -49,15 +31,15 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public RoomInfoPO getHotelRoomInfo(String hotelID) {
+	public List<RoomInfoVO> getHotelRoomInfo(String hotelID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	
-	public ResultMessage setHotelRoomInfo(RoomInfoPO hotelRoomInfoPO) {
+	public ResultMessage setHotelRoomInfo(List<RoomInfoVO> list) {
 		// TODO Auto-generated method stub
-		return ResultMessage.SUCCESS;
+		return null;
 	}
 
 	
@@ -74,7 +56,6 @@ public class HotelDataService_Stub implements HotelDataService  {
 
 	
 	public List<RoomInfoPO> getRemainRoomInfo(String hotelID) {
-		// TODO Auto-generated method stub
 		List<RoomInfoPO> list = new ArrayList<RoomInfoPO>();
 		list.add(new RoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200));
 		return list;
@@ -92,4 +73,24 @@ public class HotelDataService_Stub implements HotelDataService  {
 		return ResultMessage.SUCCESS;
 	}
 	
+	
+	
+	
+	
+	public List<HotelGeneralPO> getHotelList(AddressPO addressPO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public HotelPO getHotelDetail(String hotelID) {
+		return new HotelPO("12345678", "thisHotel", "NanJing", "center", "address", "4",
+				5,"5", "good", "allEquipment");
+	}
+
+	
+	public ResultMessage addEvaluation(EvaluationPO evaluationPO) {
+		return ResultMessage.SUCCESS;
+	}
+
 }

@@ -14,6 +14,14 @@ public class WebMarketerDataService_Stub implements WebMarketerDataService{
 	}
 
 	
+	public List<WebMarketerPO> getAllWebMarketer() {
+		List<WebMarketerPO> list= new ArrayList<WebMarketerPO>();
+		WebMarketerPO a= new WebMarketerPO("000001", "123456");
+		list.add(a);
+		return list;
+	}
+	
+	
 	public ResultMessage add(WebMarketerPO newWebMarketerPO) {
 		return ResultMessage.SUCCESS;
 	}
@@ -28,15 +36,6 @@ public class WebMarketerDataService_Stub implements WebMarketerDataService{
 	public ResultMessage init() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	
-	public List<WebMarketerPO> getAllWebMarketer() {
-		// TODO Auto-generated method stub
-		List<WebMarketerPO> list= new ArrayList<WebMarketerPO>();
-		WebMarketerPO a= new WebMarketerPO("000001", "123456");
-		list.add(a);
-		return list;
 	}
 
 }

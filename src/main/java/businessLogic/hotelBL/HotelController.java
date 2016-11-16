@@ -61,8 +61,8 @@ public class HotelController implements HotelBLService {
 		return hotel.getRemainRoomInfo(hotelWorkerID);
 	}
 
-	public ResultMessage updateRemainRoomInfo(Operation operation, Map<RoomType, Integer> roomInfo) {
-		return hotel.updateRemainRoomInfo(operation, roomInfo);
+	public ResultMessage updateRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) {
+		return hotel.updateRemainRoomInfo(hotelID, operation, roomInfo);
 	}
 
 	public ResultMessage add(HotelVO hotelVO) {

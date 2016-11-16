@@ -1,19 +1,20 @@
 package dataService.marketDataService;
 
-import po.HotelPO;
+import java.util.List;
+
 import po.MarketPO;
 import utilities.ResultMessage;
 
 public class MarketDataService_Stub implements MarketDataService {
 
-	
-	public MarketPO getMemberFormulation() {
+
+	public List<MarketPO> getMemberFormulation() {
 		// TODO Auto-generated method stub
-		return new MarketPO("aa", 0, 0.9);
+		return null;
 	}
 
-	
-	public ResultMessage setMemberFormulation(HotelPO hotelInfoPO) {
+
+	public ResultMessage setMemberFormulation(List<MarketPO> marketPOList) {
 		// TODO Auto-generated method stub
 		return null;
 	}
