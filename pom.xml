@@ -13,12 +13,13 @@
     <version>4.12</version>
 </dependency>
 
-  <!-- https://mvnrepository.com/artifact/org.jfxtras/jfxtras-fxml -->
+ <!-- https://mvnrepository.com/artifact/eu.agrosense.client/util-javafx -->
 <dependency>
-    <groupId>org.jfxtras</groupId>
-    <artifactId>jfxtras-fxml</artifactId>
-    <version>8.0-r5</version>
+    <groupId>eu.agrosense.client</groupId>
+    <artifactId>util-javafx</artifactId>
+    <version>14.06-beta</version>
 </dependency>
+
   
   </dependencies>
 </project>
