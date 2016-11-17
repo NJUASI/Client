@@ -2,6 +2,7 @@ package businessLogic.orderBL.driver;
 
 import static org.junit.Assert.*;
 
+import java.rmi.RemoteException;
 import java.time.LocalDateTime;
 
 import org.junit.Test;
@@ -34,7 +35,11 @@ public class OrderDataService_DriverTest {
 				createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, orderState, 
 				roomType, 2, "301", 2, "zhangsan","13554321234", "no");
 		
-		assertEquals(ResultMessage.SUCCESS, driver.orderDataService.createOrder(orderPO));
+		try {
+			assertEquals(ResultMessage.SUCCESS, driver.orderDataService.createOrder(orderPO));
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
@@ -42,31 +47,37 @@ public class OrderDataService_DriverTest {
 		//test interface getOrderDetails
 		OrderDataService_Stub stub = new OrderDataService_Stub();
 		OrderDataService_Driver driver = new OrderDataService_Driver(stub);
-		OrderPO orderPO = driver.orderDataService.getOrderDetail("123456789012");
+		OrderPO orderPO;
+		try {
+			orderPO = driver.orderDataService.getOrderDetail("123456789012");
+			LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 20);
+			LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
+			LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
+			LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
+			LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
 		
-		LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 20);
-		LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
-		LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
-		LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
-		LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
+			assertEquals("123456789012", orderPO.getOrderID());
+			assertEquals("thisHotel", orderPO.getHotelName());
+			assertEquals("address", orderPO.getHotelAddress());
+			assertEquals(200, orderPO.getPreviousPrice(), 0);
+			assertEquals(200, orderPO.getPrice(), 0);
+			assertEquals(createTime, orderPO.getCreateTime());
+			assertEquals(checkInTime, orderPO.getCheckInTime());
+			assertEquals(checkOutTime, orderPO.getCheckOutTime());
+			assertEquals(expectExecuteTime, orderPO.getExpectExecuteTime());
+			assertEquals(expectLeaveTime, orderPO.getExpectLeaveTime());
+			assertEquals(OrderState.EXECUTED, orderPO.getState());
+			assertEquals(RoomType.AMBASSADOR, orderPO.getRoomType());
+			assertEquals(2, orderPO.getRoomNumCount());
+			assertEquals("301  302", orderPO.getRoomNumber());
+			assertEquals("zhangsan", orderPO.getName());
+			assertEquals("13554321234", orderPO.getPhone());
+			assertEquals("no", orderPO.getMessage());
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 		
-		assertEquals("123456789012", orderPO.getOrderID());
-		assertEquals("thisHotel", orderPO.getHotelName());
-		assertEquals("address", orderPO.getHotelAddress());
-		assertEquals(200, orderPO.getPreviousPrice(), 0);
-		assertEquals(200, orderPO.getPrice(), 0);
-		assertEquals(createTime, orderPO.getCreateTime());
-		assertEquals(checkInTime, orderPO.getCheckInTime());
-		assertEquals(checkOutTime, orderPO.getCheckOutTime());
-		assertEquals(expectExecuteTime, orderPO.getExpectExecuteTime());
-		assertEquals(expectLeaveTime, orderPO.getExpectLeaveTime());
-		assertEquals(OrderState.EXECUTED, orderPO.getState());
-		assertEquals(RoomType.AMBASSADOR, orderPO.getRoomType());
-		assertEquals(2, orderPO.getRoomNumCount());
-		assertEquals("301  302", orderPO.getRoomNumber());
-		assertEquals("zhangsan", orderPO.getName());
-		assertEquals("13554321234", orderPO.getPhone());
-		assertEquals("no", orderPO.getMessage());
+		
 		
 	}
 	
@@ -76,7 +87,11 @@ public class OrderDataService_DriverTest {
 		OrderDataService_Stub stub = new OrderDataService_Stub();
 		OrderDataService_Driver driver = new OrderDataService_Driver(stub);
 		
-		assertEquals(ResultMessage.SUCCESS, driver.orderDataService.executeOrder("123456789012"));
+		try {
+			assertEquals(ResultMessage.SUCCESS, driver.orderDataService.executeOrder("123456789012"));
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 		
 	}
 }

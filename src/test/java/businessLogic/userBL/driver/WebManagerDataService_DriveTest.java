@@ -2,6 +2,8 @@ package businessLogic.userBL.driver;
 
 import static org.junit.Assert.*;
 
+import java.rmi.RemoteException;
+
 import org.junit.Test;
 
 import dataService.webManagerDataService.WebManagerDataService_Stub;
@@ -16,7 +18,11 @@ public class WebManagerDataService_DriveTest {
 		WebManagerDataService_Stub stub = new WebManagerDataService_Stub();
 		WebManagerDataService_Driver driver = new WebManagerDataService_Driver(stub);
 		
-		assertEquals(ResultMessage.SUCCESS, driver.webManagerDataService.add(new WebManagerPO("0001", "123456")));
+		try {
+			assertEquals(ResultMessage.SUCCESS, driver.webManagerDataService.add(new WebManagerPO("0001", "123456")));
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Test
@@ -24,9 +30,16 @@ public class WebManagerDataService_DriveTest {
 		//test interface getSingle
 		WebManagerDataService_Stub stub = new WebManagerDataService_Stub();
 		WebManagerDataService_Driver driver = new WebManagerDataService_Driver(stub);
-		WebManagerPO webManagerPO = driver.webManagerDataService.getSingle("0001");
+		WebManagerPO webManagerPO;
+		try {
+			webManagerPO = driver.webManagerDataService.getSingle("0001");
+			assertEquals("123456", webManagerPO.getPassword());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		assertEquals("123456", webManagerPO.getPassword());
+		
 	}
 
 }

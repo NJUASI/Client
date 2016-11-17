@@ -2,6 +2,8 @@ package businessLogic.userBL.driver;
 
 import static org.junit.Assert.*;
 
+import java.rmi.RemoteException;
+
 import org.junit.Test;
 
 import dataService.hotelWorkerDataService.HotelWorkerDataService_Stub;
@@ -15,9 +17,16 @@ public class HotelWorkerDataService_DriverTest {
 		//test interface getSingle
 		HotelWorkerDataService_Stub stub = new HotelWorkerDataService_Stub();
 		HotelWorkerDataService_Driver driver = new HotelWorkerDataService_Driver(stub);
-		HotelWorkerPO hotelWorkerPO = driver.hotelWorkerDataService.getSingle("00001111");
 		
-		assertEquals("123456", hotelWorkerPO.getPassword());
+		try {
+			HotelWorkerPO hotelWorkerPO = driver.hotelWorkerDataService.getSingle("00001111");
+			
+			assertEquals("123456", hotelWorkerPO.getPassword());
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	@Test
@@ -26,7 +35,11 @@ public class HotelWorkerDataService_DriverTest {
 		HotelWorkerDataService_Stub stub = new HotelWorkerDataService_Stub();
 		HotelWorkerDataService_Driver driver = new HotelWorkerDataService_Driver(stub);
 		
-		assertEquals(ResultMessage.SUCCESS, driver.hotelWorkerDataService.add(new HotelWorkerPO("00001111", "123456")));
+		try {	
+			assertEquals(ResultMessage.SUCCESS, driver.hotelWorkerDataService.add(new HotelWorkerPO("00001111", "123456")));
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
