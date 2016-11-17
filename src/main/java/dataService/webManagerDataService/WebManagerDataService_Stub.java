@@ -33,9 +33,4 @@ public class WebManagerDataService_Stub implements WebManagerDataService{
 	}
 
 
-	public ResultMessage init() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

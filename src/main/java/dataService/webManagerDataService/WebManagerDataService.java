@@ -14,6 +14,5 @@ public interface WebManagerDataService {
 	public ResultMessage add(WebManagerPO newWebManagerPO);
 
 	public ResultMessage modify(WebManagerPO webManagerPO);
-	
-	public ResultMessage init();
+
 }

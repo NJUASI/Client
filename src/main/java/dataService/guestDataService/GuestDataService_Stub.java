@@ -51,10 +51,4 @@ public class GuestDataService_Stub implements GuestDataService{
 		return null;
 	}
 
-
-	public ResultMessage init() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

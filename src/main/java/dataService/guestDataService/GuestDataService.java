@@ -21,5 +21,4 @@ public interface GuestDataService {
 
 	public ResultMessage modify(GuestPO guestPO);
 	
-	public ResultMessage init();
 }
