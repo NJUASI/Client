@@ -54,12 +54,10 @@ public class OrderController implements OrderBLService{
 	}
 
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral(LocalDate date) {
-		// TODO Auto-generated method stub
 		return order.getAllAbnormalOrderGeneral(date);
 	}
 
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
-		// TODO Auto-generated method stub
 		return order.getAllAbnormalOrderGeneral();
 	}
 	

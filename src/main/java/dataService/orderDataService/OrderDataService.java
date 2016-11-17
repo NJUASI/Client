@@ -15,9 +15,9 @@ public interface OrderDataService {
 	
 	public OrderPO getOrderDetail (String orderID);
 	
-	public List<OrderGeneralPO> getAllGuestOrderGeneral (String GuestID);
+	public List<OrderGeneralPO> getAllGuestOrderGeneral (String guestID);
 	
-	public List<OrderGeneralPO> getAllHotelOrderGeneral (String GuestID);
+	public List<OrderGeneralPO> getAllHotelOrderGeneral (String guestID);
 	
 	public List<OrderGeneralPO> getAllAbnormalOrderGeneral (LocalDate date);
 	
