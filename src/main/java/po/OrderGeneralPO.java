@@ -1,10 +1,11 @@
 package po;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import utilities.OrderState;
 
-public class OrderGeneralPO {
+public class OrderGeneralPO implements Serializable{
 	
 	// 订单编号
 	private String orderID;

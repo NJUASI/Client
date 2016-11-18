@@ -69,8 +69,6 @@ public class HotelController implements HotelBLService {
 		return hotel.add(hotelVO);
 	}
 	
-	
-	
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		return hotel.getHotelList(addressVO);
 	}

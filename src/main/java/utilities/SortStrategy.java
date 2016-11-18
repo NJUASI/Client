@@ -1,5 +1,7 @@
 package utilities;
 
-public class SortStrategy {
+import java.io.Serializable;
+
+public class SortStrategy implements Serializable{
 
 }

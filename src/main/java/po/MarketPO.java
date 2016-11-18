@@ -1,6 +1,8 @@
 package po;
 
-public class MarketPO {
+import java.io.Serializable;
+
+public class MarketPO implements Serializable{
 
 	//	等级名称
 	private String marketName;

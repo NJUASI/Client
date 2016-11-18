@@ -1,10 +1,11 @@
 package utilities;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import vo.OrderVO;
 
-public class PreOrder {
+public class PreOrder implements Serializable{
 	
 	// 客户编号
 	public String guestID;

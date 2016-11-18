@@ -1,6 +1,8 @@
 package po;
 
-public class WebManagerPO {
+import java.io.Serializable;
+
+public class WebManagerPO implements Serializable{
 	
 	//	管理人员编号
 	private String userID;

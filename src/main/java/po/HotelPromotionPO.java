@@ -1,10 +1,11 @@
 package po;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import utilities.PromotionType;
 
-public class HotelPromotionPO extends PromotionPO{
+public class HotelPromotionPO extends PromotionPO implements Serializable{
 
 	//	折扣酒店编号
 	private String hotelID;

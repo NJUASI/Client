@@ -1,6 +1,8 @@
 package po;
 
-public class EvaluationPO {
+import java.io.Serializable;
+
+public class EvaluationPO implements Serializable{
 
 	//	订单编号
 	private String orderID;

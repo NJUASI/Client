@@ -1,6 +1,8 @@
 package po;
 
-public class WebMarketerPO {
+import java.io.Serializable;
+
+public class WebMarketerPO implements Serializable{
 	
 	//	用户编号
 	private String userID;

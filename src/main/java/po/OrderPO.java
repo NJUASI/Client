@@ -1,11 +1,12 @@
 package po;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import utilities.OrderState;
 import utilities.RoomType;
 
-public class OrderPO {
+public class OrderPO implements Serializable{
 	
 	//	订单编号 客户编号 酒店编号 酒店名 酒店地址 最后预定价格 最晚订单执行时间 预计离开时间 订单状态
 	private OrderGeneralPO orderGeneralPO;
