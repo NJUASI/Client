@@ -28,7 +28,7 @@
          <children>
             <TabPane layoutY="60.0" prefHeight="541.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE">
                <tabs>
-                  <Tab text="详情">
+                  <Tab text="订单详情">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="297.0" prefWidth="490.0">
                            <children>
@@ -102,16 +102,17 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                     </GridPane>
-                                    <Button layoutX="583.0" layoutY="170.0" mnemonicParsing="false" text="撤销" />
+                                    <Button layoutX="612.0" layoutY="168.0" mnemonicParsing="false" text="撤销" />
                                     <Label layoutX="174.0" layoutY="384.0" text="特别要求：" />
                                     <Label layoutX="263.0" layoutY="383.0" prefHeight="23.0" text="三个孩子，不要窗户" />
+                                    <Button layoutX="548.0" layoutY="168.0" mnemonicParsing="false" text="返回" />
                                  </children>
                               </Pane>
                            </children>
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab text="评分">
+                  <Tab text="评分评价">
                      <content>
                         <Pane prefHeight="512.0" prefWidth="895.0">
                            <children>
