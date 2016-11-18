@@ -9,7 +9,7 @@ import utilities.ResultMessage;
 public class WebMarketerDataService_Stub implements WebMarketerDataService{
 
 	
-	public WebMarketerPO getSingle(String webMarketID) {
+	public WebMarketerPO getSingleWebMarketer(String webMarketID) {
 		return new WebMarketerPO("000001", "123456");
 	}
 

@@ -9,7 +9,7 @@ import utilities.ResultMessage;
 public class WebManagerDataService_Stub implements WebManagerDataService{
 
 	
-	public WebManagerPO getSingle(String webManagerID) {
+	public WebManagerPO getSingleWebManager(String webManagerID) {
 		return new WebManagerPO("0001", "123456");
 	}
 

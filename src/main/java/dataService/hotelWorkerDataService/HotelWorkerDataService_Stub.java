@@ -9,7 +9,7 @@ import utilities.ResultMessage;
 public class HotelWorkerDataService_Stub implements HotelWorkerDataService{
 
 	
-	public HotelWorkerPO getSingle(String hotelWorkerID) {
+	public HotelWorkerPO getSingleHotelWorker(String hotelWorkerID) {
 		return new HotelWorkerPO("00001111", "123456");
 	}
 
