@@ -17,5 +17,5 @@ public interface WebMarketerDataService extends Remote{
 
 	public ResultMessage modify (WebMarketerPO webMarketerPO) throws RemoteException;
 
-	public ResultMessage init() throws RemoteException;
+	public ResultMessage initWebMarketer() throws RemoteException;
 }

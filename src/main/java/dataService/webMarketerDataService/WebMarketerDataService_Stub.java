@@ -33,7 +33,7 @@ public class WebMarketerDataService_Stub implements WebMarketerDataService{
 	}
 
 	
-	public ResultMessage init() {
+	public ResultMessage initWebMarketer() {
 		// TODO Auto-generated method stub
 		return null;
 	}
