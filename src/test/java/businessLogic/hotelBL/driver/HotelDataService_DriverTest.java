@@ -18,17 +18,23 @@ public class HotelDataService_DriverTest {
 		//test interface getHotelDetail
 		HotelDataService_Stub stub = new HotelDataService_Stub();
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
-		HotelPO hotelPO = driver.hotelDataService.getHotelDetail("12345678");
-				
-		assertEquals("12345678", hotelPO.getHotelID());
-		assertEquals("thisHotel", hotelPO.getHotelName());
-		assertEquals("address", hotelPO.getHotelAddress());
-		assertEquals("NanJing", hotelPO.getCity());
-		assertEquals("4", hotelPO.getLevel());
-		assertEquals(5, hotelPO.getScore(), 0);
-		assertEquals("5", hotelPO.getComment());
-		assertEquals("good", hotelPO.getIntroduction());
-		assertEquals("allEquipment", hotelPO.getEquipment());
+		
+		try {
+			HotelPO hotelPO = driver.hotelDataService.getHotelDetail("12345678");
+			
+			assertEquals("12345678", hotelPO.getHotelID());
+			assertEquals("thisHotel", hotelPO.getHotelName());
+			assertEquals("address", hotelPO.getHotelAddress());
+			assertEquals("NanJing", hotelPO.getCity());
+			assertEquals("4", hotelPO.getLevel());
+			assertEquals(5, hotelPO.getScore(), 0);
+			assertEquals("5", hotelPO.getComment());
+			assertEquals("good", hotelPO.getIntroduction());
+			assertEquals("allEquipment", hotelPO.getEquipment());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Test

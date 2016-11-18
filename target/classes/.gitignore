@@ -1,2 +1,6 @@
 /dataService/
+/presentation/
 /businessLogic/
+/rmi/
+/po/
+/utilities/
