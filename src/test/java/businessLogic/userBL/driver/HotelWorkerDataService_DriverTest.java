@@ -19,7 +19,7 @@ public class HotelWorkerDataService_DriverTest {
 		HotelWorkerDataService_Driver driver = new HotelWorkerDataService_Driver(stub);
 		
 		try {
-			HotelWorkerPO hotelWorkerPO = driver.hotelWorkerDataService.getSingle("00001111");
+			HotelWorkerPO hotelWorkerPO = driver.hotelWorkerDataService.getSingleHotelWorker("00001111");
 			
 			assertEquals("123456", hotelWorkerPO.getPassword());
 		} catch (RemoteException e) {

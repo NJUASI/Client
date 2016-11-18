@@ -32,7 +32,7 @@ public class WebMarketerDataService_DriverTest {
 		WebMarketerDataService_Driver driver = new WebMarketerDataService_Driver(stub);
 		WebMarketerPO webMarketerPO;
 		try {
-			webMarketerPO = driver.webMarketerDataService.getSingle("000001");
+			webMarketerPO = driver.webMarketerDataService.getSingleWebMarketer("000001");
 			assertEquals("123456", webMarketerPO.getPassword());
 		} catch (RemoteException e) {
 			e.printStackTrace();

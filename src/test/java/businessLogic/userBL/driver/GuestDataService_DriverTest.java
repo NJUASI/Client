@@ -19,7 +19,7 @@ public class GuestDataService_DriverTest {
 		GuestDataService_Stub stub = new GuestDataService_Stub();
 		GuestDataService_Driver driver = new GuestDataService_Driver(stub);
 		try {
-			GuestPO guestPO = driver.guestDataService.getSingle("1234567890");
+			GuestPO guestPO = driver.guestDataService.getSingleGuest("1234567890");
 			
 			assertEquals(LocalDate.of(1995, 1, 1), guestPO.getBirthday());
 			assertEquals("school", guestPO.getEnterprise());

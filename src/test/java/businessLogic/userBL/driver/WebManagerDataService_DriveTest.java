@@ -32,7 +32,7 @@ public class WebManagerDataService_DriveTest {
 		WebManagerDataService_Driver driver = new WebManagerDataService_Driver(stub);
 		WebManagerPO webManagerPO;
 		try {
-			webManagerPO = driver.webManagerDataService.getSingle("0001");
+			webManagerPO = driver.webManagerDataService.getSingleWebManager("0001");
 			assertEquals("123456", webManagerPO.getPassword());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
