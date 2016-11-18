@@ -1,6 +1,6 @@
 package businessLogic.hotelBL.driver;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.rmi.RemoteException;
 
@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import dataService.hotelDataService.HotelDataService_Stub;
 import po.HotelPO;
-import po.RoomInfoPO;
+import po.RemainRoomInfoPO;
 import utilities.RoomType;
 
 public class HotelDataService_DriverTest {
@@ -43,8 +43,7 @@ public class HotelDataService_DriverTest {
 		HotelDataService_Stub stub = new HotelDataService_Stub();
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
 		try {
-			RoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("12345678").get(0);
-		
+			RemainRoomInfoPO remainRoomInfoPO = driver.hotelDataService.getRemainRoomInfo("12345678").get(0);
 			assertEquals(RoomType.AMBASSADOR, remainRoomInfoPO.getRoomType());
 			assertEquals(2, remainRoomInfoPO.getRoomNumCount());
 			assertEquals(200, remainRoomInfoPO.getPrice(), 0);

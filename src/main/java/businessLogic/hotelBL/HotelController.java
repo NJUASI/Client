@@ -14,6 +14,7 @@ import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public class HotelController implements HotelBLService {
@@ -34,7 +35,7 @@ public class HotelController implements HotelBLService {
 	
 	
 	public HotelVO getHotelInfo(String hotelWorkerID) {
-		return hotel.getHotelDetail(hotelWorkerID);
+		return hotel.getHotelInfo(hotelWorkerID);
 	}
 
 	public ResultMessage updateHotelInfo(HotelVO hotelVO) {
@@ -57,7 +58,7 @@ public class HotelController implements HotelBLService {
 		return hotel.updateCheckOut(checkOutVO);
 	}
 
-	public List<RoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
+	public List<RemainRoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
 		return hotel.getRemainRoomInfo(hotelWorkerID);
 	}
 
@@ -83,10 +84,6 @@ public class HotelController implements HotelBLService {
 		return hotel.getBookedHotels(userID);
 	}
 
-	public HotelVO getHotelDetail(String hotelID) {
-		return hotel.getHotelDetail(hotelID);
-	}
-
 	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
 		return hotel.getUncommentedHotels(userID);
 	}
@@ -94,4 +91,5 @@ public class HotelController implements HotelBLService {
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return hotel.updateEvaluation(evaluationVO);
 	}
+	
 }

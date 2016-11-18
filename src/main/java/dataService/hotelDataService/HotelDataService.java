@@ -11,6 +11,7 @@ import po.CheckOutPO;
 import po.EvaluationPO;
 import po.HotelGeneralPO;
 import po.HotelPO;
+import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
 import utilities.Operation;
 import utilities.ResultMessage;
@@ -30,13 +31,11 @@ public interface HotelDataService extends Remote{
 	
 	public ResultMessage setCheckOutInfo (CheckOutPO checkOutPO) throws RemoteException;
 	
-	public List<RoomInfoPO> getRemainRoomInfo(String hotelID) throws RemoteException;
+	public List<RemainRoomInfoPO> getRemainRoomInfo(String hotelID) throws RemoteException;
 	
 	public ResultMessage setRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) throws RemoteException;
 	
 	public ResultMessage add (HotelPO hotelPO) throws RemoteException;
-	
-	
 	
 	public List<HotelGeneralPO> getHotelList(AddressPO addressPO) throws RemoteException;
 	

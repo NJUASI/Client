@@ -41,7 +41,7 @@ public class HotelBLService_DriverTest {
 		//test interface getHotelDetail
 		HotelBLService_Stub stub = new HotelBLService_Stub();
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
-		HotelVO hotelVO = driver.hotelBLService.getHotelDetail("12345678");
+		HotelVO hotelVO = driver.hotelBLService.getHotelInfo("12345678");
 				
 		assertEquals("12345678", hotelVO.hotelGeneralVO.hotelID);
 		assertEquals("thisHotel", hotelVO.hotelGeneralVO.hotelName);

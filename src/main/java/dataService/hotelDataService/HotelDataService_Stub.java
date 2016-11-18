@@ -10,6 +10,7 @@ import po.CheckOutPO;
 import po.EvaluationPO;
 import po.HotelGeneralPO;
 import po.HotelPO;
+import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
 import utilities.Operation;
 import utilities.ResultMessage;
@@ -54,9 +55,9 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public List<RoomInfoPO> getRemainRoomInfo(String hotelID) {
-		List<RoomInfoPO> list = new ArrayList<RoomInfoPO>();
-		list.add(new RoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200));
+	public List<RemainRoomInfoPO> getRemainRoomInfo(String hotelID) {
+		List<RemainRoomInfoPO> list = new ArrayList<RemainRoomInfoPO>();
+		list.add(new RemainRoomInfoPO("12345678", RoomType.AMBASSADOR, 2, 200));
 		return list;
 	}
 

@@ -13,6 +13,7 @@ import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public interface HotelBLService {
@@ -29,22 +30,18 @@ public interface HotelBLService {
 	
 	public ResultMessage updateCheckOut (CheckOutVO checkOutVO);
 	
-	public List<RoomInfoVO> getRemainRoomInfo (String hotelWorkerID);
+	public List<RemainRoomInfoVO> getRemainRoomInfo (String hotelWorkerID);
 	
 	public ResultMessage updateRemainRoomInfo (String hotelID, Operation operation, 
 			Map<RoomType, Integer> roomInfo);
 	
 	public ResultMessage add (HotelVO hotelVO);
 	
-	
-	
 	public List<HotelGeneralVO> getHotelList (AddressVO addressVO);
 	
 	public List<HotelGeneralVO> getSortedHotels (SortStrategy sortStrategy);
 	
 	public List<HotelGeneralVO> getBookedHotels (String userID);
-	
-	public HotelVO getHotelDetail (String hotelID);
 	
 	public List<HotelGeneralVO> getUncommentedHotels (String userID);
 	
