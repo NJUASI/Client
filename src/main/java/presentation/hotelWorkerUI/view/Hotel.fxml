@@ -15,25 +15,25 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.hotelWorkerUI.controller.HotelWorkerViewController">
    <children>
       <SplitPane dividerPositions="0.1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="1000.0">
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="9.0" layoutY="150.0" mnemonicParsing="false" prefHeight="40.0" text="酒店订单" />
-                  <Button layoutX="8.0" layoutY="228.0" mnemonicParsing="false" prefHeight="40.0" text="线下处理" />
-                  <Button layoutX="8.0" layoutY="310.0" mnemonicParsing="false" prefHeight="40.0" text="剩余客房" />
+                  <Button layoutX="9.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#openOrderInfo" prefHeight="40.0" text="酒店订单" />
+                  <Button layoutX="8.0" layoutY="228.0" mnemonicParsing="false" onMouseClicked="#openOffline" prefHeight="40.0" text="线下处理" />
+                  <Button layoutX="8.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#openRemainRoom" prefHeight="40.0" text="剩余客房" />
                   <Label layoutX="26.0" layoutY="90.0" text="酒店名" />
-                  <Button layoutX="8.0" layoutY="390.0" mnemonicParsing="false" prefHeight="40.0" text="促销策略" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" wrapText="true" />
-                  <Button layoutX="8.0" layoutY="470.0" mnemonicParsing="false" prefHeight="40.0" text="客房信息" />
-                  <Button layoutX="8.0" layoutY="550.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="主页" />
+                  <Button layoutX="8.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#openPromotion" prefHeight="40.0" text="促销策略" />
+                  <Button layoutX="9.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#openHotelInfo" prefHeight="80.0" prefWidth="80.0" wrapText="true" />
+                  <Button layoutX="8.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#openRoomInfo" prefHeight="40.0" text="客房信息" />
+                  <Button layoutX="8.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#openMain" prefHeight="40.0" prefWidth="80.0" text="主页" />
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="601.0" prefWidth="900.0">
+            <StackPane fx:id="right" prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <Pane disable="true" prefHeight="601.0" prefWidth="895.0">
+                  <Pane fx:id="mainPane" disable="true" prefHeight="601.0" prefWidth="895.0">
                      <children>
                         <Circle fill="#becbd7" layoutX="448.0" layoutY="301.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="417.0" layoutY="277.0" text="ASI">
@@ -44,7 +44,7 @@
                      </children>
                   </Pane>
                </children>
-            </AnchorPane>
+            </StackPane>
          </items>
       </SplitPane>
       <Label layoutX="14.0" layoutY="603.0" prefHeight="22.0" prefWidth="63.0" text="状态栏：" />
