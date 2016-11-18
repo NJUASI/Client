@@ -1,5 +1,6 @@
 package vo;
 
+import po.RoomInfoPO;
 import utilities.RoomType;
 
 public class RoomInfoVO {
@@ -21,5 +22,12 @@ public class RoomInfoVO {
 		this.roomType = roomType;
 		this.roomNumCount = roomNumCount;
 		this.price = price;
+	}
+
+	public RoomInfoVO(RoomInfoPO roomInfoPO) {
+		this.hotelID = roomInfoPO.getHotelID();
+		this.roomType = roomInfoPO.getRoomType();
+		this.roomNumCount = roomInfoPO.getRoomNumCount();
+		this.price = roomInfoPO.getPrice();
 	}
 }

@@ -1,9 +1,17 @@
 package businessLogic.hotelBL;
 
+import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import businessLogic.orderBL.Order;
+import dataService.hotelDataService.HotelDataService;
+import po.CheckInPO;
+import po.CheckOutPO;
+import po.EvaluationPO;
+import po.HotelPO;
+import po.RoomInfoPO;
+import rmi.RemoteHelper;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -17,65 +25,120 @@ import vo.HotelVO;
 import vo.RoomInfoVO;
 
 public class Hotel{
-	
-	private Order order;
-	
+
+	HotelDataService hotelDataService;
+
 	public Hotel() {
-		order = new Order();
+		hotelDataService = RemoteHelper.getInstance().getHotelDataService();
 	}
 
 	public HotelVO getHotelInfo(String hotelWorkerID) {
-		// TODO Auto-generated method stub
-		return null;
+
+		HotelPO hotelPO = null;
+		HotelVO hotelVO = null;
+		try {
+			hotelPO = hotelDataService.getHotelInfo(hotelWorkerID);
+			hotelVO = new HotelVO(hotelPO);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+
+		return hotelVO;
 	}
 
 	public ResultMessage updateHotelInfo(HotelVO hotelVO) {
-		// TODO Auto-generated method stub
-		return null;
+
+		HotelPO hotelPO = new HotelPO(hotelVO);
+		ResultMessage msg = null;
+		try {
+			msg = hotelDataService.add(hotelPO);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+
+		return msg;
 	}
 
 	public List<RoomInfoVO> getHotelRoomInfo(String hotelWorkerID) {
-		// TODO Auto-generated method stub
-		return null;
+		List<RoomInfoVO> roomInfoVOList = new ArrayList<RoomInfoVO>();
+		List<RoomInfoPO> roomInfoPOList = null;
+		try {
+			roomInfoPOList = hotelDataService.getHotelRoomInfo(hotelWorkerID);
+			for(RoomInfoPO roomInfoPO: roomInfoPOList){
+				roomInfoVOList.add(new RoomInfoVO(roomInfoPO));
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return roomInfoVOList;
 	}
 
-	public ResultMessage updateHotelRoomInfo(List<RoomInfoVO> list) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultMessage updateHotelRoomInfo(List<RoomInfoVO> roomInfoVOList) {
+
+		List<RoomInfoPO> roomInfoPOList = new ArrayList<RoomInfoPO>();
+		for(RoomInfoVO roomInfoVO: roomInfoVOList){
+			roomInfoPOList.add(new RoomInfoPO(roomInfoVO));
+		}
+		ResultMessage msg = null;
+		try {
+			msg = hotelDataService.setHotelRoomInfo(roomInfoPOList);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return msg;
 	}
 
 	public ResultMessage updateCheckIn(CheckInVO checkInVO) {
-		// TODO Auto-generated method stub
-		return null;
+		CheckInPO checkInPO = new CheckInPO(checkInVO);
+		ResultMessage msg = null;
+		try {
+			msg = hotelDataService.setCheckInInfo(checkInPO);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return msg;
 	}
 
 	public ResultMessage updateCheckOut(CheckOutVO checkOutVO) {
-		// TODO Auto-generated method stub
-		return null;
+		CheckOutPO checkOutPO = new CheckOutPO(checkOutVO);
+		ResultMessage msg = null;
+		try {
+			msg = hotelDataService.setCheckOutInfo(checkOutPO);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return msg;
 	}
-
+	
 	public List<RoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	
 	public ResultMessage updateRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public ResultMessage add(HotelVO hotelVO) {
-		// TODO Auto-generated method stub
-		return null;
+		HotelPO hotelPO = new HotelPO(hotelVO);
+		ResultMessage msg = null;
+		try {
+			msg = hotelDataService.add(hotelPO);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return msg;
 	}
-	
-	
+
 	
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
 		// TODO Auto-generated method stub
 		return null;
@@ -90,14 +153,15 @@ public class Hotel{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
-		// TODO Auto-generated method stub
+		EvaluationPO evaluationPO = new EvaluationPO(evaluationVO);
+		
 		return null;
 	}
 }

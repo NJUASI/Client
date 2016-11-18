@@ -2,6 +2,8 @@ package po;
 
 import java.io.Serializable;
 
+import vo.EvaluationVO;
+
 public class EvaluationPO implements Serializable{
 
 	/**
@@ -22,6 +24,12 @@ public class EvaluationPO implements Serializable{
 		this.orderID = orderID;
 		this.score = score;
 		this.comment = comment;
+	}
+
+	public EvaluationPO(EvaluationVO evaluationVO) {
+		this.orderID = evaluationVO.orderID;
+		this.score = evaluationVO.score;
+		this.comment = evaluationVO.comment;
 	}
 
 	public String getOrderID() {

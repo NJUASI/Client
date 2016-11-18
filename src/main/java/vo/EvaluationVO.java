@@ -16,5 +16,5 @@ public class EvaluationVO {
 		this.score = score;
 		this.comment = comment;
 	}
-	
+
 }

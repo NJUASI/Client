@@ -122,8 +122,8 @@ public class HotelBLService_Stub implements HotelBLService{
 	
 	public List<RoomInfoVO> getRemainRoomInfo(String userID) {
 		List<RoomInfoVO> list = new LinkedList<RoomInfoVO>();
-		list.add(new RoomInfoVO("12345678", RoomType.SINGLEBED, 13, 200));
-		list.add(new RoomInfoVO("12345678", RoomType.DOUBLEBED, 6, 300));
+		list.add(new RoomInfoVO("12345678", RoomType.SINGLE_BED, 13, 200));
+		list.add(new RoomInfoVO("12345678", RoomType.DOUBLE_BED, 6, 300));
 		return list;
 	}
 

@@ -2,6 +2,8 @@ package po;
 
 import java.io.Serializable;
 
+import vo.HotelVO;
+
 public final class HotelPO implements Serializable{
 	
 	
@@ -45,6 +47,10 @@ public final class HotelPO implements Serializable{
 		this.equipment = equipment;
 	}
 	
+	public HotelPO(HotelVO hotelVO) {
+		
+	}
+
 	public String getHotelID() {
 		return hotelGeneralPO.getHotelID();
 	}

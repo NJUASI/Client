@@ -1,12 +1,18 @@
 package utilities;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SortStrategy implements Serializable{
+public class SortStrategy {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -346872661259391884L;
-
+	List<SingleSortStrategy> singleSortStrategiesList;
+	
+	public SortStrategy() {
+		singleSortStrategiesList = new ArrayList<SingleSortStrategy>();
+	}
+	
+	public void add(SingleSortStrategy singleSortStrategy) {
+		singleSortStrategiesList.add(singleSortStrategy);
+	}
+	
 }

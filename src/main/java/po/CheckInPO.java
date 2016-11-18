@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import vo.CheckInVO;
+
 public class CheckInPO implements Serializable{
 
 	/**
@@ -30,6 +32,13 @@ public class CheckInPO implements Serializable{
 		this.expectLeaveTime = expectLeaveTime;
 	}
 	
+	public CheckInPO(CheckInVO checkInVO) {
+		this.checkInTime = checkInVO.checkInTime;
+		this.expectLeaveTime = checkInVO.expectLeaveTime;
+		this.orderID = checkInVO.orderID;
+		this.roomNumberList = checkInVO.roomNumberList;
+	}
+
 	public String getOrderID() {
 		return orderID;
 	}
