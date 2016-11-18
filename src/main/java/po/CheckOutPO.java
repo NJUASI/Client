@@ -3,6 +3,8 @@ package po;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import vo.CheckOutVO;
+
 public class CheckOutPO implements Serializable{
 
 	/**
@@ -19,6 +21,11 @@ public class CheckOutPO implements Serializable{
 	public CheckOutPO(String orderID,LocalDateTime checkOutTime) {
 		this.orderID = orderID;
 		this.checkOutTime = checkOutTime;
+	}
+
+	public CheckOutPO(CheckOutVO checkOutVO) {
+		this.orderID = checkOutVO.orderID;
+		this.checkOutTime = checkOutVO.checkOutTime;
 	}
 
 	public String getOrderID() {

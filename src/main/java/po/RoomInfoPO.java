@@ -3,6 +3,7 @@ package po;
 import java.io.Serializable;
 
 import utilities.RoomType;
+import vo.RoomInfoVO;
 
 public class RoomInfoPO implements Serializable{
 	
@@ -29,6 +30,13 @@ public class RoomInfoPO implements Serializable{
 		this.roomType = roomType;	
 		this.roomNumCount = roomNumCount;
 		this.price = price;
+	}
+	
+	public RoomInfoPO(RoomInfoVO roomInfoVO) {
+		this.hotelID = roomInfoVO.hotelID;
+		this.roomType = roomInfoVO.roomType;
+		this.roomNumCount = roomInfoVO.roomNumCount;
+		this.price = roomInfoVO.price;
 	}
 	public String getHotelID() {
 		return hotelID;

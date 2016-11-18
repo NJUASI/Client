@@ -1,6 +1,7 @@
 package vo;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class CheckInVO {
 
@@ -15,6 +16,8 @@ public class CheckInVO {
 	
 	//	预计离开时间
 	public LocalDateTime expectLeaveTime;
+
+	public List<String> roomNumberList;
 	
 	public CheckInVO(String orderID, String roomNumber, LocalDateTime checkInTime, LocalDateTime expectLeaveTime) {
 		this.orderID = orderID;
