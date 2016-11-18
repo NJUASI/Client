@@ -7,6 +7,10 @@ import utilities.PromotionType;
 
 public class WebPromotionPO extends PromotionPO implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1175411739571123894L;
 	//	指定商圈
 	private String cycle;
 	

@@ -3,6 +3,13 @@ package po;
 import java.io.Serializable;
 
 public final class HotelPO implements Serializable{
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8529466667245846060L;
+
 	//	酒店编号 酒店名称 酒店城市 酒店商圈 酒店星级 评分
 	private HotelGeneralPO hotelGeneralPO;
 	

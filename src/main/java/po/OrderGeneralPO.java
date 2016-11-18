@@ -7,6 +7,12 @@ import utilities.OrderState;
 
 public class OrderGeneralPO implements Serializable{
 	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3557271803001378634L;
+
 	// 订单编号
 	private String orderID;
 	

@@ -5,6 +5,12 @@ import java.time.LocalDate;
 
 public class MemberPO implements Serializable{
 	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2878400778715065115L;
+
 	//	用户编号	
 	private String guestID;
 	
