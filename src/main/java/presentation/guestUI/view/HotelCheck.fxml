@@ -29,8 +29,7 @@
             <Label layoutX="228.0" layoutY="95.0" text="搜索酒店" />
             <HBox layoutX="476.0" layoutY="128.0" prefHeight="27.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" text="切换城市" />
-                  <Button mnemonicParsing="false" text="切换商圈" />
+                  <Button mnemonicParsing="false" text="切换城市商圈" />
                   <Button mnemonicParsing="false" text="筛选" />
                </children>
             </HBox>

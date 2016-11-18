@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
@@ -27,7 +26,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Pane layoutX="192.0" layoutY="114.0" prefHeight="374.0" prefWidth="563.0">
+            <Pane layoutX="184.0" layoutY="129.0" prefHeight="375.0" prefWidth="593.0">
                <children>
                   <Label layoutX="23.0" layoutY="198.0" text="姓名：" />
                   <Label layoutX="23.0" layoutY="93.0" text="昵称：" />
@@ -37,20 +36,16 @@
                   <Label layoutX="255.0" layoutY="37.0" text="信用值：" />
                   <Label layoutX="255.0" layoutY="198.0" text="生日：" />
                   <Label layoutX="255.0" layoutY="143.0" text="企业名称：" />
-                  <TextField layoutX="61.0" layoutY="194.0" text="王二" />
-                  <TextField layoutX="59.0" layoutY="89.0" text="小二" />
-                  <TextField layoutX="61.0" layoutY="139.0" text="123456" />
-                  <TextField layoutX="314.0" layoutY="89.0" prefHeight="23.0" prefWidth="137.0" text="17312452345" />
-                  <TextField layoutX="315.0" layoutY="139.0" />
-                  <HBox layoutX="395.0" layoutY="270.0" prefHeight="23.0" prefWidth="90.0" spacing="10.0">
-                     <children>
-                        <Button mnemonicParsing="false" text="取消" />
-                        <Button mnemonicParsing="false" text="完成" />
-                     </children>
-                  </HBox>
-                  <DatePicker layoutX="314.0" layoutY="194.0" prefHeight="23.0" prefWidth="137.0" promptText="2016-3-11" />
+                  <TextField layoutX="67.0" layoutY="194.0" prefHeight="30.0" prefWidth="166.0" text="王二" />
+                  <TextField layoutX="71.0" layoutY="89.0" prefHeight="30.0" prefWidth="166.0" text="小二" />
+                  <TextField layoutX="67.0" layoutY="138.0" prefHeight="30.0" prefWidth="166.0" text="123456" />
+                  <TextField layoutX="329.0" layoutY="89.0" prefHeight="23.0" prefWidth="137.0" text="17312452345" />
+                  <TextField layoutX="329.0" layoutY="139.0" prefHeight="30.0" prefWidth="137.0" />
+                  <DatePicker layoutX="327.0" layoutY="194.0" prefHeight="23.0" prefWidth="137.0" promptText="2016-3-11" />
                   <Label layoutX="315.0" layoutY="37.0" text="200" />
-                  <Label layoutX="61.0" layoutY="37.0" text="123142152" />
+                  <Label layoutX="73.0" layoutY="37.0" text="123142152" />
+                  <Button layoutX="187.0" layoutY="291.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="取消" />
+                  <Button layoutX="290.0" layoutY="291.0" mnemonicParsing="false" text="完成" />
                </children>
             </Pane>
          </children>
