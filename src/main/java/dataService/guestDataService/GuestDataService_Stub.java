@@ -12,7 +12,7 @@ import utilities.ResultMessage;
 public class GuestDataService_Stub implements GuestDataService{
 
 	
-	public GuestPO getSingle(String guestID) {
+	public GuestPO getSingleGuest(String guestID) {
 		LocalDate birthday = LocalDate.of(1995, 1, 1);
 		
 		return new GuestPO("1234567890", birthday, "school", "zhangsan", "xiaosan",

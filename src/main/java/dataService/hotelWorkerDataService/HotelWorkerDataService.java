@@ -9,7 +9,7 @@ import utilities.ResultMessage;
 
 public interface HotelWorkerDataService extends Remote{
 
-	public HotelWorkerPO getSingle(String hotelWorkerID) throws RemoteException;
+	public HotelWorkerPO getSingleHotelWorker(String hotelWorkerID) throws RemoteException;
 	
 	public List<HotelWorkerPO> getAllHotelWorker() throws RemoteException;
 	
