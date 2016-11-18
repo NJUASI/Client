@@ -5,8 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import businessLogic.orderBL.MockOrder;
-import businessLogic.orderBL.Order;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -17,14 +15,13 @@ import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public class MockHotel extends Hotel {
 
-	private Order order;
-	
 	public MockHotel() {
-		order = new MockOrder();
+
 	}
 	
 	
@@ -63,10 +60,10 @@ public class MockHotel extends Hotel {
 	}
 
 	@Override
-	public List<RoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
-		List<RoomInfoVO> list = new LinkedList<RoomInfoVO>();
-		list.add(new RoomInfoVO("12345678", RoomType.SINGLE_BED, 13, 200));
-		list.add(new RoomInfoVO("12345678", RoomType.DOUBLE_BED, 6, 300));
+	public List<RemainRoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
+		List<RemainRoomInfoVO> list = new LinkedList<RemainRoomInfoVO>();
+		list.add(new RemainRoomInfoVO("12345678", RoomType.SINGLE_BED, 13, 200));
+		list.add(new RemainRoomInfoVO("12345678", RoomType.DOUBLE_BED, 6, 300));
 		return list;
 	}
 
@@ -102,12 +99,6 @@ public class MockHotel extends Hotel {
 		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
 		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","4",5));
 		return list;
-	}
-
-	@Override
-	public HotelVO getHotelDetail(String hotelID) {
-		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5, "5", "good", "allEquipment");
 	}
 
 	@Override

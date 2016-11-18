@@ -6,10 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 import dataService.hotelDataService.HotelDataService;
+import po.AddressPO;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.EvaluationPO;
+import po.HotelGeneralPO;
 import po.HotelPO;
+import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
 import rmi.RemoteHelper;
 import utilities.Operation;
@@ -22,6 +25,7 @@ import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public class Hotel{
@@ -109,13 +113,23 @@ public class Hotel{
 		}
 		return msg;
 	}
-	
-	public List<RoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
-		// TODO Auto-generated method stub
-		return null;
+
+	public List<RemainRoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
+
+		List<RemainRoomInfoVO> remainRoomInfoVOList = new ArrayList<RemainRoomInfoVO>();
+		List<RemainRoomInfoPO> remainRoomInfoPOList = null;
+		try {
+			remainRoomInfoPOList = hotelDataService.getRemainRoomInfo(hotelWorkerID);
+			for(RemainRoomInfoPO RemainRoomInfoPO: remainRoomInfoPOList){
+				remainRoomInfoVOList.add(new RemainRoomInfoVO(RemainRoomInfoPO));
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return remainRoomInfoVOList;
 	}
-	
-	
+
+
 	public ResultMessage updateRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) {
 		// TODO Auto-generated method stub
 		return null;
@@ -132,24 +146,34 @@ public class Hotel{
 		return msg;
 	}
 
-	
+
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<HotelGeneralVO> hotelGeneralVOList = new ArrayList<HotelGeneralVO>();
+		List<HotelGeneralPO> hotelGeneralPOList = null;
+
+		AddressPO addressPO = new AddressPO(addressVO);
+
+		try {
+			hotelGeneralPOList = hotelDataService.getHotelList(addressPO);
+			for(HotelGeneralPO hotelGeneralPO : hotelGeneralPOList){
+				HotelGeneralVO hotelGeneralVO = new HotelGeneralVO(hotelGeneralPO);
+				hotelGeneralVOList.add(hotelGeneralVO);
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+
+		return hotelGeneralVOList;
 	}
 
-	
+
 	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public List<HotelGeneralVO> getBookedHotels(String userID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public HotelVO getHotelDetail(String hotelID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -161,8 +185,13 @@ public class Hotel{
 
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		EvaluationPO evaluationPO = new EvaluationPO(evaluationVO);
-		
-		return null;
+		ResultMessage msg = null;
+		try {
+			msg = hotelDataService.addEvaluation(evaluationPO);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return msg;
 	}
 }
 

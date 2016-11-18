@@ -2,6 +2,8 @@ package po;
 
 import java.io.Serializable;
 
+import vo.AddressVO;
+
 public class AddressPO implements Serializable{
 
 	/**
@@ -18,5 +20,10 @@ public class AddressPO implements Serializable{
 	public AddressPO(String city, String cycle) {
 		this.city = city;
 		this.cycle = cycle;
+	}
+
+	public AddressPO(AddressVO addressVO) {
+		this.city = addressVO.city;
+		this.cycle = addressVO.cycle;
 	}
 }

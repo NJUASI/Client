@@ -16,6 +16,7 @@ import vo.CheckOutVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
+import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
 
 public class HotelBLService_Stub implements HotelBLService{
@@ -120,10 +121,10 @@ public class HotelBLService_Stub implements HotelBLService{
 	}
 
 	
-	public List<RoomInfoVO> getRemainRoomInfo(String userID) {
-		List<RoomInfoVO> list = new LinkedList<RoomInfoVO>();
-		list.add(new RoomInfoVO("12345678", RoomType.SINGLE_BED, 13, 200));
-		list.add(new RoomInfoVO("12345678", RoomType.DOUBLE_BED, 6, 300));
+	public List<RemainRoomInfoVO> getRemainRoomInfo(String userID) {
+		List<RemainRoomInfoVO> list = new LinkedList<RemainRoomInfoVO>();
+		list.add(new RemainRoomInfoVO("12345678", RoomType.SINGLE_BED, 13, 200));
+		list.add(new RemainRoomInfoVO("12345678", RoomType.DOUBLE_BED, 6, 300));
 		return list;
 	}
 

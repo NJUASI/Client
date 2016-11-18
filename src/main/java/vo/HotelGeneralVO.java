@@ -1,5 +1,7 @@
 package vo;
 
+import po.HotelGeneralPO;
+
 public class HotelGeneralVO {
 	
 	//	酒店编号
@@ -27,5 +29,14 @@ public class HotelGeneralVO {
 		this.cycle = cycle;
 		this.level = level;
 		this.score = score;
+	}
+
+	public HotelGeneralVO(HotelGeneralPO hotelGeneralPO) {
+		this.hotelID = hotelGeneralPO.getHotelID();
+		this.hotelName = hotelGeneralPO.getHotelName();
+		this.city = hotelGeneralPO.getCity();
+		this.cycle = hotelGeneralPO.getCycle();
+		this.level = hotelGeneralPO.getLevel();
+		this.score = hotelGeneralPO.getScore();
 	}
 }
