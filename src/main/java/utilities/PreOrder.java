@@ -1,16 +1,11 @@
 package utilities;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import vo.OrderVO;
 
-public class PreOrder implements Serializable{
+public class PreOrder {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8897463302658363464L;
 
 	// 客户编号
 	public String guestID;
