@@ -6,7 +6,6 @@ import vo.OrderVO;
 
 public class PreOrder {
 	
-
 	// 客户编号
 	public String guestID;
 	
