@@ -7,6 +7,12 @@ import utilities.PromotionType;
 
 public class HotelPromotionPO extends PromotionPO implements Serializable{
 
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -64478005477556682L;
 	//	折扣酒店编号
 	private String hotelID;
 

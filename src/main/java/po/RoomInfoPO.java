@@ -6,6 +6,11 @@ import utilities.RoomType;
 
 public class RoomInfoPO implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6089646464437203567L;
+
 	// 酒店编号
 	private String hotelID;
 	

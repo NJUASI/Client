@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 public class HotelGeneralPO implements Serializable{
 	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1830401367957454463L;
+
 	//	酒店编号
 	private String hotelID;
 	

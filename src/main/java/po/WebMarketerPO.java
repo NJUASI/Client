@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 public class WebMarketerPO implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8577895472775494103L;
+
 	//	用户编号
 	private String userID;
 	
