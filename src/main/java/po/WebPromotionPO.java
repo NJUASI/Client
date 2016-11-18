@@ -1,10 +1,11 @@
 package po;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import utilities.PromotionType;
 
-public class WebPromotionPO extends PromotionPO{
+public class WebPromotionPO extends PromotionPO implements Serializable{
 
 	//	指定商圈
 	private String cycle;

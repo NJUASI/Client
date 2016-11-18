@@ -1,8 +1,9 @@
 package po;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class GuestPO {
+public class GuestPO implements Serializable{
 	
 	//	用户编号	
 	private String guestID;

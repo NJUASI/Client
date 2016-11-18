@@ -1,6 +1,8 @@
 package po;
 
-public class HotelGeneralPO {
+import java.io.Serializable;
+
+public class HotelGeneralPO implements Serializable{
 	
 	//	酒店编号
 	private String hotelID;

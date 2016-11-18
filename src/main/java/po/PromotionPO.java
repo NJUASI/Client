@@ -1,10 +1,11 @@
 package po;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import utilities.PromotionType;
 
-public abstract class PromotionPO {
+public abstract class PromotionPO implements Serializable{
 	
 	//	折扣类型
 	private PromotionType promotionType;
