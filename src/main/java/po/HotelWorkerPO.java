@@ -2,6 +2,8 @@ package po;
 
 import java.io.Serializable;
 
+import vo.HotelWorkerVO;
+
 public class HotelWorkerPO implements Serializable{
 	
 	
@@ -32,6 +34,14 @@ public class HotelWorkerPO implements Serializable{
 		this.password = password;
 		this.hotelName = hotelName;
 	}
+	
+	public HotelWorkerPO(HotelWorkerVO hotelWorkerVO) {
+		super();
+		this.hotelID = hotelWorkerVO.userID;
+		this.password = hotelWorkerVO.password;
+		this.hotelName = hotelWorkerVO.hotelName;
+	}
+	
 
 	public String getHotelID() {
 		return hotelID;

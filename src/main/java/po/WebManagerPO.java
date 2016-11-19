@@ -2,6 +2,8 @@ package po;
 
 import java.io.Serializable;
 
+import vo.WebManagerVO;
+
 public class WebManagerPO implements Serializable{
 	
 	/**
@@ -19,6 +21,12 @@ public class WebManagerPO implements Serializable{
 		super();
 		this.userID = userID;
 		this.password = password;
+	}
+	
+	public WebManagerPO(WebManagerVO  webManagerVO) {
+		super();
+		this.userID = webManagerVO.userID;
+		this.password = webManagerVO.password;
 	}
 	
 	

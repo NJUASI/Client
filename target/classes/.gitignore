@@ -1,9 +1,8 @@
-/dataService/
-/presentation/
 /businessLogic/
-/rmi/
-/po/
-/utilities/
 /businessLogicService/
+/dataService/
+/po/
+/presentation/
+/rmi/
+/utilities/
 /vo/
-/hotelListStrategy/

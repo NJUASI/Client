@@ -2,6 +2,8 @@ package po;
 
 import java.io.Serializable;
 
+import vo.WebMarketerVO;
+
 public class WebMarketerPO implements Serializable{
 	
 	/**
@@ -19,6 +21,12 @@ public class WebMarketerPO implements Serializable{
 		super();
 		this.userID = userID;
 		this.password = password;
+	}
+	
+	public WebMarketerPO(WebMarketerVO webMarketerVO) {
+		super();
+		this.userID = webMarketerVO.userID;
+		this.password = webMarketerVO.password;
 	}
 	
 	public String getUserID() {

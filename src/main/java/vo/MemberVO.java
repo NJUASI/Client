@@ -18,4 +18,10 @@ public class MemberVO {
 		this.birthday = birthday;
 		this.enterprise = enterprise;
 	}
+	
+	public MemberVO(GuestVO guestVO) {
+		this.guestID = guestVO.userID;
+		this.birthday = guestVO.birthday;
+		this.enterprise = guestVO.enterprise;
+	}
 }
