@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import dataService.hotelDataService.HotelDataService;
+import dataService.hotelDataService.HotelDataService_Stub;
 import po.AddressPO;
 import po.CheckInPO;
 import po.CheckOutPO;
@@ -14,11 +15,9 @@ import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
-import rmi.RemoteHelper;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
-import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
@@ -30,10 +29,16 @@ import vo.RoomInfoVO;
 
 public class Hotel{
 
-	HotelDataService hotelDataService;
+	private HotelDataService hotelDataService;
+	private List<HotelGeneralVO> currentHotelGeneralList;
 
 	public Hotel() {
-		hotelDataService = RemoteHelper.getInstance().getHotelDataService();
+
+	}
+
+	public Hotel(AddressVO addressVO) {
+		hotelDataService = new HotelDataService_Stub();
+		currentHotelGeneralList = this.getHotelList(addressVO);
 	}
 
 	public HotelVO getHotelInfo(String hotelWorkerID) {
@@ -148,29 +153,20 @@ public class Hotel{
 
 
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
-		
 		List<HotelGeneralVO> hotelGeneralVOList = new ArrayList<HotelGeneralVO>();
-		List<HotelGeneralPO> hotelGeneralPOList = null;
-
 		AddressPO addressPO = new AddressPO(addressVO);
+		List<HotelGeneralPO> hotelGeneralPOList = null;
 
 		try {
 			hotelGeneralPOList = hotelDataService.getHotelList(addressPO);
-			for(HotelGeneralPO hotelGeneralPO : hotelGeneralPOList){
-				HotelGeneralVO hotelGeneralVO = new HotelGeneralVO(hotelGeneralPO);
-				hotelGeneralVOList.add(hotelGeneralVO);
+			for(HotelGeneralPO hotelGeneralPO:hotelGeneralPOList){
+				hotelGeneralVOList.add(new HotelGeneralVO(hotelGeneralPO));
 			}
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 
 		return hotelGeneralVOList;
-	}
-
-
-	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public List<HotelGeneralVO> getBookedHotels(String userID) {
@@ -194,39 +190,3 @@ public class Hotel{
 		return msg;
 	}
 }
-
-
-////	酒店编号
-//String hotelID;
-////	酒店名称
-//String hotelName;
-////	酒店城市
-//String city;
-////	酒店商圈
-//String cycle;
-////	酒店地址
-//String hotelAddress;
-////	酒店星级
-//String level;
-////	评分
-//double score;
-////	评价
-//int comment;
-////	简介
-//String introduction;	
-////	设施服务
-//String equipment;
-//
-//public Hotel(String hotelID, String hotelName, String city, String cycle, String hotelAddress, String level,
-//		double score, int comment, String introduction, String equipment) {
-//	this.hotelID = hotelID;
-//	this.hotelName = hotelName;
-//	this.city = city;
-//	this.cycle = cycle;
-//	this.hotelAddress = hotelAddress;
-//	this.level = level;
-//	this.score = score;
-//	this.comment = comment;
-//	this.introduction = introduction;
-//	this.equipment = equipment;
-//}

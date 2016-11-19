@@ -6,7 +6,6 @@ import java.util.Map;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
-import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
@@ -38,8 +37,6 @@ public interface HotelBLService {
 	public ResultMessage add (HotelVO hotelVO);
 	
 	public List<HotelGeneralVO> getHotelList (AddressVO addressVO);
-	
-	public List<HotelGeneralVO> getSortedHotels (SortStrategy sortStrategy);
 	
 	public List<HotelGeneralVO> getBookedHotels (String userID);
 	

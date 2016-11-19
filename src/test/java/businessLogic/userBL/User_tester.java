@@ -17,7 +17,7 @@ public class User_tester {
 		UserController controller = UserController.getInstance();
 		
 		HotelVO newHotelVO = new HotelVO("12345678", "thisHotel", "NanJing","center", "address", "4",
-				5, "5", "good","allEquipment");
+				5,123, "5", "good","allEquipment");
 		
 		assertEquals(ResultMessage.SUCCESS, controller.addHotel(newHotelVO, "12345678"));
 		assertEquals(ResultMessage.FAIL, controller.addHotel(newHotelVO, "12345679"));

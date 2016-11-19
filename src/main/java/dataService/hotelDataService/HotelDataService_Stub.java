@@ -85,7 +85,7 @@ public class HotelDataService_Stub implements HotelDataService  {
 	
 	public HotelPO getHotelDetail(String hotelID) {
 		return new HotelPO("12345678", "thisHotel", "NanJing", "center", "address", "4",
-				5,"5", "good", "allEquipment");
+				5,123,"5", "good", "allEquipment");
 	}
 
 	

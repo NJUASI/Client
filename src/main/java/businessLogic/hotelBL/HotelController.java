@@ -7,7 +7,6 @@ import businessLogicService.hotelBLService.HotelBLService;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
-import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
@@ -29,7 +28,9 @@ public class HotelController implements HotelBLService {
 	}
 	
 	public static HotelController getInstance(){
-		if(hotelController == null) hotelController = new HotelController();
+		if(hotelController == null){
+			hotelController = new HotelController();
+		}
 		return hotelController;
 	}
 	
@@ -70,14 +71,8 @@ public class HotelController implements HotelBLService {
 		return hotel.add(hotelVO);
 	}
 	
-	
-	
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		return hotel.getHotelList(addressVO);
-	}
-
-	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
-		return hotel.getSortedHotels(sortStrategy);
 	}
 
 	public List<HotelGeneralVO> getBookedHotels(String userID) {

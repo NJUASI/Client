@@ -22,13 +22,17 @@ public class HotelGeneralVO {
 	//	评分
 	public double score;
 	
-	public HotelGeneralVO(String hotelID, String hotelName, String city, String cycle, String level, double score) {
+	//  最低价格
+	public double minPrice;
+	
+	public HotelGeneralVO(String hotelID, String hotelName, String city, String cycle, String level, double score , double minPrice) {
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.city = city;
 		this.cycle = cycle;
 		this.level = level;
 		this.score = score;
+		this.minPrice = minPrice;
 	}
 
 	public HotelGeneralVO(HotelGeneralPO hotelGeneralPO) {
@@ -38,5 +42,6 @@ public class HotelGeneralVO {
 		this.cycle = hotelGeneralPO.getCycle();
 		this.level = hotelGeneralPO.getLevel();
 		this.score = hotelGeneralPO.getScore();
+		this.minPrice = hotelGeneralPO.getMinPrice();
 	}
 }

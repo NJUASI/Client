@@ -26,10 +26,12 @@ public final class HotelPO implements Serializable{
 	
 	//	设施服务
 	private String equipment;
+
+	private double minPrice;
 	
 	public HotelPO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, 
-			String level, double score, String comment, String introduction, String equipment) {
-		this.hotelGeneralPO = new HotelGeneralPO(hotelID, hotelName, city, cycle, level, score);
+			String level, double score, double minPrice, String comment, String introduction, String equipment) {
+		this.hotelGeneralPO = new HotelGeneralPO(hotelID, hotelName, city, cycle, level, score, minPrice);
 		
 		this.hotelAddress = hotelAddress;
 		this.comment = comment;
@@ -120,6 +122,13 @@ public final class HotelPO implements Serializable{
 	}
 	public void setEquipment(String equipment) {
 		this.equipment = equipment;
+	}
+
+	public double getMinPrice() {
+		return minPrice;
+	}
+	public void setMinPrice(double minPrice) {
+		this.minPrice = minPrice;
 	}
 	
 }
