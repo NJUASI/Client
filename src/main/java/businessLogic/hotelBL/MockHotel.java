@@ -8,7 +8,6 @@ import java.util.Map;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
-import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
@@ -21,14 +20,14 @@ import vo.RoomInfoVO;
 public class MockHotel extends Hotel {
 
 	public MockHotel() {
-
+		
 	}
 	
 	
 	@Override
 	public HotelVO getHotelInfo(String hotelWorkerID) {
 		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5, "5", "good", "allEquipment");
+				5,123 ,"5", "good", "allEquipment");
 	}
 
 	@Override
@@ -82,29 +81,22 @@ public class MockHotel extends Hotel {
 	@Override
 	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
-		return list;
-	}
-
-	@Override
-	public List<HotelGeneralVO> getSortedHotels(SortStrategy sortStrategy) {
-		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5,123));
 		return list;
 	}
 
 	@Override
 	public List<HotelGeneralVO> getBookedHotels(String userID) {
 		List<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
-		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","4",5));
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5,123));
+		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","4",5,234));
 		return list;
 	}
 
 	@Override
 	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
 		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5));
+		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5,123));
 		return list;
 	}
 

@@ -27,14 +27,19 @@ public class HotelGeneralPO implements Serializable{
 	
 	//	评分
 	private double score;
+
+	//  最低价格
+	private double minPrice;
 	
-	public HotelGeneralPO(String hotelID, String hotelName, String city, String cycle, String level, double score) {
+	
+	public HotelGeneralPO(String hotelID, String hotelName, String city, String cycle, String level, double score, double minPrice) {
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.city = city;
 		this.cycle = cycle;
 		this.level = level;
 		this.score = score;
+		this.minPrice = minPrice;
 	}
 	
 	public String getHotelID() {
@@ -77,6 +82,13 @@ public class HotelGeneralPO implements Serializable{
 	}
 	public void setScore(double score) {
 		this.score = score;
+	}
+
+	public double getMinPrice() {
+		return minPrice;
+	}
+	public void setMinPrice(double minPrice){
+		this.minPrice = minPrice;
 	}
 
 }

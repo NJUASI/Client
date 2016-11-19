@@ -10,11 +10,8 @@ import vo.HotelVO;
 import vo.UserVO;
 
 public class User {
-
-	private Hotel hotel;
 	
 	public User() {
-		hotel = new Hotel();
 	}
 	
 	public ResultMessage add(UserVO newUserVO) {
