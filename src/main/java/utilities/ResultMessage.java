@@ -148,4 +148,12 @@ public enum ResultMessage implements Serializable{
 	
 	//	客户、网站管理人员：促销策略信息更新失败
 	PROMOTION_SET_FAILURE,
+	
+	
+	
+	//	酒店：酒店已存在
+	HOTEL_EXIST,
+	
+	//	酒店：酒店不存在
+	HOTEL_INEXISTENCE,
 }

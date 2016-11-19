@@ -3,6 +3,8 @@ package po;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import vo.MemberVO;
+
 public class MemberPO implements Serializable{
 	
 	
@@ -26,6 +28,13 @@ public class MemberPO implements Serializable{
 		this.birthday = birthday;
 		this.enterprise = enterprise;
 	}
+	public MemberPO(MemberVO memberVO) {
+		super();
+		this.guestID = memberVO.guestID;
+		this.birthday =memberVO.birthday;
+		this.enterprise = memberVO.enterprise;
+	}
+	
 	
 	public String getGuestID() {
 		return guestID;

@@ -3,6 +3,8 @@ package po;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import vo.GuestVO;
+
 public class GuestPO implements Serializable{
 	
 	
@@ -46,6 +48,18 @@ public class GuestPO implements Serializable{
 		this.password = password;
 		this.phone = phone;
 		this.credit = credit;
+	}
+	
+	public GuestPO(GuestVO guestVO){
+		super();
+		this.guestID = guestVO.userID;
+		this.birthday = guestVO.birthday;
+		this.enterprise = guestVO.enterprise;
+		this.name = guestVO.name;
+		this.nickName = guestVO.nickName;
+		this.password = guestVO.password;
+		this.phone = guestVO.phone;
+		this.credit = guestVO.credit;
 	}
 	
 	

@@ -2,6 +2,8 @@ package vo;
 
 import java.time.LocalDateTime;
 
+import po.CreditPO;
+
 public class CreditVO {
     
 	//	用户编号	
@@ -30,6 +32,16 @@ public class CreditVO {
 		this.previousCredit = previousCredit;
 		this.afterCredit = afterCredit;
 		this.reason = reason;
+	}
+	
+	public CreditVO(CreditPO creditPO) {
+		this.guestID = creditPO.getGuestID();
+		
+		this.time = creditPO.getTime();
+		this.orderID = creditPO.getOrderID();
+		this.previousCredit = creditPO.getPreCredit();
+		this.afterCredit = creditPO.getCredit();
+		this.reason = creditPO.getReason();
 	}
 
 }
