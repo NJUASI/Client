@@ -2,6 +2,8 @@ package po;
 
 import java.io.Serializable;
 
+import vo.MarketVO;
+
 public class MarketPO implements Serializable{
 
 	
@@ -19,7 +21,11 @@ public class MarketPO implements Serializable{
 	//	等级优惠
 	private double marketBenefit;
 
-	
+	public MarketPO(MarketVO marketVO) {
+		this.marketName = marketVO.marketName;
+		this.marketCredit =marketVO.marketCredit;
+		this.marketBenefit = marketVO.marketBenefit;
+	}
 	public MarketPO(String marketName, double marketCredit, double marketBenefit) {
 		super();
 		this.marketName = marketName;

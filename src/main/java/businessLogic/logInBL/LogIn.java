@@ -2,6 +2,7 @@ package businessLogic.logInBL;
 
 import businessLogic.userBL.User;
 import utilities.ResultMessage;
+import utilities.UserType;
 import vo.GuestVO;
 
 public class LogIn {
@@ -13,28 +14,39 @@ public class LogIn {
 	}
 	
 	public ResultMessage guestLogIn(String guest, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		if(password==user.getLogInInfo( guest, UserType.GUEST)){
+			return ResultMessage.SUCCESS;
+		}else{
+			return ResultMessage.FAIL;
+		}
 	}
 
 	public ResultMessage hotelWorkerLogIn(String hotelWorker, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		if(password==user.getLogInInfo( hotelWorker, UserType.HOTEL_WORKER)){
+			return ResultMessage.SUCCESS;
+		}else{
+			return ResultMessage.FAIL;
+		}
 	}
 
 	public ResultMessage webMarketerLogIn(String webMarketer, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		if(password==user.getLogInInfo(  webMarketer, UserType.WEB_MARKETER)){
+			return ResultMessage.SUCCESS;
+		}else{
+			return ResultMessage.FAIL;
+		}
 	}
 
 	public ResultMessage webManagerLogIn(String webManager, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		if(password==user.getLogInInfo(webManager, UserType.WEB_MANAGER)){
+			return ResultMessage.SUCCESS;
+		}else{
+			return ResultMessage.FAIL;
+		}
 	}
 
 	public ResultMessage guestSignUp(GuestVO guestVO) {
-		// TODO Auto-generated method stub
-		return null;
+		return user.add(guestVO);
 	}
 
 }
