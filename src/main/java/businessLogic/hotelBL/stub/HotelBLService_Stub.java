@@ -1,6 +1,7 @@
 package businessLogic.hotelBL.stub;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -47,14 +48,14 @@ public class HotelBLService_Stub implements HotelBLService{
 	}
 	
 	
-	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
+	public Iterator<HotelGeneralVO> getHotelList(AddressVO addressVO) {
 		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
 		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5,123));
 		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","3",5,234));
-		return list;
+		return list.iterator();
 	}
 
-	public List<HotelGeneralVO> getBookedHotels(String userID) {
+	public Iterator<HotelGeneralVO> getBookedHotels(String userID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -66,7 +67,7 @@ public class HotelBLService_Stub implements HotelBLService{
 	}
 
 	
-	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
+	public Iterator<HotelGeneralVO> getUncommentedHotels(String userID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -89,7 +90,7 @@ public class HotelBLService_Stub implements HotelBLService{
 	}
 
 	
-	public List<RoomInfoVO> getHotelRoomInfo(String userID) {
+	public Iterator<RoomInfoVO> getHotelRoomInfo(String userID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -113,11 +114,11 @@ public class HotelBLService_Stub implements HotelBLService{
 	}
 
 	
-	public List<RemainRoomInfoVO> getRemainRoomInfo(String userID) {
+	public Iterator<RemainRoomInfoVO> getRemainRoomInfo(String userID) {
 		List<RemainRoomInfoVO> list = new LinkedList<RemainRoomInfoVO>();
 		list.add(new RemainRoomInfoVO("12345678", RoomType.SINGLE_BED, 13, 200));
 		list.add(new RemainRoomInfoVO("12345678", RoomType.DOUBLE_BED, 6, 300));
-		return list;
+		return list.iterator();
 	}
 
 	

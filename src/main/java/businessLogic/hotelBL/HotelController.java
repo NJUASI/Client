@@ -1,5 +1,6 @@
 package businessLogic.hotelBL;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -18,23 +19,23 @@ import vo.RoomInfoVO;
 
 public class HotelController implements HotelBLService {
 
-	
+
 	private Hotel hotel;
 	private static HotelController hotelController;
-	
+
 	private HotelController() {
 		//new the mock object
 		hotel = new MockHotel();
 	}
-	
+
 	public static HotelController getInstance(){
 		if(hotelController == null){
 			hotelController = new HotelController();
 		}
 		return hotelController;
 	}
-	
-	
+
+
 	public HotelVO getHotelInfo(String hotelWorkerID) {
 		return hotel.getHotelInfo(hotelWorkerID);
 	}
@@ -43,7 +44,7 @@ public class HotelController implements HotelBLService {
 		return hotel.updateHotelInfo(hotelVO);
 	}
 
-	public List<RoomInfoVO> getHotelRoomInfo(String hotelWorkerID) {
+	public Iterator<RoomInfoVO> getHotelRoomInfo(String hotelWorkerID) {
 		return hotel.getHotelRoomInfo(hotelWorkerID);
 	}
 
@@ -59,7 +60,7 @@ public class HotelController implements HotelBLService {
 		return hotel.updateCheckOut(checkOutVO);
 	}
 
-	public List<RemainRoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
+	public Iterator<RemainRoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
 		return hotel.getRemainRoomInfo(hotelWorkerID);
 	}
 
@@ -70,21 +71,24 @@ public class HotelController implements HotelBLService {
 	public ResultMessage add(HotelVO hotelVO) {
 		return hotel.add(hotelVO);
 	}
-	
-	public List<HotelGeneralVO> getHotelList(AddressVO addressVO) {
-		return hotel.getHotelList(addressVO);
+
+	public Iterator<HotelGeneralVO> getHotelList(AddressVO addressVO) {
+		// TODO
+		return null;
 	}
 
-	public List<HotelGeneralVO> getBookedHotels(String userID) {
-		return hotel.getBookedHotels(userID);
+	public Iterator<HotelGeneralVO> getBookedHotels(String userID) {
+		// TODO
+		return null;
 	}
 
-	public List<HotelGeneralVO> getUncommentedHotels(String userID) {
-		return hotel.getUncommentedHotels(userID);
+	public Iterator<HotelGeneralVO> getUncommentedHotels(String userID) {
+		// TODO
+		return null;
 	}
 
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return hotel.updateEvaluation(evaluationVO);
 	}
-	
+
 }

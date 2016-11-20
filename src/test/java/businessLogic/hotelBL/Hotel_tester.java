@@ -2,6 +2,7 @@ package businessLogic.hotelBL;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
@@ -15,9 +16,9 @@ public class Hotel_tester {
 		//test cooperation with class Order
 		//test interface getBookedHotels
 		HotelController hotelController = HotelController.getInstance();
-		List<HotelGeneralVO> list = hotelController.getBookedHotels("1234567890");
-		HotelGeneralVO hotelGeneralVO1=list.get(0);
-		HotelGeneralVO hotelGeneralVO2=list.get(1);
+		Iterator<HotelGeneralVO> list = hotelController.getBookedHotels("1234567890");
+		HotelGeneralVO hotelGeneralVO1=list.next();
+		HotelGeneralVO hotelGeneralVO2=list.next();
 		
 		assertEquals("12345678", hotelGeneralVO1.hotelID);
 		assertEquals("thisHotel", hotelGeneralVO1.hotelName);

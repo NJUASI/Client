@@ -1,5 +1,6 @@
 package businessLogicService.hotelBLService;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public interface HotelBLService {
 	
 	public ResultMessage updateHotelInfo (HotelVO hotelVO);
 
-	public List<RoomInfoVO> getHotelRoomInfo (String hotelWorkerID);
+	public Iterator<RoomInfoVO> getHotelRoomInfo (String hotelWorkerID);
 	
 	public ResultMessage updateHotelRoomInfo (List<RoomInfoVO> list);
 	
@@ -29,18 +30,18 @@ public interface HotelBLService {
 	
 	public ResultMessage updateCheckOut (CheckOutVO checkOutVO);
 	
-	public List<RemainRoomInfoVO> getRemainRoomInfo (String hotelWorkerID);
+	public Iterator<RemainRoomInfoVO> getRemainRoomInfo (String hotelWorkerID);
 	
 	public ResultMessage updateRemainRoomInfo (String hotelID, Operation operation, 
 			Map<RoomType, Integer> roomInfo);
 	
 	public ResultMessage add (HotelVO hotelVO);
 	
-	public List<HotelGeneralVO> getHotelList (AddressVO addressVO);
+	public Iterator<HotelGeneralVO> getHotelList (AddressVO addressVO);
 	
-	public List<HotelGeneralVO> getBookedHotels (String userID);
+	public Iterator<HotelGeneralVO> getBookedHotels (String userID);
 	
-	public List<HotelGeneralVO> getUncommentedHotels (String userID);
+	public Iterator<HotelGeneralVO> getUncommentedHotels (String userID);
 	
 	public ResultMessage updateEvaluation (EvaluationVO evaluationVO);	
 	
