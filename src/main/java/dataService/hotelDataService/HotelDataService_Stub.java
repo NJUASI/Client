@@ -1,14 +1,13 @@
 package dataService.hotelDataService;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import po.AddressPO;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.EvaluationPO;
-import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
@@ -63,17 +62,23 @@ public class HotelDataService_Stub implements HotelDataService  {
 		return ResultMessage.SUCCESS;
 	}
 
-	
-	public ResultMessage add(HotelPO hotelInfoPO) {
-		return ResultMessage.SUCCESS;
-	}
-	
 	public HotelPO getHotelDetail(String hotelID) {
 		return new HotelPO("12345678", "thisHotel", "NanJing", "center", "address", "4",
 				5,123,"5", "good", "allEquipment");
 	}
 	
 	public ResultMessage addEvaluation(EvaluationPO evaluationPO) {
+		return ResultMessage.SUCCESS;
+	}
+
+
+	public List<EvaluationPO> getEvaluations(String hotelID) {
+		List<EvaluationPO> list =  new ArrayList<EvaluationPO>();
+		list.add(new EvaluationPO("123",123,"123"));
+		return list;
+	}
+
+	public ResultMessage updateEvaluation(EvaluationPO evaluationPO) throws RemoteException {
 		return ResultMessage.SUCCESS;
 	}
 

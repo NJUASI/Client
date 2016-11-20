@@ -2,7 +2,7 @@ package presentation.hotelWorkerUI.driver;
 
 import static org.junit.Assert.*;
 
-
+import org.junit.Ignore;
 import org.junit.Test;
 
 import businessLogic.hotelBL.stub.HotelBLService_Stub;

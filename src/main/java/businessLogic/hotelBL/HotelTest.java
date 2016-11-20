@@ -45,7 +45,7 @@ public class HotelTest {
 
 	@Test
 	public void testUpdateHotelInfo() {
-		assertEquals(hotel.updateHotelInfo(hotel.getHotelVO()), ResultMessage.SUCCESS);
+		assertEquals(hotel.updateHotelInfo(new HotelVO(hotel.getHotelPO())), ResultMessage.SUCCESS);
 	}
 
 	@Test
@@ -85,8 +85,8 @@ public class HotelTest {
 	}
 
 	@Test
-	public void testAdd() {
-		assertEquals(hotel.add(hotel.getHotelVO()), ResultMessage.SUCCESS);
+	public void testAddHotel() {
+		assertEquals(hotel.addHotel(new HotelVO(hotel.getHotelPO())), ResultMessage.SUCCESS);
 	}
 
 	@Test

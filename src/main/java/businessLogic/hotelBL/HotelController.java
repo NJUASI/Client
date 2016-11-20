@@ -68,8 +68,8 @@ public class HotelController implements HotelBLService {
 		return hotel.updateRemainRoomInfo(hotelID, operation, roomInfo);
 	}
 
-	public ResultMessage add(HotelVO hotelVO) {
-		return hotel.add(hotelVO);
+	public ResultMessage addHotel(HotelVO hotelVO) {
+		return hotel.addHotel(hotelVO);
 	}
 
 	public Iterator<HotelGeneralVO> getHotelList(AddressVO addressVO) {
@@ -89,6 +89,11 @@ public class HotelController implements HotelBLService {
 
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return hotel.updateEvaluation(evaluationVO);
+	}
+
+	@Override
+	public Iterator<EvaluationVO> getEvaluations(String hotelID) {
+		return hotel.getEvaluations();
 	}
 
 }

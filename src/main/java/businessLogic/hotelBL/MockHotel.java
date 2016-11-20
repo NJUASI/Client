@@ -70,7 +70,7 @@ public class MockHotel extends Hotel {
 	}
 
 	@Override
-	public ResultMessage add(HotelVO hotelVO) {
+	public ResultMessage addHotel(HotelVO hotelVO) {
 		return ResultMessage.SUCCESS;
 	}
 

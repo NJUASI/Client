@@ -1,5 +1,7 @@
 package vo;
 
+import po.EvaluationPO;
+
 public class EvaluationVO {
 	
 	//	订单编号
@@ -15,6 +17,12 @@ public class EvaluationVO {
 		this.orderID = orderID;
 		this.score = score;
 		this.comment = comment;
+	}
+
+	public EvaluationVO(EvaluationPO evaluationPO) {
+		this.orderID = evaluationPO.getOrderID();
+		this.score = evaluationPO.getScore();
+		this.comment = evaluationPO.getComment();
 	}
 
 }

@@ -35,13 +35,11 @@ public interface HotelBLService {
 	public ResultMessage updateRemainRoomInfo (String hotelID, Operation operation, 
 			Map<RoomType, Integer> roomInfo);
 	
-	public ResultMessage add (HotelVO hotelVO);
-	
 	public Iterator<HotelGeneralVO> getHotelList (AddressVO addressVO);
 	
 	public Iterator<HotelGeneralVO> getBookedHotels (String userID);
 	
-	public Iterator<HotelGeneralVO> getUncommentedHotels (String userID);
+	public Iterator<EvaluationVO> getEvaluations (String hotelID);
 	
 	public ResultMessage updateEvaluation (EvaluationVO evaluationVO);	
 	

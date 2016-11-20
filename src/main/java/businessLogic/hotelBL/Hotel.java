@@ -12,8 +12,6 @@ import po.CheckInPO;
 import po.CheckOutPO;
 import po.EvaluationPO;
 import po.HotelPO;
-import po.RemainRoomInfoPO;
-import po.RoomInfoPO;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -27,72 +25,84 @@ import vo.RoomInfoVO;
 public class Hotel{
 
 	private HotelDataService hotelDataService;
-	private HotelVO hotelVO;
+	private HotelPO hotelPO;
+	private String hotelID;
+	private Rooms rooms;
+	private Evaluations evaluations;
 
 	public Hotel() {
-		
+
 	}
 
 	public Hotel(String hotelWorkerID) {
-		hotelDataService = new HotelDataService_Stub();
-		hotelVO = getHotelInfo(hotelWorkerID);
+		this.hotelID = hotelWorkerID;
+		initHotel();
 	}
 
-	public HotelVO getHotelInfo(String hotelWorkerID) {
+	private void initHotel() {
+		initHotelDataService();
+		initHotelPO();
+		initRooms();
+		initEvaluations();
+	}
 
+	private void initEvaluations() {
+		evaluations = new Evaluations(hotelID,hotelDataService);
+	}
+
+	private void initRooms() {
+		rooms = new Rooms(hotelID,hotelDataService);
+	}
+
+	private void initHotelPO() {
 		try {
-			HotelPO hotelPO = hotelDataService.getHotelInfo(hotelWorkerID);
-			HotelVO hotelVO = new HotelVO(hotelPO);
-			setHotelVO(hotelVO);
+			hotelPO = hotelDataService.getHotelInfo(hotelID);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
+	}
 
-		return hotelVO;
+	private void initHotelDataService() {
+		hotelDataService = new HotelDataService_Stub();
+	}
+
+	
+	
+	// 对hotelInfo的操作，get、update、add
+	public HotelVO getHotelInfo(String hotelWorkerID) {
+		return new HotelVO(hotelPO);
 	}
 
 	public ResultMessage updateHotelInfo(HotelVO hotelVO) {
 
-		this.hotelVO = hotelVO;
+		hotelPO = new HotelPO(hotelVO);
 		try {
-			return hotelDataService.add(new HotelPO(hotelVO));
+			return hotelDataService.setHotelInfo(hotelPO);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return ResultMessage.FAIL;
 
 	}
+	
+	public ResultMessage addHotel(HotelVO hotelVO){
+		// TODO
+		return ResultMessage.SUCCESS;
+	}
 
+	//对roomInfo的操作，get、update
 	public Iterator<RoomInfoVO> getHotelRoomInfo(String hotelWorkerID) {
-		List<RoomInfoVO> roomInfoVOList = new ArrayList<RoomInfoVO>();
-		List<RoomInfoPO> roomInfoPOList = null;
-		try {
-			roomInfoPOList = hotelDataService.getHotelRoomInfo(hotelWorkerID);
-			for(RoomInfoPO roomInfoPO: roomInfoPOList){
-				roomInfoVOList.add(new RoomInfoVO(roomInfoPO));
-			}
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return roomInfoVOList.iterator();
+		return rooms.getRoomInfo();
 	}
 
 	public ResultMessage updateHotelRoomInfo(List<RoomInfoVO> roomInfoVOList) {
-
-		List<RoomInfoPO> roomInfoPOList = new ArrayList<RoomInfoPO>();
-		for(RoomInfoVO roomInfoVO: roomInfoVOList){
-			roomInfoPOList.add(new RoomInfoPO(roomInfoVO));
-		}
-		ResultMessage msg = null;
-		try {
-			msg = hotelDataService.setHotelRoomInfo(roomInfoPOList);
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return msg;
+		return rooms.updateHotelRoomInfo(roomInfoVOList);
 	}
 
+	
+	// 对checkIn、checkOut的操作，update
 	public ResultMessage updateCheckIn(CheckInVO checkInVO) {
+		// TODO
 		CheckInPO checkInPO = new CheckInPO(checkInVO);
 		ResultMessage msg = null;
 		try {
@@ -104,6 +114,7 @@ public class Hotel{
 	}
 
 	public ResultMessage updateCheckOut(CheckOutVO checkOutVO) {
+		// TODO
 		CheckOutPO checkOutPO = new CheckOutPO(checkOutVO);
 		ResultMessage msg = null;
 		try {
@@ -114,19 +125,10 @@ public class Hotel{
 		return msg;
 	}
 
+	
+	// 对remainRoomInfo的操作，get、update
 	public Iterator<RemainRoomInfoVO> getRemainRoomInfo(String hotelWorkerID) {
-
-		List<RemainRoomInfoVO> remainRoomInfoVOList = new ArrayList<RemainRoomInfoVO>();
-		List<RemainRoomInfoPO> remainRoomInfoPOList = null;
-		try {
-			remainRoomInfoPOList = hotelDataService.getRemainRoomInfo(hotelWorkerID);
-			for(RemainRoomInfoPO RemainRoomInfoPO: remainRoomInfoPOList){
-				remainRoomInfoVOList.add(new RemainRoomInfoVO(RemainRoomInfoPO));
-			}
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return remainRoomInfoVOList.iterator();
+		return rooms.getRemainRooms();
 	}
 
 
@@ -135,33 +137,24 @@ public class Hotel{
 		return null;
 	}
 
-	public ResultMessage add(HotelVO hotelVO) {
-		HotelPO hotelPO = new HotelPO(hotelVO);
-		ResultMessage msg = null;
-		try {
-			msg = hotelDataService.add(hotelPO);
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return msg;
+	
+	// 对evaluations的操作，get、update
+	public Iterator<EvaluationVO> getEvaluations(){
+		return evaluations.getEvaluations();
 	}
 
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
-		EvaluationPO evaluationPO = new EvaluationPO(evaluationVO);
-		ResultMessage msg = null;
-		try {
-			msg = hotelDataService.addEvaluation(evaluationPO);
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return msg;
+		return evaluations.addEvaluation(evaluationVO);
 	}
 	
-	public HotelVO getHotelVO(){
-		return hotelVO;
-	}
 	
-	public void setHotelVO(HotelVO hotelVO) {
-		this.hotelVO = hotelVO;
+	
+	
+	/**
+	 * 方便测试用，严格来说不能暴露，后期删除
+	 * @return
+	 */
+	public HotelPO getHotelPO(){
+		return hotelPO;
 	}
 }
