@@ -38,11 +38,6 @@ public class MockUser extends User{
 		return guestVO;
 	}
 	
-	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		if (newHotelVO.hotelGeneralVO.hotelID.equals(hotelID)) return hotel.add(newHotelVO);
-		else return ResultMessage.FAIL;
-	}
-	
 	public ResultMessage modifyCredit(String guestID, float creditNum) {
 		return ResultMessage.SUCCESS;
 	}

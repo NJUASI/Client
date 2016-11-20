@@ -1,5 +1,6 @@
 package dataService.orderDataService;
 
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -76,6 +77,13 @@ public class OrderDataService_Stub implements OrderDataService {
 	public ResultMessage undoNormalOrder(String orderID) {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
+	}
+
+
+	@Override
+	public List<String> getBookedHotels(String guestID) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

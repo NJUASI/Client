@@ -24,7 +24,7 @@ public class MockCredit extends Credit{
 	}
 	
 	@Override
-	public ResultMessage charge(String guestID, int chargeNum) {
+	public ResultMessage charge(String guestID, float chargeNum) {
 		return user.modifyCredit("1234567890", 100);
 	}
 

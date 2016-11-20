@@ -35,9 +35,10 @@ public interface HotelDataService extends Remote{
 	
 	public ResultMessage setRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) throws RemoteException;
 	
-	public ResultMessage add (HotelPO hotelPO) throws RemoteException;
-	
 	public HotelPO getHotelDetail(String hotelID) throws RemoteException;
 
-	public ResultMessage addEvaluation (EvaluationPO evaluationPO) throws RemoteException;
+	public List<EvaluationPO> getEvaluations(String hotelID) throws RemoteException;
+	
+	public ResultMessage updateEvaluation (EvaluationPO evaluationPO) throws RemoteException;
+	
 }

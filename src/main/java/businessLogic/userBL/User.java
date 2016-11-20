@@ -126,7 +126,7 @@ public class User {
 
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
 		if(hotel.getHotelInfo(hotelID)!=null){
-			return hotel.add(newHotelVO);
+			return hotel.addHotel(newHotelVO);
 		}
 		else{
 			return ResultMessage.HOTEL_EXIST;

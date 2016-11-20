@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import utilities.OrderState;
+import vo.OrderGeneralVO;
 
 public class OrderGeneralPO implements Serializable{
 	
@@ -54,6 +55,18 @@ public class OrderGeneralPO implements Serializable{
 		this.state = state;
 	}
 
+	public OrderGeneralPO(OrderGeneralVO orderGeneralVO) {
+		this.orderID = orderGeneralVO.orderID;
+		this.guestID = orderGeneralVO.guestID;
+		this.hotelID = orderGeneralVO.hotelID;
+		this.hotelName = orderGeneralVO.hotelName;
+		this.hotelAddress = orderGeneralVO.hotelAddress;
+		this.price = orderGeneralVO.price;
+		this.expectExecuteTime = orderGeneralVO.expectExecuteTime;
+		this.expectLeaveTime = orderGeneralVO.expectLeaveTime;
+		this.state = orderGeneralVO.state;
+	}
+	
 	public String getOrderID() {
 		return orderID;
 	}

@@ -2,6 +2,7 @@ package vo;
 
 import java.time.LocalDateTime;
 
+import po.OrderGeneralPO;
 import utilities.OrderState;
 
 public class OrderGeneralVO {
@@ -44,5 +45,17 @@ public class OrderGeneralVO {
 		this.expectExecuteTime = expectExecuteTime;
 		this.expectLeaveTime = expectLeaveTime;
 		this.state = state;
+	}
+	
+	public OrderGeneralVO(OrderGeneralPO orderGeneralPO) {
+		this.orderID = orderGeneralPO.getOrderID();
+		this.guestID = orderGeneralPO.getGuestID();
+		this.hotelID = orderGeneralPO.getHotelID();
+		this.hotelName = orderGeneralPO.getHotelName();
+		this.hotelAddress = orderGeneralPO.getHotelAddress();
+		this.price = orderGeneralPO.getPrice();
+		this.expectExecuteTime = orderGeneralPO.getExpectExecuteTime();
+		this.expectLeaveTime = orderGeneralPO.getExpectLeaveTime();
+		this.state = orderGeneralPO.getState();
 	}
 }

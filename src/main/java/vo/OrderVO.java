@@ -2,6 +2,7 @@ package vo;
 
 import java.time.LocalDateTime;
 
+import po.OrderPO;
 import utilities.OrderState;
 import utilities.RoomType;
 
@@ -84,5 +85,18 @@ public class OrderVO {
 		this.message = message;
 	}
 	
-	
+	public OrderVO(OrderPO orderPO) {
+		this.orderGeneralVO = new OrderGeneralVO(orderPO.getOrderGeneralPO());
+		
+		this.previousPrice = orderPO.getPreviousPrice();
+		this.createTime = orderPO.getCreateTime();
+		this.checkInTime = orderPO.getCheckInTime();
+		this.checkOutTime = orderPO.getCheckOutTime();
+		this.roomType = orderPO.getRoomType();
+		this.roomNumCount = orderPO.getRoomNumCount();
+		this.roomNumber = orderPO.getRoomNumber();
+		this.name = orderPO.getName();
+		this.phone = orderPO.getPhone();
+		this.message = orderPO.getMessage();
+	}
 }

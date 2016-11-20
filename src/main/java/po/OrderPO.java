@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import utilities.OrderState;
 import utilities.RoomType;
+import vo.OrderVO;
 
 public class OrderPO implements Serializable{
 	
@@ -91,6 +92,29 @@ public class OrderPO implements Serializable{
 		this.message = message;
 	}
 	
+	public OrderPO(OrderVO orderVO) {
+		this.orderGeneralPO = new OrderGeneralPO(orderVO.orderGeneralVO);
+		
+		this.previousPrice = orderVO.previousPrice;
+		this.createTime = orderVO.createTime;
+		this.checkInTime = orderVO.checkInTime;
+		this.checkOutTime = orderVO.checkOutTime;
+		this.roomType = orderVO.roomType;
+		this.roomNumCount = orderVO.roomNumCount;
+		this.roomNumber = orderVO.roomNumber;
+		this.name = orderVO.name;
+		this.phone = orderVO.phone;
+		this.message = orderVO.message;
+	}
+	
+	public OrderGeneralPO getOrderGeneralPO() {
+		return orderGeneralPO;
+	}
+
+	public void setOrderGeneralPO(OrderGeneralPO orderGeneralPO) {
+		this.orderGeneralPO = orderGeneralPO;
+	}
+
 	public String getOrderID() {
 		return orderGeneralPO.getOrderID();
 	}
