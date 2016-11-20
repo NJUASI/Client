@@ -23,6 +23,7 @@ public class HotelController {
 	protected void openHotelCheck() {
 		cityAndCircle.setVisible(false);
 		hotelCheck.setVisible(true);
+		hotelChoose.setVisible(false);
 	}
 
 	@FXML
