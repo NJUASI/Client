@@ -19,19 +19,247 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.guestUI.controller.OrderController">
    <children>
-      <Pane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
+      <Pane fx:id="orderCheck" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
          <children>
             <TabPane cache="true" layoutY="60.0" prefHeight="541.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE">
                <tabs>
                   <Tab text="已执行订单">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="506.0" prefWidth="992.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="512.0" prefWidth="895.0">
                            <children>
-                              <ScrollPane hbarPolicy="NEVER" layoutY="-1.0" prefHeight="514.0" prefWidth="895.0" vbarPolicy="ALWAYS" />
-                              <Pane prefWidth="979.0" />
+                              <Pane layoutY="42.0" prefHeight="462.0" prefWidth="895.0">
+                                 <children>
+                                    <Pane prefHeight="92.0" prefWidth="895.0">
+                                       <children>
+                                          <Label layoutX="127.0" layoutY="39.0" />
+                                          <Label layoutX="88.0" layoutY="39.0" />
+                                          <Label layoutX="648.0" layoutY="61.0" text="价格：" />
+                                          <Label layoutX="700.0" layoutY="61.0" text="610" />
+                                          <Button layoutX="753.0" layoutY="7.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="33.0" prefWidth="72.0" text="未执行" />
+                                          <Separator layoutY="92.0" prefHeight="0.0" prefWidth="895.0" />
+                                          <Button layoutX="749.0" layoutY="49.0" mnemonicParsing="false" onMouseClicked="#OrderDetail1" text="查看详情" />
+                                          <GridPane layoutX="66.0" layoutY="18.0" prefHeight="46.0" prefWidth="405.0">
+                                             <children>
+                                                <Label text="酒店：" />
+                                                <Label text="地址：" GridPane.rowIndex="1" />
+                                                <Label text="新街口三里步汉庭" GridPane.columnIndex="1" />
+                                                <Label text="南京市玄武区新街口三里巷" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="70.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="335.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <GridPane layoutX="403.0" layoutY="16.0" prefHeight="46.0" prefWidth="274.0">
+                                             <children>
+                                                <Label text="最晚执行时间：" />
+                                                <Label text="离店时间：" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" />
+                                                <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="127.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="147.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <Separator prefHeight="0.0" prefWidth="895.0" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutY="92.0" prefHeight="92.0" prefWidth="895.0">
+                                       <children>
+                                          <Label layoutX="127.0" layoutY="39.0" />
+                                          <Label layoutX="88.0" layoutY="39.0" />
+                                          <Label layoutX="648.0" layoutY="61.0" text="价格：" />
+                                          <Label layoutX="700.0" layoutY="61.0" text="610" />
+                                          <Button layoutX="753.0" layoutY="7.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="33.0" prefWidth="72.0" text="未执行" />
+                                          <Separator layoutY="92.0" prefHeight="0.0" prefWidth="895.0" />
+                                          <Button layoutX="749.0" layoutY="49.0" mnemonicParsing="false" text="查看详情" />
+                                          <GridPane layoutX="66.0" layoutY="18.0" prefHeight="46.0" prefWidth="405.0">
+                                             <children>
+                                                <Label text="酒店：" />
+                                                <Label text="地址：" GridPane.rowIndex="1" />
+                                                <Label text="新街口三里步汉庭" GridPane.columnIndex="1" />
+                                                <Label text="南京市玄武区新街口三里巷" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="70.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="335.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <GridPane layoutX="403.0" layoutY="16.0" prefHeight="46.0" prefWidth="274.0">
+                                             <children>
+                                                <Label text="最晚执行时间：" />
+                                                <Label text="离店时间：" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" />
+                                                <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="127.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="147.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <Separator prefHeight="0.0" prefWidth="895.0" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutY="184.0" prefHeight="92.0" prefWidth="895.0">
+                                       <children>
+                                          <Label layoutX="127.0" layoutY="39.0" />
+                                          <Label layoutX="88.0" layoutY="39.0" />
+                                          <Label layoutX="648.0" layoutY="61.0" text="价格：" />
+                                          <Label layoutX="700.0" layoutY="61.0" text="610" />
+                                          <Button layoutX="753.0" layoutY="7.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="33.0" prefWidth="72.0" text="未执行" />
+                                          <Separator layoutY="92.0" prefHeight="0.0" prefWidth="895.0" />
+                                          <Button layoutX="749.0" layoutY="49.0" mnemonicParsing="false" text="查看详情" />
+                                          <GridPane layoutX="66.0" layoutY="18.0" prefHeight="46.0" prefWidth="405.0">
+                                             <children>
+                                                <Label text="酒店：" />
+                                                <Label text="地址：" GridPane.rowIndex="1" />
+                                                <Label text="新街口三里步汉庭" GridPane.columnIndex="1" />
+                                                <Label text="南京市玄武区新街口三里巷" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="70.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="335.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <GridPane layoutX="403.0" layoutY="16.0" prefHeight="46.0" prefWidth="274.0">
+                                             <children>
+                                                <Label text="最晚执行时间：" />
+                                                <Label text="离店时间：" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" />
+                                                <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="127.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="147.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <Separator prefHeight="0.0" prefWidth="895.0" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutY="276.0" prefHeight="92.0" prefWidth="895.0">
+                                       <children>
+                                          <Label layoutX="127.0" layoutY="39.0" />
+                                          <Label layoutX="88.0" layoutY="39.0" />
+                                          <Label layoutX="648.0" layoutY="61.0" text="价格：" />
+                                          <Label layoutX="700.0" layoutY="61.0" text="610" />
+                                          <Button layoutX="753.0" layoutY="7.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="33.0" prefWidth="72.0" text="未执行" />
+                                          <Separator layoutY="92.0" prefHeight="0.0" prefWidth="895.0" />
+                                          <Button layoutX="749.0" layoutY="49.0" mnemonicParsing="false" text="查看详情" />
+                                          <GridPane layoutX="66.0" layoutY="18.0" prefHeight="46.0" prefWidth="405.0">
+                                             <children>
+                                                <Label text="酒店：" />
+                                                <Label text="地址：" GridPane.rowIndex="1" />
+                                                <Label text="新街口三里步汉庭" GridPane.columnIndex="1" />
+                                                <Label text="南京市玄武区新街口三里巷" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="70.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="335.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <GridPane layoutX="403.0" layoutY="16.0" prefHeight="46.0" prefWidth="274.0">
+                                             <children>
+                                                <Label text="最晚执行时间：" />
+                                                <Label text="离店时间：" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" />
+                                                <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="127.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="147.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <Separator prefHeight="0.0" prefWidth="895.0" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutY="368.0" prefHeight="92.0" prefWidth="895.0">
+                                       <children>
+                                          <Label layoutX="127.0" layoutY="39.0" />
+                                          <Label layoutX="88.0" layoutY="39.0" />
+                                          <Label layoutX="648.0" layoutY="61.0" text="价格：" />
+                                          <Label layoutX="700.0" layoutY="61.0" text="610" />
+                                          <Button layoutX="753.0" layoutY="7.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="33.0" prefWidth="72.0" text="未执行" />
+                                          <Separator layoutY="92.0" prefHeight="0.0" prefWidth="895.0" />
+                                          <Button layoutX="749.0" layoutY="49.0" mnemonicParsing="false" text="查看详情" />
+                                          <GridPane layoutX="66.0" layoutY="18.0" prefHeight="46.0" prefWidth="405.0">
+                                             <children>
+                                                <Label text="酒店：" />
+                                                <Label text="地址：" GridPane.rowIndex="1" />
+                                                <Label text="新街口三里步汉庭" GridPane.columnIndex="1" />
+                                                <Label text="南京市玄武区新街口三里巷" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="70.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="335.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <GridPane layoutX="403.0" layoutY="16.0" prefHeight="46.0" prefWidth="274.0">
+                                             <children>
+                                                <Label text="最晚执行时间：" />
+                                                <Label text="离店时间：" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" />
+                                                <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="2016-10-2 14：00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="127.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="147.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                          <Separator prefHeight="0.0" prefWidth="895.0" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Button layoutX="712.0" layoutY="6.0" mnemonicParsing="false" text="上一页" />
+                              <Button layoutX="807.0" layoutY="6.0" mnemonicParsing="false" text="下一页" />
                            </children>
                         </AnchorPane>
                      </content>
@@ -110,7 +338,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" visible="false">
+      <Pane fx:id="orderDetail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" visible="false">
          <children>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="454.0">
                <children>
@@ -120,7 +348,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="297.0" prefWidth="490.0">
                                  <children>
-                                    <Pane prefHeight="514.0" prefWidth="895.0">
+                                    <Pane prefHeight="504.0" prefWidth="895.0">
                                        <children>
                                           <Label layoutX="567.0" layoutY="131.0" text="价格：" />
                                           <Label layoutX="616.0" layoutY="131.0" text="610" />
@@ -190,10 +418,10 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                           </GridPane>
-                                          <Button layoutX="617.0" layoutY="170.0" mnemonicParsing="false" text="撤销" />
+                                          <Button layoutX="622.0" layoutY="170.0" mnemonicParsing="false" text="撤销" />
                                           <Label layoutX="174.0" layoutY="384.0" text="特别要求：" />
                                           <Label layoutX="263.0" layoutY="383.0" prefHeight="23.0" text="三个孩子，不要窗户" />
-                                          <Button layoutX="551.0" layoutY="170.0" mnemonicParsing="false" text="返回" />
+                                          <Button layoutX="551.0" layoutY="170.0" mnemonicParsing="false" onMouseClicked="#cancel" text="返回" />
                                        </children>
                                     </Pane>
                                  </children>
