@@ -1,4 +1,4 @@
-package presentation.signUpUI.controller;
+package presentation;
 
 
 import java.io.IOException;

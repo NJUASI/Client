@@ -17,14 +17,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.guestUI.controller.GuestController">
    <children>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
+      <Pane fx:id="guestCheck" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
          <children>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="601.0" prefWidth="895.0">
                <children>
-                  <Button layoutX="421.0" layoutY="429.0" mnemonicParsing="false" text="修改" />
+                  <Button layoutX="421.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#modifyGuestInfo" text="修改" />
                   <GridPane layoutX="219.0" layoutY="175.0" prefHeight="159.0" prefWidth="392.0">
                      <children>
                         <Label prefHeight="54.0" prefWidth="210.0" text="联系方式：" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
@@ -64,7 +63,7 @@
             </AnchorPane>
          </children>
       </Pane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" visible="false">
+      <Pane fx:id="guestModify" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" visible="false">
          <children>
             <Button layoutX="607.0" layoutY="226.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" />
             <GridPane layoutX="300.0" layoutY="168.0" prefHeight="197.0" prefWidth="265.0">
@@ -96,9 +95,9 @@
                </font>
             </Label>
             <Separator layoutY="60.0" prefHeight="0.0" prefWidth="895.0" />
-            <Button layoutX="463.0" layoutY="430.0" mnemonicParsing="false" prefHeight="26.0" text="保存" />
+            <Button layoutX="467.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#saveGuestInfo" prefHeight="26.0" text="保存" />
             <Label layoutX="607.0" layoutY="203.0" text="头像：" />
-            <Button layoutX="380.0" layoutY="430.0" mnemonicParsing="false" prefHeight="26.0" text="取消" />
+            <Button layoutX="380.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#cancer" prefHeight="26.0" text="取消" />
          </children>
       </Pane>
    </children>

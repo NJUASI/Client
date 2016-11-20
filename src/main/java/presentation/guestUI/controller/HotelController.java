@@ -9,14 +9,48 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class HotelController {
-	Parent hotelCheck;
-    @FXML private StackPane right;
-    @FXML private Pane cityChoose;
-	@FXML 
-	protected void openHotelInfo() throws IOException{
-		System.out.println("sss");
-		hotelCheck = FXMLLoader.load(getClass().getResource("/presentation/GuestUI/view/HotelCheck.fxml"));
-		right.getChildren().removeAll(hotelCheck,cityChoose);
-		right.getChildren().add(hotelCheck);
+	@FXML
+	private Pane cityAndCircle;
+	@FXML
+	private Pane hotelCheck;
+	@FXML
+	private Pane hotelDetail;
+	@FXML
+	private Pane hotelChoose; 
+	@FXML
+	private Pane createPane;
+	@FXML
+	protected void openHotelCheck() {
+		cityAndCircle.setVisible(false);
+		hotelCheck.setVisible(true);
+	}
+
+	@FXML
+	protected void openHotelDetail() {
+		hotelCheck.setVisible(false);
+		hotelDetail.setVisible(true);
+	}
+
+	@FXML
+	protected void openSwitchCityCircle() {
+		hotelCheck.setVisible(false);
+		cityAndCircle.setVisible(true);
+	}
+
+	@FXML
+	protected void openChoose() {
+		hotelCheck.setVisible(false);
+		hotelChoose.setVisible(true);
+	}
+	@FXML
+	protected void openCreateOrder() {
+		hotelDetail.setVisible(false);
+		createPane.setVisible(true);
+	}
+	@FXML
+	protected void returnHotelCheck() {
+		hotelCheck.setVisible(true);
+		hotelDetail.setVisible(false);
+		createPane.setVisible(false);
 	}
 }
