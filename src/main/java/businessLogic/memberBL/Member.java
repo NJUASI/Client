@@ -4,7 +4,6 @@ import java.rmi.RemoteException;
 
 import dataService.guestDataService.GuestDataService;
 import dataService.guestDataService.GuestDataService_Stub;
-import po.GuestPO;
 import po.MemberPO;
 import utilities.MemberType;
 import utilities.ResultMessage;

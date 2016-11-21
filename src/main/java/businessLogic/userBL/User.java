@@ -40,7 +40,7 @@ public class User {
 		guestDataService = new GuestDataService_Stub();
 		hotelWorkerDataService = new HotelWorkerDataService_Stub();
 		webMarketerDataService= new WebMarketerDataService_Stub();
-		webManagerDataService = new WebManagerDataService_Stub();;
+		webManagerDataService = new WebManagerDataService_Stub();
 		hotel = new Hotel();
 	}
 	
@@ -125,7 +125,7 @@ public class User {
 	}
 
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		if(hotel.getHotelInfo(hotelID)!=null){
+		if(hotel.getHotelInfo(hotelID)==null){
 			return hotel.addHotel(newHotelVO);
 		}
 		else{
