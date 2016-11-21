@@ -148,8 +148,6 @@ public class Hotel{
 	}
 	
 	
-	
-	
 	/**
 	 * 方便测试用，严格来说不能暴露，后期删除
 	 * @return

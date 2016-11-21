@@ -64,13 +64,12 @@ public class Rooms {
 		for(RoomInfoVO roomInfoVO: roomInfoVOList){
 			roomInfoPOList.add(new RoomInfoPO(roomInfoVO));
 		}
-		ResultMessage msg = null;
 		try {
-			msg = hotelDataService.setHotelRoomInfo(roomInfoPOList);
+			return hotelDataService.setHotelRoomInfo(roomInfoPOList);
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			return ResultMessage.FAIL;
 		}
-		return msg;
 	}
 
 
