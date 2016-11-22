@@ -40,7 +40,7 @@ public class User {
 		guestDataService = new GuestDataService_Stub();
 		hotelWorkerDataService = new HotelWorkerDataService_Stub();
 		webMarketerDataService= new WebMarketerDataService_Stub();
-		webManagerDataService = new WebManagerDataService_Stub();;
+		webManagerDataService = new WebManagerDataService_Stub();
 		hotel = new Hotel();
 	}
 	
@@ -67,7 +67,7 @@ public class User {
 				}	
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				return ResultMessage.FAIL;
+				return ResultMessage.USER_ADD_FAILURE;
 			}
 		return null;
 	}
@@ -95,7 +95,7 @@ public class User {
 			}	
 		} catch (RemoteException e) {
 			e.printStackTrace();
-			return ResultMessage.FAIL;
+			return ResultMessage.USER_INFO_UPDATE_FAILURE;
 		}
 		return null;
 	}
@@ -125,7 +125,7 @@ public class User {
 	}
 
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		if(hotel.getHotelInfo(hotelID)!=null){
+		if(hotel.getHotelInfo(hotelID)==null){
 			return hotel.addHotel(newHotelVO);
 		}
 		else{
@@ -147,19 +147,19 @@ public class User {
 	public List<UserVO> getAll(UserType userType) {
 		try {
 			if(userType==UserType.GUEST){
-				return  this.converGuest(guestDataService.getAllGuest());
+				return  this.convertGuest(guestDataService.getAllGuest());
 			}
 				
 			if(userType==UserType.HOTEL_WORKER){
-				return this.converHotelWorker(hotelWorkerDataService.getAllHotelWorker());
+				return this.convertHotelWorker(hotelWorkerDataService.getAllHotelWorker());
 			}
 				
 			if(userType==UserType.WEB_MARKETER){
-				return this.converWebMarketer(webMarketerDataService.getAllWebMarketer());
+				return this.convertWebMarketer(webMarketerDataService.getAllWebMarketer());
 			}
 				
 			if(userType==UserType.WEB_MANAGER){
-				return this.converWebManager(webManagerDataService.getAllWebManager());
+				return this.convertWebManager(webManagerDataService.getAllWebManager());
 			}
 				
 		} catch (RemoteException e) {
@@ -207,7 +207,7 @@ public class User {
 		return null;
 	}
 
-	private List<UserVO> converGuest(List<GuestPO> list){
+	private List<UserVO> convertGuest(List<GuestPO> list){
 		List<UserVO> result = new ArrayList<UserVO>();
 		for(int i=0;i<list.size();i++){
 			result.add(new GuestVO(list.get(i)));
@@ -215,7 +215,7 @@ public class User {
 		return result;
 	}
 	
-	private List<UserVO> converHotelWorker(List<HotelWorkerPO> list){
+	private List<UserVO> convertHotelWorker(List<HotelWorkerPO> list){
 		List<UserVO> result = new ArrayList<UserVO>();
 		for(int i=0;i<list.size();i++){
 			result.add(new HotelWorkerVO(list.get(i)));
@@ -223,7 +223,7 @@ public class User {
 		return result;
 	}
 	
-	private List<UserVO> converWebMarketer(List<WebMarketerPO> list){
+	private List<UserVO> convertWebMarketer(List<WebMarketerPO> list){
 		List<UserVO> result = new ArrayList<UserVO>();
 		for(int i=0;i<list.size();i++){
 			result.add(new WebMarketerVO(list.get(i)));
@@ -231,7 +231,7 @@ public class User {
 		return result;
 	}
 	
-	private List<UserVO> converWebManager(List<WebManagerPO> list){
+	private List<UserVO> convertWebManager(List<WebManagerPO> list){
 		List<UserVO> result = new ArrayList<UserVO>();
 		for(int i=0;i<list.size();i++){
 			result.add(new WebManagerVO(list.get(i)));

@@ -33,20 +33,16 @@ public class Credit {
 			GuestVO guestVO = (GuestVO)user.getSingle(ID, userType);
 			
 			List<MarketVO> memberFormulationList = market.getMemberFormulation();
-			if(guestVO.credit < memberFormulationList.get(0).marketCredit){
-				return new BasicInfoVO(guestVO,memberFormulationList.get(0).marketName);
-			}else if(guestVO.credit < memberFormulationList.get(1).marketCredit){
-				return new BasicInfoVO(guestVO,memberFormulationList.get(1).marketName);
-			}else if(guestVO.credit < memberFormulationList.get(2).marketCredit){
-				return new BasicInfoVO(guestVO,memberFormulationList.get(2).marketName);
-			}else if(guestVO.credit < memberFormulationList.get(3).marketCredit){
-				return new BasicInfoVO(guestVO,memberFormulationList.get(3).marketName);
-			}else{
-				return new BasicInfoVO(guestVO,memberFormulationList.get(4).marketName);
+			for (int i = 0; i < memberFormulationList.size(); i++) {
+				if(guestVO.credit < memberFormulationList.get(i).marketCredit){
+					return new BasicInfoVO(guestVO,memberFormulationList.get(i).marketName);
+				}
 			}
-		}else{
-			return null;
+			return new BasicInfoVO(guestVO,memberFormulationList.
+					get( memberFormulationList.size()-1).marketName);
 		}
+		
+		return null;
 		
 	}
 

@@ -29,7 +29,7 @@ public class WebManagerDataService_Stub implements WebManagerDataService{
 	
 	public ResultMessage modify(WebManagerPO webManagerPO) {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 

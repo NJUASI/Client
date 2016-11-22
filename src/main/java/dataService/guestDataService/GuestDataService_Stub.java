@@ -1,7 +1,9 @@
 package dataService.guestDataService;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import po.CreditPO;
@@ -30,8 +32,11 @@ public class GuestDataService_Stub implements GuestDataService{
 
 
 	public List<CreditPO> getAllCreditDetail(String guestID) {
-		// TODO Auto-generated method stub
-		return null;
+		List<CreditPO> creditDetailList = new LinkedList<CreditPO>();
+		creditDetailList.add(new CreditPO("1234567890", LocalDateTime.of(2016, 10, 2, 18, 12), "123420161002", 100, 100, "undo"));
+		creditDetailList.add(new CreditPO("1234567890", LocalDateTime.of(2016, 10, 3, 13, 14), "124520161003", 100, 100, "create"));
+		creditDetailList.add(new CreditPO("1234567890", LocalDateTime.of(2016, 10, 4, 15, 22), "244520161004", 100, 300, "executed"));
+		return creditDetailList;
 	}
 
 
@@ -48,7 +53,7 @@ public class GuestDataService_Stub implements GuestDataService{
 
 	public ResultMessage modify(GuestPO guestPO) {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 }
