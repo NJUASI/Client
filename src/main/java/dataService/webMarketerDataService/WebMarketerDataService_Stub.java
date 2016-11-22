@@ -29,13 +29,13 @@ public class WebMarketerDataService_Stub implements WebMarketerDataService{
 	
 	public ResultMessage modify(WebMarketerPO webMarketerPO) {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 	
 	public ResultMessage initWebMarketer() {
 		// TODO Auto-generated method stub
-		return null;
+		return ResultMessage.SUCCESS;
 	}
 
 }
