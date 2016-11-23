@@ -25,7 +25,7 @@ public class HotelController implements HotelBLService {
 
 	private HotelController() {
 		//new the mock object
-		hotel = new MockHotel();
+		hotel = new MockHotel("12345678");
 	}
 
 	public static HotelController getInstance(){

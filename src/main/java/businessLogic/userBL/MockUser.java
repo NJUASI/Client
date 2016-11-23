@@ -20,7 +20,7 @@ public class MockUser extends User{
 	private Hotel hotel;
 	
 	public MockUser() {
-		hotel = new MockHotel();
+		hotel = new MockHotel("12345678");
 	}
 	
 	public ResultMessage add(UserVO newUserVO) {

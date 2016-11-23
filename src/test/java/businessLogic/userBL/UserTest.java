@@ -77,7 +77,6 @@ public class UserTest {
 	
 	}
 	
-	@Ignore
 	@Test
 	public void testAddHotel() {
 		HotelVO hotelVO = new HotelVO("12345677", "thisHotel", "NanJing", "center", "address", "4",
