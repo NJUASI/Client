@@ -70,7 +70,13 @@ public class Hotel{
 	
 	// 对hotelInfo的操作，get、update、add
 	public HotelVO getHotelInfo(String hotelWorkerID) {
-		return new HotelVO(hotelPO);
+		if(hotelPO == null){
+			return null;
+		}
+		else{
+			return new HotelVO(hotelPO);
+		}
+		
 	}
 
 	public ResultMessage updateHotelInfo(HotelVO hotelVO) {
@@ -146,8 +152,6 @@ public class Hotel{
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return evaluations.addEvaluation(evaluationVO);
 	}
-	
-	
 	
 	
 	/**
