@@ -13,3 +13,4 @@ public class WebMarketerVO extends UserVO {
 		super(webMarketerPO.getUserID(),webMarketerPO.getPassword());
 	}
 }
+

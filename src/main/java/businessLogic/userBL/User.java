@@ -34,14 +34,12 @@ public class User {
 	private HotelWorkerDataService hotelWorkerDataService;
 	private WebMarketerDataService webMarketerDataService;
 	private WebManagerDataService webManagerDataService;
-	private Hotel hotel;
 	
 	public User() {
 		guestDataService = new GuestDataService_Stub();
 		hotelWorkerDataService = new HotelWorkerDataService_Stub();
 		webMarketerDataService= new WebMarketerDataService_Stub();
 		webManagerDataService = new WebManagerDataService_Stub();
-		hotel = new Hotel();
 	}
 	
 	public ResultMessage add(UserVO newUserVO) {
@@ -125,6 +123,8 @@ public class User {
 	}
 
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
+	    Hotel hotel = new Hotel();
+	    
 		if(hotel.getHotelInfo(hotelID)==null){
 			return hotel.addHotel(newHotelVO);
 		}
