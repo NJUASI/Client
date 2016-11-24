@@ -10,7 +10,7 @@ public class WebMarketerVO extends UserVO {
 	}
 	
 	public WebMarketerVO(WebMarketerPO webMarketerPO) {
-		super(webMarketerPO.getUserID(),webMarketerPO.getPassword());
+		super(webMarketerPO.getWebMarketerID(),webMarketerPO.getPassword());
 	}
 }
 

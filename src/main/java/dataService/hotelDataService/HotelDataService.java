@@ -5,11 +5,9 @@ import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Map;
 
-import po.AddressPO;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.EvaluationPO;
-import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
