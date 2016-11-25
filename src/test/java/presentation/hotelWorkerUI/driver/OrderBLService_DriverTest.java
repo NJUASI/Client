@@ -3,6 +3,7 @@ package presentation.hotelWorkerUI.driver;
 import static org.junit.Assert.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -10,6 +11,7 @@ import businessLogic.orderBL.stub.OrderBLService_Stub;
 import utilities.OrderState;
 import utilities.ResultMessage;
 import utilities.RoomType;
+import vo.OrderGeneralVO;
 import vo.OrderVO;
 
 public class OrderBLService_DriverTest {
@@ -21,9 +23,17 @@ public class OrderBLService_DriverTest {
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.executeOrder("123456789012"));
 	}
-
+	
 	@Test
 	public void test2() {
+		// test interface undoAbnormalOrder
+		OrderBLService_Stub stub = new OrderBLService_Stub();
+		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoAbnormalOrder("123456789012"));
+	}
+
+	@Test
+	public void test3() {
 		// test interface getOrderDetail
 		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
@@ -47,4 +57,24 @@ public class OrderBLService_DriverTest {
 		assertEquals("no", orderVO.message);
 	}
 
+	@Test
+	public void test4() {
+		//test interface getAllHotelOrderGeneral
+		OrderBLService_Stub stub = new OrderBLService_Stub();
+		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		
+		List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllHotelOrderGeneral("1234567890");
+		OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
+		
+		assertEquals("123456789012", orderGeneralVO.orderID);
+		assertEquals("1234567890", orderGeneralVO.guestID);
+		assertEquals("12345678", orderGeneralVO.hotelID);
+		assertEquals("thisHotel", orderGeneralVO.hotelName);
+		assertEquals("address", orderGeneralVO.hotelAddress);
+		assertEquals(200, orderGeneralVO.price, 0);
+		assertEquals(LocalDateTime.of(2016, 2, 3, 14, 0), orderGeneralVO.expectExecuteTime);
+		assertEquals(LocalDateTime.of(2016, 2, 4, 12, 0), orderGeneralVO.expectLeaveTime);
+		assertEquals(OrderState.EXECUTED, orderGeneralVO.state);
+		
+	}
 }

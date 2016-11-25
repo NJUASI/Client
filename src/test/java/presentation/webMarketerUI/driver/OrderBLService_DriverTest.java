@@ -2,7 +2,9 @@ package presentation.webMarketerUI.driver;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -10,21 +12,22 @@ import businessLogic.orderBL.stub.OrderBLService_Stub;
 import utilities.OrderState;
 import utilities.ResultMessage;
 import utilities.RoomType;
+import vo.OrderGeneralVO;
 import vo.OrderVO;
 
 public class OrderBLService_DriverTest {
 	
 	@Test
-	//test interface undoAbnormalOrder
 	public void test1() {
+		//test interface undoAbnormalOrder
 		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoAbnormalOrder("123456789012"));
 	}
 	
 	@Test
-	//test interface getOrderDetail
 	public void test2() {
+		//test interface getOrderDetail
 		OrderBLService_Stub stub = new OrderBLService_Stub();
 		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
         OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
@@ -47,5 +50,45 @@ public class OrderBLService_DriverTest {
 		assertEquals("no", orderVO.message);
 	}
 	
+	@Test
+	public void test3() {
+		//test interface getAllAbnormalOrderGeneral(LocalDate date)
+		OrderBLService_Stub stub = new OrderBLService_Stub();
+		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		
+		List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllAbnormalOrderGeneral(LocalDate.of(2016, 2, 3));
+		OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
+		
+		assertEquals("123456789012", orderGeneralVO.orderID);
+		assertEquals("1234567890", orderGeneralVO.guestID);
+		assertEquals("12345678", orderGeneralVO.hotelID);
+		assertEquals("thisHotel", orderGeneralVO.hotelName);
+		assertEquals("address", orderGeneralVO.hotelAddress);
+		assertEquals(200, orderGeneralVO.price, 0);
+		assertEquals(LocalDateTime.of(2016, 2, 3, 14, 0), orderGeneralVO.expectExecuteTime);
+		assertEquals(LocalDateTime.of(2016, 2, 4, 12, 0), orderGeneralVO.expectLeaveTime);
+		assertEquals(OrderState.EXECUTED, orderGeneralVO.state);
+		
+	}
 	
+	@Test
+	public void test4() {
+		//test interface getAllAbnormalOrderGeneral
+		OrderBLService_Stub stub = new OrderBLService_Stub();
+		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		
+		List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllAbnormalOrderGeneral();
+		OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
+		
+		assertEquals("123456789012", orderGeneralVO.orderID);
+		assertEquals("1234567890", orderGeneralVO.guestID);
+		assertEquals("12345678", orderGeneralVO.hotelID);
+		assertEquals("thisHotel", orderGeneralVO.hotelName);
+		assertEquals("address", orderGeneralVO.hotelAddress);
+		assertEquals(200, orderGeneralVO.price, 0);
+		assertEquals(LocalDateTime.of(2016, 2, 3, 14, 0), orderGeneralVO.expectExecuteTime);
+		assertEquals(LocalDateTime.of(2016, 2, 4, 12, 0), orderGeneralVO.expectLeaveTime);
+		assertEquals(OrderState.EXECUTED, orderGeneralVO.state);
+		
+	}
 }

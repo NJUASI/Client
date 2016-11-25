@@ -68,7 +68,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllGuestOrderGeneral(String guestID) {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 
@@ -76,7 +76,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllHotelOrderGeneral(String hotelID) {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 
@@ -84,7 +84,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral (LocalDate date) {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 	
@@ -92,7 +92,7 @@ public class MockOrder extends Order{
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral () {
 		List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
-				LocalDateTime.of(2016, 2, 3, 12, 0), LocalDateTime.of(2016, 2, 3, 12, 0) , OrderState.EXECUTED));
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
 		return orderGenerals;
 	}
 	

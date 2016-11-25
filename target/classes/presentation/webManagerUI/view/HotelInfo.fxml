@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.webManagerUI.controller.HotelInfoController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
+         <children>
+            <Label layoutX="388.0" layoutY="14.0" prefHeight="39.0" text="酒店信息添加">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="229.0" layoutY="127.0" text="酒店名称：" />
+            <TextField layoutX="297.0" layoutY="317.0" prefHeight="23.0" prefWidth="313.0" text="南京市傻逼路23金鹰酒店" />
+            <Label layoutX="229.0" layoutY="188.0" text="所属城市：" />
+            <ChoiceBox layoutX="297.0" layoutY="184.0" prefWidth="150.0" />
+            <Label layoutX="480.0" layoutY="188.0" text="所属商圈：" />
+            <ChoiceBox layoutX="553.0" layoutY="184.0" prefWidth="150.0" />
+            <Label layoutX="480.0" layoutY="127.0" text="酒店星级：" />
+            <ChoiceBox layoutX="553.0" layoutY="123.0" prefWidth="150.0" />
+            <Label layoutX="229.0" layoutY="321.0" text="详细地址：" />
+            <HBox layoutX="397.0" layoutY="478.0" prefHeight="30.0" prefWidth="113.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" text="取消" />
+                  <Button mnemonicParsing="false" text="添加" />
+               </children>
+            </HBox>
+            <Separator layoutY="60.0" prefHeight="3.0" prefWidth="895.0" />
+            <TextField layoutX="297.0" layoutY="123.0" prefHeight="23.0" prefWidth="150.0" text="金鹰酒店" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

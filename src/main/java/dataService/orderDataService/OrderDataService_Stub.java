@@ -3,6 +3,7 @@ package dataService.orderDataService;
 import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import po.OrderGeneralPO;
@@ -15,17 +16,26 @@ public class OrderDataService_Stub implements OrderDataService {
 
 	
 	public ResultMessage createOrder(OrderPO order) {
-		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}
 
 
 	public ResultMessage executeOrder(String orderID) {
-		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}
 
 
+
+	public ResultMessage undoAbnormalOrder(String orderID) {
+		return ResultMessage.SUCCESS;
+	}
+
+	
+	public ResultMessage undoNormalOrder(String orderID) {
+		return ResultMessage.SUCCESS;
+	}
+	
+	
 	public OrderPO getOrderDetail(String orderID) {
 		LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 20);
 		LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
@@ -45,45 +55,43 @@ public class OrderDataService_Stub implements OrderDataService {
 
 	
 	public List<OrderGeneralPO> getAllGuestOrderGeneral(String GuestID) {
-		// TODO Auto-generated method stub
-		return null;
+		List<OrderGeneralPO> orderGenerals = new ArrayList<OrderGeneralPO>();
+		orderGenerals.add(new OrderGeneralPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
+		return orderGenerals;
 	}
 
 	
 	public List<OrderGeneralPO> getAllHotelOrderGeneral(String GuestID) {
-		// TODO Auto-generated method stub
-		return null;
+		List<OrderGeneralPO> orderGenerals = new ArrayList<OrderGeneralPO>();
+		orderGenerals.add(new OrderGeneralPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
+		return orderGenerals;
 	}
 
 	
 	public List<OrderGeneralPO> getAllAbnormalOrderGeneral(LocalDate date) {
-		// TODO Auto-generated method stub
-		return null;
+		List<OrderGeneralPO> orderGenerals = new ArrayList<OrderGeneralPO>();
+		orderGenerals.add(new OrderGeneralPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
+		return orderGenerals;
 	}
 
 
 	public List<OrderGeneralPO> getAllAbnormalOrderGeneral() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	public ResultMessage undoAbnormalOrder(String orderID) {
-		// TODO Auto-generated method stub
-		return ResultMessage.SUCCESS;
-	}
-
-	
-	public ResultMessage undoNormalOrder(String orderID) {
-		// TODO Auto-generated method stub
-		return ResultMessage.SUCCESS;
+		List<OrderGeneralPO> orderGenerals = new ArrayList<OrderGeneralPO>();
+		orderGenerals.add(new OrderGeneralPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
+		return orderGenerals;
 	}
 
 
 	@Override
 	public List<String> getBookedHotels(String guestID) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> bookedHotels = new ArrayList<String>();
+		bookedHotels.add("12345678");
+		bookedHotels.add("12345679");
+		return bookedHotels;
 	}
 
 }
