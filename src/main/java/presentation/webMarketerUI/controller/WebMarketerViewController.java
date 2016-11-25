@@ -20,26 +20,26 @@ public class WebMarketerViewController {
 	}
 	@FXML 
 	protected void openCharge() throws IOException{
-		charge = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/Charge.fxml"));
 		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		charge = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/Charge.fxml"));
 		right.getChildren().add(charge);
 	}
 	@FXML 
 	protected void openMarket() throws IOException{
-		market= FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/MemberCheck.fxml"));
 		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		market= FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/MemberCheck.fxml"));
 		right.getChildren().add(market);
 	}
 	@FXML 
 	protected void openPromotion() throws IOException{
-//		 promotion = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/Promotion.fxml"));
-//		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
-//		right.getChildren().add( promotion);
+		 promotion = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/Promotion.fxml"));
+		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		right.getChildren().add( promotion);
 	}
 	@FXML 
 	protected void openOrder() throws IOException{
-		abnormalOrder = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/orderSearch.fxml"));
 		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		abnormalOrder = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/orderSearch.fxml"));
 		right.getChildren().add(abnormalOrder);
 	}
 }

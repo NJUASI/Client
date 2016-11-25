@@ -9,46 +9,47 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class WebManagerViewController {
-	Parent guest,hotel, marketer,hotelInfo;		
-	
-    @FXML private StackPane right;
-    @FXML private Pane mainPane;
-    
-	@FXML 
-	protected void openGuest() throws IOException{
-	
+	Parent guest, hotel, marketer, hotelInfo;
+
+	@FXML
+	private StackPane right;
+	@FXML
+	private Pane mainPane;
+
+	@FXML
+	protected void openGuest() throws IOException {
+		right.getChildren().removeAll(mainPane, guest, hotel, marketer, hotelInfo);
 		guest = FXMLLoader.load(getClass().getResource("/presentation/webManagerUI/view/Guest.fxml"));
-		right.getChildren().removeAll(mainPane,guest,hotel, marketer,hotelInfo);
 		right.getChildren().add(guest);
-		
+
 	}
-	@FXML 
-	protected void openHotel() throws IOException{
-		
+
+	@FXML
+	protected void openHotel() throws IOException {
+		right.getChildren().removeAll(mainPane, guest, hotel, marketer, hotelInfo);
 		hotel = FXMLLoader.load(getClass().getResource("/presentation/webManagerUI/view/HotelWorker.fxml"));
-		right.getChildren().removeAll(mainPane,guest,hotel, marketer,hotelInfo);
 		right.getChildren().add(hotel);
-		
+
 	}
-	@FXML 
-	protected void openMarketer() throws IOException{
-		
+
+	@FXML
+	protected void openMarketer() throws IOException {
+		right.getChildren().removeAll(mainPane, guest, hotel, marketer, hotelInfo);
 		marketer = FXMLLoader.load(getClass().getResource("/presentation/webManagerUI/view/Marketer.fxml"));
-		right.getChildren().removeAll(mainPane,guest,hotel, marketer,hotelInfo);
 		right.getChildren().add(marketer);
-		
+
 	}
-	@FXML 
-	protected void openHotelInfo() throws IOException{
-		
+
+	@FXML
+	protected void openHotelInfo() throws IOException {
+		right.getChildren().removeAll(mainPane, guest, hotel, marketer, hotelInfo);
 		hotelInfo = FXMLLoader.load(getClass().getResource("/presentation/webManagerUI/view/HotelInfo.fxml"));
-		right.getChildren().removeAll(mainPane,guest,hotel, marketer,hotelInfo);
-		right.getChildren().add(hotelInfo);	
+		right.getChildren().add(hotelInfo);
 	}
-	
-	@FXML 
-	protected void openMain(){
-		right.getChildren().removeAll(mainPane,guest,hotel, marketer,hotelInfo);
-		right.getChildren().add(mainPane);	
+
+	@FXML
+	protected void openMain() {
+		right.getChildren().removeAll(mainPane, guest, hotel, marketer, hotelInfo);
+		right.getChildren().add(mainPane);
 	}
 }

@@ -31,13 +31,13 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <TabPane layoutY="60.0" prefHeight="542.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane layoutY="60.0" prefHeight="542.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                <tabs>
                   <Tab text="线下入住">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="895.0">
                            <children>
-                              <GridPane layoutX="338.0" layoutY="79.0" prefHeight="173.0" prefWidth="239.0">
+                              <GridPane layoutX="338.0" layoutY="79.0" prefHeight="173.0" prefWidth="239.0" AnchorPane.bottomAnchor="251.0" AnchorPane.leftAnchor="338.0" AnchorPane.rightAnchor="318.0" AnchorPane.topAnchor="79.0">
                                  <children>
                                     <Label text="入住房型：" />
                                     <Label text="入住日期：" GridPane.rowIndex="2" />
@@ -79,7 +79,7 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                               </GridPane>
-                              <Button layoutX="423.0" layoutY="310.0" mnemonicParsing="false" text="确认" />
+                              <Button layoutX="423.0" layoutY="310.0" mnemonicParsing="false" text="确认" AnchorPane.bottomAnchor="163.0" AnchorPane.leftAnchor="423.0" AnchorPane.rightAnchor="422.0" AnchorPane.topAnchor="310.0" />
                            </children>
                         </AnchorPane>
                      </content>

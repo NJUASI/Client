@@ -7,7 +7,6 @@ import java.util.List;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.EvaluationPO;
-import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RemainRoomInfoPO;
 import po.RoomInfoPO;

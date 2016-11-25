@@ -8,12 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import presentation.signUpUI.controller.LogInViewController;
 
 public class Main extends Application{
 	
 	public void start(Stage stage) throws IOException  {
 		Parent root = FXMLLoader.load(getClass().getResource("/presentation/signUpUI/view/logIn.fxml"));
 //		Pane root=new Pane();
+		LogInViewController s=new LogInViewController();
 		Scene scene = new Scene(root, 1000, 625);
 		
 		stage.setTitle("酒店互联网预定系统");

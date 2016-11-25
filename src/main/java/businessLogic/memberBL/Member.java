@@ -11,19 +11,21 @@ import vo.GuestVO;
 import vo.MemberVO;
 
 public class Member {
-	
+
 	private GuestDataService guestDataService;
-	
-	public Member(){
-		guestDataService= new GuestDataService_Stub();
+	private MemberInfo member;
+
+	public Member() {
+		guestDataService = new GuestDataService_Stub();
+		member = new MemberInfo();
 	}
 
 	public ResultMessage add(MemberVO memberVO) {
-		 return this.addMemberInfo(memberVO);
+		return this.addMemberInfo(memberVO);
 	}
 
 	public ResultMessage modify(MemberVO memberVO) {
-		 return this.addMemberInfo(memberVO);
+		return this.addMemberInfo(memberVO);
 	}
 
 	public MemberVO getMemberInfo(String userID, MemberType memberType) {
@@ -40,22 +42,21 @@ public class Member {
 		try {
 			GuestVO guestVO = new GuestVO(guestDataService.getSingleGuest(userID));
 			MemberVO memberVO = new MemberVO(guestVO);
-			if(memberType==MemberType.COMMON&&memberVO.birthday==null){//不是普通会员，返回错误
-				return false;
+			if (member.isCommonMember(memberVO, memberType)) {// 是普通会员，返回true
+				return true;
 			}
-			if(memberType==MemberType.ENTERPRISE&&memberVO.enterprise==null){//不是企业会员，返回错误
-				return false;
+			if (member.isEnterpriseMember(memberVO, memberType)) {// 是企业会员，返回true
+				return true;
 			}
-			
-			if(memberType==MemberType.BOTH){//判断是两种类型会员，返回正确
-				if(memberVO.birthday!=null&&memberVO.enterprise!=null){return true;}
-				else return false;
+
+			if (member.isBothMember(memberVO, memberType)) {// 判断是两种类型会员，返回true
+				return true;
 			}
-			
-			return true;//不满足上述三种情况，返回正确
+
+			return false;// 不满足上述三种情况，返回false
 		} catch (RemoteException e) {
 			e.printStackTrace();
-			System.out.println("error");//异常返回错误
+			System.out.println("error");// 异常返回错误
 			return false;
 		}
 	}
@@ -64,28 +65,18 @@ public class Member {
 		try {
 			GuestVO guestVO = new GuestVO(guestDataService.getSingleGuest(userID));
 			MemberVO memberVO = new MemberVO(guestVO);
-			
-			if(memberVO.birthday!=null&&memberVO.enterprise!=null){
-				return MemberType.BOTH;
-			}
-			
-			if(memberVO.birthday!=null){
-				return MemberType.COMMON;
-			}
-			
-			if(memberVO.enterprise!=null){
-				return MemberType.ENTERPRISE;
-			}
+
+			return member.getMemberType(memberVO);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	private ResultMessage addMemberInfo(MemberVO memberVO){
+	private ResultMessage addMemberInfo(MemberVO memberVO) {
 		try {
 			MemberPO memberPO = new MemberPO(memberVO);
-			 return guestDataService.modifyMember(memberPO);
+			return guestDataService.modifyMember(memberPO);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 			return ResultMessage.FAIL;

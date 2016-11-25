@@ -39,7 +39,6 @@ public class GuestPO implements Serializable{
 	
 	public GuestPO(String guestID, LocalDate birthday, String enterprise, String name, String nickName,
 			String password, String phone, double credit) {
-		super();
 		this.guestID = guestID;
 		this.birthday = birthday;
 		this.enterprise = enterprise;
@@ -51,7 +50,6 @@ public class GuestPO implements Serializable{
 	}
 	
 	public GuestPO(GuestVO guestVO){
-		super();
 		this.guestID = guestVO.userID;
 		this.birthday = guestVO.birthday;
 		this.enterprise = guestVO.enterprise;

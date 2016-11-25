@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import utilities.ResultMessage;
@@ -21,10 +20,11 @@ import vo.WebMarketerVO;
 
 public class UserTest {
 	
-	private User user= new User();
 
 	@Test
 	public void testAdd() {
+		User user= new User();
+		
 		UserVO guestVO = new GuestVO("1234567890", LocalDate.of(1995, 1, 1), "school", "zhangsan", "xiaosan",
 				"000000", "13523456789",100);
 		UserVO hotelWorkerVO = new HotelWorkerVO("00001111", "123456","school");
@@ -38,6 +38,8 @@ public class UserTest {
 
 	@Test
 	public void testModify() {
+		User user= new User();
+		
 		UserVO guestVO = new GuestVO("1234567890", LocalDate.of(1995, 1, 1), "school", "zhangsan", "xiaosan",
 				"000000", "13523456789",100);
 		UserVO hotelWorkerVO = new HotelWorkerVO("00001111", "123456","school");
@@ -51,6 +53,7 @@ public class UserTest {
 	
 	@Test
 	public void testGetSingle() {
+		User user= new User();
 		
 		GuestVO guestVO = (GuestVO)user.getSingle("1234567890", UserType.GUEST);
 		assertEquals(guestVO.birthday,LocalDate.of(1995, 1, 1));
@@ -79,18 +82,24 @@ public class UserTest {
 	
 	@Test
 	public void testAddHotel() {
+		User user= new User();
+		
 		HotelVO hotelVO = new HotelVO("12345677", "thisHotel", "NanJing", "center", "address", "4",
 				5,123,"5", "good", "allEquipment");
-		assertEquals(user.addHotel(hotelVO, "12345677"),ResultMessage.HOTEL_EXIST);
+		assertEquals(user.addHotel(hotelVO, "12345677"),ResultMessage.SUCCESS);
 	}
 	
 	@Test
 	public void testModifyCredit() {
+		User user= new User();
+		
 		assertEquals(user.modifyCredit("1234567890", 100),ResultMessage.SUCCESS);
 	}
 	
 	@Test
 	public void testGetAll() {
+		User user= new User();
+		
 		List<UserVO> guest = user.getAll(UserType.GUEST);
 		GuestVO guestVO =(GuestVO)guest.get(0);
 		assertEquals(guestVO.birthday,LocalDate.of(1995, 1, 1));
@@ -106,6 +115,8 @@ public class UserTest {
 
 	@Test
 	public void testGetAllCreditDetail() {
+		User user= new User();
+		
 		List<CreditVO> credit = user.getAllCreditDetail("1234567890");
 		CreditVO creditVO = credit.get(0);
 		assertEquals("1234567890", creditVO.guestID);
@@ -118,6 +129,7 @@ public class UserTest {
 	
 	@Test
 	public void testGetLogInInfo() {
+		User user= new User();
 		
 		assertEquals(user.getLogInInfo("1234567890", UserType.GUEST),"000000");
 		assertEquals(user.getLogInInfo("00001111", UserType.HOTEL_WORKER),"123456");

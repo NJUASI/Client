@@ -46,66 +46,18 @@
                       <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="用户编号：">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="订单编号：" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改时间：" GridPane.columnIndex="4">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1234567891" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改前信用值：" GridPane.columnIndex="2">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="2111" GridPane.columnIndex="3">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                        <Label text="用户编号：" />
+                        <Label text="订单编号：" GridPane.rowIndex="1" />
+                        <Label text="更改时间：" GridPane.columnIndex="4" />
+                        <Label text="1234567891" GridPane.columnIndex="1" />
+                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5" />
+                        <Label text="更改前信用值：" GridPane.columnIndex="2" />
+                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text="2111" GridPane.columnIndex="3" />
+                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -116,66 +68,18 @@
                   <Separator prefWidth="895.0" />
                   <GridPane layoutX="97.0" layoutY="5.0" prefHeight="81.0" prefWidth="752.0">
                      <children>
-                        <Label text="用户编号：">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="订单编号：" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改时间：" GridPane.columnIndex="4">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1234567891" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改前信用值：" GridPane.columnIndex="2">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="2111" GridPane.columnIndex="3">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                        <Label text="用户编号：" />
+                        <Label text="订单编号：" GridPane.rowIndex="1" />
+                        <Label text="更改时间：" GridPane.columnIndex="4" />
+                        <Label text="1234567891" GridPane.columnIndex="1" />
+                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5" />
+                        <Label text="更改前信用值：" GridPane.columnIndex="2" />
+                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text="2111" GridPane.columnIndex="3" />
+                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="79.0" />
@@ -192,72 +96,24 @@
                   </GridPane>
                </children>
             </Pane>
-            <Pane layoutY="243.0" prefHeight="91.0" prefWidth="895.0">
+            <Pane layoutX="5.0" layoutY="243.0" prefHeight="91.0" prefWidth="895.0">
                <children>
                   <Separator layoutY="90.0" prefWidth="895.0" />
                   <Separator prefWidth="895.0" />
                   <GridPane layoutX="97.0" layoutY="5.0" prefHeight="81.0" prefWidth="752.0">
                      <children>
-                        <Label text="用户编号：">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="订单编号：" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改时间：" GridPane.columnIndex="4">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1234567891" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改前信用值：" GridPane.columnIndex="2">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="2111" GridPane.columnIndex="3">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                        <Label text="用户编号：" />
+                        <Label text="订单编号：" GridPane.rowIndex="1" />
+                        <Label text="更改时间：" GridPane.columnIndex="4" />
+                        <Label text="1234567891" GridPane.columnIndex="1" />
+                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5" />
+                        <Label text="更改前信用值：" GridPane.columnIndex="2" />
+                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text="2111" GridPane.columnIndex="3" />
+                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="79.0" />
@@ -274,72 +130,24 @@
                   </GridPane>
                </children>
             </Pane>
-            <Pane layoutY="334.0" prefHeight="91.0" prefWidth="895.0">
+            <Pane layoutX="5.0" layoutY="334.0" prefHeight="91.0" prefWidth="895.0">
                <children>
                   <Separator layoutY="90.0" prefWidth="895.0" />
                   <Separator prefWidth="895.0" />
                   <GridPane layoutX="97.0" layoutY="5.0" prefHeight="81.0" prefWidth="752.0">
                      <children>
-                        <Label text="用户编号：">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="订单编号：" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改时间：" GridPane.columnIndex="4">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1234567891" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改前信用值：" GridPane.columnIndex="2">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="2111" GridPane.columnIndex="3">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                        <Label text="用户编号：" />
+                        <Label text="订单编号：" GridPane.rowIndex="1" />
+                        <Label text="更改时间：" GridPane.columnIndex="4" />
+                        <Label text="1234567891" GridPane.columnIndex="1" />
+                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5" />
+                        <Label text="更改前信用值：" GridPane.columnIndex="2" />
+                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text="2111" GridPane.columnIndex="3" />
+                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="79.0" />
@@ -362,66 +170,18 @@
                   <Separator prefWidth="895.0" />
                   <GridPane layoutX="97.0" layoutY="5.0" prefHeight="81.0" prefWidth="752.0">
                      <children>
-                        <Label text="用户编号：">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="订单编号：" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改时间：" GridPane.columnIndex="4">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1234567891" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改前信用值：" GridPane.columnIndex="2">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="2111" GridPane.columnIndex="3">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                        <Label text="用户编号：" />
+                        <Label text="订单编号：" GridPane.rowIndex="1" />
+                        <Label text="更改时间：" GridPane.columnIndex="4" />
+                        <Label text="1234567891" GridPane.columnIndex="1" />
+                        <Label text="12334455336677" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="163.0" text="2016-1-12 21:11" GridPane.columnIndex="5" />
+                        <Label text="更改前信用值：" GridPane.columnIndex="2" />
+                        <Label text="更改后信用值：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text="2111" GridPane.columnIndex="3" />
+                        <Label text="1231" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" prefWidth="53.0" text="操作：" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label prefHeight="22.0" text="正常-&gt;异常" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="79.0" />

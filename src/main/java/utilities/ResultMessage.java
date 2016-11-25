@@ -156,4 +156,7 @@ public enum ResultMessage implements Serializable{
 	
 	//	酒店：酒店不存在
 	HOTEL_INEXISTENCE,
+	
+	// 用户： 用户不存在
+	USER_INEXISTENCE,
 }

@@ -10,6 +10,6 @@ public class WebManagerVO extends UserVO {
 	}
 	
 	public WebManagerVO(WebManagerPO webManagerPO) {
-		super(webManagerPO.getUserID(),webManagerPO.getPassword());
+		super(webManagerPO.getWebManagerID(),webManagerPO.getPassword());
 	}
 }

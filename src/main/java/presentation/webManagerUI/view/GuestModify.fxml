@@ -26,28 +26,24 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Pane layoutX="184.0" layoutY="129.0" prefHeight="375.0" prefWidth="593.0">
-               <children>
-                  <Label layoutX="23.0" layoutY="198.0" text="姓名：" />
-                  <Label layoutX="23.0" layoutY="93.0" text="昵称：" />
-                  <Label layoutX="23.0" layoutY="37.0" text="编号：" />
-                  <Label layoutX="23.0" layoutY="143.0" text="密码：" />
-                  <Label layoutX="252.0" layoutY="93.0" text="联系方式：" />
-                  <Label layoutX="255.0" layoutY="37.0" text="信用值：" />
-                  <Label layoutX="255.0" layoutY="198.0" text="生日：" />
-                  <Label layoutX="255.0" layoutY="143.0" text="企业名称：" />
-                  <TextField layoutX="67.0" layoutY="194.0" prefHeight="30.0" prefWidth="166.0" text="王二" />
-                  <TextField layoutX="71.0" layoutY="89.0" prefHeight="30.0" prefWidth="166.0" text="小二" />
-                  <TextField layoutX="67.0" layoutY="138.0" prefHeight="30.0" prefWidth="166.0" text="123456" />
-                  <TextField layoutX="329.0" layoutY="89.0" prefHeight="23.0" prefWidth="137.0" text="17312452345" />
-                  <TextField layoutX="329.0" layoutY="139.0" prefHeight="30.0" prefWidth="137.0" />
-                  <DatePicker layoutX="327.0" layoutY="194.0" prefHeight="23.0" prefWidth="137.0" promptText="2016-3-11" />
-                  <Label layoutX="315.0" layoutY="37.0" text="200" />
-                  <Label layoutX="73.0" layoutY="37.0" text="123142152" />
-                  <Button layoutX="187.0" layoutY="291.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="取消" />
-                  <Button layoutX="290.0" layoutY="291.0" mnemonicParsing="false" text="完成" />
-               </children>
-            </Pane>
+            <Label layoutX="226.0" layoutY="166.0" text="编号：" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="624.0" AnchorPane.topAnchor="166.0" />
+            <Label layoutX="295.0" layoutY="166.0" text="123142152" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="295.0" AnchorPane.topAnchor="166.0" />
+            <Label layoutX="226.0" layoutY="219.0" text="昵称：" AnchorPane.bottomAnchor="362.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="624.0" AnchorPane.topAnchor="219.0" />
+            <Label layoutX="226.0" layoutY="270.0" text="密码：" AnchorPane.bottomAnchor="311.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="624.0" AnchorPane.topAnchor="270.0" />
+            <TextField layoutX="295.0" layoutY="265.0" prefHeight="30.0" prefWidth="166.0" text="123456" AnchorPane.bottomAnchor="306.0" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="434.0" AnchorPane.topAnchor="265.0" />
+            <Label layoutX="226.0" layoutY="323.0" text="姓名：" AnchorPane.bottomAnchor="258.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="624.0" AnchorPane.topAnchor="323.0" />
+            <TextField layoutX="295.0" layoutY="318.0" prefHeight="30.0" prefWidth="166.0" text="王二" AnchorPane.bottomAnchor="253.0" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="434.0" AnchorPane.topAnchor="318.0" />
+            <Label layoutX="486.0" layoutY="164.0" text="信用值：" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="349.0" AnchorPane.topAnchor="164.0" />
+            <Label layoutX="584.0" layoutY="166.0" text="200" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="166.0" />
+            <Label layoutX="486.0" layoutY="219.0" text="联系方式：" AnchorPane.bottomAnchor="362.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="219.0" />
+            <TextField layoutX="584.0" layoutY="214.0" prefHeight="23.0" prefWidth="137.0" text="17312452345" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="214.0" />
+            <Label layoutX="486.0" layoutY="270.0" text="企业名称：" AnchorPane.bottomAnchor="311.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="270.0" />
+            <TextField layoutX="584.0" layoutY="265.0" prefHeight="30.0" prefWidth="137.0" AnchorPane.bottomAnchor="306.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="265.0" />
+            <Label layoutX="489.0" layoutY="323.0" text="生日：" AnchorPane.bottomAnchor="258.0" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="361.0" AnchorPane.topAnchor="323.0" />
+            <DatePicker layoutX="584.0" layoutY="318.0" prefHeight="23.0" prefWidth="137.0" promptText="2016-3-11" AnchorPane.bottomAnchor="253.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="318.0" />
+            <Button layoutX="353.0" layoutY="448.0" mnemonicParsing="false" onAction="#cancelModify" prefHeight="30.0" prefWidth="50.0" text="取消" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="353.0" AnchorPane.rightAnchor="492.0" AnchorPane.topAnchor="448.0" />
+            <Button layoutX="464.0" layoutY="448.0" mnemonicParsing="false" onAction="#saveModify" text="完成" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="464.0" AnchorPane.rightAnchor="381.0" AnchorPane.topAnchor="448.0" />
+            <TextField layoutX="296.0" layoutY="214.0" prefHeight="30.0" prefWidth="166.0" text="123456" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="296.0" AnchorPane.rightAnchor="433.0" AnchorPane.topAnchor="214.0" />
          </children>
       </AnchorPane>
    </children>
