@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import businessLogicService.hotelBLService.HotelBLService;
+import dataService.hotelDataService.HotelDataService;
+import dataService.hotelDataService.HotelDataService_Stub;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -20,22 +22,36 @@ import vo.RoomInfoVO;
 public class HotelController implements HotelBLService {
 
 
+	private static HotelController hotelController = new HotelController();
 	private Hotel hotel;
-	private static HotelController hotelController;
-
+	private HotelScan hotelScan;
+	
 	private HotelController() {
-		//new the mock object
-		hotel = new MockHotel("12345678");
+		
+	}
+	
+	/**
+	 * 当酒店工作人员登录时，则调用此初始化方法
+	 * @param hotelID
+	 */
+	public void initHotel(String hotelID){
+		hotel = new Hotel(hotelID);
+	}
+	
+	/**
+	 * 当用户或者网站管理人员登陆时，则调用此初始化方法
+	 * @param addressVO
+	 */
+	public void inithotelsScan(AddressVO addressVO){
+		hotelScan = new HotelScan(addressVO);
 	}
 
 	public static HotelController getInstance(){
-		if(hotelController == null){
-			hotelController = new HotelController();
-		}
 		return hotelController;
 	}
 
-
+	// 对单个hotel的操作
+	
 	public HotelVO getHotelInfo(String hotelWorkerID) {
 		return hotel.getHotelInfo(hotelWorkerID);
 	}
@@ -72,28 +88,23 @@ public class HotelController implements HotelBLService {
 		return hotel.addHotel(hotelVO);
 	}
 
-	public Iterator<HotelGeneralVO> getHotelList(AddressVO addressVO) {
-		// TODO
-		return null;
-	}
-
-	public Iterator<HotelGeneralVO> getBookedHotels(String userID) {
-		// TODO
-		return null;
-	}
-
-	public Iterator<HotelGeneralVO> getUncommentedHotels(String userID) {
-		// TODO
-		return null;
-	}
-
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return hotel.updateEvaluation(evaluationVO);
 	}
 
-	@Override
 	public Iterator<EvaluationVO> getEvaluations(String hotelID) {
 		return hotel.getEvaluations();
+	}
+	
+	
+	// 浏览概况时的操作
+	public Iterator<HotelGeneralVO> getHotels() {
+		return hotelScan.getHotelList();
+	}
+
+	public Iterator<HotelGeneralVO> getBookedHotels() {
+		// TODO 自动生成的方法存根
+		return null;
 	}
 
 }

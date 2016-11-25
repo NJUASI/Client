@@ -1,5 +1,6 @@
 package businessLogicService.promotionBLService;
 
+import java.util.Iterator;
 import java.util.List;
 
 import utilities.PreOrder;
@@ -9,9 +10,9 @@ import vo.WebPromotionVO;
 
 public interface PromotionBLService {
 
-	public List<HotelPromotionVO> getHotelPromotions(String hotelWorkerID);
+	public Iterator<HotelPromotionVO> getHotelPromotions(String hotelWorkerID);
 
-	public List<WebPromotionVO> getWebPromotions();
+	public Iterator<WebPromotionVO> getWebPromotions();
 
 	public ResultMessage setHotelPromotions(String hotelWorkerID, List<HotelPromotionVO> list);
 

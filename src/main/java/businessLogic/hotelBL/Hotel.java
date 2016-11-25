@@ -1,7 +1,6 @@
 package businessLogic.hotelBL;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +9,6 @@ import dataService.hotelDataService.HotelDataService;
 import dataService.hotelDataService.HotelDataService_Stub;
 import po.CheckInPO;
 import po.CheckOutPO;
-import po.EvaluationPO;
 import po.HotelPO;
 import utilities.Operation;
 import utilities.ResultMessage;
@@ -83,7 +81,7 @@ public class Hotel{
 
 		hotelPO = new HotelPO(hotelVO);
 		try {
-			return hotelDataService.setHotelInfo(hotelPO);
+			return hotelDataService.updateHotelInfo(hotelPO);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
@@ -112,7 +110,7 @@ public class Hotel{
 		CheckInPO checkInPO = new CheckInPO(checkInVO);
 		ResultMessage msg = null;
 		try {
-			msg = hotelDataService.setCheckInInfo(checkInPO);
+			msg = hotelDataService.updateCheckInInfo(checkInPO);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
@@ -124,7 +122,7 @@ public class Hotel{
 		CheckOutPO checkOutPO = new CheckOutPO(checkOutVO);
 		ResultMessage msg = null;
 		try {
-			msg = hotelDataService.setCheckOutInfo(checkOutPO);
+			msg = hotelDataService.updateCheckOutInfo(checkOutPO);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}

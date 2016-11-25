@@ -1,10 +1,10 @@
 package presentation.webMarketerUI.driver;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -20,10 +20,10 @@ public class PromotionBLService_DriverTest {
 		//test interface getWebPromotions
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
-		List<WebPromotionVO> list = driver.promotionBLService.getWebPromotions();
+		Iterator<WebPromotionVO> list = driver.promotionBLService.getWebPromotions();
 
-		WebPromotionVO promotionVO1=list.get(0);
-		WebPromotionVO promotionVO2=list.get(1);
+		WebPromotionVO promotionVO1=list.next();
+		WebPromotionVO promotionVO2=list.next();
 		
 		assertEquals(PromotionType.WEB__HOLIDAY, promotionVO1.promotionType);
 		assertEquals(0.9, promotionVO1.discount,0);

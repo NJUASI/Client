@@ -19,10 +19,8 @@ public class HotelBLService_DriverTest {
 		//test interface getHotelList
 		HotelBLService_Stub stub = new HotelBLService_Stub();
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
-		HotelGeneralVO hotelGeneralVO1 = driver.hotelBLService.getHotelList(new AddressVO
-				("NanJing", "center")).next();
-		HotelGeneralVO hotelGeneralVO2 = driver.hotelBLService.getHotelList(new AddressVO
-				("NanJing", "center")).next();
+		HotelGeneralVO hotelGeneralVO1 = driver.hotelBLService.getHotels().next();
+		HotelGeneralVO hotelGeneralVO2 = driver.hotelBLService.getHotels().next();
 		
 		assertEquals("thisHotel", hotelGeneralVO1.hotelName);
 		assertEquals("NanJing", hotelGeneralVO1.city);

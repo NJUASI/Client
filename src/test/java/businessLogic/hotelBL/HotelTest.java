@@ -29,7 +29,7 @@ public class HotelTest {
 	@Before
 	public void setUp() throws Exception {
 		hotelWorkerID = "12345678";
-		hotel = new Hotel("12345678");
+		hotel = new MockHotel("12345678");
 	}
 
 	@After

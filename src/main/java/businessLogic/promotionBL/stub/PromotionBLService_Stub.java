@@ -1,6 +1,7 @@
 package businessLogic.promotionBL.stub;
 
 import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class PromotionBLService_Stub implements PromotionBLService{
 	}
 
 
-	public List<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
+	public Iterator<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		List<HotelPromotionVO> list = new LinkedList<HotelPromotionVO>();
 		
@@ -41,11 +42,11 @@ public class PromotionBLService_Stub implements PromotionBLService{
 		list.add(new HotelPromotionVO(PromotionType.HOTEL__ENTERPRISE, hotelWorkerID, 0.95, 
 				LocalDate.of(2016, 7, 1), LocalDate.of(2016, 12, 31)));
 		
-		return list;
+		return list.iterator();
 	}
 
 
-	public List<WebPromotionVO> getWebPromotions() {
+	public Iterator<WebPromotionVO> getWebPromotions() {
 		// TODO Auto-generated method stub
 		List<WebPromotionVO> list = new LinkedList<WebPromotionVO>();
 		
@@ -54,7 +55,7 @@ public class PromotionBLService_Stub implements PromotionBLService{
 		list.add(new WebPromotionVO(PromotionType.WEB__VIP_APPOINTED_CYCLE, "ALL_CYCLE", 0.95, 
 				LocalDate.of(2016, 7, 1), LocalDate.of(2016, 12, 31)));
 		
-		return list;
+		return list.iterator();
 	}
 
 

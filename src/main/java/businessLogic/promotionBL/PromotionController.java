@@ -1,5 +1,6 @@
 package businessLogic.promotionBL;
 
+import java.util.Iterator;
 import java.util.List;
 
 import businessLogicService.promotionBLService.PromotionBLService;
@@ -12,7 +13,7 @@ public class PromotionController implements PromotionBLService {
 
 
 	private Promotion promotion;
-	private static PromotionController promotionController;
+	private static PromotionController promotionController = new PromotionController();
 
 	private PromotionController() {
 		//new the mock object
@@ -20,23 +21,26 @@ public class PromotionController implements PromotionBLService {
 	}
 
 	public static PromotionController getInstance(){
-		if(promotionController == null) promotionController = new PromotionController();
 		return promotionController;
 	}
 
-	public List<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
+
+	// 对酒店策略的操作，get，set
+	public Iterator<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		return promotion.getHotelPromotions(hotelWorkerID);
 	}
-
-	public List<WebPromotionVO> getWebPromotions() {
-		// TODO Auto-generated method stub
-		return promotion.getWebPromotions();
-	}
-
+	
 	public ResultMessage setHotelPromotions(String hotelWorkerID, List<HotelPromotionVO> list) {
 		// TODO Auto-generated method stub
 		return promotion.setHotelPromotions(hotelWorkerID, list);
+	}
+	
+	
+	//对网站营销策略的操作，get，set
+	public Iterator<WebPromotionVO> getWebPromotions() {
+		// TODO Auto-generated method stub
+		return promotion.getWebPromotions();
 	}
 
 	public ResultMessage setWebPromotions(List<WebPromotionVO> list) {

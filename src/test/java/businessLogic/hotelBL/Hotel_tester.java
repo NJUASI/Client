@@ -12,14 +12,13 @@ import vo.HotelGeneralVO;
 
 public class Hotel_tester {
 	
-	
 	@Ignore
 	@Test
 	public void test1() {
 		//test cooperation with class Order
 		//test interface getBookedHotels
 		HotelController hotelController = HotelController.getInstance();
-		Iterator<HotelGeneralVO> list = hotelController.getBookedHotels("1234567890");
+		Iterator<HotelGeneralVO> list = hotelController.getBookedHotels();
 		HotelGeneralVO hotelGeneralVO1=list.next();
 		HotelGeneralVO hotelGeneralVO2=list.next();
 		
