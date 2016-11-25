@@ -8,6 +8,7 @@ import java.util.Map;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.EvaluationPO;
+import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RemainRoomInfoPO;
 import po.RoomInfoPO;
@@ -24,7 +25,7 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public ResultMessage setHotelInfo(HotelPO hotelInfoPO) {
+	public ResultMessage updateHotelInfo(HotelPO hotelInfoPO) {
 		return ResultMessage.SUCCESS;
 	}
 
@@ -36,17 +37,17 @@ public class HotelDataService_Stub implements HotelDataService  {
 	}
 
 	
-	public ResultMessage setHotelRoomInfo(List<RoomInfoPO> list) {
+	public ResultMessage updateHotelRoomInfo(List<RoomInfoPO> list) {
 		return ResultMessage.SUCCESS;
 	}
 
 	
-	public ResultMessage setCheckInInfo(CheckInPO checkInInfo) {
+	public ResultMessage updateCheckInInfo(CheckInPO checkInInfo) {
 		return ResultMessage.SUCCESS;
 	}
 
 	
-	public ResultMessage setCheckOutInfo(CheckOutPO checkOutInfo) {
+	public ResultMessage updateCheckOutInfo(CheckOutPO checkOutInfo) {
 		return ResultMessage.SUCCESS;
 	}
 
@@ -57,10 +58,10 @@ public class HotelDataService_Stub implements HotelDataService  {
 		return list;
 	}
 
-	
-	public ResultMessage setRemainRoomInfo(String hotelID, Operation operation, Map<RoomType, Integer> roomInfo) {
-		return ResultMessage.SUCCESS;
-	}
+	public ResultMessage updateRemainRoomInfo(RemainRoomInfoPO remainRoomPO) throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}	
 
 	public HotelPO getHotelDetail(String hotelID) {
 		return new HotelPO("12345678", "thisHotel", "NanJing", "center", "address", "4",
@@ -80,6 +81,16 @@ public class HotelDataService_Stub implements HotelDataService  {
 
 	public ResultMessage updateEvaluation(EvaluationPO evaluationPO) throws RemoteException {
 		return ResultMessage.SUCCESS;
+	}
+
+
+	@Override
+	public List<HotelGeneralPO> getHotelGeneralList(String city,String circle) throws RemoteException {
+		List<HotelGeneralPO> list = new ArrayList<HotelGeneralPO>();
+		list.add(new HotelGeneralPO("12345678","rujia","Nanjing","xianlin","4",5,123));
+		list.add(new HotelGeneralPO("12345678","ruji","Nanjing","xianlin","3",4,124));
+		list.add(new HotelGeneralPO("12345679","ruja","Nanjing","xianlin","2",3,125));
+		return list;
 	}
 
 }

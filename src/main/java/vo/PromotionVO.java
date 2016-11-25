@@ -25,4 +25,8 @@ public abstract class PromotionVO {
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
+
+	public PromotionVO() {
+		// TODO 自动生成的构造函数存根
+	}
 }

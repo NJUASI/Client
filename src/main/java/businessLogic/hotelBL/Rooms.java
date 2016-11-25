@@ -65,7 +65,7 @@ public class Rooms {
 			roomInfoPOList.add(new RoomInfoPO(roomInfoVO));
 		}
 		try {
-			return hotelDataService.setHotelRoomInfo(roomInfoPOList);
+			return hotelDataService.updateHotelRoomInfo(roomInfoPOList);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 			return ResultMessage.FAIL;

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -20,10 +20,10 @@ public class PromotionBLService_DriverTest {
 		//test interface getHotelPromotions
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
-		List<HotelPromotionVO> list = driver.promotionBLService.getHotelPromotions("12345678");
+		Iterator<HotelPromotionVO> list = driver.promotionBLService.getHotelPromotions("12345678");
 
-		HotelPromotionVO promotionVO1=list.get(0);
-		HotelPromotionVO promotionVO2=list.get(1);
+		HotelPromotionVO promotionVO1=list.next();
+		HotelPromotionVO promotionVO2=list.next();
 		
 		assertEquals(PromotionType.HOTEL__HOLIDAY, promotionVO1.promotionType);
 		assertEquals(0.9, promotionVO1.discount,0);

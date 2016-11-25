@@ -1,7 +1,14 @@
 package businessLogic.promotionBL;
 
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import dataService.promotionDataService.PromotionDataService;
+import dataService.promotionDataService.PromotionDataService_Stub;
+import po.HotelPromotionPO;
+import po.WebPromotionPO;
 import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.HotelPromotionVO;
@@ -9,19 +16,45 @@ import vo.WebPromotionVO;
 
 public class Promotion{
 
-	public List<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
-		// TODO Auto-generated method stub
-		return null;
+	PromotionDataService promotionDataService;
+	List<HotelPromotionPO> hotelPromotionPOList;
+	List<WebPromotionPO> webPromotionPOList;
+	
+	public Promotion() {
+		promotionDataService = new PromotionDataService_Stub();
 	}
-
-	public List<WebPromotionVO> getWebPromotions() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Iterator<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
+		List<HotelPromotionVO> hotelPromotionList = new ArrayList<HotelPromotionVO>();
+		try {
+			hotelPromotionPOList = promotionDataService.getHotelPromotions(hotelWorkerID);
+			for(HotelPromotionPO hotelPromotionPO: hotelPromotionPOList){
+				hotelPromotionList.add(new HotelPromotionVO(hotelPromotionPO));
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
+		return hotelPromotionList.iterator();
 	}
-
+	
 	public ResultMessage setHotelPromotions(String hotelWorkerID, List<HotelPromotionVO> list) {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
+	}
+
+	public Iterator<WebPromotionVO> getWebPromotions() {
+		List<WebPromotionVO> webPromotionList = new ArrayList<WebPromotionVO>();
+		try {
+			webPromotionPOList = promotionDataService.getWebPromotions();
+			for(WebPromotionPO webPromotionPO: webPromotionPOList){
+				webPromotionList.add(new WebPromotionVO(webPromotionPO));
+			}
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
+		return webPromotionList.iterator();
 	}
 
 	public ResultMessage setWebPromotions(List<WebPromotionVO> list) {
