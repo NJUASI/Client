@@ -17,8 +17,8 @@ import vo.UserVO;
 
 public class User {
 
-	private UserService user;
-	private CreditService guest;
+	private UserService user;//该变量在方法中实时修改
+	private CreditService guest;//在构造中new一次
 
 	public User() {
 		guest = new Guest();
