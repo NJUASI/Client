@@ -1,9 +1,10 @@
-package businessLogic.userBL;
+package businessLogic.userBL.userService;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+import businessLogic.userBL.userService.service.UserService;
 import dataService.webManagerDataService.WebManagerDataService;
 import dataService.webManagerDataService.WebManagerDataService_Stub;
 import po.WebManagerPO;
@@ -12,7 +13,7 @@ import utilities.UserType;
 import vo.UserVO;
 import vo.WebManagerVO;
 
-public class WebManager {
+public class WebManager implements UserService{
 
 	// 网站管理人员的ID长度为4
 	private static int IDLength = 4;
@@ -81,7 +82,7 @@ public class WebManager {
 		return null;
 	}
 
-	public boolean isWebManager(int length) {
+	public static boolean isWebManager(int length) {
 		if (WebManager.IDLength == length) {
 			return true;
 		} else {
@@ -89,7 +90,7 @@ public class WebManager {
 		}
 	}
 
-	public boolean isWebManager(UserType type) {
+	public static boolean isWebManager(UserType type) {
 		if (WebManager.type == type) {
 			return true;
 		} else {

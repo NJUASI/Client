@@ -1,9 +1,10 @@
-package businessLogic.userBL;
+package businessLogic.userBL.userService;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+import businessLogic.userBL.userService.service.UserService;
 import dataService.hotelWorkerDataService.HotelWorkerDataService;
 import dataService.hotelWorkerDataService.HotelWorkerDataService_Stub;
 import po.HotelWorkerPO;
@@ -12,7 +13,7 @@ import utilities.UserType;
 import vo.HotelWorkerVO;
 import vo.UserVO;
 
-public class HotelWorker {
+public class HotelWorker implements UserService{
 
 	// 酒店工作人员的ID长度为8
 	private static int IDLength = 8;
@@ -81,7 +82,7 @@ public class HotelWorker {
 		return null;
 	}
 
-	public boolean isHotelWorker(int length) {
+	public static boolean isHotelWorker(int length) {
 		if (HotelWorker.IDLength == length) {
 			return true;
 		} else {
@@ -89,7 +90,7 @@ public class HotelWorker {
 		}
 	}
 
-	public boolean isHotelWorker(UserType type) {
+	public static boolean isHotelWorker(UserType type) {
 		if (HotelWorker.type == type) {
 			return true;
 		} else {

@@ -3,6 +3,12 @@ package businessLogic.userBL;
 import java.util.List;
 
 import businessLogic.hotelBL.Hotel;
+import businessLogic.userBL.userService.Guest;
+import businessLogic.userBL.userService.HotelWorker;
+import businessLogic.userBL.userService.WebManager;
+import businessLogic.userBL.userService.WebMarketer;
+import businessLogic.userBL.userService.service.CreditService;
+import businessLogic.userBL.userService.service.UserService;
 import utilities.ResultMessage;
 import utilities.UserType;
 import vo.CreditVO;
@@ -11,81 +17,39 @@ import vo.UserVO;
 
 public class User {
 
-	private Guest guest;
-	private HotelWorker hotelWorker;
-	private WebMarketer webMarketer;
-	private WebManager webManager;
+	private UserService user;
+	private CreditService guest;
 
 	public User() {
 		guest = new Guest();
-		hotelWorker = new HotelWorker();
-		webMarketer = new WebMarketer();
-		webManager = new WebManager();
-
 	}
 
 	public ResultMessage add(UserVO newUserVO) {
 
 		ResultMessage msg = ResultMessage.USER_INEXISTENCE;
+		this.initial(newUserVO.userID.length());
 
-		if (guest.isGuest(newUserVO.userID.length())) {
-			msg = guest.add(newUserVO);
-		}
+		msg = user.add(newUserVO);
 
-		if (hotelWorker.isHotelWorker(newUserVO.userID.length())) {
-			msg = hotelWorker.add(newUserVO);
-		}
-
-		if (webMarketer.isWebMarketer(newUserVO.userID.length())) {
-			msg = webMarketer.add(newUserVO);
-		}
-
-		if (webManager.isWebManager(newUserVO.userID.length())) {
-			msg = webManager.add(newUserVO);
-		}
 		return msg;
 	}
 
 	public ResultMessage modify(UserVO userVO) {
 
 		ResultMessage msg = ResultMessage.USER_INEXISTENCE;
+		this.initial(userVO.userID.length());
 
-		if (guest.isGuest(userVO.userID.length())) {
-			msg = guest.modify(userVO);
-		}
+		msg = user.modify(userVO);
 
-		if (hotelWorker.isHotelWorker(userVO.userID.length())) {
-			msg = hotelWorker.modify(userVO);
-		}
-
-		if (webMarketer.isWebMarketer(userVO.userID.length())) {
-			msg = webMarketer.modify(userVO);
-		}
-
-		if (webManager.isWebManager(userVO.userID.length())) {
-			msg = webManager.modify(userVO);
-		}
 		return msg;
 	}
 
 	public UserVO getSingle(String userID, UserType userType) {
-		if (guest.isGuest(userType)) {
-			return guest.getSingle(userID);
-		}
 
-		if (hotelWorker.isHotelWorker(userType)) {
-			return hotelWorker.getSingle(userID);
-		}
+		this.initial(userType);
 
-		if (webMarketer.isWebMarketer(userType)) {
-			return webMarketer.getSingle(userID);
-		}
+		return user.getSingle(userID);
 
-		if (webManager.isWebManager(userType)) {
-			return webManager.getSingle(userID);
-		}
-
-		return null;
 	}
 
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
@@ -105,23 +69,11 @@ public class User {
 	}
 
 	public List<UserVO> getAll(UserType userType) {
-		if (guest.isGuest(userType)) {
-			return guest.getAll();
-		}
 
-		if (hotelWorker.isHotelWorker(userType)) {
-			return hotelWorker.getAll();
-		}
+		this.initial(userType);
 
-		if (webMarketer.isWebMarketer(userType)) {
-			return webMarketer.getAll();
-		}
+		return user.getAll();
 
-		if (webManager.isWebManager(userType)) {
-			return webManager.getAll();
-		}
-
-		return null;
 	}
 
 	public List<CreditVO> getAllCreditDetail(String guestID) {
@@ -129,22 +81,49 @@ public class User {
 	}
 
 	public String getLogInInfo(String userID, UserType userType) {
-		if (guest.isGuest(userType)) {
-			return guest.getLogInInfo(userID);
-		}
-
-		if (hotelWorker.isHotelWorker(userType)) {
-			return hotelWorker.getLogInInfo(userID);
-		}
-
-		if (webMarketer.isWebMarketer(userType)) {
-			return webMarketer.getLogInInfo(userID);
-		}
-
-		if (webManager.isWebManager(userType)) {
-			return webManager.getLogInInfo(userID);
-		}
-		return null;
+		this.initial(userType);
+		return user.getLogInInfo(userID);
 	}
 
+	private void initial(int IDLength) {
+		if (Guest.isGuest(IDLength)) {
+			user = new Guest();
+			return;
+		}
+
+		if (HotelWorker.isHotelWorker(IDLength)) {
+			user = new HotelWorker();
+			return;
+		}
+
+		if (WebMarketer.isWebMarketer(IDLength)) {
+			user = new WebMarketer();
+			return;
+		}
+
+		if (WebManager.isWebManager(IDLength)) {
+			user = new WebManager();
+		}
+	}
+
+	private void initial(UserType userType) {
+		if (Guest.isGuest(userType)) {
+			user = new Guest();
+			return;
+		}
+
+		if (HotelWorker.isHotelWorker(userType)) {
+			user = new HotelWorker();
+			return;
+		}
+
+		if (WebMarketer.isWebMarketer(userType)) {
+			user = new WebMarketer();
+			return;
+		}
+
+		if (WebManager.isWebManager(userType)) {
+			user = new WebManager();
+		}
+	}
 }

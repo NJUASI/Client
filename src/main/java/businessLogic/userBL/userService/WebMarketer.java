@@ -1,9 +1,10 @@
-package businessLogic.userBL;
+package businessLogic.userBL.userService;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+import businessLogic.userBL.userService.service.UserService;
 import dataService.webMarketerDataService.WebMarketerDataService;
 import dataService.webMarketerDataService.WebMarketerDataService_Stub;
 import po.WebMarketerPO;
@@ -12,7 +13,7 @@ import utilities.UserType;
 import vo.WebMarketerVO;
 import vo.UserVO;
 
-public class WebMarketer {
+public class WebMarketer implements UserService{
 
 	// 营销人员的ID长度为6
 	private static int IDLength = 6;
@@ -81,7 +82,7 @@ public class WebMarketer {
 		return null;
 	}
 
-	public boolean isWebMarketer(int length) {
+	public static boolean isWebMarketer(int length) {
 		if (WebMarketer.IDLength == length) {
 			return true;
 		} else {
@@ -89,7 +90,7 @@ public class WebMarketer {
 		}
 	}
 
-	public boolean isWebMarketer(UserType type) {
+	public static boolean isWebMarketer(UserType type) {
 		if (WebMarketer.type == type) {
 			return true;
 		} else {

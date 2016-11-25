@@ -1,9 +1,11 @@
-package businessLogic.userBL;
+package businessLogic.userBL.userService;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+import businessLogic.userBL.userService.service.CreditService;
+import businessLogic.userBL.userService.service.UserService;
 import dataService.guestDataService.GuestDataService;
 import dataService.guestDataService.GuestDataService_Stub;
 import po.CreditPO;
@@ -14,7 +16,7 @@ import vo.CreditVO;
 import vo.GuestVO;
 import vo.UserVO;
 
-public class Guest {
+public class Guest implements UserService ,CreditService{
 
 	// 客户的ID长度为10
 	private static int IDLength = 10;
@@ -113,7 +115,7 @@ public class Guest {
 		return null;
 	}
 
-	public boolean isGuest(int length) {
+	public static boolean isGuest(int length) {
 		if (Guest.IDLength == length) {
 			return true;
 		} else {
@@ -121,7 +123,7 @@ public class Guest {
 		}
 	}
 
-	public boolean isGuest(UserType type) {
+	public static boolean isGuest(UserType type) {
 		if (Guest.type == type) {
 			return true;
 		} else {

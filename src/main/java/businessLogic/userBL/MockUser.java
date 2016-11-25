@@ -12,7 +12,6 @@ import utilities.ResultMessage;
 import utilities.UserType;
 import vo.CreditVO;
 import vo.GuestVO;
-import vo.HotelVO;
 import vo.UserVO;
 
 public class MockUser extends User{
