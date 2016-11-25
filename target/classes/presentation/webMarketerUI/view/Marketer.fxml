@@ -21,12 +21,12 @@
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button layoutX="5.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#openCharge" prefHeight="40.0" prefWidth="88.0" text="信用充值" />
-                  <Button layoutX="5.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#openMarket" prefHeight="40.0" prefWidth="88.0" text="会员等级" />
-                  <Label layoutX="31.0" layoutY="96.0" text="营销员" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#openMain" prefHeight="80.0" prefWidth="80.0" text="主页" />
-                  <Button layoutX="6.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#openPromotion" prefHeight="40.0" prefWidth="88.0" text="促销策略" />
-                  <Button layoutX="5.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#openOrder" prefHeight="40.0" prefWidth="88.0" text="异常订单" />
+                  <Button focusTraversable="false" layoutX="5.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#openCharge" prefHeight="55.0" prefWidth="88.0" text="信用充值" AnchorPane.bottomAnchor="396.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="150.0" />
+                  <Button focusTraversable="false" layoutX="4.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#openMarket" prefHeight="55.0" prefWidth="88.0" text="会员等级" AnchorPane.bottomAnchor="296.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="250.0" />
+                  <Label layoutX="31.0" layoutY="96.0" text="营销员" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+                  <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#openMain" prefHeight="80.0" prefWidth="80.0" text="主页" AnchorPane.bottomAnchor="511.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="10.0" />
+                  <Button focusTraversable="false" layoutX="4.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#openPromotion" prefHeight="55.0" prefWidth="88.0" text="促销策略" AnchorPane.bottomAnchor="196.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="350.0" />
+                  <Button focusTraversable="false" layoutX="4.0" layoutY="450.0" mnemonicParsing="false" onMouseClicked="#openOrder" prefHeight="55.0" prefWidth="88.0" text="异常订单" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="450.0" />
                </children>
             </AnchorPane>
             <StackPane fx:id="right" prefHeight="150.0" prefWidth="200.0">
