@@ -40,8 +40,8 @@
                   <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
                </rowConstraints>
             </GridPane>
-            <Button layoutX="579.0" layoutY="146.0" mnemonicParsing="false" text="查询" />
-            <Pane layoutX="269.0" layoutY="186.0" prefHeight="361.0" prefWidth="358.0">
+            <Button layoutX="579.0" layoutY="146.0" mnemonicParsing="false" onAction="#search" text="查询" />
+            <Pane fx:id="chargePane" layoutX="269.0" layoutY="186.0" prefHeight="361.0" prefWidth="358.0">
                <children>
                   <GridPane layoutX="75.0" layoutY="59.0" prefHeight="161.0" prefWidth="226.0">
                      <children>
@@ -65,8 +65,8 @@
                         <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                   </GridPane>
-                  <Button layoutX="104.0" layoutY="255.0" mnemonicParsing="false" text="返回" />
-                  <Button layoutX="212.0" layoutY="255.0" mnemonicParsing="false" text="充值" />
+                  <Button layoutX="104.0" layoutY="255.0" mnemonicParsing="false" onAction="#cancelCharge" text="返回" />
+                  <Button layoutX="212.0" layoutY="255.0" mnemonicParsing="false" onAction="#saveCharge" text="充值" />
                </children>
             </Pane>
          </children>
