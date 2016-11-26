@@ -4,9 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import businessLogic.hotelBL.hotel.Hotel;
+import businessLogic.hotelBL.hotelScan.HotelScan;
+import businessLogic.hotelBL.hotelScan.ScanStrategy;
 import businessLogicService.hotelBLService.HotelBLService;
-import dataService.hotelDataService.HotelDataService;
-import dataService.hotelDataService.HotelDataService_Stub;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -98,8 +99,8 @@ public class HotelController implements HotelBLService {
 	
 	
 	// 浏览概况时的操作
-	public Iterator<HotelGeneralVO> getHotels() {
-		return hotelScan.getHotelList();
+	public Iterator<HotelGeneralVO> getHotels(ScanStrategy strategy) {
+		return hotelScan.getHotelList(strategy);
 	}
 
 	public Iterator<HotelGeneralVO> getBookedHotels() {

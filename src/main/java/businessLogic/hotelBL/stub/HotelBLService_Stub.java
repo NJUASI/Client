@@ -6,11 +6,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import businessLogic.hotelBL.hotelScan.ScanStrategy;
 import businessLogicService.hotelBLService.HotelBLService;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
-import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
 import vo.EvaluationVO;
@@ -84,16 +84,17 @@ public class HotelBLService_Stub implements HotelBLService{
 		return null;
 	}
 
-	
-	public Iterator<HotelGeneralVO> getHotels() {
+	@Override
+	public Iterator<HotelGeneralVO> getHotels(ScanStrategy strategy) {
 		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
 		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5,123));
 		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","3",5,234));
 		return list.iterator();
 	}
 
+	@Override
 	public Iterator<HotelGeneralVO> getBookedHotels() {
-		// TODO Auto-generated method stub
+		// TODO 自动生成的方法存根
 		return null;
 	}
 

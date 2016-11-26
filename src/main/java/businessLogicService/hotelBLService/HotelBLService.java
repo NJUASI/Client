@@ -2,6 +2,8 @@ package businessLogicService.hotelBLService;
 
 import java.util.Iterator;
 import java.util.List;
+
+import businessLogic.hotelBL.hotelScan.ScanStrategy;
 import utilities.ResultMessage;
 import vo.CheckInVO;
 import vo.CheckOutVO;
@@ -31,8 +33,8 @@ public interface HotelBLService {
 
 	public ResultMessage updateEvaluation (EvaluationVO evaluationVO);	
 
-	public Iterator<HotelGeneralVO> getHotels();
+	public Iterator<HotelGeneralVO> getHotels(ScanStrategy strategy);
 	
 	public Iterator<HotelGeneralVO> getBookedHotels();
-
+	
 }

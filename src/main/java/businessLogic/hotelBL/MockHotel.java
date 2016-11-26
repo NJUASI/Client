@@ -2,6 +2,7 @@ package businessLogic.hotelBL;
 
 import java.util.Map;
 
+import businessLogic.hotelBL.hotel.Hotel;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;

@@ -1,4 +1,4 @@
-package businessLogic.hotelBL;
+package businessLogic.hotelBL.hotel;
 
 import java.rmi.RemoteException;
 import java.util.Iterator;

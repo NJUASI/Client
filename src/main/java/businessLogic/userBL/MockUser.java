@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import businessLogic.hotelBL.Hotel;
 import businessLogic.hotelBL.MockHotel;
+import businessLogic.hotelBL.hotel.Hotel;
 import utilities.ResultMessage;
 import utilities.UserType;
 import vo.CreditVO;
