@@ -2,7 +2,7 @@ package businessLogic.userBL;
 
 import java.util.List;
 
-import businessLogic.hotelBL.Hotel;
+import businessLogic.hotelBL.hotel.Hotel;
 import businessLogic.userBL.userService.Guest;
 import businessLogic.userBL.userService.HotelWorker;
 import businessLogic.userBL.userService.WebManager;

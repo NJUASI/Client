@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import businessLogic.hotelBL.hotel.Hotel;
 import utilities.ResultMessage;
 import vo.CheckInVO;
 import vo.CheckOutVO;

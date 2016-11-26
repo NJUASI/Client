@@ -1,4 +1,4 @@
-package businessLogic.hotelBL;
+package businessLogic.hotelBL.hotel;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -7,10 +7,8 @@ import java.util.List;
 
 import dataService.hotelDataService.HotelDataService;
 import po.EvaluationPO;
-import po.RemainRoomInfoPO;
 import utilities.ResultMessage;
 import vo.EvaluationVO;
-import vo.RemainRoomInfoVO;
 
 public class Evaluations {
 
