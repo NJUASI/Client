@@ -16,8 +16,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.guestUI.controller.MemberController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.guestUI.controller.MemberCheckController">
    <children>
       <Pane fx:id="memberCheck" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
          <children>
@@ -37,12 +36,12 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="52.0" layoutY="62.0" text="人寿保险公司" textAlignment="CENTER" wrapText="true">
+                              <Label fx:id="enterprise" layoutX="52.0" layoutY="62.0" text="人寿保险公司" textAlignment="CENTER" wrapText="true">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="82.0" layoutY="173.0" text="Lv1" textAlignment="CENTER" wrapText="true">
+                              <Label fx:id="market" layoutX="82.0" layoutY="173.0" text="Lv1" textAlignment="CENTER" wrapText="true">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -63,7 +62,7 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="85.0" layoutY="63.0" text="2/29" textAlignment="CENTER" wrapText="true">
+                                    <Label fx:id="birthday" layoutX="85.0" layoutY="63.0" text="2/29" textAlignment="CENTER" wrapText="true">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -74,7 +73,7 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="92.0" layoutY="173.0" text="Lv1" textAlignment="CENTER" wrapText="true">
+                                    <Label fx:id="market2" layoutX="92.0" layoutY="173.0" text="Lv1" textAlignment="CENTER" wrapText="true">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -85,7 +84,7 @@
                         </AnchorPane>
                      </content>
                   </TitledPane>
-                  <Button layoutX="425.0" layoutY="450.0" mnemonicParsing="false" onMouseClicked="#register" text="注册" />
+                  <Button focusTraversable="false" layoutX="425.0" layoutY="450.0" mnemonicParsing="false" onMouseClicked="#register" text="注册" />
                   <Label layoutX="380.0" layoutY="14.0" prefHeight="39.0" prefWidth="132.0" text="会员信息查看">
                      <font>
                         <Font size="22.0" />
@@ -102,11 +101,11 @@
                <children>
                   <TitledPane layoutX="246.0" layoutY="139.0" prefHeight="102.0" prefWidth="399.0" text="企业会员注册">
                      <content>
-                        <Pane prefHeight="110.0" prefWidth="399.0">
+                        <Pane fx:id="enterprisePane" prefHeight="110.0" prefWidth="399.0">
                            <children>
                               <Label layoutX="14.0" layoutY="14.0" text="企业名称：" />
                               <Label layoutX="22.0" layoutY="111.0" />
-                              <Button layoutX="341.0" layoutY="35.0" mnemonicParsing="false" text="提交" />
+                              <Button focusTraversable="false" layoutX="317.0" layoutY="35.0" mnemonicParsing="false" onAction="#registerEnterprise" text="提交" />
                               <TextField layoutX="44.0" layoutY="35.0" prefHeight="23.0" prefWidth="244.0" text="人寿保险公司" />
                            </children>
                         </Pane>
@@ -114,20 +113,20 @@
                   </TitledPane>
                   <TitledPane layoutX="246.0" layoutY="289.0" prefHeight="102.0" prefWidth="399.0" text="个人会员注册">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="399.0">
+                        <AnchorPane fx:id="commonPane" minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="399.0">
                            <children>
                               <Pane prefHeight="40.0" prefWidth="55.0">
                                  <children>
                                     <Label layoutX="14.0" layoutY="14.0" text="生日：" />
                                  </children>
                               </Pane>
-                              <Button layoutX="343.0" layoutY="31.0" mnemonicParsing="false" text="提交" />
+                              <Button focusTraversable="false" layoutX="315.0" layoutY="29.0" mnemonicParsing="false" onAction="#registerCommon" text="提交" />
                               <DatePicker layoutX="55.0" layoutY="29.0" prefHeight="23.0" prefWidth="226.0" />
                            </children>
                         </AnchorPane>
                      </content>
                   </TitledPane>
-                  <Button layoutX="425.0" layoutY="450.0" mnemonicParsing="false" onMouseClicked="#cancer" text="取消" />
+                  <Button focusTraversable="false" layoutX="425.0" layoutY="450.0" mnemonicParsing="false" onAction="#cancer" text="取消" />
                   <Label layoutX="401.0" layoutY="14.0" prefHeight="39.0" prefWidth="90.0" text="会员注册" textAlignment="CENTER">
                      <font>
                         <Font size="22.0" />

@@ -58,7 +58,7 @@ public class LogInViewController {
 
 	@FXML
 	protected void logIn() {
-		 System.out.println(ID.getText()+" "+password.getText());
+//		 System.out.println(ID.getText()+" "+password.getText());
 		try {
 			Parent root = null;
 			if (ID.getText().length() == 1) {

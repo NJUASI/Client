@@ -3,7 +3,7 @@ package presentation.guestUI.controller;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
-public class OrderController {
+public class OrderCheckController {
 	@FXML
 	private Pane orderDetail;
 	@FXML
