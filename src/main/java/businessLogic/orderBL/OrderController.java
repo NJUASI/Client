@@ -8,10 +8,16 @@ import utilities.ResultMessage;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
-public class OrderController implements OrderBLService{
+/**
+ * 
+ * @author cuihua
+ *
+ */
+public class OrderController implements OrderBLService {
 
 	
 	private Order order;
+	
 	private static OrderController orderController;
 	
 	private OrderController() {

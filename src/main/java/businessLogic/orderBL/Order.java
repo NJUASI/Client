@@ -15,88 +15,138 @@ import utilities.ResultMessage;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
+/**
+ * 
+ * @author charles
+ * lastChangedBy charles
+ * updateTime 2016/11/27
+ *
+ */
 public class Order {
 	
 	private OrderDataService orderDataService;
+	
 	private Promotion promotion;
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 构造函数，初始化成员变量
+	 */
 	public Order() {
 		orderDataService = RemoteHelper.getInstance().getOrderDataService();
 		promotion = new Promotion();
 	}
 
-	public ResultMessage createOrder(OrderVO orderVO) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderVO 从客户界面层传下来的Order载体
+	 * @return 客户是否成功创建此订单
+	 */
+	public ResultMessage createOrder(final OrderVO orderVO) {
 		ResultMessage resultMessage = ResultMessage.ORDER_CREATE_FAILURE;
 		
 		try {
-			double discount = promotion.getDiscout(new PreOrder(orderVO));
-			orderVO.orderGeneralVO.price  = orderVO.previousPrice * discount;
+			final double discount = promotion.getDiscout(new PreOrder(orderVO));
+			orderVO.orderGeneralVO.price = orderVO.previousPrice * discount;
 			
 			resultMessage = orderDataService.createOrder(new OrderPO(orderVO));
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return resultMessage;
 	}
 
-	public ResultMessage executeOrder(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 酒店工作人员当前需要执行订单的订单号
+	 * @return 酒店工作人员是否成功执行此订单
+	 */
+	public ResultMessage executeOrder(final String orderID) {
 		ResultMessage resultMessage = ResultMessage.ORDER_EXECUTE_FAILURE;
 		
 		try {
 			resultMessage = orderDataService.executeOrder(orderID);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return resultMessage;
 	}
 
-	public ResultMessage undoAbnormalOrder(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 网站营销人员当前需要撤销的异常订单的订单号
+	 * @return 网站营销人员是否成功撤销此异常订单
+	 */
+	public ResultMessage undoAbnormalOrder(final String orderID) {
 		ResultMessage resultMessage = ResultMessage.ABNORMAL_ORDER_UNDO_FAILURE;
 		
 		try {
 			resultMessage = orderDataService.undoAbnormalOrder(orderID);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return resultMessage;
 	}
 
-	public ResultMessage undoNormalOrder(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 客户当前需要撤销的正常订单的订单号
+	 * @return 客户是否成功撤销此正常订单
+	 */
+	public ResultMessage undoNormalOrder(final String orderID) {
 		ResultMessage resultMessage = ResultMessage.NORMAL_ORDER_UNDO_FAILURE;
 		
 		try {
 			resultMessage = orderDataService.undoNormalOrder(orderID);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return resultMessage;
 	}
 
-	public OrderVO getOrderDetail(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 用户当前需要查看的订单的订单号
+	 * @return 此被需要订单的详情载体
+	 */
+	public OrderVO getOrderDetail(final String orderID) {
 		OrderVO thisOrderVO = null;
 		
 		try {
 			thisOrderVO = new OrderVO(orderDataService.getOrderDetail(orderID));
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return thisOrderVO;
 	}
 
-	public List<OrderGeneralVO> getAllGuestOrderGeneral(String guestID) {
-		List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param guestID 客户要查看个人所有订单时，客户的编号
+	 * @return 客户个人所有订单
+	 */
+	public List<OrderGeneralVO> getAllGuestOrderGeneral(final String guestID) {
+		final List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
 		
 		List<OrderGeneralPO> orderGeneralPOs = null;
 		try {
 			orderGeneralPOs = orderDataService.getAllGuestOrderGeneral(guestID);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -109,14 +159,20 @@ public class Order {
 		return result;
 	}
 
-	public List<OrderGeneralVO> getAllHotelOrderGeneral(String hotelID) {
-		List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param hotelID 酒店要查看本酒店所有订单时，酒店的编号
+	 * @return 此酒店所有的所有订单
+	 */
+	public List<OrderGeneralVO> getAllHotelOrderGeneral(final String hotelID) {
+		final List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
 		
 		List<OrderGeneralPO> orderGeneralPOs = null;
 		try {
 			orderGeneralPOs = orderDataService.getAllHotelOrderGeneral(hotelID);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -129,8 +185,15 @@ public class Order {
 		return result;
 	}
 
-	public List<OrderGeneralVO> getAllAbnormalOrderGeneral (LocalDate date) {
-		List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param date 网站营销人员撤销异常订单时输入的指定日期
+	 * @return 网站营销人员需要查看的当天所有的异常订单
+	 */
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral(final LocalDate date) {
+		final List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
 		
 		List<OrderGeneralPO> orderGeneralPOs = null;
 		try {
@@ -149,8 +212,14 @@ public class Order {
 		return result;
 	}
 	
-	public List<OrderGeneralVO> getAllAbnormalOrderGeneral () {
-		List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @return 是否成功执行此订单
+	 */
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
+		final List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
 		
 		List<OrderGeneralPO> orderGeneralPOs = null;
 		try {
@@ -169,7 +238,14 @@ public class Order {
 		return result;
 	}
 	
-	public List<String> getBookedHotels(String guestID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param guestID 客户需要查看个人定过的酒店时依照的客户个人编号
+	 * @return 客户定过的酒店列表
+	 */
+	public List<String> getBookedHotels(final String guestID) {
 		List<String> result = null;
 		
 		try {
