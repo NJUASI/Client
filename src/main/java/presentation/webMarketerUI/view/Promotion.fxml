@@ -26,7 +26,7 @@
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="601.0" prefWidth="895.0">
                <children>
                   <Separator layoutY="60.0" prefHeight="2.0" prefWidth="895.0" />
-                  <Button layoutX="735.0" layoutY="98.0" mnemonicParsing="false" text="修改" AnchorPane.bottomAnchor="473.0" AnchorPane.leftAnchor="735.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="98.0" />
+                  <Button layoutX="750.0" layoutY="98.0" mnemonicParsing="false" text="修改" AnchorPane.bottomAnchor="473.0" AnchorPane.leftAnchor="750.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="98.0" />
                   <Label layoutX="406.0" layoutY="14.0" prefHeight="39.0" text="酒店策略" AnchorPane.bottomAnchor="548.0" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="401.0" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font size="22.0" />
