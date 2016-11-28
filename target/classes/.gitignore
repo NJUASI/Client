@@ -1,6 +1,8 @@
+/businessLogic/
+/businessLogicService/
+/dataService/
+/po/
 /presentation/
 /rmi/
 /utilities/
 /vo/
-/businessLogic/
-/po/

@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="right" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.guestUI.controller.HotelController">
+<StackPane fx:id="right" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.guestUI.controller.HotelSearchController">
    <children>
       <Pane fx:id="cityAndCircle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
          <children>
@@ -29,40 +29,15 @@
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <GridPane layoutX="241.0" layoutY="234.0" prefHeight="276.0" prefWidth="636.0" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="234.0">
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="上海" GridPane.columnIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="成都" GridPane.columnIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="广州" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="杭州" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="北京" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="重庆" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="深圳" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="西安" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="天津" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="贵阳" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="武汉" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="厦门" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <Label layoutX="204.0" layoutY="128.0" text="输入城市：" />
-                  <Separator layoutX="185.0" layoutY="77.0" prefHeight="3.0" prefWidth="519.0" />
-                  <Button layoutX="649.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#openHotelCheck" prefHeight="3.0" text="搜索" />
-                  <Separator layoutX="216.0" layoutY="181.0" prefHeight="3.0" prefWidth="458.0" />
-                  <TextField layoutX="279.0" layoutY="123.0" prefHeight="30.0" prefWidth="137.0" />
-                  <Label layoutX="421.0" layoutY="208.0" text="热门城市" />
-                  <ComboBox layoutX="465.0" layoutY="123.0" prefHeight="30.0" prefWidth="137.0" />
+                  <Label layoutX="163.0" layoutY="172.0" text="输入城市：" />
+                  <Separator layoutX="141.0" layoutY="122.0" prefHeight="3.0" prefWidth="586.0" />
+                  <Button layoutX="659.0" layoutY="182.0" mnemonicParsing="false" onMouseClicked="#openHotelCheck" prefHeight="3.0" text="搜索" />
+                  <Separator layoutX="211.0" layoutY="271.0" prefHeight="3.0" prefWidth="458.0" />
+                  <TextField fx:id="cityChoose" layoutX="252.0" layoutY="167.0" prefHeight="30.0" prefWidth="137.0" />
+                  <ComboBox fx:id="cycleChoose" layoutX="507.0" layoutY="182.0" prefHeight="30.0" prefWidth="137.0" />
+                  <Label layoutX="417.0" layoutY="187.0" text="选择商圈：" />
+                  <ComboBox layoutX="252.0" layoutY="212.0" prefHeight="30.0" prefWidth="137.0" />
+                  <Label layoutX="163.0" layoutY="217.0" text="选择城市：" />
                </children>
             </AnchorPane>
          </children>
@@ -84,29 +59,29 @@
                   <Button layoutX="709.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#openChoose" text="筛选" />
                   <Pane layoutY="198.0" prefHeight="401.0" prefWidth="895.0">
                      <children>
-                        <Pane prefHeight="101.0" prefWidth="895.0">
+                        <Pane layoutY="1.0" prefHeight="101.0" prefWidth="895.0">
                            <children>
-                              <Label layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
+                              <Label fx:id="hotelName1" layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="600.0" layoutY="64.0" text="￥298起">
+                              <Label fx:id="price1" layoutX="607.0" layoutY="12.0" text="￥298起">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
                               <Button layoutX="739.0" layoutY="63.0" mnemonicParsing="false" text="立即预定" />
-                              <GridPane layoutX="93.0" layoutY="36.0" prefHeight="51.0" prefWidth="400.0">
+                              <GridPane layoutX="93.0" layoutY="39.0" prefHeight="51.0" prefWidth="362.0">
                                  <children>
                                     <Label text="城市：" />
-                                    <Label text="南京" GridPane.columnIndex="1" />
+                                    <Label fx:id="city1" text="南京" GridPane.columnIndex="1" />
                                     <Label text="商圈：" GridPane.columnIndex="2" />
-                                    <Label text="仙林中心" GridPane.columnIndex="3" />
+                                    <Label fx:id="cycle1" text="仙林中心" GridPane.columnIndex="3" />
                                     <Label text="星级：" GridPane.rowIndex="1" />
-                                    <Label text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="level1" text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label text="评分：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                    <Label text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Label fx:id="score1" text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                  </children>
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="67.0" />
@@ -120,33 +95,43 @@
                                  </rowConstraints>
                               </GridPane>
                               <Separator layoutY="100.0" prefWidth="895.0" />
-                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#openHotelDetail" text="查看详情" />
+                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onAction="#openHotelDetail1" text="查看详情" />
                               <Separator prefWidth="895.0" />
+                              <Label layoutX="514.0" layoutY="67.0" text="10001000">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="466.0" layoutY="67.0" text="编号：">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
-                        <Pane layoutY="100.0" prefHeight="101.0" prefWidth="895.0">
+                        <Pane layoutY="101.0" prefHeight="101.0" prefWidth="895.0">
                            <children>
-                              <Label layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
+                              <Label fx:id="hotelName2" layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="600.0" layoutY="64.0" text="￥298起">
+                              <Label fx:id="price2" layoutX="607.0" layoutY="12.0" text="￥298起">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
                               <Button layoutX="739.0" layoutY="63.0" mnemonicParsing="false" text="立即预定" />
-                              <GridPane layoutX="93.0" layoutY="36.0" prefHeight="51.0" prefWidth="400.0">
+                              <GridPane layoutX="93.0" layoutY="39.0" prefHeight="51.0" prefWidth="362.0">
                                  <children>
                                     <Label text="城市：" />
-                                    <Label text="南京" GridPane.columnIndex="1" />
+                                    <Label fx:id="city2" text="南京" GridPane.columnIndex="1" />
                                     <Label text="商圈：" GridPane.columnIndex="2" />
-                                    <Label text="仙林中心" GridPane.columnIndex="3" />
+                                    <Label fx:id="cycle2" text="仙林中心" GridPane.columnIndex="3" />
                                     <Label text="星级：" GridPane.rowIndex="1" />
-                                    <Label text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="level2" text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label text="评分：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                    <Label text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Label fx:id="score1" text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                  </children>
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="67.0" />
@@ -160,33 +145,43 @@
                                  </rowConstraints>
                               </GridPane>
                               <Separator layoutY="100.0" prefWidth="895.0" />
-                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#openHotelDetail" text="查看详情" />
+                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onAction="#openHotelDetail2" text="查看详情" />
                               <Separator prefWidth="895.0" />
+                              <Label layoutX="514.0" layoutY="67.0" text="10001000">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="466.0" layoutY="67.0" text="编号：">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
-                        <Pane layoutY="200.0" prefHeight="101.0" prefWidth="895.0">
+                        <Pane layoutY="201.0" prefHeight="101.0" prefWidth="895.0">
                            <children>
-                              <Label layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
+                              <Label fx:id="hotelName3" layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="600.0" layoutY="64.0" text="￥298起">
+                              <Label fx:id="price3" layoutX="607.0" layoutY="12.0" text="￥298起">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
                               <Button layoutX="739.0" layoutY="63.0" mnemonicParsing="false" text="立即预定" />
-                              <GridPane layoutX="93.0" layoutY="36.0" prefHeight="51.0" prefWidth="400.0">
+                              <GridPane layoutX="93.0" layoutY="39.0" prefHeight="51.0" prefWidth="362.0">
                                  <children>
                                     <Label text="城市：" />
-                                    <Label text="南京" GridPane.columnIndex="1" />
+                                    <Label fx:id="city3" text="南京" GridPane.columnIndex="1" />
                                     <Label text="商圈：" GridPane.columnIndex="2" />
-                                    <Label text="仙林中心" GridPane.columnIndex="3" />
+                                    <Label fx:id="cycle3" text="仙林中心" GridPane.columnIndex="3" />
                                     <Label text="星级：" GridPane.rowIndex="1" />
-                                    <Label text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="level3" text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label text="评分：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                    <Label text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Label fx:id="score1" text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                  </children>
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="67.0" />
@@ -200,33 +195,43 @@
                                  </rowConstraints>
                               </GridPane>
                               <Separator layoutY="100.0" prefWidth="895.0" />
-                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#openHotelDetail" text="查看详情" />
+                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onAction="#openHotelDetail3" text="查看详情" />
                               <Separator prefWidth="895.0" />
+                              <Label layoutX="514.0" layoutY="67.0" text="10001000">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="466.0" layoutY="67.0" text="编号：">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
-                        <Pane layoutY="300.0" prefHeight="101.0" prefWidth="895.0">
+                        <Pane layoutY="301.0" prefHeight="101.0" prefWidth="895.0">
                            <children>
-                              <Label layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
+                              <Label fx:id="hotelName4" layoutX="81.0" layoutY="3.0" text="南京金鹰酒店">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="600.0" layoutY="64.0" text="￥298起">
+                              <Label fx:id="price4" layoutX="607.0" layoutY="12.0" text="￥298起">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Label>
                               <Button layoutX="739.0" layoutY="63.0" mnemonicParsing="false" text="立即预定" />
-                              <GridPane layoutX="93.0" layoutY="36.0" prefHeight="51.0" prefWidth="400.0">
+                              <GridPane layoutX="93.0" layoutY="39.0" prefHeight="51.0" prefWidth="362.0">
                                  <children>
                                     <Label text="城市：" />
-                                    <Label text="南京" GridPane.columnIndex="1" />
+                                    <Label fx:id="city4" text="南京" GridPane.columnIndex="1" />
                                     <Label text="商圈：" GridPane.columnIndex="2" />
-                                    <Label text="仙林中心" GridPane.columnIndex="3" />
+                                    <Label fx:id="cycle4" text="仙林中心" GridPane.columnIndex="3" />
                                     <Label text="星级：" GridPane.rowIndex="1" />
-                                    <Label text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="level4" text="五星" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label text="评分：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                    <Label text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Label fx:id="score1" text="4.5分" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                  </children>
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="67.0" />
@@ -240,15 +245,25 @@
                                  </rowConstraints>
                               </GridPane>
                               <Separator layoutY="100.0" prefWidth="895.0" />
-                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#openHotelDetail" text="查看详情" />
+                              <Button layoutX="739.0" layoutY="21.0" mnemonicParsing="false" onAction="#openHotelDetail4" text="查看详情" />
                               <Separator prefWidth="895.0" />
+                              <Label layoutX="514.0" layoutY="67.0" text="10001000">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="466.0" layoutY="67.0" text="编号：">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
                      </children>
                   </Pane>
                   <Separator layoutY="149.0" prefWidth="895.0" />
-                  <Button layoutX="764.0" layoutY="160.0" mnemonicParsing="false" text="下一页" />
-                  <Button layoutX="677.0" layoutY="160.0" mnemonicParsing="false" text="上一页" />
+                  <Button layoutX="764.0" layoutY="160.0" mnemonicParsing="false" onAction="#nextPage" text="下一页" />
+                  <Button layoutX="677.0" layoutY="160.0" mnemonicParsing="false" onAction="#lastPage" text="上一页" />
                </children>
             </AnchorPane>
          </children>
@@ -263,7 +278,7 @@
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <TabPane layoutY="154.0" prefHeight="449.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutY="152.0" prefHeight="449.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE">
                      <tabs>
                         <Tab text="房型列表">
                            <content>
@@ -602,7 +617,7 @@
                         </Tab>
                      </tabs>
                   </TabPane>
-                  <GridPane layoutX="37.0" layoutY="69.0" prefHeight="68.0" prefWidth="286.0">
+                  <GridPane layoutX="39.0" layoutY="97.0" prefHeight="51.0" prefWidth="286.0">
                      <children>
                         <Label text="城市： " />
                         <Label text="南京" GridPane.columnIndex="1" />
@@ -624,7 +639,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                   </GridPane>
-                  <GridPane layoutX="360.0" layoutY="69.0" prefHeight="83.0" prefWidth="466.0">
+                  <GridPane layoutX="360.0" layoutY="69.0" prefHeight="79.0" prefWidth="466.0">
                      <children>
                         <Label text="简介：" />
                         <Label prefHeight="15.0" prefWidth="272.0" text="你的家" GridPane.columnIndex="1" />
@@ -643,7 +658,9 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                   </GridPane>
-                  <Button layoutX="825.0" layoutY="120.0" mnemonicParsing="false" onMouseClicked="#returnHotelCheck" prefHeight="32.0" prefWidth="50.0" text="返回" />
+                  <Button layoutX="826.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#returnHotelCheck" prefHeight="32.0" prefWidth="50.0" text="返回" />
+                  <Label layoutX="39.0" layoutY="73.0" text="编号：" />
+                  <Label layoutX="111.0" layoutY="73.0" text="21311223" />
                </children>
             </AnchorPane>
          </children>

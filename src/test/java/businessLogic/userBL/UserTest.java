@@ -18,11 +18,20 @@ import vo.UserVO;
 import vo.WebManagerVO;
 import vo.WebMarketerVO;
 
+/**
+ * 
+ * @author 董金玉
+ * lastChangedBy 董金玉
+ * test the all method of memberBL
+ * updateTime 2016/11/28
+ *
+ */
 public class UserTest {
 	
 
 	@Test
 	public void testAdd() {
+		//test the method add
 		User user= new User();
 		
 		UserVO guestVO = new GuestVO("1234567890", LocalDate.of(1995, 1, 1), "school", "zhangsan", "xiaosan",
@@ -38,6 +47,7 @@ public class UserTest {
 
 	@Test
 	public void testModify() {
+		//test the method modify
 		User user= new User();
 		
 		UserVO guestVO = new GuestVO("1234567890", LocalDate.of(1995, 1, 1), "school", "zhangsan", "xiaosan",
@@ -53,6 +63,7 @@ public class UserTest {
 	
 	@Test
 	public void testGetSingle() {
+		//test the method getSingle
 		User user= new User();
 		
 		GuestVO guestVO = (GuestVO)user.getSingle("1234567890", UserType.GUEST);
@@ -82,6 +93,7 @@ public class UserTest {
 	
 	@Test
 	public void testAddHotel() {
+		//test the method addHotel
 		User user= new User();
 		
 		HotelVO hotelVO = new HotelVO("12345677", "thisHotel", "NanJing", "center", "address", "4",
@@ -91,6 +103,7 @@ public class UserTest {
 	
 	@Test
 	public void testModifyCredit() {
+		//test the method modifyCredit
 		User user= new User();
 		
 		assertEquals(user.modifyCredit("1234567890", 100),ResultMessage.SUCCESS);
@@ -98,6 +111,7 @@ public class UserTest {
 	
 	@Test
 	public void testGetAll() {
+		//test the method getAll
 		User user= new User();
 		
 		List<UserVO> guest = user.getAll(UserType.GUEST);
@@ -115,6 +129,7 @@ public class UserTest {
 
 	@Test
 	public void testGetAllCreditDetail() {
+		//test the method getAllCreditDetail
 		User user= new User();
 		
 		List<CreditVO> credit = user.getAllCreditDetail("1234567890");
@@ -129,6 +144,7 @@ public class UserTest {
 	
 	@Test
 	public void testGetLogInInfo() {
+		//test the method getLoginInfo
 		User user= new User();
 		
 		assertEquals(user.getLogInInfo("1234567890", UserType.GUEST),"000000");
