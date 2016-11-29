@@ -9,7 +9,7 @@ import vo.MarketVO;
 
 public interface CreditBLService {
 
-	public ResultMessage charge(String guestID, int chargeNum);
+	public ResultMessage charge(String guestID, float chargeNum);
 	
 	public BasicInfoVO getBasicInfo (String guestID);
 	

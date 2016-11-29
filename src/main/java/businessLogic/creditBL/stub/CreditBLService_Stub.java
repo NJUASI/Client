@@ -28,7 +28,7 @@ public class CreditBLService_Stub implements CreditBLService {
 	}
 
 	
-	public ResultMessage charge(String guestID, int chargeNum) {
+	public ResultMessage charge(String guestID, float chargeNum) {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}

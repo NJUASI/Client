@@ -50,13 +50,13 @@ public class Credit {
 	 * @author 61990
 	 * @lastChangedBy 61990
 	 * @updateTime 2016/11/27
-	 * @param ID
+	 * @param guestID
 	 *            从登录界面层传下来的ID
 	 * @return 客户的基本信息
 	 */
-	public BasicInfoVO getBasicInfo(final String ID) {
+	public BasicInfoVO getBasicInfo(final String guestID) {
 	
-		final GuestVO guestVO = (GuestVO) user.getSingle(ID, UserType.GUEST);
+		final GuestVO guestVO = (GuestVO) user.getSingle(guestID, UserType.GUEST);
 
 		final List<MarketVO> memberFormulationList = market.getMemberFormulation();
 		for (int i = 0; i < memberFormulationList.size(); i++) {
