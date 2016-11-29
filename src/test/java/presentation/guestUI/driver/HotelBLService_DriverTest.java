@@ -5,10 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import businessLogic.hotelBL.hotelScan.NullStrategy;
-import businessLogic.hotelBL.hotelScan.ScanStrategy;
 import businessLogic.hotelBL.stub.HotelBLService_Stub;
 import utilities.ResultMessage;
+import vo.AddressVO;
 import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
@@ -20,9 +19,9 @@ public class HotelBLService_DriverTest {
 		//test interface getHotelList
 		HotelBLService_Stub stub = new HotelBLService_Stub();
 		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
-		ScanStrategy nullStrategy = new NullStrategy();
-		HotelGeneralVO hotelGeneralVO1 = driver.hotelBLService.getHotels(nullStrategy).next();
-		HotelGeneralVO hotelGeneralVO2 = driver.hotelBLService.getHotels(nullStrategy).next();
+		AddressVO addressVO = new AddressVO("Nanjing","Xianlin", 0.5);
+		HotelGeneralVO hotelGeneralVO1 = driver.hotelBLService.getHotels(addressVO).next();
+		HotelGeneralVO hotelGeneralVO2 = driver.hotelBLService.getHotels(addressVO).next();
 		
 		assertEquals("thisHotel", hotelGeneralVO1.hotelName);
 		assertEquals("NanJing", hotelGeneralVO1.city);

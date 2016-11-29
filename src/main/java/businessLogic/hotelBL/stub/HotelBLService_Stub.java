@@ -1,16 +1,17 @@
 package businessLogic.hotelBL.stub;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import businessLogic.hotelBL.hotelScan.ScanStrategy;
+import businessLogic.hotelBL.hotelScan.SearchCriteria;
 import businessLogicService.hotelBLService.HotelBLService;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
+import utilities.SortStrategy;
+import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
 import vo.EvaluationVO;
@@ -84,16 +85,28 @@ public class HotelBLService_Stub implements HotelBLService{
 		return null;
 	}
 
+	
+	
 	@Override
-	public Iterator<HotelGeneralVO> getHotels(ScanStrategy strategy) {
-		ArrayList<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
-		list.add(new HotelGeneralVO("12345678", "thisHotel","NanJing","center","4",5,123));
-		list.add(new HotelGeneralVO("12345679", "thatHotel","NanJing","center","3",5,234));
-		return list.iterator();
+	public Iterator<HotelGeneralVO> getHotels(AddressVO addressVO) {
+		// TODO 自动生成的方法存根
+		return null;
 	}
 
 	@Override
+	public Iterator<HotelGeneralVO> sortHotels(SortStrategy sortStrategy) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+	
+	@Override
 	public Iterator<HotelGeneralVO> getBookedHotels() {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+	
+	@Override
+	public Iterator<HotelGeneralVO> searchHotels(List<SearchCriteria> searchCriteria) {
 		// TODO 自动生成的方法存根
 		return null;
 	}

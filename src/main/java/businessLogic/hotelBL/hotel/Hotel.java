@@ -142,7 +142,7 @@ public class Hotel{
 	}
 
 	
-	// 对evaluations的操作，get、update
+	// 对evaluations的操作，get
 	public Iterator<EvaluationVO> getEvaluations(){
 		return evaluations.getEvaluations();
 	}
