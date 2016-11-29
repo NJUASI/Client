@@ -21,7 +21,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.guestUI.controller.OrderCheckController">
    <children>
-      <Pane fx:id="orderCheck" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" visible="false">
+      <Pane fx:id="orderCheck" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
          <children>
             <TabPane cache="true" layoutY="60.0" prefHeight="541.0" prefWidth="895.0" tabClosingPolicy="UNAVAILABLE">
                <tabs>
@@ -39,7 +39,7 @@
                                           <Label layoutX="700.0" layoutY="61.0" text="610" />
                                           <Button layoutX="753.0" layoutY="7.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="33.0" prefWidth="72.0" text="未执行" />
                                           <Separator layoutY="92.0" prefHeight="0.0" prefWidth="895.0" />
-                                          <Button layoutX="749.0" layoutY="49.0" mnemonicParsing="false" onMouseClicked="#OrderDetail1" text="查看详情" />
+                                          <Button layoutX="749.0" layoutY="49.0" mnemonicParsing="false" onAction="#orderDetail1" text="查看详情" />
                                           <GridPane layoutX="66.0" layoutY="18.0" prefHeight="46.0" prefWidth="405.0">
                                              <children>
                                                 <Label text="酒店：" />
@@ -338,7 +338,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="orderDetail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
+      <Pane fx:id="orderDetail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" visible="false">
          <children>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="454.0">
                <children>

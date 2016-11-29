@@ -1,6 +1,6 @@
 package presentation.webMarketerUI.driver;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,22 +15,41 @@ import utilities.RoomType;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
+/**
+ * 
+ * @author charles
+ * lastChangedBy charles
+ * updateTime 2016/11/27
+ *
+ */
 public class OrderBLService_DriverTest {
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface undoAbnormalOrder
+	 */
 	@Test
 	public void test1() {
-		//test interface undoAbnormalOrder
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoAbnormalOrder("123456789012"));
 	}
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface getOrderDetail
+	 */
 	@Test
 	public void test2() {
-		//test interface getOrderDetail
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
-        OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
 		
         assertEquals("123456789012", orderVO.orderGeneralVO.orderID);
 		assertEquals("thisHotel", orderVO.orderGeneralVO.hotelName);
@@ -50,14 +69,20 @@ public class OrderBLService_DriverTest {
 		assertEquals("no", orderVO.message);
 	}
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface getAllAbnormalOrderGeneral(LocalDate date)
+	 */
 	@Test
 	public void test3() {
-		//test interface getAllAbnormalOrderGeneral(LocalDate date)
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		
-		List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllAbnormalOrderGeneral(LocalDate.of(2016, 2, 3));
-		OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
+		final List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllAbnormalOrderGeneral(LocalDate.of(2016, 2, 3));
+		final OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
 		
 		assertEquals("123456789012", orderGeneralVO.orderID);
 		assertEquals("1234567890", orderGeneralVO.guestID);
@@ -71,14 +96,20 @@ public class OrderBLService_DriverTest {
 		
 	}
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface getAllAbnormalOrderGeneral()
+	 */
 	@Test
 	public void test4() {
-		//test interface getAllAbnormalOrderGeneral
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		
-		List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllAbnormalOrderGeneral();
-		OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
+		final List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllAbnormalOrderGeneral();
+		final OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
 		
 		assertEquals("123456789012", orderGeneralVO.orderID);
 		assertEquals("1234567890", orderGeneralVO.guestID);

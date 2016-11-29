@@ -199,7 +199,6 @@ public class Order {
 		try {
 			orderGeneralPOs = orderDataService.getAllAbnormalOrderGeneral(date);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -225,7 +224,6 @@ public class Order {
 		try {
 			orderGeneralPOs = orderDataService.getAllAbnormalOrderGeneral();
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -251,7 +249,6 @@ public class Order {
 		try {
 			result = orderDataService.getBookedHotels(guestID);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

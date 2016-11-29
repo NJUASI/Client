@@ -1,59 +1,81 @@
 package presentation.guestUI.driver;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import java.rmi.RemoteException;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import org.junit.Test;
 
 import businessLogic.orderBL.stub.OrderBLService_Stub;
-import dataService.orderDataService.OrderDataService_Stub;
 import utilities.OrderState;
 import utilities.ResultMessage;
 import utilities.RoomType;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
+/**
+ * 
+ * @author cuihua
+ * lastChangedBy charles
+ * updateTime 2016/11/27
+ */
 public class OrderBLService_DriverTest {
 
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface createOrder
+	 */
 	@Test
 	public void test1() {
-		//test interface createOrder
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		
-		LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 30);
-		LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
-		LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
-		LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
-		LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
+		final LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 30);
+		final LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
+		final LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);
+		final LocalDateTime expectExecuteTime = LocalDateTime.of(2016, 2, 3, 14, 00);
+		final LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
 		
-		OrderState orderState = OrderState.EXECUTED;
-		RoomType roomType = RoomType.AMBASSADOR;
+		final OrderState orderState = OrderState.EXECUTED;
+		final RoomType roomType = RoomType.AMBASSADOR;
 		
-		OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 
+		final OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 
 				250, 200, createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, 
-				orderState, roomType, 2, "301  302", 2, "zhangsan","13554321234", "no");
+				orderState, roomType, 2, "301  302", 2, "zhangsan", "13554321234", "no");
 		
 		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.createOrder(orderVO));
 	}
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface undoNormalOrder
+	 */
 	@Test
 	public void test2() {
-		// test interface undoNormalOrder
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.undoNormalOrder("123456789012"));
 	}
 
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface getOrderDetails
+	 */
 	@Test
 	public void test3() {
-		//test interface getOrderDetail
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
-		OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderVO orderVO = driver.orderBLService.getOrderDetail("123456789012");
 		
 		assertEquals("123456789012", orderVO.orderGeneralVO.orderID);
 		assertEquals("thisHotel", orderVO.orderGeneralVO.hotelName);
@@ -73,14 +95,20 @@ public class OrderBLService_DriverTest {
 		assertEquals("no", orderVO.message);
 	}
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * 
+	 * test interface getAllGuestOrderGeneral
+	 */
 	@Test
 	public void test4() {
-		//test interface getAllGuestOrderGeneral
-		OrderBLService_Stub stub = new OrderBLService_Stub();
-		OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
 		
-		List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllGuestOrderGeneral("1234567890");
-		OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
+		final List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllGuestOrderGeneral("1234567890");
+		final OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
 		
 		assertEquals("123456789012", orderGeneralVO.orderID);
 		assertEquals("1234567890", orderGeneralVO.guestID);

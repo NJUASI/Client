@@ -11,65 +11,148 @@ import vo.OrderVO;
 /**
  * 
  * @author cuihua
- *
+ * lastChangedBy charles
+ * updateTime 2016/11/29
  */
-public class OrderController implements OrderBLService {
+public final class OrderController implements OrderBLService {
 
 	
 	private Order order;
 	
 	private static OrderController orderController;
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/29
+	 * 构造函数，初始化成员变量
+	 */
 	private OrderController() {
 		//new the mock object
 		order = new MockOrder();
 	}
 	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @return order controller的实例，单例化
+	 */
 	public static OrderController getInstance() {
-		if (orderController == null) orderController = new OrderController();
+		if (orderController == null) {
+			orderController = new OrderController();
+		}
 		return orderController;
 	}
 	
-	
-	public ResultMessage createOrder(OrderVO orderVO) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderVO 从客户界面层传下来的Order载体
+	 * @return 客户是否成功创建此订单
+	 */
+	public ResultMessage createOrder(final OrderVO orderVO) {
 		return order.createOrder(orderVO);
 	}
 
-	public ResultMessage executeOrder(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 酒店工作人员当前需要执行订单的订单号
+	 * @return 酒店工作人员是否成功执行此订单
+	 */
+	public ResultMessage executeOrder(final String orderID) {
 		return order.executeOrder(orderID);
 	}
 
-	public ResultMessage undoAbnormalOrder(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 网站营销人员当前需要撤销的异常订单的订单号
+	 * @return 网站营销人员是否成功撤销此异常订单
+	 */
+	public ResultMessage undoAbnormalOrder(final String orderID) {
 		return order.undoAbnormalOrder(orderID);
 	}
 
-	public ResultMessage undoNormalOrder(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 客户当前需要撤销的正常订单的订单号
+	 * @return 客户是否成功撤销此正常订单
+	 */
+	public ResultMessage undoNormalOrder(final String orderID) {
 		return order.undoNormalOrder(orderID);
 	}
 
-	public OrderVO getOrderDetail(String orderID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param orderID 用户当前需要查看的订单的订单号
+	 * @return 此被需要订单的详情载体
+	 */
+	public OrderVO getOrderDetail(final String orderID) {
 		return order.getOrderDetail(orderID);
 	}
 
-	public List<OrderGeneralVO> getAllGuestOrderGeneral(String guestID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param guestID 客户要查看个人所有订单时，客户的编号
+	 * @return 客户个人所有订单
+	 */
+	public List<OrderGeneralVO> getAllGuestOrderGeneral(final String guestID) {
 		return order.getAllGuestOrderGeneral(guestID);
 	}
 
-	public List<OrderGeneralVO> getAllHotelOrderGeneral(String hotelID) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param hotelID 酒店要查看本酒店所有订单时，酒店的编号
+	 * @return 此酒店所有的所有订单
+	 */
+	public List<OrderGeneralVO> getAllHotelOrderGeneral(final String hotelID) {
 		return order.getAllHotelOrderGeneral(hotelID);
 	}
 
-	public List<OrderGeneralVO> getAllAbnormalOrderGeneral(LocalDate date) {
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param date 网站营销人员撤销异常订单时输入的指定日期
+	 * @return 网站营销人员需要查看的当天所有的异常订单
+	 */
+	public List<OrderGeneralVO> getAllAbnormalOrderGeneral(final LocalDate date) {
 		// TODO Auto-generated method stub
 		return order.getAllAbnormalOrderGeneral(date);
 	}
 
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @return 是否成功执行此订单
+	 */
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
 		// TODO Auto-generated method stub
 		return order.getAllAbnormalOrderGeneral();
 	}
-	
-	public List<String> getBookedHotels(String guestID) {
+
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/27
+	 * @param guestID 客户需要查看个人定过的酒店时依照的客户个人编号
+	 * @return 客户定过的酒店列表
+	 */
+	public List<String> getBookedHotels(final String guestID) {
 		return order.getBookedHotels(guestID);
 	}
 
