@@ -28,7 +28,6 @@ public class HotelDataService_DriverTest {
 			assertEquals("NanJing", hotelPO.getCity());
 			assertEquals("4", hotelPO.getLevel());
 			assertEquals(5, hotelPO.getScore(), 0);
-			assertEquals("5", hotelPO.getComment());
 			assertEquals("good", hotelPO.getIntroduction());
 			assertEquals("allEquipment", hotelPO.getEquipment());
 		} catch (RemoteException e) {

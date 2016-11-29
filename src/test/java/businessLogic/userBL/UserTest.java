@@ -97,7 +97,7 @@ public class UserTest {
 		User user= new User();
 		
 		HotelVO hotelVO = new HotelVO("12345677", "thisHotel", "NanJing", "center", "address", "4",
-				5,123,"5", "good", "allEquipment");
+				5,123, "good", "allEquipment");
 		assertEquals(user.addHotel(hotelVO, "12345677"),ResultMessage.SUCCESS);
 	}
 	

@@ -32,7 +32,7 @@ public class HotelBLService_Stub implements HotelBLService{
 
 	public HotelVO getHotelInfo(String userID) {
 		return new HotelVO("12345678","thisHotel", "NanJing", "center", "address", "4" ,
-				5,123, "5", "good", "allEquipment");
+				5,123,"good","allEquipment");
 	}
 
 

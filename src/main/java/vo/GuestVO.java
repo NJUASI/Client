@@ -25,7 +25,7 @@ public class GuestVO extends UserVO{
 	public double credit;
 	
 	public GuestVO(String guestID, LocalDate birthday, String enterprise, String name, String nickName,
-			String password, String phone, int credit) {
+			String password, String phone, double credit) {
 		super(guestID,password);
 		this.birthday = birthday;
 		this.enterprise = enterprise;

@@ -45,7 +45,7 @@ public class OrderBLService_DriverTest {
 		
 		final OrderVO orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 
 				250, 200, createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, 
-				orderState, roomType, 2, "301  302", 2, "zhangsan", "13554321234", "no");
+				orderState, roomType, 2, "301  302", 2, "zhangsan", "13554321234", "no","good");
 		
 		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.createOrder(orderVO));
 	}

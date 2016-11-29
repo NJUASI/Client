@@ -44,12 +44,15 @@ public class OrderVO {
 	//	特别要求
 	public String message;
 	
+	//评价
+	public  String comment;
+	
 
 	public OrderVO(String orderID, String guestID, String hotelID, String hotelName, String hotelAddress, 
 			double previousPrice, double price, LocalDateTime createTime, LocalDateTime checkInTime,
 			LocalDateTime checkOutTime, LocalDateTime expectExecuteTime, LocalDateTime expectLeaveTime, 
 			OrderState state, RoomType roomType, int roomNumCount, String roomNumber, 
-			int expectGuestNumCount, String name, String phone, String message) {
+			int expectGuestNumCount, String name, String phone, String message,String comment) {
 		super();
 		this.orderGeneralVO = new OrderGeneralVO(orderID, guestID, hotelID, hotelName, hotelAddress,
 				price, expectExecuteTime, expectLeaveTime, state);
@@ -65,11 +68,12 @@ public class OrderVO {
 		this.name = name;
 		this.phone = phone;
 		this.message = message;
+		this.comment = comment;
 	}
 
 	public OrderVO(OrderGeneralVO orderGeneralVO, double previousPrice, LocalDateTime createTime, LocalDateTime checkInTime, 
 			LocalDateTime checkOutTime, RoomType roomType, int roomNumCount, String roomNumber, String name, 
-			String phone, String message) {
+			String phone, String message,String comment) {
 		super();
 		this.orderGeneralVO = orderGeneralVO;
 		
@@ -83,6 +87,7 @@ public class OrderVO {
 		this.name = name;
 		this.phone = phone;
 		this.message = message;
+		this.comment = comment;
 	}
 	
 	public OrderVO(OrderPO orderPO) {
@@ -98,5 +103,6 @@ public class OrderVO {
 		this.name = orderPO.getName();
 		this.phone = orderPO.getPhone();
 		this.message = orderPO.getMessage();
+		this.comment = orderPO.getComment();
 	}
 }

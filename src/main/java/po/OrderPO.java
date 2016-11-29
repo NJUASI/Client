@@ -51,12 +51,15 @@ public class OrderPO implements Serializable{
 	//	特别要求
 	private String message;
 	
+	//	评论
+	private String comment;
+	
 
 	public OrderPO(String orderID, String guestID, String hotelID, String hotelName, String hotelAddress, 
 			double previousPrice, double price, LocalDateTime createTime, LocalDateTime checkInTime,
 			LocalDateTime checkOutTime, LocalDateTime expectExecuteTime, LocalDateTime expectLeaveTime, 
 			OrderState state, RoomType roomType, int roomNumCount, String roomNumber, 
-			int expectGuestNumCount, String name, String phone, String message) {
+			int expectGuestNumCount, String name, String phone, String message,String comment) {
 		super();
 		this.orderGeneralPO = new OrderGeneralPO(orderID, guestID, hotelID, hotelName, hotelAddress,
 				price, expectExecuteTime, expectLeaveTime, state);
@@ -72,11 +75,12 @@ public class OrderPO implements Serializable{
 		this.name = name;
 		this.phone = phone;
 		this.message = message;
+		this.comment = comment;
 	}
 
 	public OrderPO(OrderGeneralPO orderGeneralPO, double previousPrice, LocalDateTime createTime, LocalDateTime checkInTime, 
 			LocalDateTime checkOutTime, RoomType roomType, int roomNumCount, String roomNumber, String name, 
-			String phone, String message) {
+			String phone, String message,String comment) {
 		super();
 		this.orderGeneralPO = orderGeneralPO;
 		
@@ -90,6 +94,7 @@ public class OrderPO implements Serializable{
 		this.name = name;
 		this.phone = phone;
 		this.message = message;
+		this.comment = comment;
 	}
 	
 	public OrderPO(OrderVO orderVO) {
@@ -207,6 +212,14 @@ public class OrderPO implements Serializable{
 
 	public LocalDateTime getCheckInTime() {
 		return checkInTime;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	public void setCheckInTime(LocalDateTime checkInTime) {

@@ -17,7 +17,7 @@ public class RoomInfoVO {
 	// 价格
 	public double price;
 	
-	public RoomInfoVO(String hotelID, RoomType roomType, int roomNumCount, int price) {
+	public RoomInfoVO(String hotelID, RoomType roomType, int roomNumCount, double price) {
 		this.hotelID = hotelID;
 		this.roomType = roomType;
 		this.roomNumCount = roomNumCount;

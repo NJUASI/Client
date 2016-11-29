@@ -31,9 +31,6 @@ public final class HotelVO {
 	//	酒店地址
 	public String hotelAddress;
 
-	//	评价
-	public String comment;
-
 	//	简介
 	public String introduction;	
 
@@ -41,21 +38,19 @@ public final class HotelVO {
 	public String equipment;
 
 	public HotelVO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, 
-			String level, double score, double minPrice, String comment, String introduction, String equipment) {
+			String level, double score, double minPrice, String introduction, String equipment) {
 		this.hotelGeneralVO = new HotelGeneralVO(hotelID, hotelName, city, cycle, level, score, minPrice);
 
 		this.hotelAddress = hotelAddress;
-		this.comment = comment;
 		this.introduction = introduction;
 		this.equipment = equipment;
 	}
 
-	public HotelVO(HotelGeneralVO hotelGeneralVO, String hotelAddress, String comment, 
+	public HotelVO(HotelGeneralVO hotelGeneralVO, String hotelAddress, 
 			String introduction, String equipment) {
 		this.hotelGeneralVO = hotelGeneralVO;
 
 		this.hotelAddress = hotelAddress;
-		this.comment = comment;
 		this.introduction = introduction;
 		this.equipment = equipment;
 	}
@@ -69,7 +64,6 @@ public final class HotelVO {
 		this.score = hotelPO.getScore();
 		this.minPrice = hotelPO.getMinPrice();
 		this.hotelAddress = hotelPO.getHotelAddress();
-		this.comment = hotelPO.getComment();
 		this.introduction = hotelPO.getIntroduction();
 		this.equipment = hotelPO.getEquipment();
 	}

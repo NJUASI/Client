@@ -24,7 +24,7 @@ public class CreditVO {
 	//	变化原因 即动作
 	public String reason;
 	
-	public CreditVO(String guestID, LocalDateTime time, String orderID, int previousCredit, int afterCredit, String reason) {
+	public CreditVO(String guestID, LocalDateTime time, String orderID, double previousCredit, double afterCredit, String reason) {
 		this.guestID = guestID;
 		
 		this.time = time;
