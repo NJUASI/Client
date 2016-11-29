@@ -20,7 +20,7 @@ public class RemainRoomInfoPO implements Serializable{
 	private RoomType roomType;
 
 	// 房间数
-	private int roomNumCount;
+	private int roomNumCount;	
 
 	// 价格
 	private double price;
