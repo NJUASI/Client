@@ -140,7 +140,7 @@ public class Guest implements UserService ,CreditService{
 	 * @param guestID, creditNum从userDoMain传下来的指定客户ID和需修改的信用值
 	 * @return ResultMessage 信用值是否添加成功
 	 */
-	public ResultMessage modifyCredit(String guestID, float creditNum) {
+	public ResultMessage modifyCredit(String guestID, double creditNum) {
 
 		ResultMessage msg = ResultMessage.FAIL;
 

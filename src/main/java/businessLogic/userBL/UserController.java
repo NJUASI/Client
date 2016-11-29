@@ -65,7 +65,6 @@ public class UserController implements UserBLService{
 	 * @return ResultMessage 用户是否成功修改用户信息
 	 */
 	public ResultMessage modify(UserVO userVO) {
-		// TODO Auto-generated method stub
 		return user.modify(userVO);
 	}
 
@@ -77,7 +76,6 @@ public class UserController implements UserBLService{
 	 * @return UserVO 单一userInfo载体
 	 */
 	public UserVO getSingle(String userID, UserType userType) {
-		// TODO Auto-generated method stub
 		return user.getSingle(userID, userType);
 	}
 
@@ -89,7 +87,6 @@ public class UserController implements UserBLService{
 	 * @return ResultMessage 酒店是否添加成功
 	 */
 	public ResultMessage addHotel(HotelVO newHotelVO, String hotelID) {
-		// TODO Auto-generated method stub
 		return user.addHotel(newHotelVO, hotelID);
 	}
 
@@ -100,8 +97,7 @@ public class UserController implements UserBLService{
 	 * @param guestID, creditNum从客户界面层传下来的指定客户ID和需修改的信用值
 	 * @return ResultMessage 信用值是否添加成功
 	 */
-	public ResultMessage modifyCredit(String guestID, float creditNum) {
-		// TODO Auto-generated method stub
+	public ResultMessage modifyCredit(String guestID, double creditNum) {
 		return user.modifyCredit(guestID, creditNum);
 	}
 
@@ -113,7 +109,6 @@ public class UserController implements UserBLService{
 	 * @return List<UserVO> 指定用户类型的所有userInfo载体
 	 */
 	public List<UserVO> getAll(UserType userType) {
-		// TODO Auto-generated method stub
 		return user.getAll(userType);
 	}
 
@@ -125,7 +120,6 @@ public class UserController implements UserBLService{
 	 * @return List<CreditVO> 指定客户的所有creditInfo载体
 	 */
 	public List<CreditVO> getAllCreditDetail(String guestID) {
-		// TODO Auto-generated method stub
 		return user.getAllCreditDetail(guestID);
 	}
 
@@ -138,8 +132,7 @@ public class UserController implements UserBLService{
 	 * @return String 指定用户 的登录信息
 	 */
 	public String getLogInInfo(String userID, UserType userType) {
-		// TODO Auto-generated method stub
 		return user.getLogInInfo(userID, userType);
 	}
-	
+
 }

@@ -112,7 +112,7 @@ public class User {
 	 * @param guestID, creditNum从客户界面层传下来的指定客户ID和需修改的信用值
 	 * @return ResultMessage 信用值是否添加成功
 	 */
-	public ResultMessage modifyCredit(String guestID, float creditNum) {
+	public ResultMessage modifyCredit(String guestID, double creditNum) {
 		return guest.modifyCredit(guestID, creditNum);
 	}
 

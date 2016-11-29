@@ -7,7 +7,7 @@ import vo.CreditVO;
 
 public interface CreditService {
 	
-	public ResultMessage modifyCredit (String guestID, float creditNum);
+	public ResultMessage modifyCredit (String guestID, double creditNum);
 	
 	public List<CreditVO> getAllCreditDetail(String guestID);
 
