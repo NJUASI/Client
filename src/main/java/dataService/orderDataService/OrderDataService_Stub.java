@@ -96,12 +96,7 @@ public class OrderDataService_Stub implements OrderDataService {
 		
 		return new OrderPO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200, 200,
 				createTime, checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, orderState, 
-<<<<<<< Updated upstream
 				roomType, 2, "301  302", 2, "zhangsan","13554321234", "no","good");
-=======
-				roomType, 2, "301  302", 2, "zhangsan", "13554321234", "no");
->>>>>>> Stashed changes
-
 	}
 
 	
