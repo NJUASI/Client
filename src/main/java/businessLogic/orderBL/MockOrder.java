@@ -159,14 +159,29 @@ public class MockOrder extends Order {
 	/**
 	 * @author charles
 	 * @lastChangedBy charles
-	 * @updateTime 2016/11/27
-	 * @return 是否成功执行此订单
+	 * @updateTime 2016/11/29
+	 * @return 网站营销人员需要查看的所有的异常订单，按倒序排列
 	 */
 	@Override
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
 		final List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0) , OrderState.EXECUTED));
+		return orderGenerals;
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/29
+	 * @param date 网站营销人员查看未执行订单时输入的指定日期
+	 * @return 网站营销人员需要查看的当天所有的未执行订单
+	 */
+	@Override
+	public List<OrderGeneralVO> getAllUnexecutedOrderGeneral(final LocalDate date) {
+		final List<OrderGeneralVO> orderGenerals = new ArrayList<OrderGeneralVO>();
+		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
+				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0), OrderState.UNEXECUTED));
 		return orderGenerals;
 	}
 	
