@@ -30,7 +30,7 @@
             <GridPane layoutX="294.0" layoutY="90.0" prefHeight="46.0" prefWidth="308.0">
                <children>
                   <Label prefHeight="51.0" prefWidth="86.0" text="客户编号：" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-                  <TextField prefHeight="30.0" prefWidth="0.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="searchGuestID" focusTraversable="false" prefHeight="30.0" prefWidth="0.0" GridPane.columnIndex="1" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="85.0" />
@@ -40,19 +40,19 @@
                   <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
                </rowConstraints>
             </GridPane>
-            <Button layoutX="579.0" layoutY="146.0" mnemonicParsing="false" onAction="#search" text="查询" />
-            <Pane fx:id="chargePane" layoutX="269.0" layoutY="186.0" prefHeight="361.0" prefWidth="358.0">
+            <Button focusTraversable="false" layoutX="579.0" layoutY="146.0" mnemonicParsing="false" onAction="#search" text="查询" />
+            <Pane fx:id="chargePane" layoutX="269.0" layoutY="186.0" prefHeight="361.0" prefWidth="358.0" visible="false">
                <children>
                   <GridPane layoutX="75.0" layoutY="59.0" prefHeight="161.0" prefWidth="226.0">
                      <children>
                         <Label prefHeight="54.0" prefWidth="210.0" text="信 用 值：" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="2" />
                         <Label prefHeight="51.0" prefWidth="86.0" text="客户编号：" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
                         <Label prefHeight="54.0" prefWidth="210.0" text="客户姓名：" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="1" />
-                        <Label prefHeight="54.0" prefWidth="210.0" text="小三" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label prefHeight="39.0" prefWidth="103.0" text="500" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="name" prefHeight="54.0" prefWidth="210.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="credit" prefHeight="39.0" prefWidth="103.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label prefHeight="54.0" prefWidth="210.0" text="充值额度：" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="3" />
-                        <TextField prefHeight="23.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label prefHeight="42.0" prefWidth="119.0" text="1234500001" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" />
+                        <TextField fx:id="chargeNum" prefHeight="23.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="guestID" prefHeight="42.0" prefWidth="119.0" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="93.0" />

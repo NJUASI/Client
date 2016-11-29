@@ -3,6 +3,10 @@ package presentation.webMarketerUI.controller;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
+/**
+ * @author 61990
+ *
+ */
 public class MemberController {
 	 @FXML private Pane marketCheckPane;
 	 @FXML private Pane marketModifyPane;
