@@ -1,5 +1,6 @@
 package businessLogic.hotelBL.stub;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -89,8 +90,10 @@ public class HotelBLService_Stub implements HotelBLService{
 	
 	@Override
 	public Iterator<HotelGeneralVO> getHotels(AddressVO addressVO) {
-		// TODO 自动生成的方法存根
-		return null;
+		List<HotelGeneralVO> list = new ArrayList<HotelGeneralVO>();
+		list.add(new HotelGeneralVO("12345678", "thisHotel", "NanJing", "center", "4", 5, 123));
+		list.add(new HotelGeneralVO("12345678", "thisHotel", "NanJing", "center", "4", 5, 123));
+		return list.iterator();
 	}
 
 	@Override
