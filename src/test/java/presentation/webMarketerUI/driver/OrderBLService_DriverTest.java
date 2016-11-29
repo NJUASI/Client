@@ -122,4 +122,31 @@ public class OrderBLService_DriverTest {
 		assertEquals(OrderState.EXECUTED, orderGeneralVO.state);
 		
 	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/29
+	 * 
+	 * test interface getAllUnexecutedOrderGeneral
+	 */
+	@Test
+	public void test5() {
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		
+		final List<OrderGeneralVO> orderGeneralVOs = driver.orderBLService.getAllUnexecutedOrderGeneral(LocalDate.of(2016, 2, 3));
+		final OrderGeneralVO orderGeneralVO = orderGeneralVOs.get(0);	
+		
+		assertEquals("123456789012", orderGeneralVO.orderID);
+		assertEquals("1234567890", orderGeneralVO.guestID);
+		assertEquals("12345678", orderGeneralVO.hotelID);
+		assertEquals("thisHotel", orderGeneralVO.hotelName);
+		assertEquals("address", orderGeneralVO.hotelAddress);
+		assertEquals(200, orderGeneralVO.price, 0);
+		assertEquals(LocalDateTime.of(2016, 2, 3, 14, 0), orderGeneralVO.expectExecuteTime);
+		assertEquals(LocalDateTime.of(2016, 2, 4, 12, 0), orderGeneralVO.expectLeaveTime);
+		assertEquals(OrderState.UNEXECUTED, orderGeneralVO.state);
+		
+	}
 }

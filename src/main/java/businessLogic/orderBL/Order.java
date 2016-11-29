@@ -2,6 +2,7 @@ package businessLogic.orderBL;
 
 import java.rmi.RemoteException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import dataService.orderDataService.OrderDataService;
 import po.OrderGeneralPO;
 import po.OrderPO;
 import rmi.RemoteHelper;
+import utilities.OrderState;
 import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.OrderGeneralVO;
@@ -214,8 +216,8 @@ public class Order {
 	/**
 	 * @author charles
 	 * @lastChangedBy charles
-	 * @updateTime 2016/11/27
-	 * @return 是否成功执行此订单
+	 * @updateTime 2016/11/29
+	 * @return 网站营销人员需要查看的所有的异常订单，按倒序排列
 	 */
 	public List<OrderGeneralVO> getAllAbnormalOrderGeneral() {
 		final List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
@@ -223,6 +225,32 @@ public class Order {
 		List<OrderGeneralPO> orderGeneralPOs = null;
 		try {
 			orderGeneralPOs = orderDataService.getAllAbnormalOrderGeneral();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
+		if (orderGeneralPOs != null) {
+			for (int i = 0; i < orderGeneralPOs.size(); i++) {
+				result.add(new OrderGeneralVO(orderGeneralPOs.get(i)));
+			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/11/29
+	 * @param date 网站营销人员查看未执行订单时输入的指定日期
+	 * @return 网站营销人员需要查看的当天所有的未执行订单
+	 */
+	public List<OrderGeneralVO> getAllUnexecutedOrderGeneral(final LocalDate date) {
+		final List<OrderGeneralVO> result = new ArrayList<OrderGeneralVO>();
+		
+		List<OrderGeneralPO> orderGeneralPOs = null;
+		try {
+			orderGeneralPOs = orderDataService.getAllUnexecutedOrderGeneral(date);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
