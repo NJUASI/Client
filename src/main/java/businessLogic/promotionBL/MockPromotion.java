@@ -17,7 +17,7 @@ public class MockPromotion extends Promotion {
 		// TODO Auto-generated method stub
 		List<HotelPromotionVO> list = new LinkedList<HotelPromotionVO>();
 		
-		list.add(new HotelPromotionVO(PromotionType.HOTEL__HOLIDAY, hotelWorkerID, 0.9, 
+		list.add(new HotelPromotionVO(PromotionType.HOTEL_HOLIDAY, hotelWorkerID, 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 		list.add(new HotelPromotionVO(PromotionType.HOTEL__ENTERPRISE, hotelWorkerID, 0.95, 
 				LocalDate.of(2016, 7, 1), LocalDate.of(2016, 12, 31)));
@@ -29,7 +29,7 @@ public class MockPromotion extends Promotion {
 		// TODO Auto-generated method stub
 		List<WebPromotionVO> list = new LinkedList<WebPromotionVO>();
 		
-		list.add(new WebPromotionVO(PromotionType.HOTEL__HOLIDAY, "ALL_CYCLE", 0.9, 
+		list.add(new WebPromotionVO(PromotionType.HOTEL_HOLIDAY, "ALL_CYCLE", 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 		list.add(new WebPromotionVO(PromotionType.HOTEL__ENTERPRISE, "ALL_CYCLE", 0.95, 
 				LocalDate.of(2016, 7, 1), LocalDate.of(2016, 12, 31)));

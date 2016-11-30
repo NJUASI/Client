@@ -6,12 +6,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 import businessLogicService.promotionBLService.PromotionBLService;
+import vo.HotelFixedPromotionVO;
 import vo.HotelPromotionVO;
 import vo.WebPromotionVO;
 import utilities.PreOrder;
 import utilities.PromotionType;
 import utilities.ResultMessage;
+import utilities.UserType;
 import vo.PromotionVO;
+import vo.SpecialSpanPromotionVO;
 
 public class PromotionBLService_Stub implements PromotionBLService{
 
@@ -37,7 +40,7 @@ public class PromotionBLService_Stub implements PromotionBLService{
 		// TODO Auto-generated method stub
 		List<HotelPromotionVO> list = new LinkedList<HotelPromotionVO>();
 		
-		list.add(new HotelPromotionVO(PromotionType.HOTEL__HOLIDAY, hotelWorkerID, 0.9, 
+		list.add(new HotelPromotionVO(PromotionType.HOTEL_HOLIDAY, hotelWorkerID, 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 		list.add(new HotelPromotionVO(PromotionType.HOTEL__ENTERPRISE, hotelWorkerID, 0.95, 
 				LocalDate.of(2016, 7, 1), LocalDate.of(2016, 12, 31)));
@@ -50,7 +53,7 @@ public class PromotionBLService_Stub implements PromotionBLService{
 		// TODO Auto-generated method stub
 		List<WebPromotionVO> list = new LinkedList<WebPromotionVO>();
 		
-		list.add(new WebPromotionVO(PromotionType.WEB__HOLIDAY, "ALL_CYCLE", 0.9, 
+		list.add(new WebPromotionVO(PromotionType.WEB_HOLIDAY, "ALL_CYCLE", 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 		list.add(new WebPromotionVO(PromotionType.WEB__VIP_APPOINTED_CYCLE, "ALL_CYCLE", 0.95, 
 				LocalDate.of(2016, 7, 1), LocalDate.of(2016, 12, 31)));
@@ -68,6 +71,19 @@ public class PromotionBLService_Stub implements PromotionBLService{
 	public ResultMessage setWebPromotions(List<WebPromotionVO> list) {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
+	}
+
+
+	@Override
+	public Iterator<HotelFixedPromotionVO> getHotelFixedPromotions(String hotelWorkerID) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public Iterator<SpecialSpanPromotionVO> getSpecialSpanPromotions(String userID) {
+		// TODO 自动生成的方法存根
+		return null;
 	}
 	
 
