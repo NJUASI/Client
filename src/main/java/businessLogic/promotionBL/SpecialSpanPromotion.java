@@ -26,15 +26,32 @@ public class SpecialSpanPromotion {
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
-		List<SpecialSpanPromotionVO> specialSpanPromotionVOList = new ArrayList<SpecialSpanPromotionVO>();
-		for(SpecialSpanPromotionPO specialSpanPromotion: specialSpanPromotions){
-			specialSpanPromotionVOList.add(new SpecialSpanPromotionVO(specialSpanPromotion));
-		}
-		return specialSpanPromotionVOList.iterator();
+		return convertPOListToVOListIterator(specialSpanPromotions);
 	}
 	
 	public ResultMessage updateSpecialSpanPromotions(List<SpecialSpanPromotionVO> list){
-		return ResultMessage.SUCCESS;
+		try {
+			return promotionDataService.updateSpecialSpanPromotion(convertVOListToPOList(list));
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			return ResultMessage.FAIL;
+		}
+	}
+	
+	private Iterator<SpecialSpanPromotionVO> convertPOListToVOListIterator(List<SpecialSpanPromotionPO> POList){
+		List<SpecialSpanPromotionVO> specialSpanPromotions = new ArrayList<SpecialSpanPromotionVO>();
+		for(SpecialSpanPromotionPO specialSpanPromotion: POList){
+			specialSpanPromotions.add(new SpecialSpanPromotionVO(specialSpanPromotion));
+		}
+		return specialSpanPromotions.iterator();
+	}
+
+	private List<SpecialSpanPromotionPO> convertVOListToPOList(List<SpecialSpanPromotionVO> VOList){
+		specialSpanPromotions.clear();
+		for(SpecialSpanPromotionVO specialSpanPromotionVO: VOList){
+			specialSpanPromotions.add(new SpecialSpanPromotionPO(specialSpanPromotionVO));
+		}
+		return specialSpanPromotions;
 	}
 	
 	

@@ -5,7 +5,6 @@ import java.util.List;
 
 import utilities.PreOrder;
 import utilities.ResultMessage;
-import utilities.UserType;
 import vo.HotelFixedPromotionVO;
 import vo.HotelPromotionVO;
 import vo.SpecialSpanPromotionVO;

@@ -11,7 +11,9 @@ import po.HotelPromotionPO;
 import po.WebPromotionPO;
 import utilities.PreOrder;
 import utilities.ResultMessage;
+import vo.HotelFixedPromotionVO;
 import vo.HotelPromotionVO;
+import vo.SpecialSpanPromotionVO;
 import vo.WebPromotionVO;
 
 public class Promotion{
@@ -21,14 +23,15 @@ public class Promotion{
 	private List<WebPromotionPO> webPromotionPOList;
 	private HotelFixedPromotion hotelFixedPromotion;
 	private SpecialSpanPromotion specialSpanPromotion;
-	private WebPromotion webPromotion;
-	
+
 	public Promotion() {
 		promotionDataService = new PromotionDataService_Stub();
+		hotelFixedPromotion = new HotelFixedPromotion();
+		specialSpanPromotion = new SpecialSpanPromotion();
 	}
-	
-	
-	
+
+
+
 	public Iterator<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
 		List<HotelPromotionVO> hotelPromotionList = new ArrayList<HotelPromotionVO>();
 		try {
@@ -39,10 +42,10 @@ public class Promotion{
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
-		
+
 		return hotelPromotionList.iterator();
 	}
-	
+
 	public ResultMessage setHotelPromotions(String hotelWorkerID, List<HotelPromotionVO> list) {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
@@ -58,7 +61,7 @@ public class Promotion{
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
-		
+
 		return webPromotionList.iterator();
 	}
 
@@ -66,9 +69,21 @@ public class Promotion{
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}
+
+	
+	//新添加的方法
+	
+	public Iterator<HotelFixedPromotionVO> getHotelFixedPromotions(String hotelWorkerID){
+		return hotelFixedPromotion.getHotelFixedPromotions(hotelWorkerID);
+	}
+	
+	public Iterator<SpecialSpanPromotionVO> getSpecialSpanPromotions(String userID){
+		return specialSpanPromotion.getSpecialSpanPromotions(userID);
+	}
 	
 	public double getDiscout(PreOrder preOrder) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 }

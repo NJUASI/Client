@@ -6,7 +6,6 @@ import java.util.List;
 import businessLogicService.promotionBLService.PromotionBLService;
 import utilities.PreOrder;
 import utilities.ResultMessage;
-import utilities.UserType;
 import vo.HotelFixedPromotionVO;
 import vo.HotelPromotionVO;
 import vo.SpecialSpanPromotionVO;
