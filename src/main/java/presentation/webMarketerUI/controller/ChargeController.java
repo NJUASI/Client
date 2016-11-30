@@ -73,14 +73,20 @@ public class ChargeController {
 		if (credit.getText() != null) {
 			userBLService.modifyCredit(searchGuestID.getText(),
 					Double.parseDouble(chargeNum.getText()) + Double.parseDouble(credit.getText()));
-			Parent root = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/message.fxml"));
-			Scene scene = new Scene(root); // 创建场景；
+			showResult();
+		}
+	}
+	void showResult() throws IOException{
+			Pane root = new Pane();
+			Label result = new Label("save successfully");
+			result.setLayoutY(50);
+			result.setLayoutX(50);
+			root.getChildren().add(result);
+			Scene scene = new Scene(root,200,100); // 创建场景；
 			Stage message = new Stage();// 创建舞台；
 			message.setScene(scene); // 将场景载入舞台；
 			message.show(); // 显示窗口；
-		}
 	}
-
 	/**
 	 * @author 61990
 	 * @throws IOException

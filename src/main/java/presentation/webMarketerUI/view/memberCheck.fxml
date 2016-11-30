@@ -35,21 +35,21 @@
                   <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label prefHeight="36.0" text="100" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" />
-                  <Label prefHeight="36.0" text="LV5" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="4" />
-                  <Label prefHeight="36.0" text="LV4" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="3" />
-                  <Label prefHeight="36.0" text="LV3" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="2" />
-                  <Label prefHeight="36.0" text="LV2" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="1" />
-                  <Label prefHeight="36.0" text="12221 " textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label prefHeight="36.0" text="3233" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label prefHeight="36.0" text="500" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label prefHeight="36.0" text="200" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label prefHeight="36.0" text="LV1" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
-                  <Label prefHeight="36.0" text="100" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Label prefHeight="36.0" text="100" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Label prefHeight="36.0" text="100" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Label prefHeight="36.0" text="100" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Label prefHeight="36.0" text="100" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" />
+                  <Label fx:id="credit1" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" />
+                  <Label fx:id="name5" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="4" />
+                  <Label fx:id="name4" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="3" />
+                  <Label fx:id="name3" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="2" />
+                  <Label fx:id="name2" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.rowIndex="1" />
+                  <Label fx:id="credit5" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="credit4" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="credit3" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="credit2" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="name1" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+                  <Label fx:id="discount5" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="discount4" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label fx:id="discount3" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label fx:id="discount2" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="discount1" prefHeight="36.0" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="2" />
                </children>
             </GridPane>
             <Label layoutX="382.0" layoutY="14.0" text="会员等级查看" AnchorPane.topAnchor="14.0">
@@ -64,27 +64,27 @@
             <Label layoutX="546.0" layoutY="114.0" prefHeight="36.0" text="折扣" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
          </children>
       </AnchorPane>
-      <Pane fx:id="marketModifyPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0">
+      <Pane fx:id="marketModifyPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="895.0" visible="false">
          <children>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="601.0" prefWidth="895.0">
                <children>
                   <GridPane layoutX="285.0" layoutY="170.0" prefHeight="279.0" prefWidth="315.0">
                      <children>
-                        <TextField GridPane.columnIndex="4" />
-                        <TextField GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                        <TextField GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                        <TextField alignment="CENTER" text="LV5" GridPane.rowIndex="4" />
-                        <TextField alignment="CENTER" text="LV4" GridPane.rowIndex="3" />
-                        <TextField alignment="CENTER" text="LV3" GridPane.rowIndex="2" />
-                        <TextField alignment="CENTER" text="LV2" GridPane.rowIndex="1" />
-                        <TextField alignment="CENTER" text="LV1" />
-                        <TextField alignment="CENTER" text="LV1" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                        <TextField alignment="CENTER" text="LV1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <TextField alignment="CENTER" text="LV1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <TextField alignment="CENTER" text="LV1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <TextField alignment="CENTER" text="LV1" GridPane.columnIndex="2" />
+                        <TextField fx:id="modifyDiscount1" focusTraversable="false" GridPane.columnIndex="4" />
+                        <TextField fx:id="modifyDiscount2" focusTraversable="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <TextField fx:id="modifyDiscount3" focusTraversable="false" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <TextField fx:id="modifyDiscount4" focusTraversable="false" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <TextField fx:id="modifyDiscount5" focusTraversable="false" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <TextField fx:id="market5" alignment="CENTER" focusTraversable="false" GridPane.rowIndex="4" />
+                        <TextField fx:id="market4" alignment="CENTER" focusTraversable="false" GridPane.rowIndex="3" />
+                        <TextField fx:id="market3" alignment="CENTER" focusTraversable="false" GridPane.rowIndex="2" />
+                        <TextField fx:id="market2" alignment="CENTER" focusTraversable="false" GridPane.rowIndex="1" />
+                        <TextField fx:id="market1" alignment="CENTER" focusTraversable="false" />
+                        <TextField fx:id="needCredit5" alignment="CENTER" focusTraversable="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextField fx:id="needCredit4" alignment="CENTER" focusTraversable="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField fx:id="needCredit3" alignment="CENTER" focusTraversable="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="needCredit2" alignment="CENTER" focusTraversable="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="needCredit1" alignment="CENTER" focusTraversable="false" GridPane.columnIndex="2" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="70.0" />
