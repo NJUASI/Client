@@ -16,13 +16,18 @@ import vo.WebPromotionVO;
 
 public class Promotion{
 
-	PromotionDataService promotionDataService;
-	List<HotelPromotionPO> hotelPromotionPOList;
-	List<WebPromotionPO> webPromotionPOList;
+	private PromotionDataService promotionDataService;
+	private List<HotelPromotionPO> hotelPromotionPOList;
+	private List<WebPromotionPO> webPromotionPOList;
+	private HotelFixedPromotion hotelFixedPromotion;
+	private SpecialSpanPromotion specialSpanPromotion;
+	private WebPromotion webPromotion;
 	
 	public Promotion() {
 		promotionDataService = new PromotionDataService_Stub();
 	}
+	
+	
 	
 	public Iterator<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
 		List<HotelPromotionVO> hotelPromotionList = new ArrayList<HotelPromotionVO>();

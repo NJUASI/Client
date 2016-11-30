@@ -25,7 +25,7 @@ public class PromotionBLService_DriverTest {
 		WebPromotionVO promotionVO1=list.next();
 		WebPromotionVO promotionVO2=list.next();
 		
-		assertEquals(PromotionType.WEB__HOLIDAY, promotionVO1.promotionType);
+		assertEquals(PromotionType.WEB_HOLIDAY, promotionVO1.promotionType);
 		assertEquals(0.9, promotionVO1.discount,0);
 		assertEquals("ALL_CYCLE", promotionVO1.cycle);
 		assertEquals(LocalDate.of(2016, 11, 1), promotionVO1.startDate);
@@ -45,7 +45,7 @@ public class PromotionBLService_DriverTest {
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
 		ArrayList<WebPromotionVO> list = new ArrayList<WebPromotionVO>();
-		list.add(new WebPromotionVO(PromotionType.WEB__HOLIDAY, "ALL_CYCLE", 0.9, 
+		list.add(new WebPromotionVO(PromotionType.WEB_HOLIDAY, "ALL_CYCLE", 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 
 		assertEquals(ResultMessage.SUCCESS, driver.promotionBLService.setWebPromotions(list));

@@ -6,7 +6,10 @@ import java.util.List;
 import businessLogicService.promotionBLService.PromotionBLService;
 import utilities.PreOrder;
 import utilities.ResultMessage;
+import utilities.UserType;
+import vo.HotelFixedPromotionVO;
 import vo.HotelPromotionVO;
+import vo.SpecialSpanPromotionVO;
 import vo.WebPromotionVO;
 
 public class PromotionController implements PromotionBLService {
@@ -51,5 +54,17 @@ public class PromotionController implements PromotionBLService {
 	public double getDiscout(PreOrder preOrder) {
 		// TODO Auto-generated method stub
 		return promotion.getDiscout(preOrder);
+	}
+
+	@Override
+	public Iterator<HotelFixedPromotionVO> getHotelFixedPromotions(String hotelWorkerID) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public Iterator<SpecialSpanPromotionVO> getSpecialSpanPromotions(String userID) {
+		// TODO 自动生成的方法存根
+		return null;
 	}
 }

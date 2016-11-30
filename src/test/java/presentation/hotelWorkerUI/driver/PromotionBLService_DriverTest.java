@@ -25,7 +25,7 @@ public class PromotionBLService_DriverTest {
 		HotelPromotionVO promotionVO1=list.next();
 		HotelPromotionVO promotionVO2=list.next();
 		
-		assertEquals(PromotionType.HOTEL__HOLIDAY, promotionVO1.promotionType);
+		assertEquals(PromotionType.HOTEL_HOLIDAY, promotionVO1.promotionType);
 		assertEquals(0.9, promotionVO1.discount,0);
 		assertEquals("12345678", promotionVO1.hotelID);
 		assertEquals(LocalDate.of(2016, 11, 1), promotionVO1.startDate);
@@ -45,7 +45,7 @@ public class PromotionBLService_DriverTest {
 		PromotionBLService_Stub stub = new PromotionBLService_Stub();
 		PromotionBLService_Driver driver = new PromotionBLService_Driver(stub);
 		ArrayList<HotelPromotionVO> list = new ArrayList<HotelPromotionVO>();
-		list.add(new HotelPromotionVO(PromotionType.HOTEL__HOLIDAY, "12345678", 0.9, 
+		list.add(new HotelPromotionVO(PromotionType.HOTEL_HOLIDAY, "12345678", 0.9, 
 				LocalDate.of(2016, 11, 1), LocalDate.of(2016, 11, 15)));
 
 		assertEquals(ResultMessage.SUCCESS, driver.promotionBLService.setHotelPromotions("12345678", list));
