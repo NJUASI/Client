@@ -16,7 +16,7 @@ import utilities.ResultMessage;
  * updateTime 2016/11/29
  *
  */
-public interface OrderDataService extends Remote{
+public interface OrderDataService extends Remote {
 	
 	/**
 	 * 
