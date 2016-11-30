@@ -32,8 +32,8 @@ public class OriginPriceSpanCriteria implements SearchCriteria {
 		return null;
 	}
 	
-	private boolean notInPriceSpan(int minPrice) {
-		if(minPrice<minPrice||minPrice>maxPrice){
+	private boolean notInPriceSpan(int price) {
+		if(price<minPrice||price>maxPrice){
 			return true;
 		}
 		else

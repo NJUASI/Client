@@ -2,7 +2,6 @@ package dataService.promotionDataService;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.sql.ResultSet;
 import java.util.List;
 
 import po.HotelFixedPromotionPO;
@@ -28,6 +27,6 @@ public interface PromotionDataService extends Remote{
 
 	public List<SpecialSpanPromotionPO> getSpecialSpanPromotion(String userID) throws RemoteException;
 	
-	public ResultMessage updateSpecialSpanPromotion(List<SpecialSpanPromotionVO> list) throws RemoteException; 
+	public ResultMessage updateSpecialSpanPromotion(List<SpecialSpanPromotionPO> list) throws RemoteException; 
 
 }

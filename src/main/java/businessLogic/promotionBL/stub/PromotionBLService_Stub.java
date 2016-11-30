@@ -12,7 +12,6 @@ import vo.WebPromotionVO;
 import utilities.PreOrder;
 import utilities.PromotionType;
 import utilities.ResultMessage;
-import utilities.UserType;
 import vo.PromotionVO;
 import vo.SpecialSpanPromotionVO;
 

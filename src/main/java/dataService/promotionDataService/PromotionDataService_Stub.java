@@ -1,7 +1,6 @@
 package dataService.promotionDataService;
 
 import java.rmi.RemoteException;
-import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,9 +63,8 @@ public class PromotionDataService_Stub implements PromotionDataService {
 		return null;
 	}
 
-
 	@Override
-	public ResultMessage updateSpecialSpanPromotion(List<SpecialSpanPromotionVO> list) throws RemoteException {
+	public ResultMessage updateSpecialSpanPromotion(List<SpecialSpanPromotionPO> list) throws RemoteException {
 		// TODO 自动生成的方法存根
 		return null;
 	}
