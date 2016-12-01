@@ -3,9 +3,11 @@ package dataService.promotionDataService;
 import java.rmi.RemoteException;
 import java.util.List;
 
+import po.AddressPO;
 import po.HotelFixedPromotionPO;
 import po.SpecialSpanPromotionPO;
 import utilities.ResultMessage;
+import vo.AddressVO;
 
 public class PromotionDataService_Stub implements PromotionDataService {
 
@@ -16,13 +18,13 @@ public class PromotionDataService_Stub implements PromotionDataService {
 		return null;
 	}
 
-
 	@Override
-	public ResultMessage updateHotelFixedPromotion(List<HotelFixedPromotionPO> list) throws RemoteException {
+	public ResultMessage updateHotelFixedPromotion(HotelFixedPromotionPO hotelFixedPromotionPO) throws RemoteException {
 		// TODO 自动生成的方法存根
 		return null;
 	}
 
+	
 	@Override
 	public ResultMessage updateSpecialSpanPromotion(List<SpecialSpanPromotionPO> list) throws RemoteException {
 		// TODO 自动生成的方法存根
@@ -41,6 +43,27 @@ public class PromotionDataService_Stub implements PromotionDataService {
 	public List<SpecialSpanPromotionPO> getHotelSpecialSpanPromotion(String hotelID) throws RemoteException {
 		// TODO 自动生成的方法存根
 		return null;
+	}
+
+
+	@Override
+	public List<AddressPO> getSpecialCirclePromotion(String city) throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+
+	@Override
+	public ResultMessage updateSepecialCirclePromotion(AddressVO addressVO) throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+
+	@Override
+	public double getSpecialCircleDiscount(String city, String cycle) {
+		// TODO 自动生成的方法存根
+		return 0;
 	}
 
 }

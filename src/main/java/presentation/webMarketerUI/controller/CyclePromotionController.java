@@ -110,7 +110,7 @@ public class CyclePromotionController {
 
 		ObservableList<Address> data = FXCollections.observableArrayList();
 		for (int i = 0; i < address.size(); i++) {
-			data.add(new Address(address.get(i).city, address.get(i).cycle, Double.toString(address.get(i).discout)));
+			data.add(new Address(address.get(i).city, address.get(i).circle, Double.toString(address.get(i).discout)));
 		}
 		cityColumn.setCellValueFactory(cellData -> cellData.getValue().city);
 		cycleColumn.setCellValueFactory(cellData -> cellData.getValue().cycle);

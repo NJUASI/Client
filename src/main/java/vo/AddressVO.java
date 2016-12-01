@@ -1,19 +1,27 @@
 package vo;
 
+import po.AddressPO;
+
 public class AddressVO {
 
 	//	酒店所属城市
 	public String city;
 	
 	//	酒店商圈
-	public String cycle;
+	public String circle;
 	
 	// 折扣
 	public double discout;
 	
-	public AddressVO(String city, String cycle,double discout) {
+	public AddressVO(String city, String circle,double discout) {
 		this.city = city;
-		this.cycle = cycle;
+		this.circle = circle;
 		this.discout = discout;
+	}
+
+	public AddressVO(AddressPO specialCirclePromotion) {
+		this.city = specialCirclePromotion.getCity();
+		this.circle = specialCirclePromotion.getCircle();
+		this.discout = specialCirclePromotion.getDiscout();
 	}
 }

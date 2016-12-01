@@ -22,7 +22,7 @@ public class PreOrder {
 	// 房间数
 	public int roomNum;
 
-	//入住天数
+	// 入住天数
 	public int lastDays;
 	
 	public PreOrder(OrderVO orderVO){

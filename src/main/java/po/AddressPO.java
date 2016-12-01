@@ -15,20 +15,20 @@ public class AddressPO implements Serializable{
 	private String city;
 	
 	//	酒店商圈
-	private String cycle;
+	private String circle;
 	
 	// 折扣
 	private Double discout;
 	
-	public AddressPO(String city, String cycle,Double discout) {
+	public AddressPO(String city, String circle,Double discout) {
 		this.city = city;
-		this.cycle = cycle;
+		this.circle = circle;
 		this.discout = discout;
 	}
 
 	public AddressPO(AddressVO addressVO) {
 		this.city = addressVO.city;
-		this.cycle = addressVO.cycle;
+		this.circle = addressVO.circle;
 		this.discout = addressVO.discout;
 	}
 	
@@ -40,12 +40,12 @@ public class AddressPO implements Serializable{
 		this.city = city;
 	}
 
-	public String getCycle() {
-		return cycle;
+	public String getcircle() {
+		return circle;
 	}
 
-	public void setCycle(String cycle) {
-		this.cycle = cycle;
+	public void setcircle(String circle) {
+		this.circle = circle;
 	}
 
 	public Double getDiscout() {
@@ -54,5 +54,9 @@ public class AddressPO implements Serializable{
 
 	public void setDiscout(Double discout) {
 		this.discout = discout;
+	}
+
+	public String getCircle() {
+		return circle;
 	}
 }

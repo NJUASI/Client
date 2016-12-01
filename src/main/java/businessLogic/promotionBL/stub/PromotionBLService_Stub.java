@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import businessLogicService.promotionBLService.PromotionBLService;
+import vo.AddressVO;
 import vo.HotelFixedPromotionVO;
 import utilities.PreOrder;
 import utilities.ResultMessage;
@@ -28,7 +29,7 @@ public class PromotionBLService_Stub implements PromotionBLService{
 	}
 
 	@Override
-	public ResultMessage updateHotelFixedPromotions(List<HotelFixedPromotionVO> hotelFixedPromotionVO) {
+	public ResultMessage updateHotelFixedPromotion(HotelFixedPromotionVO hotelFixedPromotionVO) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
@@ -47,6 +48,18 @@ public class PromotionBLService_Stub implements PromotionBLService{
 
 	@Override
 	public ResultMessage updateSpecialSpanPromotions(List<SpecialSpanPromotionVO> list) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+	
+	@Override
+	public Iterator<AddressVO> getSpecialCirclePromotions(String city) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public ResultMessage updateSpecialCirclePromotions(AddressVO addressVO) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
