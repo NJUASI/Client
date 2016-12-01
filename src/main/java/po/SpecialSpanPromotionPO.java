@@ -10,15 +10,15 @@ public class SpecialSpanPromotionPO {
 	private String userID;
 	private PromotionType promotionType;
 	private double discount;
-	private LocalDate startDay;
-	private LocalDate endDay;
+	private LocalDate startDate;
+	private LocalDate endDate;
 	
 	public SpecialSpanPromotionPO(SpecialSpanPromotionVO specialSpanPromotionVO) {
 		this.userID = specialSpanPromotionVO.userID;
 		this.promotionType = specialSpanPromotionVO.promotionType;
 		this.discount = specialSpanPromotionVO.discount;
-		this.startDay = specialSpanPromotionVO.startDay;
-		this.endDay = specialSpanPromotionVO.endDay;
+		this.startDate = specialSpanPromotionVO.startDate;
+		this.endDate = specialSpanPromotionVO.endDate;
 	}
 
 	public String getUserID() {
@@ -45,20 +45,20 @@ public class SpecialSpanPromotionPO {
 		this.discount = discount;
 	}
 
-	public LocalDate getStartDay() {
-		return startDay;
+	public LocalDate getStartDate() {
+		return startDate;
 	}
 
-	public void setStartDay(LocalDate startDay) {
-		this.startDay = startDay;
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
 	}
 
-	public LocalDate getEndDay() {
-		return endDay;
+	public LocalDate getEndDate() {
+		return endDate;
 	}
 
-	public void setEndDay(LocalDate endDay) {
-		this.endDay = endDay;
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
 	}
 
 }
