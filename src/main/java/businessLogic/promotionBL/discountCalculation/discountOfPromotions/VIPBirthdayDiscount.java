@@ -1,8 +1,8 @@
-package businessLogic.promotionBL.discountOfPromotions;
+package businessLogic.promotionBL.discountCalculation.discountOfPromotions;
 
 import java.time.LocalDate;
 
-import businessLogic.promotionBL.CalculateDiscount;
+import businessLogic.promotionBL.discountCalculation.CalculateDiscount;
 
 public class VIPBirthdayDiscount implements CalculateDiscount{
 

@@ -5,8 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import businessLogic.promotionBL.MockPromotion;
-import businessLogic.promotionBL.Promotion;
+import businessLogic.promotionBL.discountCalculation.DiscountCalculator;
 import utilities.OrderState;
 import utilities.PreOrder;
 import utilities.ResultMessage;
@@ -22,7 +21,7 @@ import vo.OrderVO;
  */
 public class MockOrder extends Order {
 
-	private Promotion promotion;
+	private DiscountCalculator discountCalculator;
 
 	/**
 	 * @author charles
@@ -31,7 +30,7 @@ public class MockOrder extends Order {
 	 * 构造函数，初始化成员变量
 	 */
 	public MockOrder() {
-		promotion = new MockPromotion();
+		discountCalculator = new DiscountCalculator();
 	}
 	
 	/**
@@ -44,7 +43,7 @@ public class MockOrder extends Order {
 	@Override
 	public ResultMessage createOrder(final OrderVO orderVO) {
 		final PreOrder preOrder = new PreOrder(orderVO);
-		final double discout = promotion.getDiscout(preOrder);
+		final double discout = discountCalculator.getDiscountOneday(preOrder);
 		orderVO.orderGeneralVO.price = (int) discout * orderVO.previousPrice;
 		return ResultMessage.SUCCESS;
 	}
