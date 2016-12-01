@@ -49,15 +49,16 @@ public class HotelFixedPromotion {
 
 	/**
 	 * @Description:更新酒店没有特定期间的促销策略，会员生日、三间及以上和合作企业会员的策略
+	 * 只进行单条更新
 	 * @param hotelFixedPromotionVO
 	 * @return
 	 * ResultMessage
 	 * @author: Harvey Gong
 	 * @time:2016年12月1日 下午2:08:49
 	 */
-	public ResultMessage updateHotelFixedPromotions(List<HotelFixedPromotionVO> hotelFixedPromotionVO){
+	public ResultMessage updateHotelFixedPromotion(HotelFixedPromotionVO hotelFixedPromotionVO){
 		try {
-			return promotionDataService.updateHotelFixedPromotion(convertVOListToPOListIterator(hotelFixedPromotionVO));
+			return promotionDataService.updateHotelFixedPromotion(new HotelFixedPromotionPO(hotelFixedPromotionVO));
 		} catch (RemoteException e) {
 			e.printStackTrace();
 			return ResultMessage.FAIL;
