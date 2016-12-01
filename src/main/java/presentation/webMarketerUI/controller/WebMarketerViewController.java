@@ -13,12 +13,14 @@ import javafx.scene.layout.StackPane;
  *
  */
 public class WebMarketerViewController {
-	Parent charge, market, promotion, abnormalOrder;		
-	
-    @FXML private StackPane right;
-    
-    @FXML private Pane mainPane;
-    
+	Parent charge, market, commonPromotion, cyclePromotion, abnormalOrder;
+
+	@FXML
+	private StackPane right;
+
+	@FXML
+	private Pane mainPane;
+
 	/**
 	 * @author 61990
 	 * @lastChangedBy 61990
@@ -27,7 +29,7 @@ public class WebMarketerViewController {
 	 */
 	@FXML
 	protected void openMain() {
-		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		right.getChildren().removeAll(mainPane, charge, market, commonPromotion, cyclePromotion, abnormalOrder);
 		right.getChildren().add(mainPane);
 	}
 
@@ -36,11 +38,11 @@ public class WebMarketerViewController {
 	 * @lastChangedBy 61990
 	 * @updateTime 2016/11/27
 	 * @throws IOException
-	 *  			跳转信用充值界面
+	 *             跳转信用充值界面
 	 */
 	@FXML
 	protected void openCharge() throws IOException {
-		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		right.getChildren().removeAll(mainPane, charge, market, commonPromotion, cyclePromotion, abnormalOrder);
 		charge = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/Charge.fxml"));
 		right.getChildren().add(charge);
 	}
@@ -50,11 +52,11 @@ public class WebMarketerViewController {
 	 * @lastChangedBy 61990
 	 * @updateTime 2016/11/27
 	 * @throws IOException
-	 *  			跳转会员等级制定界面
+	 *             跳转会员等级制定界面
 	 */
 	@FXML
 	protected void openMarket() throws IOException {
-		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		right.getChildren().removeAll(mainPane, charge, market, commonPromotion, cyclePromotion, abnormalOrder);
 		market = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/MemberCheck.fxml"));
 		right.getChildren().add(market);
 	}
@@ -64,14 +66,14 @@ public class WebMarketerViewController {
 	 * @lastChangedBy 61990
 	 * @updateTime 2016/11/27
 	 * @throws IOException
-	 *  			跳转网站策略制定界面
+	 *             跳转网站商圈策略制定界面
 	 */
 	@FXML
 	protected void openPromotion() throws IOException {
-		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
-		promotion = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/Promotion.fxml"));
+		right.getChildren().removeAll(mainPane, charge, market, commonPromotion, cyclePromotion, abnormalOrder);
+		cyclePromotion = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/CyclePromotion.fxml"));
 
-		right.getChildren().add(promotion);
+		right.getChildren().add(cyclePromotion);
 	}
 
 	/**
@@ -79,11 +81,25 @@ public class WebMarketerViewController {
 	 * @lastChangedBy 61990
 	 * @updateTime 2016/11/27
 	 * @throws IOException
-	 *  			跳转异常订单界面
+	 *             跳转会员等级制定界面
+	 */
+	@FXML
+	protected void openCommonPromotion() throws IOException {
+		right.getChildren().removeAll(mainPane, charge, market, commonPromotion, cyclePromotion, abnormalOrder);
+		commonPromotion = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/DatePromotion.fxml"));
+		right.getChildren().add(commonPromotion);
+	}
+
+	/**
+	 * @author 61990
+	 * @lastChangedBy 61990
+	 * @updateTime 2016/11/27
+	 * @throws IOException
+	 *             跳转异常订单界面
 	 */
 	@FXML
 	protected void openOrder() throws IOException {
-		right.getChildren().removeAll(mainPane, charge, market, promotion, abnormalOrder);
+		right.getChildren().removeAll(mainPane, charge, market, commonPromotion, cyclePromotion, abnormalOrder);
 		abnormalOrder = FXMLLoader.load(getClass().getResource("/presentation/webMarketerUI/view/orderSearch.fxml"));
 		right.getChildren().add(abnormalOrder);
 	}
