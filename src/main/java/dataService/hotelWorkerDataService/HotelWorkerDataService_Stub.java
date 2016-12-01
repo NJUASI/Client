@@ -34,7 +34,7 @@ public class HotelWorkerDataService_Stub implements HotelWorkerDataService{
 	}
 
 	
-	public ResultMessage initHotelWorker() {
+	public ResultMessage initHotelWorker(String hotelWorkerID) {
 		// TODO Auto-generated method stub
 		return ResultMessage.SUCCESS;
 	}
