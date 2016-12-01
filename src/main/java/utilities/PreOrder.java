@@ -1,5 +1,6 @@
 package utilities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import vo.OrderVO;
@@ -14,6 +15,9 @@ public class PreOrder {
 	
 	// 入住时间
 	public LocalDateTime checkInTime;
+	
+	// 入住日期
+	public LocalDate checkInDate;
 
 	// 房间数
 	public int roomNum;

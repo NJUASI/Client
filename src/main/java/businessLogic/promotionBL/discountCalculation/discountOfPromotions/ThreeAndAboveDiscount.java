@@ -4,18 +4,20 @@ import businessLogic.promotionBL.discountCalculation.CalculateDiscount;
 
 public class ThreeAndAboveDiscount implements CalculateDiscount{
 
-	int standardNum = 3;
-	int roomNum;
+	private int standardNum = 3;
+	private int roomNum;
+	private double discount;
 	
-	public ThreeAndAboveDiscount(int roomNum) {
+	public ThreeAndAboveDiscount(double discount, int roomNum) {
+		this.discount = discount;
 		this.roomNum = roomNum;
 	}
-	
-	//需要比对房间数量是否
+
+	//比较预订的房间数量是否大于3间，若是，则返回该折扣
 	@Override
 	public double getDiscount() {
 		if(roomNum>=standardNum){
-			return 0.5;
+			return discount;
 		}
 		else
 		{

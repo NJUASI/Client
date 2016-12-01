@@ -3,7 +3,7 @@ package vo;
 import po.HotelFixedPromotionPO;
 import utilities.PromotionType;
 
-public class HotelFixedPromotionVO {
+public class HotelFixedPromotionVO{
 
 	public String hotelID;
 	public PromotionType promotionType;
