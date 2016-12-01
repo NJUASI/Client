@@ -3,67 +3,51 @@ package businessLogic.promotionBL;
 import java.util.Iterator;
 import java.util.List;
 
+import businessLogic.promotionBL.discountCalculation.DiscountCalculator;
 import businessLogicService.promotionBLService.PromotionBLService;
 import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.HotelFixedPromotionVO;
-import vo.HotelPromotionVO;
 import vo.SpecialSpanPromotionVO;
-import vo.WebPromotionVO;
 
 public class PromotionController implements PromotionBLService {
 
 
-	private Promotion promotion;
+	
 	private static PromotionController promotionController = new PromotionController();
-
+	
+	private HotelFixedPromotion hotelFixedPromotion;
+	private SpecialSpanPromotion specialSpanPromotion; 
+	private DiscountCalculator discountCalculator;
+	
 	private PromotionController() {
 		//new the mock object
-		promotion = new MockPromotion();
+		hotelFixedPromotion = new HotelFixedPromotion();
+		specialSpanPromotion = new SpecialSpanPromotion();
+		discountCalculator = new DiscountCalculator();
 	}
 
 	public static PromotionController getInstance(){
 		return promotionController;
 	}
 
-
-	// 对酒店策略的操作，get，set
-	public Iterator<HotelPromotionVO> getHotelPromotions(String hotelWorkerID) {
-		// TODO Auto-generated method stub
-		return promotion.getHotelPromotions(hotelWorkerID);
-	}
-	
-	public ResultMessage setHotelPromotions(String hotelWorkerID, List<HotelPromotionVO> list) {
-		// TODO Auto-generated method stub
-		return promotion.setHotelPromotions(hotelWorkerID, list);
-	}
-	
-	
-	//对网站营销策略的操作，get，set
-	public Iterator<WebPromotionVO> getWebPromotions() {
-		// TODO Auto-generated method stub
-		return promotion.getWebPromotions();
-	}
-
-	public ResultMessage setWebPromotions(List<WebPromotionVO> list) {
-		// TODO Auto-generated method stub
-		return promotion.setWebPromotions(list);
-	}
-
-	public double getDiscout(PreOrder preOrder) {
-		// TODO Auto-generated method stub
-		return promotion.getDiscout(preOrder);
-	}
-
 	@Override
 	public Iterator<HotelFixedPromotionVO> getHotelFixedPromotions(String hotelWorkerID) {
-		// TODO 自动生成的方法存根
-		return null;
+		return hotelFixedPromotion.getHotelFixedPromotions(hotelWorkerID);
 	}
 
 	@Override
 	public Iterator<SpecialSpanPromotionVO> getSpecialSpanPromotions(String userID) {
-		// TODO 自动生成的方法存根
-		return null;
+		return specialSpanPromotion.getSpecialSpanPromotions(userID);
+	}
+	
+	@Override
+	public double getDiscount(PreOrder preOrder) {
+		return discountCalculator.getDiscountOneday(preOrder);
+	}
+
+	@Override
+	public Iterator<Double> getDiscountInSpan(PreOrder preOrder) {
+		return discountCalculator.getDiscountOfEachDay(preOrder);
 	}
 }

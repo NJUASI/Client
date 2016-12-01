@@ -1,6 +1,6 @@
-package businessLogic.promotionBL.discountOfPromotions;
+package businessLogic.promotionBL.discountCalculation.discountOfPromotions;
 
-import businessLogic.promotionBL.CalculateDiscount;
+import businessLogic.promotionBL.discountCalculation.CalculateDiscount;
 
 public class ThreeAndAboveDiscount implements CalculateDiscount{
 

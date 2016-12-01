@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import businessLogic.promotionBL.Promotion;
+import businessLogic.promotionBL.discountCalculation.DiscountCalculator;
 import dataService.orderDataService.OrderDataService;
 import po.OrderGeneralPO;
 import po.OrderPO;
@@ -26,7 +26,7 @@ public class Order {
 	
 	private OrderDataService orderDataService;
 	
-	private Promotion promotion;
+	private DiscountCalculator discountCalculator;
 	
 	/**
 	 * @author charles
@@ -36,7 +36,7 @@ public class Order {
 	 */
 	public Order() {
 		orderDataService = RemoteHelper.getInstance().getOrderDataService();
-		promotion = new Promotion();
+		discountCalculator = new DiscountCalculator();
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class Order {
 		ResultMessage resultMessage = ResultMessage.ORDER_CREATE_FAILURE;
 		
 		try {
-			final double discount = promotion.getDiscout(new PreOrder(orderVO));
+			final double discount = discountCalculator.getDiscountOneday(new PreOrder(orderVO));
 			orderVO.orderGeneralVO.price = orderVO.previousPrice * discount;
 			
 			resultMessage = orderDataService.createOrder(new OrderPO(orderVO));

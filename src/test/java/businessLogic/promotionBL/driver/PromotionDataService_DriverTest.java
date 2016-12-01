@@ -1,6 +1,6 @@
 package businessLogic.promotionBL.driver;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.rmi.RemoteException;
 import java.time.LocalDate;
@@ -8,8 +8,7 @@ import java.time.LocalDate;
 import org.junit.Test;
 
 import dataService.promotionDataService.PromotionDataService_Stub;
-import po.HotelPromotionPO;
-import po.WebPromotionPO;
+import po.SpecialSpanPromotionPO;
 
 public class PromotionDataService_DriverTest {
 
@@ -18,33 +17,16 @@ public class PromotionDataService_DriverTest {
 		//test interface getHotelPromotions
 		PromotionDataService_Stub stub = new PromotionDataService_Stub();
 		PromotionDataService_Driver driver = new PromotionDataService_Driver(stub);
-		HotelPromotionPO hotelPromotionPO;
+		SpecialSpanPromotionPO specialSpanPromotionPO;
 		try {
-			hotelPromotionPO = driver.promotionDataService.getHotelPromotions("12345678").get(0);
-			assertEquals("12345678", hotelPromotionPO.getHotelID());
-			assertEquals(LocalDate.of(2016, 2, 2), hotelPromotionPO.getStartDate());		
-			assertEquals(LocalDate.of(2016, 3, 9), hotelPromotionPO.getEndDate());	} catch (RemoteException e) {
+			specialSpanPromotionPO = driver.promotionDataService.getSpecialSpanPromotion("12345678").get(0);
+			assertEquals("12345678", specialSpanPromotionPO.getUserID());
+			assertEquals(LocalDate.of(2016, 2, 2), specialSpanPromotionPO.getStartDay());		
+			assertEquals(LocalDate.of(2016, 3, 9), specialSpanPromotionPO.getEndDay());	} catch (RemoteException e) {
 			e.printStackTrace();
 		}
 		
 			
 	}
-	
-	@Test
-	public void test2() {
-		//test interface getWebPromotions
-		PromotionDataService_Stub stub = new PromotionDataService_Stub();
-		PromotionDataService_Driver driver = new PromotionDataService_Driver(stub);
-		WebPromotionPO webPromotionPO;
-		try {
-			webPromotionPO = driver.promotionDataService.getWebPromotions().get(0);
-			assertEquals("ALL_CYCLE", webPromotionPO.getCycle());
-			assertEquals(LocalDate.of(2016, 2, 2), webPromotionPO.getStartDate());		
-			assertEquals(LocalDate.of(2016, 3, 9), webPromotionPO.getEndDate());	} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		
 			
-	}
-
 }

@@ -17,6 +17,9 @@ public class PreOrder {
 
 	// 房间数
 	public int roomNum;
+
+	//入住天数
+	public int lastDays;
 	
 	public PreOrder(OrderVO orderVO){
 		this.guestID = orderVO.orderGeneralVO.guestID;
