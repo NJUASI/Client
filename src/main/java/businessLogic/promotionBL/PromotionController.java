@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import businessLogicService.promotionBLService.PromotionBLService;
-import po.HotelFixedPromotionPO;
 import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.AddressVO;
@@ -20,11 +19,13 @@ public class PromotionController implements PromotionBLService {
 	private HotelFixedPromotion hotelFixedPromotion;
 	private SpecialSpanPromotion specialSpanPromotion;
 	private SpecialCirclePromotion specialCirclePromotion;
+	private MemberLevelPromotion memberLevelPromotion;
 	
 	private PromotionController() {
 		hotelFixedPromotion = new HotelFixedPromotion();
 		specialSpanPromotion = new SpecialSpanPromotion();
 		specialCirclePromotion = new SpecialCirclePromotion();
+		memberLevelPromotion = new MemberLevelPromotion();
 	}
 
 	public static PromotionController getInstance(){
@@ -73,8 +74,8 @@ public class PromotionController implements PromotionBLService {
 		for(int i = 0;i<preOrder.lastDays;i++){
 			discountsInSpan.add(hotelFixedPromotion.getDiscountOneday(preOrder,today)
 					*specialSpanPromotion.getDiscountOneday(preOrder,today)
-					*specialCirclePromotion.getDiscount(preOrder));
-			//TODO 还差一个vip特定商圈的折扣和会员等级折扣
+					*specialCirclePromotion.getDiscount(preOrder)
+					*memberLevelPromotion.getDiscount(preOrder.guestID));
 		}
 		return discountsInSpan.iterator();
 	}

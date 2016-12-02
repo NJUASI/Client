@@ -61,7 +61,7 @@ public class SpecialCirclePromotion {
 
 	public double getDiscount(PreOrder preOrder){
 		if(isVIP(preOrder.guestID)){
-			HotelVO currentHotelInfo = new Hotel().getHotelInfo(preOrder.guestID);
+			HotelVO currentHotelInfo = new Hotel().getHotelInfo(preOrder.hotelID);
 			String city = currentHotelInfo.city;
 			String cycle = currentHotelInfo.cycle;
 			try {
