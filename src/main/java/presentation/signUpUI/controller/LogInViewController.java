@@ -13,9 +13,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import presentation.Main;
 	
 public class LogInViewController {
-	
+	public static String userID;
 	//登录和注册界面
 	@FXML
 	private Pane logInPane;
@@ -35,19 +36,29 @@ public class LogInViewController {
 	private TextField nickName;
 	@FXML
 	private TextField phone;
-
+	
+	
 	@FXML
 	private void initialize() {
 		
 	}
-	
-	//切换登录界面
+	/**
+	 * @author 61990
+	 * @lastChangedBy 61990
+	 * @updateTime 2016/12/2
+	 * @切换登录界面
+	 */
 	@FXML
 	protected void openLogIn() {
 		registerPane.setVisible(false);
 		logInPane.setVisible(true);
 	}
-	
+	/**
+	 * @author 61990
+	 * @lastChangedBy 61990
+	 * @updateTime 2016/11/30
+	 * @切换注册界面
+	 */
 	@FXML
 	public void openRegister() {
 		registerPane.setVisible(true);
@@ -55,11 +66,17 @@ public class LogInViewController {
 	}
 
 
-
+	/**
+	 * @author 61990
+	 * @lastChangedBy 61990
+	 * @updateTime 2016/11/30
+	 * @登录
+	 */
 	@FXML
 	protected void logIn() {
 //		 System.out.println(ID.getText()+" "+password.getText());
 		try {
+			Main.userID=ID.getText();
 			Parent root = null;
 			if (ID.getText().length() == 1) {
 				root = FXMLLoader.load(getClass().getResource("/presentation/GuestUI/view/Guest.fxml"));
@@ -76,7 +93,7 @@ public class LogInViewController {
 			stage.get(0).setScene(scene);
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 

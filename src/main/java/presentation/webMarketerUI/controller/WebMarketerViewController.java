@@ -13,6 +13,7 @@ import javafx.scene.layout.StackPane;
  *
  */
 public class WebMarketerViewController {
+	
 	Parent charge, market, commonPromotion, cyclePromotion, abnormalOrder;
 
 	@FXML
