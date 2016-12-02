@@ -1,5 +1,6 @@
 package businessLogic.hotelBL.hotelScan;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -38,7 +39,11 @@ public class HotelScan {
 	 * @time:2016年11月29日 下午9:01:13
 	 */
 	public Iterator<HotelGeneralVO> getHotels(AddressVO addressVO){
-		hotelGeneralPOList = hotelDataService.getHotelGeneralList(addressVO);
+		try {
+			hotelGeneralPOList = hotelDataService.getHotelGeneralList(addressVO);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 		currentGeneralPOList = hotelGeneralPOList;
 		return convertPOListToVOList(currentGeneralPOList).iterator();
 	}

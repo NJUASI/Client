@@ -32,7 +32,7 @@ public interface PromotionDataService extends Remote{
 	
 	public List<AddressPO> getSpecialCirclePromotion(String city) throws RemoteException;
 
-	public ResultMessage updateSepecialCirclePromotion(AddressVO addressVO) throws RemoteException;
+	public ResultMessage updateSepecialCirclePromotion(AddressPO addressPO) throws RemoteException;
 
 	public double getSpecialCircleDiscount(String city, String cycle) throws RemoteException;
 

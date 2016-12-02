@@ -38,6 +38,6 @@ public interface HotelDataService extends Remote{
 	
 	public ResultMessage updateEvaluation (EvaluationPO evaluationPO) throws RemoteException;
 
-	public List<HotelGeneralPO> getHotelGeneralList(AddressVO addressVO);
+	public List<HotelGeneralPO> getHotelGeneralList(AddressVO addressVO) throws RemoteException;
 
 }

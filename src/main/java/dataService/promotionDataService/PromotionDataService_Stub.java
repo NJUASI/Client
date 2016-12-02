@@ -66,7 +66,7 @@ public class PromotionDataService_Stub implements PromotionDataService {
 
 
 	@Override
-	public ResultMessage updateSepecialCirclePromotion(AddressVO addressVO) throws RemoteException {
+	public ResultMessage updateSepecialCirclePromotion(AddressPO addressPO) throws RemoteException {
 		// TODO 自动生成的方法存根
 		return null;
 	}
