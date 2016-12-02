@@ -1,4 +1,4 @@
-package businessLogic.hotelBL.hotel;
+package businessLogic.hotelBL.hotel.hotelComponents;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;

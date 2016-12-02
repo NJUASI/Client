@@ -7,7 +7,6 @@ import java.util.List;
 
 import businessLogic.promotionBL.discountCalculation.DiscountCalculator;
 import utilities.OrderState;
-import utilities.PreOrder;
 import utilities.ResultMessage;
 import utilities.RoomType;
 import vo.OrderGeneralVO;
@@ -21,7 +20,7 @@ import vo.OrderVO;
  */
 public class MockOrder extends Order {
 
-	private DiscountCalculator discountCalculator;
+	private DiscountCalculator discountInSpan;
 
 	/**
 	 * @author charles
@@ -30,24 +29,9 @@ public class MockOrder extends Order {
 	 * 构造函数，初始化成员变量
 	 */
 	public MockOrder() {
-		discountCalculator = new DiscountCalculator();
+		discountInSpan = new DiscountCalculator();
 	}
 	
-	/**
-	 * @author charles
-	 * @lastChangedBy charles
-	 * @updateTime 2016/11/27
-	 * @param orderVO 从客户界面层传下来的Order载体
-	 * @return 客户是否成功创建此订单
-	 */
-	@Override
-	public ResultMessage createOrder(final OrderVO orderVO) {
-		final PreOrder preOrder = new PreOrder(orderVO);
-		final double discout = discountCalculator.getDiscountOneday(preOrder);
-		orderVO.orderGeneralVO.price = (int) discout * orderVO.previousPrice;
-		return ResultMessage.SUCCESS;
-	}
-
 	/**
 	 * @author charles
 	 * @lastChangedBy charles

@@ -20,7 +20,7 @@ public class HotelGeneralPO implements Serializable{
 	private String city;
 	
 	//	酒店商圈
-	private String cycle;
+	private String circle;
 	
 	//	酒店星级
 	private String level;
@@ -32,11 +32,11 @@ public class HotelGeneralPO implements Serializable{
 	private double minPrice;
 	
 	
-	public HotelGeneralPO(String hotelID, String hotelName, String city, String cycle, String level, double score, double minPrice) {
+	public HotelGeneralPO(String hotelID, String hotelName, String city, String circle, String level, double score, double minPrice) {
 		this.hotelID = hotelID;
 		this.hotelName = hotelName;
 		this.city = city;
-		this.cycle = cycle;
+		this.circle = circle;
 		this.level = level;
 		this.score = score;
 		this.minPrice = minPrice;
@@ -63,11 +63,11 @@ public class HotelGeneralPO implements Serializable{
 		this.city = city;
 	}
 	
-	public String getCycle() {
-		return cycle;
+	public String getCircle() {
+		return circle;
 	}
-	public void setCycle(String cycle) {
-		this.cycle = cycle;
+	public void setCircle(String circle) {
+		this.circle = circle;
 	}
 	
 	public String getLevel() {

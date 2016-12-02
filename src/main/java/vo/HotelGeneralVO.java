@@ -39,7 +39,7 @@ public class HotelGeneralVO {
 		this.hotelID = hotelGeneralPO.getHotelID();
 		this.hotelName = hotelGeneralPO.getHotelName();
 		this.city = hotelGeneralPO.getCity();
-		this.cycle = hotelGeneralPO.getCycle();
+		this.cycle = hotelGeneralPO.getCircle();
 		this.level = hotelGeneralPO.getLevel();
 		this.score = hotelGeneralPO.getScore();
 		this.minPrice = hotelGeneralPO.getMinPrice();

@@ -26,9 +26,9 @@ public final class HotelPO implements Serializable{
 
 	private double minPrice;
 	
-	public HotelPO(String hotelID, String hotelName, String city, String cycle, String hotelAddress, 
+	public HotelPO(String hotelID, String hotelName, String city, String circle, String hotelAddress, 
 			String level, double score, double minPrice, String introduction, String equipment) {
-		this.hotelGeneralPO = new HotelGeneralPO(hotelID, hotelName, city, cycle, level, score, minPrice);
+		this.hotelGeneralPO = new HotelGeneralPO(hotelID, hotelName, city, circle, level, score, minPrice);
 		
 		this.hotelAddress = hotelAddress;
 		this.introduction = introduction;
@@ -69,11 +69,12 @@ public final class HotelPO implements Serializable{
 		this.hotelGeneralPO.setCity(city);
 	}
 	
-	public String getCycle() {
-		return hotelGeneralPO.getCycle();
+	public String getCircle() {
+		return hotelGeneralPO.getCircle();
 	}
-	public void setCycle(String cycle) {
-		this.hotelGeneralPO.setCycle(cycle);
+	
+	public void setCircle(String circle) {
+		this.hotelGeneralPO.setCircle(circle);
 	}
 	
 	public String getHotelAddress() {
@@ -118,5 +119,6 @@ public final class HotelPO implements Serializable{
 	public void setMinPrice(double minPrice) {
 		this.minPrice = minPrice;
 	}
+
 	
 }

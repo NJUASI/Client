@@ -3,8 +3,10 @@ package businessLogic.orderBL;
 import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import businessLogic.promotionBL.DiscountInSpan;
 import businessLogic.promotionBL.discountCalculation.DiscountCalculator;
 import dataService.orderDataService.OrderDataService;
 import po.OrderGeneralPO;
@@ -26,7 +28,7 @@ public class Order {
 	
 	private OrderDataService orderDataService;
 	
-	private DiscountCalculator discountCalculator;
+	private DiscountInSpan discountCalculator;
 	
 	/**
 	 * @author charles
@@ -50,8 +52,8 @@ public class Order {
 		ResultMessage resultMessage = ResultMessage.ORDER_CREATE_FAILURE;
 		
 		try {
-			final double discount = discountCalculator.getDiscountOneday(new PreOrder(orderVO));
-			orderVO.orderGeneralVO.price = orderVO.previousPrice * discount;
+			Iterator<Double> discountsInSpan = discountCalculator.getDiscountInSpan(new PreOrder(orderVO));
+			orderVO.orderGeneralVO.price = orderVO.previousPrice * discountsInSpan.next();
 			
 			resultMessage = orderDataService.createOrder(new OrderPO(orderVO));
 		} catch (RemoteException e) {

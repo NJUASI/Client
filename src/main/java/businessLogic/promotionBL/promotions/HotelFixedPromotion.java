@@ -1,4 +1,4 @@
-package businessLogic.promotionBL;
+package businessLogic.promotionBL.promotions;
 
 import java.rmi.RemoteException;
 import java.time.LocalDate;
@@ -12,6 +12,7 @@ import dataService.promotionDataService.PromotionDataService;
 import dataService.promotionDataService.PromotionDataService_Stub;
 import po.HotelFixedPromotionPO;
 import utilities.PreOrder;
+import utilities.PromotionType;
 import utilities.ResultMessage;
 import vo.HotelFixedPromotionVO;
 
@@ -89,8 +90,10 @@ public class HotelFixedPromotion {
 		initHotelFixedPromotions(preOrder.hotelID);
 		HotelFixedDiscountFactory factory = new HotelFixedDiscountFactory(preOrder,today);
 		for(int i = 0;i<hotelFixedPromotions.size();i++){
-			calculateFixedPromotions.add(factory.createCalculateDiscount
-					(new HotelFixedPromotionVO(hotelFixedPromotions.get(i))));
+			HotelFixedPromotionPO tempHotelFixedPromotion = hotelFixedPromotions.get(i);
+			PromotionType promotionType = tempHotelFixedPromotion.getPromotionType();
+			double discount = tempHotelFixedPromotion.getDiscout();
+			calculateFixedPromotions.add(factory.createCalculateDiscount(promotionType,discount));
 		}
 		return calculateFixedPromotions;
 	}
@@ -109,14 +112,6 @@ public class HotelFixedPromotion {
 			hotelFixedPromotionVOList.add(new HotelFixedPromotionVO(hotelFixedPromotion));
 		}
 		return hotelFixedPromotionVOList.iterator();
-	}
-
-	private List<HotelFixedPromotionPO> convertVOListToPOListIterator(List<HotelFixedPromotionVO> VOList){
-		hotelFixedPromotions.clear();
-		for(HotelFixedPromotionVO hotelFixedPromotion: VOList){
-			hotelFixedPromotions.add(new HotelFixedPromotionPO(hotelFixedPromotion));
-		}
-		return hotelFixedPromotions;
 	}
 
 }

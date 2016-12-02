@@ -47,10 +47,23 @@ public class PromotionBLService_Stub implements PromotionBLService{
 	}
 
 	@Override
-	public ResultMessage updateSpecialSpanPromotions(List<SpecialSpanPromotionVO> list) {
+	public ResultMessage addSpecialSpanPromotion(SpecialSpanPromotionVO specialSpanPromotionVO) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
+
+	@Override
+	public ResultMessage updateSpecialSpanPromotions(SpecialSpanPromotionVO specialSpanPromotionVO) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public ResultMessage deleteSpecialSpanPromotion(SpecialSpanPromotionVO specialSpanPromotionVO) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
 	
 	@Override
 	public Iterator<AddressVO> getSpecialCirclePromotions(String city) {
@@ -58,16 +71,11 @@ public class PromotionBLService_Stub implements PromotionBLService{
 		return null;
 	}
 
+	
 	@Override
 	public ResultMessage updateSpecialCirclePromotions(AddressVO addressVO) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
 	
-	@Override
-	public Iterator<Double> getDiscountInSpan(PreOrder preOrder) {
-		// TODO 自动生成的方法存根
-		return null;
-	}
-
 }

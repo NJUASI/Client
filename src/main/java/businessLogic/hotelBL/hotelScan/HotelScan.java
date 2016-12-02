@@ -59,7 +59,7 @@ public class HotelScan {
 	
 	
 	/**
-	 * @Description:根据传入的搜索标准对当前currentGeneralPOList进行 筛选
+	 * @Description:根据传入的搜索标准对当前currentGeneralPOList进行筛选
 	 * @param searchCriteria
 	 * @return
 	 * Iterator<HotelGeneralVO>

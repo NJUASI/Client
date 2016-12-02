@@ -1,4 +1,4 @@
-package businessLogic.promotionBL;
+package businessLogic.promotionBL.promotions;
 
 import java.rmi.RemoteException;
 import java.time.LocalDate;
@@ -10,6 +10,7 @@ import businessLogic.promotionBL.discountCalculation.CalculateDiscount;
 import businessLogic.promotionBL.discountCalculation.discountOfPromotions.SpecialSpanDiscount;
 import dataService.promotionDataService.PromotionDataService;
 import dataService.promotionDataService.PromotionDataService_Stub;
+import javafx.scene.control.Separator;
 import po.SpecialSpanPromotionPO;
 import utilities.PreOrder;
 import utilities.ResultMessage;
@@ -55,22 +56,54 @@ public class SpecialSpanPromotion {
 	}
 
 	/**
-	 * @Description:更新酒店或网站的所有特定期间的促销策略
+	 * @Description:添加特定期间的促销策略
+	 * @param specialSpanPromotionVO
+	 * @return
+	 * ResultMessage
+	 * @author: Harvey Gong
+	 * @time:2016年12月2日 下午6:56:05
+	 */
+	public ResultMessage addSpecialSpanPromotion(SpecialSpanPromotionVO specialSpanPromotionVO){
+		try {
+			return promotionDataService.addSpecialSpanPromotion(new SpecialSpanPromotionPO(specialSpanPromotionVO));
+		} catch (RemoteException e) {
+			return ResultMessage.FAIL;
+		}
+	}
+	
+	/**
+	 * @Description:修改并更新特定期间的促销策略
 	 * @param list
 	 * @return
 	 * ResultMessage
 	 * @author: Harvey Gong
 	 * @time:2016年12月1日 下午3:26:32
 	 */
-	public ResultMessage updateSpecialSpanPromotions(List<SpecialSpanPromotionVO> list){
+	public ResultMessage updateSpecialSpanPromotion(SpecialSpanPromotionVO specialSpanPromotionVO){
 		try {
-			return promotionDataService.updateSpecialSpanPromotion(convertVOListToPOList(list));
+			return promotionDataService.updateSpecialSpanPromotion(new SpecialSpanPromotionPO(specialSpanPromotionVO));
 		} catch (RemoteException e) {
 			e.printStackTrace();
 			return ResultMessage.FAIL;
 		}
 	}
-
+	
+	/**
+	 * @Description:根据被删除的promotion的数据，将数据库里对应的一条promotion删除
+	 * @param specialSpanPromotionVO
+	 * @return
+	 * ResultMessage
+	 * @author: Harvey Gong
+	 * @time:2016年12月2日 下午7:23:31
+	 */
+	public ResultMessage deleteSpecialSpanPromotion(SpecialSpanPromotionVO specialSpanPromotionVO){
+		try {
+			return promotionDataService.deleteSpecialSpanPromotion(new SpecialSpanPromotionPO(specialSpanPromotionVO));
+		} catch (RemoteException e) {
+			return ResultMessage.FAIL;
+		}	
+	}
+	
 	/**
 	 * @Description:根据传入的订单信息和需要计算策略的日期，
 	 * 计算酒店和网站特定期间的促销策略的折扣
@@ -81,9 +114,9 @@ public class SpecialSpanPromotion {
 	 * @author: Harvey Gong
 	 * @time:2016年12月1日 下午3:27:17
 	 */
-	public double getDiscountOneday(PreOrder preOrder, LocalDate today){
+	public double getDiscountOneday(String hotelID, LocalDate today){
 		double discount = 1;
-		initSpecialSpanPromotionDiscountOneday(preOrder.hotelID);
+		initSpecialSpanPromotionDiscountOneday(hotelID);
 		discount = discount * getSpecialSpanDiscount(today);
 		initSpecialSpanPromotionDiscountOneday(null);
 		discount = discount * getSpecialSpanDiscount(today); 
@@ -136,14 +169,5 @@ public class SpecialSpanPromotion {
 		}
 		return specialSpanPromotions.iterator();
 	}
-
-	private List<SpecialSpanPromotionPO> convertVOListToPOList(List<SpecialSpanPromotionVO> VOList){
-		specialSpanPromotions.clear();
-		for(SpecialSpanPromotionVO specialSpanPromotionVO: VOList){
-			specialSpanPromotions.add(new SpecialSpanPromotionPO(specialSpanPromotionVO));
-		}
-		return specialSpanPromotions;
-	}
-
 
 }

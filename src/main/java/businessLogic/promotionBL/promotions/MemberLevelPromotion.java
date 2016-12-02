@@ -1,4 +1,4 @@
-package businessLogic.promotionBL;
+package businessLogic.promotionBL.promotions;
 
 import java.util.List;
 

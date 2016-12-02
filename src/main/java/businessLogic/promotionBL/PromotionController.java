@@ -1,12 +1,11 @@
 package businessLogic.promotionBL;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
+import businessLogic.promotionBL.promotions.HotelFixedPromotion;
+import businessLogic.promotionBL.promotions.SpecialCirclePromotion;
+import businessLogic.promotionBL.promotions.SpecialSpanPromotion;
 import businessLogicService.promotionBLService.PromotionBLService;
-import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.AddressVO;
 import vo.HotelFixedPromotionVO;
@@ -19,13 +18,11 @@ public class PromotionController implements PromotionBLService {
 	private HotelFixedPromotion hotelFixedPromotion;
 	private SpecialSpanPromotion specialSpanPromotion;
 	private SpecialCirclePromotion specialCirclePromotion;
-	private MemberLevelPromotion memberLevelPromotion;
 	
 	private PromotionController() {
 		hotelFixedPromotion = new HotelFixedPromotion();
 		specialSpanPromotion = new SpecialSpanPromotion();
 		specialCirclePromotion = new SpecialCirclePromotion();
-		memberLevelPromotion = new MemberLevelPromotion();
 	}
 
 	public static PromotionController getInstance(){
@@ -53,8 +50,18 @@ public class PromotionController implements PromotionBLService {
 	}
 	
 	@Override
-	public ResultMessage updateSpecialSpanPromotions(List<SpecialSpanPromotionVO> list) {
-		return specialSpanPromotion.updateSpecialSpanPromotions(list);
+	public ResultMessage addSpecialSpanPromotion(SpecialSpanPromotionVO specialSpanPromotionVO) {
+		return specialSpanPromotion.addSpecialSpanPromotion(specialSpanPromotionVO);
+	}
+
+	@Override
+	public ResultMessage updateSpecialSpanPromotions(SpecialSpanPromotionVO specialSpanPromotionVO) {
+		return specialSpanPromotion.updateSpecialSpanPromotion(specialSpanPromotionVO);
+	}
+
+	@Override
+	public ResultMessage deleteSpecialSpanPromotion(SpecialSpanPromotionVO specialSpanPromotionVO) {
+		return specialSpanPromotion.deleteSpecialSpanPromotion(specialSpanPromotionVO);
 	}
 	
 	@Override
@@ -67,17 +74,4 @@ public class PromotionController implements PromotionBLService {
 		return specialCirclePromotion.updateSpecialCirclePromotion(addressVO);
 	}
 	
-	@Override
-	public Iterator<Double> getDiscountInSpan(PreOrder preOrder) {
-		List<Double> discountsInSpan = new ArrayList<Double>();
-		LocalDate today = preOrder.checkInDate;
-		for(int i = 0;i<preOrder.lastDays;i++){
-			discountsInSpan.add(hotelFixedPromotion.getDiscountOneday(preOrder,today)
-					*specialSpanPromotion.getDiscountOneday(preOrder,today)
-					*specialCirclePromotion.getDiscount(preOrder)
-					*memberLevelPromotion.getDiscount(preOrder.guestID));
-		}
-		return discountsInSpan.iterator();
-	}
-
 }

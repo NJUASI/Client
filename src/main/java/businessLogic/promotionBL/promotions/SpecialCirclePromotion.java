@@ -1,4 +1,4 @@
-package businessLogic.promotionBL;
+package businessLogic.promotionBL.promotions;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -10,11 +10,10 @@ import businessLogic.memberBL.Member;
 import dataService.promotionDataService.PromotionDataService;
 import dataService.promotionDataService.PromotionDataService_Stub;
 import po.AddressPO;
+import utilities.Address;
 import utilities.MemberType;
-import utilities.PreOrder;
 import utilities.ResultMessage;
 import vo.AddressVO;
-import vo.HotelVO;
 
 /**
  * @Description:对于VIP会员特定商圈专属折扣
@@ -59,11 +58,20 @@ public class SpecialCirclePromotion {
 		}
 	}
 
-	public double getDiscount(PreOrder preOrder){
-		if(isVIP(preOrder.guestID)){
-			HotelVO currentHotelInfo = new Hotel().getHotelInfo(preOrder.hotelID);
-			String city = currentHotelInfo.city;
-			String cycle = currentHotelInfo.cycle;
+	/**
+	 * @Description:根据guestID判断是否是会员，若是再根据hotelID分别获得该酒店的城市和商圈
+	 * @param guestID
+	 * @param hotelID
+	 * @return
+	 * double
+	 * @author: Harvey Gong
+	 * @time:2016年12月2日 下午7:08:54
+	 */
+	public double getDiscount(String guestID,String hotelID){
+		if(isVIP(guestID)){
+			Address hotelAddress = new Hotel().getHotelAddress(hotelID);
+			String city = hotelAddress.city;
+			String cycle = hotelAddress.circle;
 			try {
 				return promotionDataService.getSpecialCircleDiscount(city,cycle);
 			} catch (RemoteException e) {
@@ -73,7 +81,6 @@ public class SpecialCirclePromotion {
 		return 1;
 	}
 		
-	
 	private boolean isVIP(String guestID){
 		return new Member().isMember(guestID, MemberType.COMMON);
 	}
