@@ -4,13 +4,13 @@ import java.time.LocalDate;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class DatePromotion {
+public class DatePromotionTable {
 	public final SimpleStringProperty name;
 	public final SimpleStringProperty discount;
 	public final SimpleStringProperty startDate;
 	public final SimpleStringProperty endDate;
 	
-	public DatePromotion(String name, String  discount, LocalDate startDate, LocalDate endDate) {
+	public DatePromotionTable(String name, String  discount, LocalDate startDate, LocalDate endDate) {
 		this.name = new SimpleStringProperty(name);
 		this.discount = new SimpleStringProperty(discount);
 		this.startDate = new SimpleStringProperty(startDate.toString());
