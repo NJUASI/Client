@@ -16,19 +16,24 @@ public interface PromotionDataService extends Remote{
 	
 	public ResultMessage updateHotelFixedPromotion(HotelFixedPromotionPO hotelFixedPromotionPO) throws RemoteException;
 
+	// 对特定期间策略的操作，get、add、update、delete
 	
 	public List<SpecialSpanPromotionPO> getHotelSpecialSpanPromotion(String hotelID) throws RemoteException;
 	
 	public List<SpecialSpanPromotionPO> getWebSpecialSpanPromotion() throws RemoteException;
 	
-	public ResultMessage updateSpecialSpanPromotion(List<SpecialSpanPromotionPO> list) throws RemoteException;
-
+	public ResultMessage addSpecialSpanPromotion(SpecialSpanPromotionPO specialSpanPromotionPO) throws RemoteException;
+	
+	public ResultMessage updateSpecialSpanPromotion(SpecialSpanPromotionPO specialSpanPromotionPO) throws RemoteException;
+	
+	public ResultMessage deleteSpecialSpanPromotion(SpecialSpanPromotionPO specialSpanPromotionPO) throws RemoteException;
+	
+	// 对会员专属商圈策略的操作，get、update、根据城市、商圈直接获得相应的折扣
 	
 	public List<AddressPO> getSpecialCirclePromotion(String city) throws RemoteException;
 
 	public ResultMessage updateSepecialCirclePromotion(AddressVO addressVO) throws RemoteException;
 
-	//根据城市商圈获取vip会员商圈专属折扣
 	public double getSpecialCircleDiscount(String city, String cycle) throws RemoteException;
 
 }

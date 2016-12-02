@@ -24,13 +24,6 @@ public class PromotionDataService_Stub implements PromotionDataService {
 		return null;
 	}
 
-	
-	@Override
-	public ResultMessage updateSpecialSpanPromotion(List<SpecialSpanPromotionPO> list) throws RemoteException {
-		// TODO 自动生成的方法存根
-		return null;
-	}
-
 
 	@Override
 	public List<SpecialSpanPromotionPO> getWebSpecialSpanPromotion() throws RemoteException {
@@ -45,6 +38,25 @@ public class PromotionDataService_Stub implements PromotionDataService {
 		return null;
 	}
 
+	@Override
+	public ResultMessage addSpecialSpanPromotion(SpecialSpanPromotionPO specialSpanPromotionPO) throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public ResultMessage updateSpecialSpanPromotion(SpecialSpanPromotionPO specialSpanPromotionPO)
+			throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	@Override
+	public ResultMessage deleteSpecialSpanPromotion(SpecialSpanPromotionPO specialSpanPromotionPO)
+			throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
 
 	@Override
 	public List<AddressPO> getSpecialCirclePromotion(String city) throws RemoteException {

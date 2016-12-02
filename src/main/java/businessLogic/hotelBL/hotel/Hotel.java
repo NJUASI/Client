@@ -5,11 +5,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import businessLogic.hotelBL.hotel.hotelComponents.Evaluations;
+import businessLogic.hotelBL.hotel.hotelComponents.Rooms;
 import dataService.hotelDataService.HotelDataService;
 import dataService.hotelDataService.HotelDataService_Stub;
 import po.CheckInPO;
 import po.CheckOutPO;
 import po.HotelPO;
+import utilities.Address;
 import utilities.Operation;
 import utilities.ResultMessage;
 import utilities.RoomType;
@@ -149,6 +152,12 @@ public class Hotel{
 
 	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
 		return evaluations.addEvaluation(evaluationVO);
+	}
+	
+	public Address getHotelAddress(String hotelID){
+		this.hotelID = hotelID;
+		initHotelPO();
+		return new Address(hotelPO.getCity(), hotelPO.getCircle());
 	}
 	
 	
