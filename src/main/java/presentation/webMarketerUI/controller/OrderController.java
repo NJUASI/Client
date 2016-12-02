@@ -88,7 +88,7 @@ public class OrderController {
 		// Order.
 		// 获得输入的内容
 		// searchID.getText();
-		// Test
+		// Test,需要删掉s
 		final LocalDateTime createTime = LocalDateTime.of(2016, 2, 2, 18, 30);
 		final LocalDateTime checkInTime = LocalDateTime.of(2016, 2, 3, 11, 23);
 		final LocalDateTime checkOutTime = LocalDateTime.of(2016, 2, 4, 10, 58);

@@ -1,21 +1,17 @@
 package presentation.webMarketerUI.controller;
 
-import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import presentation.Main;
+import presentation.signUpUI.controller.LogInViewController;
 import vo.AddressVO;
 
 
@@ -61,14 +57,14 @@ public class CyclePromotionController {
 	 * @author 61990
 	 * @lastChangedBy 61990
 	 * @updateTime 2016/11/30
-	 * @查找商圈
+	 * @查找城市
 	 */
 	@FXML
 	protected void searchCity() {
 		List<String> list = getCity();
-		cycleInput.getItems().clear();
+		cityInput.getItems().clear();
 		for (int i = 0; i < list.size(); i++) {
-			cycleInput.getItems().add(list.get(i));
+			cityInput.getItems().add(list.get(i));
 		}
 	}
 
@@ -80,6 +76,31 @@ public class CyclePromotionController {
 		list.add("131");
 		list.add("3");
 		list.add("23");
+		return list;
+	}
+	/**
+	 * @author 61990
+	 * @lastChangedBy 61990
+	 * @updateTime 2016/11/30
+	 * @查找商圈
+	 */
+	@FXML
+	protected void searchCycle() {
+		List<String> list = getCycle(cityInput.getValue());
+		cycleInput.getItems().clear();
+		for (int i = 0; i < list.size(); i++) {
+			cycleInput.getItems().add(list.get(i));
+		}
+	}
+	
+	List<String> getCycle(String city) {
+		List<String> list = new LinkedList<String>();
+		list.add("123");
+		list.add("1233");
+		list.add("1231");
+		list.add("1232");
+		list.add("1213");
+		list.add("1123");
 		return list;
 	}
 	/**
@@ -110,7 +131,7 @@ public class CyclePromotionController {
 
 		ObservableList<AddressTable> data = FXCollections.observableArrayList();
 		for (int i = 0; i < address.size(); i++) {
-			data.add(new AddressTable(address.get(i).city, address.get(i).cycle, Double.toString(address.get(i).discout)));
+			data.add(new AddressTable(address.get(i).city, address.get(i).circle, Double.toString(address.get(i).discout)));
 		}
 		cityColumn.setCellValueFactory(cellData -> cellData.getValue().city);
 		cycleColumn.setCellValueFactory(cellData -> cellData.getValue().cycle);
@@ -120,31 +141,7 @@ public class CyclePromotionController {
 	
 	}
 	
-	/**
-	 * @author 61990
-	 * @lastChangedBy 61990
-	 * @updateTime 2016/11/30
-	 * @查找商圈
-	 */
-	@FXML
-	protected void searchCycle() {
-		List<String> list = getCycle(cityInput.getValue());
-		cycleInput.getItems().clear();
-		for (int i = 0; i < list.size(); i++) {
-			cycleInput.getItems().add(list.get(i));
-		}
-	}
 
-	List<String> getCycle(String city) {
-		List<String> list = new LinkedList<String>();
-		list.add("123");
-		list.add("1233");
-		list.add("1231");
-		list.add("1232");
-		list.add("1213");
-		list.add("1123");
-		return list;
-	}
 
 	/**
 	 * @author 61990
