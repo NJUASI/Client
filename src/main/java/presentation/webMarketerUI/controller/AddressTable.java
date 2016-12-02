@@ -2,12 +2,12 @@ package presentation.webMarketerUI.controller;
 
 import javafx.beans.property.SimpleStringProperty;
 
-class Address {
+class AddressTable {
 	public final SimpleStringProperty city;
 	public final SimpleStringProperty cycle;
 	public final SimpleStringProperty discount;
 
-	public Address(String city, String cycle, String discount) {
+	public AddressTable(String city, String cycle, String discount) {
 		this.city = new SimpleStringProperty(city);
 		this.cycle = new SimpleStringProperty(cycle);
 		this.discount = new SimpleStringProperty(discount);

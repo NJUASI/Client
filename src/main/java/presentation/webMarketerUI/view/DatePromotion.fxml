@@ -67,9 +67,15 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <Button focusTraversable="false" layoutX="658.0" layoutY="480.0" mnemonicParsing="false" onAction="#savePromotion" text="保存" />
                   <Button focusTraversable="false" layoutX="266.0" layoutY="487.0" mnemonicParsing="false" onAction="#deleteOne" text="删除" />
                   <Label alignment="CENTER" layoutX="617.0" layoutY="106.0" prefHeight="28.0" prefWidth="132.0" text="普通折扣修改" />
+                  <Button fx:id="addBt" focusTraversable="false" layoutX="675.0" layoutY="464.0" mnemonicParsing="false" onAction="#addPromotion" text="添加" />
+                  <Pane fx:id="modifyPane" layoutX="614.0" layoutY="450.0" prefHeight="58.0" prefWidth="172.0" visible="false">
+                     <children>
+                        <Button focusTraversable="false" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#cancelModifyPromotion" text="取消" />
+                        <Button focusTraversable="false" layoutX="106.0" layoutY="14.0" mnemonicParsing="false" onAction="#savePromotion" text="保存" />
+                     </children>
+                  </Pane>
                </children>
             </AnchorPane>
          </children>

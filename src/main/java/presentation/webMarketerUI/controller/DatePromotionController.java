@@ -8,6 +8,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -20,11 +21,14 @@ import vo.AddressVO;
 
 
 public class DatePromotionController {
-
 	@FXML
-	private TableView<DatePromotion> table;
+	private Pane modifyPane;
 	@FXML
-	private TableColumn<DatePromotion, String> nameColumn,  discountColumn , startDateColumn , endDateColumn;
+	private Button addBt;
+	@FXML
+	private TableView<DatePromotionTable> table;
+	@FXML
+	private TableColumn<DatePromotionTable, String> nameColumn,  discountColumn , startDateColumn , endDateColumn;
 	@FXML
 	private TextField nameText,discountText;
 	@FXML
@@ -38,13 +42,13 @@ public class DatePromotionController {
 	@FXML
 	private void initialize() {
 		table.getItems().clear();
-		List<DatePromotion> datePromotion = new LinkedList<DatePromotion>();
-		datePromotion.add(new DatePromotion("兰州", "www", LocalDate.of(2014,4,3),LocalDate.of(2014,4,23)));
-		datePromotion.add(new DatePromotion("兰2州", "w2ww", LocalDate.of(2015,6,7),LocalDate.of(2014,4,23)));
-		datePromotion.add(new DatePromotion("兰1州", "w2ww", LocalDate.of(2015,6,7),LocalDate.of(2014,4,23)));
-		datePromotion.add(new DatePromotion("兰4s州", "w2ww", LocalDate.of(2015,6,7),LocalDate.of(2014,4,23)));
+		List<DatePromotionTable> datePromotion = new LinkedList<DatePromotionTable>();
+		datePromotion.add(new DatePromotionTable("兰州", "www", LocalDate.of(2014,4,3),LocalDate.of(2014,4,23)));
+		datePromotion.add(new DatePromotionTable("兰2州", "w2ww", LocalDate.of(2015,6,7),LocalDate.of(2014,4,23)));
+		datePromotion.add(new DatePromotionTable("兰1州", "w2ww", LocalDate.of(2015,6,7),LocalDate.of(2014,4,23)));
+		datePromotion.add(new DatePromotionTable("兰4s州", "w2ww", LocalDate.of(2015,6,7),LocalDate.of(2014,4,23)));
 
-		ObservableList<DatePromotion> data = FXCollections.observableArrayList();
+		ObservableList<DatePromotionTable> data = FXCollections.observableArrayList();
 		for (int i = 0; i < datePromotion.size(); i++) {
 			data.add(datePromotion.get(i));
 		}
@@ -66,13 +70,12 @@ public class DatePromotionController {
 	@FXML
 	protected void modifyOne() {
 		try{
-		
-			nameText.setText(table.getSelectionModel().getSelectedItem().getName());
-			discountText.setText(table.getSelectionModel().getSelectedItem().getDiscount());
-
-			 startDatePicker.setValue(table.getSelectionModel().getSelectedItem().getStartDate());
-			 endDatePicker.setValue(table.getSelectionModel().getSelectedItem().getEndDate());
-			 
+			setModifyText(table.getSelectionModel().getSelectedItem().getName(),
+					table.getSelectionModel().getSelectedItem().getDiscount(),
+					table.getSelectionModel().getSelectedItem().getStartDate(),
+					table.getSelectionModel().getSelectedItem().getEndDate());
+			modifyPane.setVisible(true);
+			addBt.setVisible(false);
 		} catch (Exception e) {
 			System.out.println("请选定");
 		}
@@ -91,13 +94,56 @@ public class DatePromotionController {
 		// PromotionVO promitonVO=new
 		// PromotionVO(PromotionType.HOTEL__HOLIDAY,Double.parseDouble(doubleDiscount2.getText()),s1,s2);
 		System.out.println("success");
-		
+		modifyPane.setVisible(false);
+		addBt.setVisible(true);
+		setModifyText("","",null,null);
 		initialize();
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("保存失败");
 		}
 	}
+	/**
+	 * @author 61990
+	 * @lastChangedBy 61990
+	 * @updateTime 2016/11/30
+	 * @添加双十一策略
+	 */
+	@FXML
+	protected void addPromotion() {
+		try {
+//			nameText.getText();
+//			discountText.getText();
+//			startDatePicker.getValue();
+//			endDatePicker.getValue();
+		System.out.println("success");
+	
+		} catch (Exception e) {
+			System.out.println("保存失败");
+		}
+	}
+	/**
+	 * @author 61990
+	 * @lastChangedBy 61990
+	 * @updateTime 2016/11/30
+	 * @取消修改双十一策略
+	 */
+	@FXML
+	protected void cancelModifyPromotion() {
+		try {
+			modifyPane.setVisible(false);
+			addBt.setVisible(true);
+			setModifyText("","",null,null);
+		} catch (Exception e) {
 
+		}
+	}
+	private void setModifyText(String name,String discount,LocalDate startDate ,LocalDate endDate) {
+		
+		nameText.setText(name);
+		discountText.setText(discount);
+		startDatePicker.setValue(startDate);
+		endDatePicker.setValue(endDate);
+	}
 	/**
 	 * @author 61990
 	 * @lastChangedBy 61990
@@ -108,6 +154,6 @@ public class DatePromotionController {
 	protected void deleteOne() {
 		//通过name删除
 //		table.getSelectionModel().getSelectedItem().getName();
-		
+		initialize();	
 	}
 }

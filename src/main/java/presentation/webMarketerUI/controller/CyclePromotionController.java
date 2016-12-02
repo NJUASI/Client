@@ -22,9 +22,9 @@ import vo.AddressVO;
 public class CyclePromotionController {
 
 	@FXML
-	private TableView<Address> table;
+	private TableView<AddressTable> table;
 	@FXML
-	private TableColumn<Address, String> cityColumn, cycleColumn, discountColumn;
+	private TableColumn<AddressTable, String> cityColumn, cycleColumn, discountColumn;
 	@FXML
 	private TextField cycleDiscount;
 	@FXML
@@ -108,9 +108,9 @@ public class CyclePromotionController {
 		address.add(new AddressVO("兰州", "www", 0.9));
 		address.add(new AddressVO("兰州", "www", 0.9));
 
-		ObservableList<Address> data = FXCollections.observableArrayList();
+		ObservableList<AddressTable> data = FXCollections.observableArrayList();
 		for (int i = 0; i < address.size(); i++) {
-			data.add(new Address(address.get(i).city, address.get(i).circle, Double.toString(address.get(i).discout)));
+			data.add(new AddressTable(address.get(i).city, address.get(i).cycle, Double.toString(address.get(i).discout)));
 		}
 		cityColumn.setCellValueFactory(cellData -> cellData.getValue().city);
 		cycleColumn.setCellValueFactory(cellData -> cellData.getValue().cycle);
