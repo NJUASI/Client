@@ -38,7 +38,7 @@ public class HotelDataService_DriverTest {
 	
 	@Test
 	public void test2() {
-		//test interface Evaluation
+		//test interface getRemainRoomInfo
 		HotelDataService_Stub stub = new HotelDataService_Stub();
 		HotelDataService_Driver driver = new HotelDataService_Driver(stub);
 		try {

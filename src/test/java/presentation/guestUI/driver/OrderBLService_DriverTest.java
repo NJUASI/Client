@@ -11,6 +11,7 @@ import businessLogic.orderBL.stub.OrderBLService_Stub;
 import utilities.OrderState;
 import utilities.ResultMessage;
 import utilities.RoomType;
+import vo.GuestEvaluationVO;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
@@ -18,7 +19,9 @@ import vo.OrderVO;
  * 
  * @author cuihua
  * lastChangedBy charles
- * updateTime 2016/11/27
+ * updateTime 2016/12/2
+ * 
+ * 添加addEvaluation测试
  */
 public class OrderBLService_DriverTest {
 
@@ -120,5 +123,21 @@ public class OrderBLService_DriverTest {
 		assertEquals(LocalDateTime.of(2016, 2, 4, 12, 0), orderGeneralVO.expectLeaveTime);
 		assertEquals(OrderState.EXECUTED, orderGeneralVO.state);
 		
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * 
+	 * test interface addEvaluation
+	 */
+	@Test
+	public void test5() {
+		final OrderBLService_Stub stub = new OrderBLService_Stub();
+		final OrderBLService_Driver driver = new OrderBLService_Driver(stub);
+		
+		assertEquals(ResultMessage.SUCCESS, driver.orderBLService.addEvaluation(new GuestEvaluationVO
+				("123420161002", 4, "5")));
 	}
 }

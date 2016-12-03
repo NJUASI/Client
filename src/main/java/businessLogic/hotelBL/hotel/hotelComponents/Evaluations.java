@@ -6,15 +6,15 @@ import java.util.Iterator;
 import java.util.List;
 
 import dataService.hotelDataService.HotelDataService;
-import po.EvaluationPO;
+import po.HotelEvaluationPO;
 import utilities.ResultMessage;
-import vo.EvaluationVO;
+import vo.HotelEvaluationVO;
 
 public class Evaluations {
 
 	private String hotelID;
 	private HotelDataService hotelDataService;
-	private List<EvaluationPO> evaluationList;
+	private List<HotelEvaluationPO> evaluationList;
 	
 	public Evaluations(String hotelID, HotelDataService hotelDataService) {
 		this.hotelID = hotelID;
@@ -30,27 +30,27 @@ public class Evaluations {
 		}
 	}
 	
-	public Iterator<EvaluationVO> getEvaluations(){
-		List<EvaluationVO> evaluationsVOList = new ArrayList<EvaluationVO>();
+	public Iterator<HotelEvaluationVO> getEvaluations(){
+		List<HotelEvaluationVO> evaluationsVOList = new ArrayList<HotelEvaluationVO>();
 		
-		for(EvaluationPO evaluationPO:evaluationList){
-			evaluationsVOList.add(new EvaluationVO(evaluationPO));
+		for(HotelEvaluationPO evaluationPO:evaluationList){
+			evaluationsVOList.add(new HotelEvaluationVO(evaluationPO));
 		}
 		
 		return evaluationsVOList.iterator();
 	}
 	
-	public ResultMessage addEvaluation(EvaluationVO evaluationVO) {
-		
-		EvaluationPO evaluationPO = new EvaluationPO(evaluationVO);
-		evaluationList.add(evaluationPO);
-		try {
-			return hotelDataService.updateEvaluation(evaluationPO);
-		} catch (RemoteException e) {
-			e.printStackTrace();
-			return ResultMessage.FAIL;
-		}
-	}
+//	public ResultMessage addEvaluation(EvaluationVO evaluationVO) {
+//		
+//		EvaluationPO evaluationPO = new EvaluationPO(evaluationVO);
+//		evaluationList.add(evaluationPO);
+//		try {
+//			return hotelDataService.updateEvaluation(evaluationPO);
+//		} catch (RemoteException e) {
+//			e.printStackTrace();
+//			return ResultMessage.FAIL;
+//		}
+//	}
 	
 
 }

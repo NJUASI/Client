@@ -16,7 +16,6 @@ import businessLogic.hotelBL.hotel.Hotel;
 import utilities.ResultMessage;
 import vo.CheckInVO;
 import vo.CheckOutVO;
-import vo.EvaluationVO;
 import vo.HotelVO;
 import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
@@ -89,10 +88,10 @@ public class HotelTest {
 		assertEquals(hotel.addHotel(new HotelVO(hotel.getHotelPO())), ResultMessage.SUCCESS);
 	}
 
-	@Test
-	public void testUpdateEvaluation() {
-		EvaluationVO evaluation = new EvaluationVO("13", 1, "123");
-		assertEquals(hotel.updateEvaluation(evaluation), ResultMessage.SUCCESS);
-	}
+//	@Test
+//	public void testUpdateEvaluation() {
+//		EvaluationVO evaluation = new EvaluationVO("13", 1, "123");
+//		assertEquals(hotel.updateEvaluation(evaluation), ResultMessage.SUCCESS);
+//	}
 
 }

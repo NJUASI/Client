@@ -6,12 +6,18 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import businessLogic.hotelBL.stub.HotelBLService_Stub;
-import utilities.ResultMessage;
 import vo.AddressVO;
-import vo.EvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
 
+/**
+ * 
+ * @author Harvey
+ * lastChangedBy charles
+ * updateTime 2016/12/2
+ * 
+ * 去除Evaluation测试
+ */
 public class HotelBLService_DriverTest {
 
 	@Test
@@ -55,13 +61,13 @@ public class HotelBLService_DriverTest {
 		assertEquals("allEquipment", hotelVO.equipment);
 	}
 	
-	@Test
-	public void test3() {
-		//test interface Evaluation
-		HotelBLService_Stub stub = new HotelBLService_Stub();
-		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
-		
-		assertEquals(ResultMessage.SUCCESS, driver.hotelBLService.updateEvaluation(new EvaluationVO
-				("123420161002", 4, "5")));
-	}
+//	@Test
+//	public void test3() {
+//		//test interface Evaluation
+//		HotelBLService_Stub stub = new HotelBLService_Stub();
+//		HotelBLService_Driver driver = new HotelBLService_Driver(stub);
+//		
+//		assertEquals(ResultMessage.SUCCESS, driver.hotelBLService.updateEvaluation(new EvaluationVO
+//				("123420161002", 4, "5")));
+//	}
 }

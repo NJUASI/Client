@@ -1,12 +1,13 @@
 package dataService.hotelDataService;
 
 import java.rmi.RemoteException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import po.CheckInPO;
 import po.CheckOutPO;
-import po.EvaluationPO;
+import po.HotelEvaluationPO;
 import po.HotelGeneralPO;
 import po.HotelPO;
 import po.RemainRoomInfoPO;
@@ -66,20 +67,20 @@ public class HotelDataService_Stub implements HotelDataService  {
 				5,123,"good", "allEquipment");
 	}
 	
-	public ResultMessage addEvaluation(EvaluationPO evaluationPO) {
-		return ResultMessage.SUCCESS;
-	}
+//	public ResultMessage addEvaluation(EvaluationPO evaluationPO) {
+//		return ResultMessage.SUCCESS;
+//	}
 
 
-	public List<EvaluationPO> getEvaluations(String hotelID) {
-		List<EvaluationPO> list =  new ArrayList<EvaluationPO>();
-		list.add(new EvaluationPO("123",123,"123"));
+	public List<HotelEvaluationPO> getEvaluations(String hotelID) {
+		List<HotelEvaluationPO> list =  new ArrayList<HotelEvaluationPO>();
+		list.add(new HotelEvaluationPO("1234567890", LocalDate.of(2016, 11, 21), 4.5, "good"));
 		return list;
 	}
 
-	public ResultMessage updateEvaluation(EvaluationPO evaluationPO) throws RemoteException {
-		return ResultMessage.SUCCESS;
-	}
+//	public ResultMessage updateEvaluation(EvaluationPO evaluationPO) throws RemoteException {
+//		return ResultMessage.SUCCESS;
+//	}
 
 
 	@Override
