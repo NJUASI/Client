@@ -9,6 +9,8 @@ import businessLogicService.orderBLService.OrderBLService;
 import utilities.OrderState;
 import utilities.ResultMessage;
 import utilities.RoomType;
+import vo.GuestEvaluationVO;
+import vo.HotelEvaluationVO;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
@@ -165,6 +167,31 @@ public class OrderBLService_Stub implements OrderBLService {
 		orderGenerals.add(new OrderGeneralVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 200,
 				LocalDateTime.of(2016, 2, 3, 14, 0), LocalDateTime.of(2016, 2, 4, 12, 0), OrderState.UNEXECUTED));
 		return orderGenerals;
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param evaluationVO 客户评价单个订单时产生的订单
+	 * @return 客户是否成功评价该订单
+	 */
+	@Override
+	public ResultMessage addEvaluation(final GuestEvaluationVO evaluationVO) {
+		return ResultMessage.SUCCESS;
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param hotelID 酒店工作人员／客户查看酒店的评论
+	 * @return 此酒店的所有评价
+	 */
+	@Override
+	public List<HotelEvaluationVO> getEvaluations(String hotelID) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	/**

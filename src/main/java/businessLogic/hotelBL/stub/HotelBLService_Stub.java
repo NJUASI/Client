@@ -15,7 +15,7 @@ import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
-import vo.EvaluationVO;
+import vo.HotelEvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
 import vo.RemainRoomInfoVO;
@@ -27,9 +27,9 @@ public class HotelBLService_Stub implements HotelBLService{
 
 	}
 
-	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
-		return ResultMessage.SUCCESS;
-	}
+//	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
+//		return ResultMessage.SUCCESS;
+//	}
 
 
 	public HotelVO getHotelInfo(String userID) {
@@ -81,7 +81,7 @@ public class HotelBLService_Stub implements HotelBLService{
 		return null;
 	}
 
-	public Iterator<EvaluationVO> getEvaluations(String hotelID) {
+	public Iterator<HotelEvaluationVO> getEvaluations(String hotelID) {
 		// TODO 自动生成的方法存根
 		return null;
 	}

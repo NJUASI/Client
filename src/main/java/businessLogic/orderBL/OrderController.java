@@ -5,6 +5,8 @@ import java.util.List;
 
 import businessLogicService.orderBLService.OrderBLService;
 import utilities.ResultMessage;
+import vo.GuestEvaluationVO;
+import vo.HotelEvaluationVO;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
@@ -167,10 +169,35 @@ public final class OrderController implements OrderBLService {
 	/**
 	 * @author charles
 	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param evaluationVO 客户评价单个订单时产生的订单
+	 * @return 客户是否成功评价该订单
+	 */
+	@Override
+	public ResultMessage addEvaluation(GuestEvaluationVO evaluationVO) {
+		return order.addEvaluation(evaluationVO);
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param hotelID 酒店工作人员／客户查看酒店的评论
+	 * @return 此酒店的所有评价
+	 */
+	@Override
+	public List<HotelEvaluationVO> getEvaluations(String hotelID) {
+		return order.getEvaluations(hotelID);
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
 	 * @updateTime 2016/11/27
 	 * @param guestID 客户需要查看个人定过的酒店时依照的客户个人编号
 	 * @return 客户定过的酒店列表
 	 */
+	@Override
 	public List<String> getBookedHotels(final String guestID) {
 		return order.getBookedHotels(guestID);
 	}

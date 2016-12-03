@@ -14,7 +14,7 @@ import utilities.SortStrategy;
 import vo.AddressVO;
 import vo.CheckInVO;
 import vo.CheckOutVO;
-import vo.EvaluationVO;
+import vo.HotelEvaluationVO;
 import vo.HotelGeneralVO;
 import vo.HotelVO;
 import vo.RemainRoomInfoVO;
@@ -90,11 +90,11 @@ public class HotelController implements HotelBLService {
 		return hotel.addHotel(hotelVO);
 	}
 
-	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
-		return hotel.updateEvaluation(evaluationVO);
-	}
+//	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
+//		return hotel.updateEvaluation(evaluationVO);
+//	}
 
-	public Iterator<EvaluationVO> getEvaluations(String hotelID) {
+	public Iterator<HotelEvaluationVO> getEvaluations(String hotelID) {
 		return hotel.getEvaluations();
 	}
 	

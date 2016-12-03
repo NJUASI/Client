@@ -14,6 +14,8 @@ import po.OrderPO;
 import rmi.RemoteHelper;
 import utilities.PreOrder;
 import utilities.ResultMessage;
+import vo.GuestEvaluationVO;
+import vo.HotelEvaluationVO;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
@@ -262,6 +264,30 @@ public class Order {
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param evaluationVO 客户评价单个订单时产生的订单
+	 * @return 客户是否成功评价该订单
+	 */
+	public ResultMessage addEvaluation(GuestEvaluationVO evaluationVO){
+		return null;
+		
+	}
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param hotelID 酒店工作人员／客户查看酒店的评论
+	 * @return 此酒店的所有评价
+	 */
+	public List<HotelEvaluationVO> getEvaluations(String hotelID) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	/**

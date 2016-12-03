@@ -18,7 +18,7 @@ import utilities.ResultMessage;
 import utilities.RoomType;
 import vo.CheckInVO;
 import vo.CheckOutVO;
-import vo.EvaluationVO;
+import vo.HotelEvaluationVO;
 import vo.HotelVO;
 import vo.RemainRoomInfoVO;
 import vo.RoomInfoVO;
@@ -146,13 +146,13 @@ public class Hotel{
 
 	
 	// 对evaluations的操作，get
-	public Iterator<EvaluationVO> getEvaluations(){
+	public Iterator<HotelEvaluationVO> getEvaluations(){
 		return evaluations.getEvaluations();
 	}
 
-	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
-		return evaluations.addEvaluation(evaluationVO);
-	}
+//	public ResultMessage updateEvaluation(EvaluationVO evaluationVO) {
+//		return evaluations.addEvaluation(evaluationVO);
+//	}
 	
 	public Address getHotelAddress(String hotelID){
 		this.hotelID = hotelID;

@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 import utilities.ResultMessage;
+import vo.GuestEvaluationVO;
+import vo.HotelEvaluationVO;
 import vo.OrderGeneralVO;
 import vo.OrderVO;
 
@@ -105,6 +107,24 @@ public interface OrderBLService {
 	 * @return 网站营销人员需要查看的当天所有的未执行订单
 	 */
 	List<OrderGeneralVO> getAllUnexecutedOrderGeneral(LocalDate date);
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param evaluationVO 客户评价单个订单时产生的订单
+	 * @return 客户是否成功评价该订单
+	 */
+	ResultMessage addEvaluation(GuestEvaluationVO evaluationVO);
+	
+	/**
+	 * @author charles
+	 * @lastChangedBy charles
+	 * @updateTime 2016/12/2
+	 * @param hotelID 酒店工作人员／客户查看酒店的评论
+	 * @return 此酒店的所有评价
+	 */
+	public List<HotelEvaluationVO> getEvaluations(String hotelID);
 	
 	/**
 	 * @author charles
