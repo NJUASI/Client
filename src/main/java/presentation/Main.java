@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+
 /**
  * @author 61990
  *
@@ -27,6 +28,9 @@ public class Main extends Application {
 		final Parent root = FXMLLoader.load(getClass().getResource("/presentation/signUpUI/view/logIn.fxml"));
 		// Pane root=new Pane();
 //		LogInViewController s = new LogInViewController();
+	
+//		final Parent root = FXMLLoader.load(getClass().getResource("/presentation/guestUI/view/OrderCreate.fxml"));
+
 		final Scene scene = new Scene(root, 1000, 625);
 
 		stage.setTitle("酒店互联网预定系统");
