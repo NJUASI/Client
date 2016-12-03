@@ -1,10 +1,16 @@
 package presentation.guestUI.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import presentation.Main;
+import vo.MarketVO;
+import vo.MemberVO;
 
 /**
  * @author 61990
@@ -12,7 +18,9 @@ import javafx.scene.layout.Pane;
  * @version 11.27
  */
 public class MemberCheckController {
-	
+
+	MemberVO memberVO;
+	MarketVO marketVO;
 	@FXML
 	private Pane memberCheck;
 	
@@ -30,10 +38,23 @@ public class MemberCheckController {
 	 */
 	@FXML
 	private void initialize() {
-		enterprise.setText(" ");
-		market.setText(" ");
-		market2.setText(" ");
-		birthday.setText(" ");
+		try {
+			memberVO=new MemberVO("12345",LocalDate.of(2001, 1, 22),null);
+			marketVO = new MarketVO("LV4", 0, 0);
+			enterprise.setText(memberVO.enterprise);
+			if(memberVO.enterprise!=null){
+			market.setText(marketVO.marketName);
+			}
+			birthday.setText(memberVO.birthday.toString());
+			
+			if(memberVO.birthday!=null){
+			market2.setText(marketVO.marketName);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 	// 注册界面
@@ -53,14 +74,18 @@ public class MemberCheckController {
 	protected void register() {
 		memberCheck.setVisible(false);
 		memberModify.setVisible(true);
-		if (!"".equals(enterprise.getText())) {
+		if (!"".equals(birthday.getText())) {
 			commonPane.setDisable(false);
 		}
 		if (!"".equals(enterprise.getText())) {
-			enterprisePane.setDisable(false);
+			enterprisePane.setDisable(true);
 		}
 	}
-
+	@FXML
+	private TextField enterpriseText;
+	@FXML 
+	private DatePicker birthdayPicker;
+	
 	/**
 	 * @author 61990
 	 * @lastChangedBy 61990
@@ -69,7 +94,9 @@ public class MemberCheckController {
 	 */
 	@FXML
 	protected void registerEnterprise() {
-
+//		String s=Main.userID;
+		enterprise.getText();	
+		initialize();
 	}
 
 	/**
@@ -80,7 +107,9 @@ public class MemberCheckController {
 	 */
 	@FXML
 	protected void registerCommon() {
-
+//		String s=Main.userID;
+		birthdayPicker.getValue();
+		initialize();
 	}
 
 	/**

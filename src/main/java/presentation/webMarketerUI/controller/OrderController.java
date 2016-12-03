@@ -50,12 +50,12 @@ public class OrderController {
 	// 详情界面内容
 	@FXML
 	private Label detail_ID, detail_Hotel, detail_address, detail_roomType, detail_roomNum, detail_personNum,
-			detail_price, detail_personName, detail_phone, detail_createTime, detail_expectTime;
+			detail_price, detail_personName, detail_phone, detail_createTime, detail_expectTime,detail_message;
 	// 概况界面内容
 	@FXML
-	private TableView<OrderTable> table;
+	private TableView<MarketerOrderTable> table;
 	@FXML
-	private TableColumn<OrderTable, String> orderIDColumn, hotelNameColumn, addressColumn, priceColumn,
+	private TableColumn<MarketerOrderTable, String> orderIDColumn, hotelNameColumn, addressColumn, priceColumn,
 			checkInTimeColumn, stateColumn;
 
 	/**
@@ -96,7 +96,7 @@ public class OrderController {
 		final LocalDateTime expectLeaveTime = LocalDateTime.of(2016, 2, 4, 12, 00);
 
 		final OrderState orderState = OrderState.ABNORMAL;
-		final RoomType roomType = RoomType.AMBASSADOR;
+		final RoomType roomType = RoomType.DOUBLE_BED;
 
 		orderVO = new OrderVO("123456789012", "1234567890", "12345678", "thisHotel", "address", 250, 200, createTime,
 				checkInTime, checkOutTime, expectExecuteTime, expectLeaveTime, orderState, roomType, 2, "301  302", 2,
@@ -284,6 +284,7 @@ public class OrderController {
 		detail_expectTime.setText(orderVO.orderGeneralVO.expectExecuteTime.toString());
 		detail_price.setText(Double.toString(orderVO.orderGeneralVO.price));
 		detail_state.setText(orderVO.orderGeneralVO.state.toString());
+		detail_message.setText(orderVO.message);
 	}
 	/**
 	 * @author 61990
@@ -294,14 +295,14 @@ public class OrderController {
 	 */
 	private void initOrderCheck(List<OrderGeneralVO> orderVOlist) {
 		table.getItems().clear();
-		List<OrderTable> orderList = new LinkedList<OrderTable>();
+		List<MarketerOrderTable> orderList = new LinkedList<MarketerOrderTable>();
 		for (int i = 0; i < orderVOlist.size(); i++) {
 			OrderGeneralVO temp = orderVOlist.get(i);
-			orderList.add(new OrderTable(temp.orderID, temp.hotelName, temp.hotelAddress,
+			orderList.add(new MarketerOrderTable(temp.orderID, temp.hotelName, temp.hotelAddress,
 					temp.expectExecuteTime.toString(), temp.price + "", temp.state.toString()));
 		}
 
-		ObservableList<OrderTable> data = FXCollections.observableArrayList();
+		ObservableList<MarketerOrderTable> data = FXCollections.observableArrayList();
 		for (int i = 0; i < orderList.size(); i++) {
 			data.add(orderList.get(i));
 		}

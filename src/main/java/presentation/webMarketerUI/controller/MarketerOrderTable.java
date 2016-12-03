@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class OrderTable {
+public class MarketerOrderTable {
 	
 	public final SimpleStringProperty orderID;
 	public final SimpleStringProperty hotelName;
@@ -13,7 +13,7 @@ public class OrderTable {
 	public final SimpleStringProperty price;
 	public final SimpleStringProperty state;
 	
-	public OrderTable(String orderID, String hotelName,String address, String checkInTime,String price, String state) {
+	public MarketerOrderTable(String orderID, String hotelName,String address, String checkInTime,String price, String state) {
 		this.orderID = new SimpleStringProperty(orderID);
 		this.hotelName = new SimpleStringProperty(hotelName);
 		this.address = new SimpleStringProperty(address);
