@@ -92,7 +92,7 @@ public class HotelFixedPromotion {
 		for(int i = 0;i<hotelFixedPromotions.size();i++){
 			HotelFixedPromotionPO tempHotelFixedPromotion = hotelFixedPromotions.get(i);
 			PromotionType promotionType = tempHotelFixedPromotion.getPromotionType();
-			double discount = tempHotelFixedPromotion.getDiscout();
+			double discount = tempHotelFixedPromotion.getDiscount();
 			calculateFixedPromotions.add(factory.createCalculateDiscount(promotionType,discount));
 		}
 		return calculateFixedPromotions;
