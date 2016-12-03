@@ -52,7 +52,7 @@ public class SpecialCirclePromotion {
 	 */
 	public ResultMessage updateSpecialCirclePromotion(AddressVO addressVO){
 		try {
-			return promotionDataService.updateSepecialCirclePromotion(addressVO);
+			return promotionDataService.updateSepecialCirclePromotion(new AddressPO(addressVO));
 		} catch (RemoteException e) {
 			return ResultMessage.FAIL;
 		}
